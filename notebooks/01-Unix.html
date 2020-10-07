@@ -804,28 +804,201 @@ remember!)</p></li>
 <ul class="simple">
 <li><p>Do all your work in a single directory with the abbreviation of your course followed by <code class="docutils literal notranslate"><span class="pre">CourseWork</span></code> (no spaces please) located in a suitable place in your <code class="docutils literal notranslate"><span class="pre">/home</span></code>. So for example, for CMEE students, the directory would be <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code>.</p></li>
 <li><p>Each week’s coursework should be in its respective directory; e.g., <code class="docutils literal notranslate"><span class="pre">CMEECourseWork/Week1</span></code>, <code class="docutils literal notranslate"><span class="pre">CMEECourseWork/Week2</span></code>, etc.</p></li>
-<li><p>Each week’s directory should contain directories called <code class="docutils literal notranslate"><span class="pre">Code</span></code>, <code class="docutils literal notranslate"><span class="pre">Data</span></code>, etc (more on this later)</p></li>
+<li><p>Each week’s directory should contain directories called <code class="docutils literal notranslate"><span class="pre">Code</span></code>, <code class="docutils literal notranslate"><span class="pre">Data</span></code>, <code class="docutils literal notranslate"><span class="pre">Results</span></code>, and <code class="docutils literal notranslate"><span class="pre">Sandbox</span></code> (can also be all small or all large case, but be consistent)</p></li>
 </ul>
-<p>You will bring your <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code> (or <code class="docutils literal notranslate"><span class="pre">QMEECourseWork</span></code>, or whatever) and all it’s contents under version control using Git (coming up in the <a class="reference internal" href="03-Git.html"><span class="doc std std-doc">Version Control Chapter</span></a>.</p>
+<p>You will bring your <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code> and all it’s contents under version control using Git (coming up in the <a class="reference internal" href="03-Git.html"><span class="doc std std-doc">Version Control Chapter</span></a>.</p>
 <p><span class="math notranslate nohighlight">\(\star\)</span> OK, make your coursework directory now. First, <code class="docutils literal notranslate"><span class="pre">cd</span></code> to an appropriate place (e.g., <code class="docutils literal notranslate"><span class="pre">Documents</span></code> on your <code class="docutils literal notranslate"><span class="pre">home</span></code>):</p>
-<p>Check what you have in there:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Documents <span class="c1"># same as /home/YourUserName/Documents</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check what you have in there with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>(You should see the contents of your <code class="docutils literal notranslate"><span class="pre">Documents</span></code> directory)</p>
 <p>Now make the directory and <code class="docutils literal notranslate"><span class="pre">cd</span></code> to it</p>
-<p>You will get an error if a directory by that name already exists. Note that you can combine commands using <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code></p>
-<p>You will get an error, because in the UNIX/Linux file system, commands are case-sensitive. So “<code class="docutils literal notranslate"><span class="pre">Sandbox</span></code>” is not the same as “<code class="docutils literal notranslate"><span class="pre">sandbox</span></code>”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir CMEECourseWork
+</pre></div>
+</div>
+</div>
+</div>
+<p>You will get an error if a directory by that name already exists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> CMEECourseWork
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also combine commands using <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>. For example,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> CMEECourseWork <span class="o">&amp;&amp;</span> <span class="nb">cd</span> CMEECourseWork
+</pre></div>
+</div>
+<p>Next, create your week1 sub-directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir week1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> week1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir sandbox code data results
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, try to cd to it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Sandbox
+</pre></div>
+</div>
+<p>You will get <code class="docutils literal notranslate"><span class="pre">bash:</span> <span class="pre">cd:</span> <span class="pre">Sandbox:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code> error, because in the UNIX/Linux file system, commands are case-sensitive. So “<code class="docutils literal notranslate"><span class="pre">Sandbox</span></code>” is not the same as “<code class="docutils literal notranslate"><span class="pre">sandbox</span></code>”.</p>
 <hr class="docutils" />
 <blockquote>
 <div><p><strong>Mac OS has case insensitive commands</strong>: Unlike UNIX/Linux, MacOS allows execution of commands and file/directory names in a case-insensitive way. Keep this in mind from the perspective of platform independence - if you write your code to call a directory called, say, <code class="docutils literal notranslate"><span class="pre">Sandbox</span></code>, but the directory is actually called <code class="docutils literal notranslate"><span class="pre">sandbox</span></code>, then you will niot get an error, but your collaborator (me!) will, if she/he uses Linux!</p>
 </div></blockquote>
 <hr class="docutils" />
+<p>Next, try and remove <code class="docutils literal notranslate"><span class="pre">sandbox</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm sandbox
+</pre></div>
+</div>
+<p>You will get a <code class="docutils literal notranslate"><span class="pre">rm:</span> <span class="pre">cannot</span> <span class="pre">remove</span> <span class="pre">'sandbox':</span> <span class="pre">Is</span> <span class="pre">a</span> <span class="pre">directory</span></code> error because UNIX is conservative about allowing users to delete directories (this is one of the reasons why it is so stable). To delete it, you will need to use the <code class="docutils literal notranslate"><span class="pre">-r</span></code> (for <em>recursive</em>) flag:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -r sandbox
+</pre></div>
+</div>
+</div>
+</div>
+<p>Careful with the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, because starting with the target directory (<code class="docutils literal notranslate"><span class="pre">sandbox</span></code> in this case), it <code class="docutils literal notranslate"><span class="pre">r</span></code>ecursively removes the entire directory tree inside the target directory, files and all!</p>
+<p>Now recreate your <code class="docutils literal notranslate"><span class="pre">sandbox</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir sandbox
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try renaming it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv sandbox Sandbox
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">code</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">results</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">Sandbox</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s move back to all small caps <code class="docutils literal notranslate"><span class="pre">sandbox</span></code> for naming consistency:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv Sandbox sandbox
+ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">code</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">results</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">sandbox</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next try some more directory and file manipulations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> sandbox
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try <code class="docutils literal notranslate"><span class="pre">pwd</span></code> (<code class="docutils literal notranslate"><span class="pre">p</span></code>rint <code class="docutils literal notranslate"><span class="pre">w</span></code>orking <code class="docutils literal notranslate"><span class="pre">d</span></code>irectory) next to see the full path of the current directory.</p>
 <p>Let’s continue:</p>
-<p>rm sandbox</p>
-<p>You will get an error because UNIX is conservative about allowing users to delete directories (this is one of the reasons why it is so stable)</p>
-<p>Let’s try renaming:</p>
-<p>You can also do <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">sandbox</span></code> and then recreate <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">Sandbox</span></code>.</p>
-<p>However, careful with the <code class="docutils literal notranslate"><span class="pre">-r</span></code> option, because starting with the target directory (<code class="docutils literal notranslate"><span class="pre">sandbox</span></code> in this case), it <code class="docutils literal notranslate"><span class="pre">r</span></code>ecursively removes the entire directory tree inside the target directory, files and all!</p>
-<p>Next try a some more directory and file manipulations:</p>
-<p>Note the hash mark (<code class="docutils literal notranslate"><span class="pre">#</span></code>) after one of the commands above – anything after a <code class="docutils literal notranslate"><span class="pre">#</span></code> is ignored (so you can use it for commenting).</p>
-<p>You could have made your project directories and subdirectories in one swoop by using the <code class="docutils literal notranslate"><span class="pre">-p</span></code> option of <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> (<code class="docutils literal notranslate"><span class="pre">cd</span></code> up to <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code> first (<em>how would you do it?</em>)):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls <span class="c1"># nothing here yet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note the hash mark (<code class="docutils literal notranslate"><span class="pre">#</span></code>) after the command above – anything after a <code class="docutils literal notranslate"><span class="pre">#</span></code> is ignored (so you can use it for commenting).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch TestFile <span class="c1"># OR, &quot;touch TestFile.txt&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFile
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv TestFile TestFile2<span class="p">;</span> ls <span class="c1"># commands can also be sequentially executed with a `;`</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TestFile2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm TestFile2
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could have made your project directories and subdirectories in one swoop by using the <code class="docutils literal notranslate"><span class="pre">-p</span></code> option of <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> (<code class="docutils literal notranslate"><span class="pre">cd</span></code> back up to <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code> first) with the <code class="docutils literal notranslate"><span class="pre">-p</span></code> flag for <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p Week1/<span class="o">{</span>Data,Code,Results,Sandbox<span class="o">}</span>
+</pre></div>
+</div>
+<p><em>How would you <code class="docutils literal notranslate"><span class="pre">cd</span></code> to <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code>?</em></p>
+<p>There are two reasonable options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../../../CMEECourseWork
+</pre></div>
+</div>
+<p>Or,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/YourUserName/Documents/CMEECourseWork
+</pre></div>
+</div>
+<p>Try them both.</p>
+<p>Which is the same as <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Documents/CMEECourseWork</span></code></p>
+<p><em>Which of these two would you choose and why?</em></p>
 </div>
 <div class="section" id="command-arguments">
 <h2>Command arguments<a class="headerlink" href="#command-arguments" title="Permalink to this headline">¶</a></h2>
@@ -872,8 +1045,155 @@ remember!)</p></li>
 </tr>
 </tbody>
 </table>
-<p>You can also combine command arguments. Try:</p>
-<p>This combines <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-t</span></code></p>
+<p>You can also combine command arguments / flags. Try:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../../ <span class="c1"># cd two directory levels higher, assuming you are currently in CMEECourseWork/Week1/sandbox</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x 6 mhasoba mhasoba 4096 Oct  7 17:32 <span class=" -Color -Color-Bold -Color-Bold-Blue">week1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-l</span></code> flag gives you both the directory permissions info and when it was modified. Your user name will appear instead of <code class="docutils literal notranslate"><span class="pre">mhasoba</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -R
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">week1</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">code</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">results</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">sandbox</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/code:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/data:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/results:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/sandbox:
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-R</span></code> flag lists directory tree  recursively (through all subdirectories)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -lR <span class="c1"># same as ls -l -R</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x 6 mhasoba mhasoba 4096 Oct  7 17:32 <span class=" -Color -Color-Bold -Color-Bold-Blue">week1</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 16
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x 2 mhasoba mhasoba 4096 Oct  7 17:32 <span class=" -Color -Color-Bold -Color-Bold-Blue">code</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x 2 mhasoba mhasoba 4096 Oct  7 17:32 <span class=" -Color -Color-Bold -Color-Bold-Blue">data</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x 2 mhasoba mhasoba 4096 Oct  7 17:32 <span class=" -Color -Color-Bold -Color-Bold-Blue">results</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x 2 mhasoba mhasoba 4096 Oct  7 17:32 <span class=" -Color -Color-Bold -Color-Bold-Blue">sandbox</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/code:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/data:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/results:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./week1/sandbox:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The combines <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-R</span></code> to give you both the directory permissions info and when it was modied as well as .</p>
 </div>
 <div class="section" id="redirection-and-pipes">
 <h2>Redirection and pipes<a class="headerlink" href="#redirection-and-pipes" title="Permalink to this headline">¶</a></h2>
@@ -882,15 +1202,108 @@ remember!)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>: Redirect output from a command to a file on disk. If the file already exists, it will be overwritten.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>: Append the output from a command to a file on disk. If the file does not exist, it will be created.</p></li>
 </ul>
-<p>Examples (make sure you are in <code class="docutils literal notranslate"><span class="pre">Week1/Sandbox</span></code>):</p>
+<p>Let’s try some examples.</p>
+<p>First make sure you are back in <code class="docutils literal notranslate"><span class="pre">sandbox</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> week1/sandbox
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;My first line.&quot;</span> &gt; test.txt
+cat test.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My first line.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;My second line&quot;</span> &gt;&gt; test.txt
+cat test.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My first line.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My second line
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now try</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls / &gt;&gt; ListRootDir.txt
+cat ListRootDir.txt
+</pre></div>
+</div>
+<p><em>What do you see?</em> Cool!</p>
 <p>We can also concatenate commands using “pipes” with “<code class="docutils literal notranslate"><span class="pre">|</span></code>” e.g., to count how many files are in root (<code class="docutils literal notranslate"><span class="pre">/</span></code>) directory:</p>
-<p>what does this do? Look up “man wc” in the terminal (or google “unix wc”).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls / <span class="p">|</span> wc -l
+</pre></div>
+</div>
+<p><em>How many is that?</em></p>
+<p>Look up <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">wc</span></code> in the terminal, or search “unix wc” online.</p>
 <p>Or try:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -lt <span class="p">|</span> head -5
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 mhasoba mhasoba 30 Oct  7 17:32 test.txt
+</pre></div>
+</div>
+</div>
+</div>
 <p><em>What does this do?</em></p>
 </div>
 <div class="section" id="wildcards">
 <h2>Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
 <p>We can use wildcards to find files based on their names (still in <code class="docutils literal notranslate"><span class="pre">Week1/Sandbox</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir TestWild
+<span class="nb">cd</span> TestWild
+touch File1.txt
+touch File2.txt
+touch File3.txt
+touch File4.txt
+touch File1.csv
+touch File2.csv
+touch File3.csv
+touch File4.csv
+touch Anotherfile.csv
+touch Anotherfile.txt
+ls 
+ls <span class="p">|</span> wc -l
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anotherfile.csv  File1.csv  File2.csv  File3.csv  File4.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anotherfile.txt  File1.txt  File2.txt  File3.txt  File4.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
 <p>We will use the following wildcards:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -911,44 +1324,57 @@ remember!)</p></li>
 </tbody>
 </table>
 <p>Now let’s try to find the files using wildcards:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls *
+ls File*
+ls *.txt
+ls File?.txt
+ls File<span class="o">[</span><span class="m">1</span>-2<span class="o">]</span>.txt
+ls File<span class="o">[</span>!3<span class="o">]</span>.*
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anotherfile.csv  File1.csv  File2.csv  File3.csv  File4.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anotherfile.txt  File1.txt  File2.txt  File3.txt  File4.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File1.csv  File2.csv  File3.csv  File4.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File1.txt  File2.txt  File3.txt  File4.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anotherfile.txt  File1.txt  File2.txt  File3.txt  File4.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File1.txt  File2.txt  File3.txt  File4.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File1.txt  File2.txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File1.csv  File1.txt  File2.csv  File2.txt  File4.csv  File4.txt
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="using-grep">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#using-grep" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is a command that matches strings in a file (why is this useful?). It is based on regular expressions (more on this later). Let’s explore some basic usage of <code class="docutils literal notranslate"><span class="pre">grep</span></code>. For a test file let’s download a list of protected species from the web (to <code class="docutils literal notranslate"><span class="pre">Sandbox</span></code>):</p>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> is a command that matches strings in a file (why is this useful?). It is based on regular expressions (more on this later). Let’s explore some basic usage of <code class="docutils literal notranslate"><span class="pre">grep</span></code>. For a test file let’s download a list of protected species from the web (to <code class="docutils literal notranslate"><span class="pre">sandbox</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Documents/CMEECourseWork <span class="c1"># make sure you are in the right place</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../ <span class="c1"># move one level up from TestWild, back to sandbox</span>
+wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/spawannxs.txt <span class="c1">#Cool!</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">Sandbox</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">Week1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Week1
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/spawannxs.txt <span class="c1">#Cool!</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2020-10-07 09:57:07--  https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/spawannxs.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2020-10-07 17:32:21--  https://raw.githubusercontent.com/mhasoba/TheMulQuaBio/master/content/data/spawannxs.txt
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.16.133
@@ -970,13 +1396,13 @@ remember!)</p></li>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spawannxs.txt         0%[                    ]       0  --.-KB/s               
-spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.001s  
+spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.003s  
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-10-07 09:57:07 (8.89 MB/s) - ‘spawannxs.txt’ saved [13467/13467]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2020-10-07 17:32:21 (4.69 MB/s) - ‘spawannxs.txt’ saved [13467/13467]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -991,33 +1417,21 @@ spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.001s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Blue">Code</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">Data</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">sandbox</span>  <span class=" -Color -Color-Bold -Color-Bold-Blue">Sandbox</span>  spawannxs.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spawannxs.txt  test.txt  <span class=" -Color -Color-Bold -Color-Bold-Blue">TestWild</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv spawannxs.txt Data <span class="c1"># Mode the file to the appropriate location</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv spawannxs.txt ../data <span class="c1"># Move the file to the appropriate location (note the ../ - relative path)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Data
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spawannxs.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../data <span class="c1"># Move to the data directory</span>
 </pre></div>
 </div>
 </div>
@@ -1182,6 +1596,27 @@ spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.001s
 </div>
 </div>
 <p>OK, let’s look for falcons:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep Falco spawannxs.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>nidae	<span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>		femoralis septentrionalis
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>nidae	<span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>		peregrinus
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>nidae	Polyborus	plancus
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>nidae	<span class=" -Color -Color-Bold -Color-Bold-Red">Falco</span>		columbarius
+</pre></div>
+</div>
+</div>
+</div>
 <p>Nothing there? Let’s use <code class="docutils literal notranslate"><span class="pre">-i</span></code> to make the matching case-insensitive:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1262,7 +1697,7 @@ spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.001s
 </div>
 </div>
 </div>
-<p>But this poses a problem (what is the problem?).</p>
+<p>But this poses a problem (<em>What is the problem?</em>).</p>
 <p>We can solve this by specifying <code class="docutils literal notranslate"><span class="pre">-w</span></code> to match only full words:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1358,7 +1793,8 @@ spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.001s
 </div>
 </div>
 <p>To print all the lines that do not match a pattern, use <span>-v</span>:</p>
-<p>This will porduce a lot of output (which I will not show)!</p>
+<p>Also try <code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-i</span> <span class="pre">-w</span> <span class="pre">-v</span> <span class="pre">ara</span> <span class="pre">spawannxs.txt</span></code></p>
+<p>This will produce a lot of output (which I will not show)! <em>What does this command do?</em></p>
 <p>To match one of several strings, use <code class="docutils literal notranslate"><span class="pre">grep&quot;string1\|string2”</span> <span class="pre">file</span></code>. <code class="docutils literal notranslate"><span class="pre">grep</span></code> can be used on multiple files, all files, using wildcards for filenames, etc – explore as and when you need.</p>
 </div>
 <div class="section" id="finding-files">
@@ -1366,7 +1802,7 @@ spawannxs.txt       100%[===================&gt;]  13.15K  --.-KB/s    in 0.001s
 <p>It’s easy to find files in UNIX using, well, the <code class="docutils literal notranslate"><span class="pre">find</span></code> command! Let’s test it (make sure you are in <code class="docutils literal notranslate"><span class="pre">Sandbox</span></code>, not <code class="docutils literal notranslate"><span class="pre">Data</span></code>!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../sandbox <span class="c1"># note the relative path!</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ../sandbox <span class="c1"># again, note the relative path!</span>
 </pre></div>
 </div>
 </div>
@@ -1386,17 +1822,6 @@ touch Dir2/file2.csv
 touch Dir2/File2.tex
 touch Dir1/Dir11/Dir111/File111.txt
 touch Dir3/File3.txt
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘TestFind’: File exists
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘Dir2’: File exists
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘Dir3’: File exists
 </pre></div>
 </div>
 </div>
@@ -1575,23 +2000,24 @@ touch Dir3/File3.txt
 </div>
 </div>
 </div>
+<p>That’s it for this introduction to UNIX.</p>
+<p>Remember that along with the <code class="docutils literal notranslate"><span class="pre">man</span></code> command for specific functions, you can use the internet to get help on practically everything about UNIX.</p>
 </div>
 <div class="section" id="practicals">
 <h2>Practicals<a class="headerlink" href="#practicals" title="Permalink to this headline">¶</a></h2>
 <p><strong>Some instructions</strong>:</p>
 <ul class="simple">
-<li><p>Review (especially if you got lost along the way) and make sure you can run and understand all the commands and get the expected outputs we have covered today.</p></li>
-<li><p>Make sure you have your directory organized with <code class="docutils literal notranslate"><span class="pre">Data</span></code> and <code class="docutils literal notranslate"><span class="pre">Sandbox</span></code> with the necessary files, under your coursework directory (e.g., <code class="docutils literal notranslate"><span class="pre">CMEECourseWork/Week1</span></code>).</p></li>
+<li><p>Review (especially if you got lost along the way) and make sure you can run and understand all the commands and get the expected outputs we have covered above.</p></li>
+<li><p>Make sure you have your directory organized with <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code> etc and the necessary files, under your coursework directory (e.g., <code class="docutils literal notranslate"><span class="pre">CMEECourseWork/Week1</span></code>).</p></li>
 <li><p>Along with the completeness of the practicals/exercises themselves, you will be marked on the basis of how complete and well-organized your directory structure and content is – in all coming weeks as well.</p></li>
 </ul>
 <div class="section" id="bash-command-challenge">
 <h3>Bash command challenge<a class="headerlink" href="#bash-command-challenge" title="Permalink to this headline">¶</a></h3>
-<p>Here is a more complicated bash command using two pipes (<em>you are not expected to include the answer to this one as part of your weekly submission</em>):</p>
+<p>Here is a somewhat complicated bash command using two pipes (<em>you are not expected to include the answer to this one as part of your weekly submission</em>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -type f -exec ls -s <span class="o">{}</span> <span class="se">\;</span> <span class="p">|</span> sort -n <span class="p">|</span> head -10
 </pre></div>
 </div>
-<p>What does this command do? (Hint: try it on the test directories and files we created in <code class="docutils literal notranslate"><span class="pre">Sandbox</span></code>)</p>
-<p><em>Remember that along with the <code class="docutils literal notranslate"><span class="pre">man</span></code> command, you can use the internet to get help on practically everything about UNIX!</em></p>
+<p>What does this command do? (Hint: try it on the test directories and files we created in <code class="docutils literal notranslate"><span class="pre">sandbox</span></code>)</p>
 </div>
 <div class="section" id="fasta-exercise">
 <h3>FASTA exercise<a class="headerlink" href="#fasta-exercise" title="Permalink to this headline">¶</a></h3>
