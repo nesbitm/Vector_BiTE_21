@@ -318,7 +318,10 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        
+        <a class="repository-button"
+            href="https://github.com/mhasoba/TheMulQuaBio"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
             href="https://github.com/mhasoba/TheMulQuaBio/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03-Git.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
@@ -589,7 +592,7 @@ git config --list
 </div>
 <div class="section" id="your-first-repository">
 <h2>Your first repository<a class="headerlink" href="#your-first-repository" title="Permalink to this headline">¶</a></h2>
-<p>Time to bring your computing coursework directory under version control. For example, for CMEE Masters students:</p>
+<p>Time to bring your computing coursework directory under version control. For example, for CMEE Masters students, first CD to your coursework directory:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Documents/CMEECourseWork
@@ -597,6 +600,7 @@ git config --list
 </div>
 </div>
 </div>
+<p>Then initialize your local git repository:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
@@ -609,13 +613,15 @@ git config --list
 </div>
 </div>
 </div>
+<p>Create your README file (as a <a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">markdown</a> document, so with the <code class="docutils literal notranslate"><span class="pre">.md</span></code> extension):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;My CMEE Coursework Repository&quot;</span> &gt; README.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;My CMEE Coursework Repository&quot;</span> &gt; README.md
 </pre></div>
 </div>
 </div>
 </div>
+<p>Check your git configuration:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --list
@@ -624,28 +630,17 @@ git config --list
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>user.email=mhasoba@gmail.com
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>user.name=Samraat Pawar
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>push.default=simple
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>core.repositoryformatversion=0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>core.filemode=true
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>core.bare=false
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>core.logallrefupdates=true
+user.name=Samraat Pawar
+push.default=simple
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
 </pre></div>
 </div>
 </div>
 </div>
+<p>Check the files and directories that have been created; note the hidden <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -al
@@ -654,32 +649,24 @@ git config --list
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total 20
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x  4 mhasoba mhasoba 4096 Oct  8 08:45 <span class=" -Color -Color-Bold -Color-Bold-Blue">.</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxr-xr-x 34 mhasoba mhasoba 4096 Oct  8 08:45 <span class=" -Color -Color-Bold -Color-Bold-Blue">..</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x  7 mhasoba mhasoba 4096 Oct  8 08:45 <span class=" -Color -Color-Bold -Color-Bold-Blue">.git</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r--  1 mhasoba mhasoba   30 Oct  8 08:45 README.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>drwxrwxr-x  6 mhasoba mhasoba 4096 Oct  8 08:45 <span class=" -Color -Color-Bold -Color-Bold-Blue">week1</span>
+drwxrwxr-x  4 mhasoba mhasoba 4096 Oct  9 08:56 <span class=" -Color -Color-Bold -Color-Bold-Blue">.</span>
+drwxr-xr-x 34 mhasoba mhasoba 4096 Oct  9 08:56 <span class=" -Color -Color-Bold -Color-Bold-Blue">..</span>
+drwxrwxr-x  7 mhasoba mhasoba 4096 Oct  9 08:56 <span class=" -Color -Color-Bold -Color-Bold-Blue">.git</span>
+-rw-rw-r--  1 mhasoba mhasoba   30 Oct  9 08:56 README.md
+drwxrwxr-x  6 mhasoba mhasoba 4096 Oct  9 08:56 <span class=" -Color -Color-Bold -Color-Bold-Blue">week1</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Add the README (AKA “stage” it for for a git commit):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add README.txt <span class="c1">#Staging for commit</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add README.md
 </pre></div>
 </div>
 </div>
 </div>
+<p>Check the current status of your repository:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
@@ -688,88 +675,56 @@ git config --list
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No commits yet
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Changes to be committed:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   README.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Untracked files:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Red">week1/</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+	<span class=" -Color -Color-Green">new file:   README.md</span>
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	<span class=" -Color -Color-Red">week1/</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>This tells you that there are local changes that need to be committed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Added README file.&quot;</span> <span class="c1">#you can use -am too</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Added README file.&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 23a8da6] Added README file.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 1 insertion(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 README.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master (root-commit) 8aa8c1e] Added README file.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
 </pre></div>
 </div>
 </div>
 </div>
+<p>You can also combine flags like in other UNIX comamnds; so you can both, add (<code class="docutils literal notranslate"><span class="pre">-a</span></code> flag) and commit (<code class="docutils literal notranslate"><span class="pre">-m</span></code> flag) at one go, with <code class="docutils literal notranslate"><span class="pre">-am</span></code>.</p>
+<p>Check status again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status <span class="c1">#what does it say now?</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Untracked files:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Red">week1/</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+	<span class=" -Color -Color-Red">week1/</span>
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
 </pre></div>
 </div>
 </div>
 </div>
+<p><em>What does it say now?</em></p>
+<p>You can also add (stage for commit) all changes in a directory using the <code class="docutils literal notranslate"><span class="pre">-A</span></code> (same as <code class="docutils literal notranslate"><span class="pre">--all</span></code>) flag:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add -A
@@ -785,110 +740,109 @@ git config --list
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Changes to be committed:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/data/spawannxs.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/Dir11/Dir111/File111.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/File1.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/File1.tex</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/File1.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir2/File2.tex</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir2/File2.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir2/file2.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir3/File3.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/Anotherfile.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/Anotherfile.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File1.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File1.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File2.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File2.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File3.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File3.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File4.csv</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File4.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	<span class=" -Color -Color-Green">new file:   week1/sandbox/test.txt</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+	<span class=" -Color -Color-Green">new file:   week1/data/spawannxs.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/Dir11/Dir111/File111.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/File1.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/File1.tex</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir1/File1.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir2/File2.tex</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir2/File2.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir2/file2.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestFind/Dir3/File3.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/Anotherfile.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/Anotherfile.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File1.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File1.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File2.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File2.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File3.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File3.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File4.csv</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/TestWild/File4.txt</span>
+	<span class=" -Color -Color-Green">new file:   week1/sandbox/test.txt</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Next you can commit the rest of these files inside <code class="docutils literal notranslate"><span class="pre">week</span> <span class="pre">1</span></code> with another message, just like you did for <code class="docutils literal notranslate"><span class="pre">readme</span></code> above.</p>
+<p>Note that this adds ALL changes, recursively (through all sub-directories).</p>
+<p>Next you can commit the rest of these files inside <code class="docutils literal notranslate"><span class="pre">week</span> <span class="pre">1</span></code> with another message, just like you did for <code class="docutils literal notranslate"><span class="pre">readme</span></code> above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Full first commit of new project&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master a16e73c] Full first commit of new project
+ 20 files changed, 599 insertions(+)
+ create mode 100644 week1/data/spawannxs.txt
+ create mode 100644 week1/sandbox/TestFind/Dir1/Dir11/Dir111/File111.txt
+ create mode 100644 week1/sandbox/TestFind/Dir1/File1.csv
+ create mode 100644 week1/sandbox/TestFind/Dir1/File1.tex
+ create mode 100644 week1/sandbox/TestFind/Dir1/File1.txt
+ create mode 100644 week1/sandbox/TestFind/Dir2/File2.tex
+ create mode 100644 week1/sandbox/TestFind/Dir2/File2.txt
+ create mode 100644 week1/sandbox/TestFind/Dir2/file2.csv
+ create mode 100644 week1/sandbox/TestFind/Dir3/File3.txt
+ create mode 100644 week1/sandbox/TestWild/Anotherfile.csv
+ create mode 100644 week1/sandbox/TestWild/Anotherfile.txt
+ create mode 100644 week1/sandbox/TestWild/File1.csv
+ create mode 100644 week1/sandbox/TestWild/File1.txt
+ create mode 100644 week1/sandbox/TestWild/File2.csv
+ create mode 100644 week1/sandbox/TestWild/File2.txt
+ create mode 100644 week1/sandbox/TestWild/File3.csv
+ create mode 100644 week1/sandbox/TestWild/File3.txt
+ create mode 100644 week1/sandbox/TestWild/File4.csv
+ create mode 100644 week1/sandbox/TestWild/File4.txt
+ create mode 100644 week1/sandbox/test.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On branch master
+nothing to commit, working tree clean
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
 <blockquote>
 <div><p><strong>Make meaningful Comments</strong>: Please don’t neglect to make each commit message meaningful. And use this mantra: “commit often, comment always”.</p>
 </div></blockquote>
-<hr class="docutils" />
 <p><img alt="image" src="../_images/git_xkcd.png" />
 <small> <center>Source: <a class="reference external" href="https://m.xkcd.com/1296/">https://m.xkcd.com/1296/</a>
 Don’t succumb to this.</figcaption></center></small></p>
 <hr class="docutils" />
-<blockquote>
-<div><p>Here are some tips for good practices: https://chris.beams.io/posts/git-commit/</p>
-</div></blockquote>
-<p>Nothing has been sent to the remote server yet (see <a class="reference external" href="#git-commands">section below</a> for how git uses the remote server).</p>
-<p>So let’s go to your git service (e.g., bitbucket or github) and set up. Note that bitbucket and github both give you unlimited free private repositories if you register with an academic email. Not a big deal if you will not be writing private code, handy if you are (<em>can you think of examples when you would need to write private code?</em>).</p>
+<p>Nothing has been sent to the remote server yet (see below for more on the remote server).</p>
+<p>So let’s go to your online git service (e.g., github or  bitbucket) and set up. Note that github and bitbucket both give you unlimited free private repositories if you register with an academic email. Not a big deal if you will not be writing private code, handy if you are (<em>can you think of examples when you would need to write private code?</em>).</p>
 <p>So let’s proceed with connecting your local git repository to your remote server:</p>
 <ul class="simple">
-<li><p>Login to your bitbucket or github account</p></li>
-<li><p>Set up your <code class="docutils literal notranslate"><span class="pre">ssh</span></code>-based access. SSH (<code class="docutils literal notranslate"><span class="pre">S</span></code>ecure <code class="docutils literal notranslate"><span class="pre">S</span></code>ocket S<code class="docutils literal notranslate"><span class="pre">h</span></code>ell) is a protocol that allows you to connect to and interact with remote servers.</p></li>
+<li><p>Login to your github or bitbucket account</p></li>
+<li><p>Set up your <code class="docutils literal notranslate"><span class="pre">ssh</span></code>-based access. SSH (<code class="docutils literal notranslate"><span class="pre">S</span></code>ecure <code class="docutils literal notranslate"><span class="pre">S</span></code>ocket S<code class="docutils literal notranslate"><span class="pre">h</span></code>ell) is a protocol that allows you to connect to and interact with remote servers. Here are two sets of guidelines (you can use whichever seems easier to you, irrespective of whether you are using githib or bitbucket):</p>
+<ul>
+<li><p><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh">github</a></p></li>
+<li><p><a class="reference external" href="https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html">bitbucket</a> (most of you will want the “Set up SSH on macOS/Linux” option)</p></li>
 </ul>
-<p>Here are two sets of guidelines (you can use whichever seems easier to you, irrespective of whether you are using githib or bitbucket):</p>
-<p><a class="reference external" href="https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html">bitbucket</a> (most of you will want the “Set up SSH on macOS/Linux” option)</p>
-<p><a class="reference external" href="https://help.github.com/articles/connecting-to-github-with-ssh">github</a></p>
-<ul class="simple">
-<li><p>Next, create a new repository on your remote service with the same name as your local project (e.g., <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code>), and push your new project to this newly created remote git repository.</p></li>
+</li>
+<li><p>Next, create a new repository on your remote service with the same name as your local project (e.g., <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code>), and push your new project to this newly created remote git repository. Instructions for this step are here:</p>
+<ul>
+<li><p><a class="reference external" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line">github</a></p></li>
+<li><p><a class="reference external" href="https://confluence.atlassian.com/bitbucket/set-up-a-repository-877174034.html">bitbucket</a> (choose the “I have existing files on my local system.” option)</p></li>
 </ul>
-<p>Instructions for this step are here:</p>
-<p><a class="reference external" href="https://confluence.atlassian.com/bitbucket/set-up-a-repository-877174034.html">bitbucket</a> (choose the “I have existing files on my local system.” option)</p>
-<p><a class="reference external" href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line">github</a></p>
-<p>Note that you have already done the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> step, so no need to repeat those bits.</p>
+</li>
+</ul>
+<p><em>Note that you have already done the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> step, so no need to repeat those bits.</em></p>
 <p>You are done. Now you can really start to use git!</p>
-<p>The first step after having created your remote (say, github or bitbucket) repository and added your ssh key to it, is to link the remote to your local repo (as the instructions in web pages linked above will already have told you):</p>
+<p>The first step after having created your remote repository and added your ssh key to it, is to link the remote to your local repo (as the instructions in web pages linked above will already have told you):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin git@github.com:mhasoba/CMEECourseWork.git
 </pre></div>
 </div>
@@ -922,9 +876,7 @@ Don’t succumb to this.</figcaption></center></small></p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*~ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*.tmp
+*.tmp
 </pre></div>
 </div>
 </div>
@@ -1002,76 +954,30 @@ Don’t succumb to this.</figcaption></center></small></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 82560e3] added a new file that we&#39;ll remove later
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22 files changed, 602 insertions(+)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 .gitignore
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 FileToRem.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/data/spawannxs.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir1/Dir11/Dir111/File111.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir1/File1.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir1/File1.tex
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir1/File1.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir2/File2.tex
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir2/File2.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir2/file2.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestFind/Dir3/File3.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/Anotherfile.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/Anotherfile.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File1.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File1.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File2.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File2.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File3.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File3.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File4.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/TestWild/File4.txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> create mode 100644 week1/sandbox/test.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master a921378] added a new file that we&#39;ll remove later
+ 22 files changed, 602 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 FileToRem.txt
+ create mode 100644 week1/data/spawannxs.txt
+ create mode 100644 week1/sandbox/TestFind/Dir1/Dir11/Dir111/File111.txt
+ create mode 100644 week1/sandbox/TestFind/Dir1/File1.csv
+ create mode 100644 week1/sandbox/TestFind/Dir1/File1.tex
+ create mode 100644 week1/sandbox/TestFind/Dir1/File1.txt
+ create mode 100644 week1/sandbox/TestFind/Dir2/File2.tex
+ create mode 100644 week1/sandbox/TestFind/Dir2/File2.txt
+ create mode 100644 week1/sandbox/TestFind/Dir2/file2.csv
+ create mode 100644 week1/sandbox/TestFind/Dir3/File3.txt
+ create mode 100644 week1/sandbox/TestWild/Anotherfile.csv
+ create mode 100644 week1/sandbox/TestWild/Anotherfile.txt
+ create mode 100644 week1/sandbox/TestWild/File1.csv
+ create mode 100644 week1/sandbox/TestWild/File1.txt
+ create mode 100644 week1/sandbox/TestWild/File2.csv
+ create mode 100644 week1/sandbox/TestWild/File2.txt
+ create mode 100644 week1/sandbox/TestWild/File3.csv
+ create mode 100644 week1/sandbox/TestWild/File3.txt
+ create mode 100644 week1/sandbox/TestWild/File4.csv
+ create mode 100644 week1/sandbox/TestWild/File4.txt
+ create mode 100644 week1/sandbox/test.txt
 </pre></div>
 </div>
 </div>
@@ -1095,13 +1001,9 @@ Don’t succumb to this.</figcaption></center></small></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master 2129fe7] removed the file
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 1 file changed, 1 deletion(-)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> delete mode 100644 FileToRem.txt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[master c3cbaf7] removed the file
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 FileToRem.txt
 </pre></div>
 </div>
 </div>
@@ -1182,6 +1084,7 @@ Try not to do this, but most of us will have, at some point!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git -C ../SomeDir/ status
 </pre></div>
 </div>
+<hr class="docutils" />
 <blockquote>
 <div><p><strong>Cloning the MulQuaBio repository</strong>: You can clone the master repository of these notes on your computer and regularly git pull it to keep it updated. That way the these notes and the associated code and data files are easily and locally available on your computer. DO NOT clone the repository into your own coursework repository though!</p>
 </div></blockquote>
@@ -1200,10 +1103,10 @@ Try not to do this, but most of us will have, at some point!</p>
 </div>
 <div class="section" id="using-git-through-a-gui">
 <h2>Using git through a GUI<a class="headerlink" href="#using-git-through-a-gui" title="Permalink to this headline">¶</a></h2>
-<p>There are many nice git GUI’s (Graphical User Interfaces) out there, such as <a class="reference external" href="https://www.gitkraken.com/">gitKracken</a>. Or if you are using a code editor like vs code, there are nice extensions that will give you considerable GUI functionality.</p>
+<p>There are many nice git GUI’s (Graphical User Interfaces) out there, such as <a class="reference external" href="https://www.gitkraken.com/">gitKracken</a>. Or if you are using a code editor like Visual Studio Code, there are nice extensions that will give you considerable GUI functionality.</p>
 <hr class="docutils" />
 <blockquote>
-<div><p><strong>Checking git status</strong>: Always do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in a repository before pulling from or pushing to a remote repository!.</p>
+<div><p><strong>Checking git status</strong>: Always do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in a repository before pulling from or pushing to a remote repository!</p>
 </div></blockquote>
 </div>
 <hr class="docutils" />
@@ -1217,8 +1120,6 @@ Try not to do this, but most of us will have, at some point!</p>
 <li><p>The only practical submission for git is pushing your coursework git repository, <code class="docutils literal notranslate"><span class="pre">.gitgnore</span></code> and <code class="docutils literal notranslate"><span class="pre">readme</span></code> files included. Make sure your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> has meaningful exclusions, and your <code class="docutils literal notranslate"><span class="pre">readme</span></code> has useful information. Google “readme good practices” or something like that to find online tips.</p></li>
 <li><p>Also, invite your assessor to your coursework repository (e.g, <code class="docutils literal notranslate"><span class="pre">CMEECourseWork</span></code>) repository with <em>write privileges</em>. The current assessor is s.pawar&#64;imperial.ac.uk (or “mhasoba” on both bitbucket and github).</p></li>
 </ul>
-<p>Also, remember, you can clone TheMulQuaBio (see the <a class="reference internal" href="00-Intro.html"><span class="doc std std-doc">Intro Chapter</span></a>). You can then <code class="docutils literal notranslate"><span class="pre">cp</span></code> files from this to your own CMEECourseWork as and when needed. Please don’t work in the master repo, as you will lose your work when I next update it!</p>
-<p>You can thereafter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> at the start of every new session (to get the updates) inside your local copy of <code class="docutils literal notranslate"><span class="pre">TheMulQuaBio</span></code> (but always do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> first).</p>
 </div>
 </div>
 <div class="section" id="readings-resources">
@@ -1228,7 +1129,8 @@ Try not to do this, but most of us will have, at some point!</p>
 <li><p>Excellent book on Git: <a class="reference external" href="http://git-scm.com/book">http://git-scm.com/book</a></p></li>
 <li><p>Also, <a class="reference external" href="https://www.atlassian.com/git/">https://www.atlassian.com/git/</a></p></li>
 <li><p>Really great git tutorials: <a class="reference external" href="https://try.github.io">https://try.github.io</a></p></li>
-<li><p>Guidelines for the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file: https://labs.consol.de/development/git/2017/02/22/gitignore.html</p></li>
+<li><p>Some tips for good commit practices: https://chris.beams.io/posts/git-commit/</p></li>
+<li><p>Guidelines for the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file: https://labs.consol.de/development/git/2017/02/22/gitignore.html, https://docs.github.com/en/free-pro-team&#64;latest/github/using-git/ignoring-files</p></li>
 <li><p>Gudelines for brancing: https://gist.github.com/digitaljhelms/4287848</p></li>
 </ul>
 <p><strong>Footnotes</strong></p>

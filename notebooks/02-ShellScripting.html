@@ -318,7 +318,10 @@
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
-        
+        <a class="repository-button"
+            href="https://github.com/mhasoba/TheMulQuaBio"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
             href="https://github.com/mhasoba/TheMulQuaBio/issues/new?title=Issue%20on%20page%20%2Fnotebooks/02-ShellScripting.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
@@ -501,7 +504,7 @@
 <li><p>Make the script executable and execute it:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod +x myscript.sh
-myscript.sh
+./myscript.sh <span class="c1"># the ./ is needed</span>
 </pre></div>
 </div>
 <p>Use this second approach for a script that does something generic, and is likely to be reused again and again (<em>Can you think of examples?</em>)</p>
@@ -520,13 +523,7 @@ bash boilerplate.sh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a shell script! 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -539,7 +536,7 @@ separated files than csv (e.g., <code class="docutils literal notranslate"><span
 <p>To do this, in the bash we can use <code class="docutils literal notranslate"><span class="pre">tr</span></code> (abbreviation of <code class="docutils literal notranslate"><span class="pre">tr</span></code>anslate or <code class="docutils literal notranslate"><span class="pre">tr</span></code>ansliterate), which deletes or substitute characters. Here are some examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Remove    excess      spaces.&quot;</span> <span class="p">|</span> tr -s <span class="s2">&quot;\b&quot;</span> <span class="s2">&quot; &quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Remove    excess      spaces.&quot;</span> <span class="p">|</span> tr -s <span class="s2">&quot; &quot;</span>
 </pre></div>
 </div>
 </div>
@@ -551,12 +548,12 @@ separated files than csv (e.g., <code class="docutils literal notranslate"><span
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;remove all the as&quot;</span> <span class="p">|</span> tr -d <span class="s2">&quot;a&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;remove all the a&#39;s&quot;</span> <span class="p">|</span> tr -d <span class="s2">&quot;a&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remove ll the s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remove ll the &#39;s
 </pre></div>
 </div>
 </div>
@@ -585,7 +582,7 @@ separated files than csv (e.g., <code class="docutils literal notranslate"><span
 </div>
 </div>
 </div>
-<p>Now write a shell script to substitute all tabs with commas called <code class="docutils literal notranslate"><span class="pre">tabtocsv.sh</span></code> in <code class="docutils literal notranslate"><span class="pre">Week1/Code</span></code>:</p>
+<p>Now write a shell script to substitute all tabs with commas called <code class="docutils literal notranslate"><span class="pre">tabtocsv.sh</span></code> in <code class="docutils literal notranslate"><span class="pre">week1/code</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># Author: Your name you.login@imperial.ac.uk</span>
 <span class="c1"># Script: tabtocsv.sh</span>
@@ -596,7 +593,7 @@ separated files than csv (e.g., <code class="docutils literal notranslate"><span
 <span class="c1"># Date: Oct 2019</span>
 
 <span class="nb">echo</span> <span class="s2">&quot;Creating a comma delimited version of </span><span class="nv">$1</span><span class="s2"> ...&quot;</span>
-cat <span class="nv">$1</span> <span class="p">|</span> tr -s <span class="s2">&quot;\t&quot;</span> <span class="s2">&quot;,&quot;</span> &gt;&gt; <span class="nv">$1</span>.txt
+cat <span class="nv">$1</span> <span class="p">|</span> tr -s <span class="s2">&quot;\t&quot;</span> <span class="s2">&quot;,&quot;</span> &gt;&gt; <span class="nv">$1</span>.csv
 <span class="nb">echo</span> <span class="s2">&quot;Done!&quot;</span>
 <span class="nb">exit</span>
 </pre></div>
@@ -618,9 +615,7 @@ cat <span class="nv">$1</span> <span class="p">|</span> tr -s <span class="s2">&
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Creating a comma delimited version of ../sandbox/test.txt ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done!
+Done!
 </pre></div>
 </div>
 </div>
@@ -640,7 +635,7 @@ cat <span class="nv">$1</span> <span class="p">|</span> tr -s <span class="s2">&
 <li><p>Reading from the user: <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">MYVAR</span></code></p></li>
 <li><p>Command substitution: <code class="docutils literal notranslate"><span class="pre">MYVAR=\$(</span> <span class="pre">(ls</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l)</span> <span class="pre">)</span></code></p></li>
 </ol>
-<p>Here are some examples of assignments (try them out and save as a single  <code class="docutils literal notranslate"><span class="pre">Week1/Code/variables.sh</span></code> script):</p>
+<p>Here are some examples of assignments (try them out and save as a single  <code class="docutils literal notranslate"><span class="pre">week1/code/variables.sh</span></code> script):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Shows the use of variables</span>
@@ -658,7 +653,7 @@ cat <span class="nv">$1</span> <span class="p">|</span> tr -s <span class="s2">&
 <span class="nb">echo</span> <span class="nv">$mysum</span>
 </pre></div>
 </div>
-<p>And also (save as <code class="docutils literal notranslate"><span class="pre">Week1/Code/MyExampleScript.sh</span></code>):</p>
+<p>And also (save as <code class="docutils literal notranslate"><span class="pre">week1/code/MyExampleScript.sh</span></code>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
 <span class="nv">msg1</span><span class="o">=</span><span class="s2">&quot;Hello&quot;</span>
@@ -732,7 +727,7 @@ cat <span class="nv">$3</span>
 <ul class="simple">
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">csvtospace.sh</span></code> shell script that takes a <code class="docutils literal notranslate"><span class="pre">c</span></code>omma <code class="docutils literal notranslate"><span class="pre">s</span></code>eparated <code class="docutils literal notranslate"><span class="pre">v</span></code>alues and converts it to a space separated values file. However, it must not change the input file — it should save it as a differently named file.</p></li>
 <li><p>Make this script robust, as you were asked to doin the previous exercise (a).</p></li>
-<li><p>Save the script in <code class="docutils literal notranslate"><span class="pre">CMEECourseWork/Week1/Code</span></code>, and run it on the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data files that are in <code class="docutils literal notranslate"><span class="pre">Temperatures</span></code> in the master repository’s <code class="docutils literal notranslate"><span class="pre">Data</span></code> directory.</p></li>
+<li><p>Save the script in <code class="docutils literal notranslate"><span class="pre">CMEECourseWork/week1/code</span></code>, and run it on the <code class="docutils literal notranslate"><span class="pre">csv</span></code> data files that are in <code class="docutils literal notranslate"><span class="pre">Temperatures</span></code> in the master repository’s <code class="docutils literal notranslate"><span class="pre">Data</span></code> directory.</p></li>
 </ul>
 </div>
 </div>
