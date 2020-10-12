@@ -207,7 +207,32 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="18-ModelSimp.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-ModelSimp.html#an-example">
+   An example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-ModelSimp.html#a-maximal-model">
+   A Maximal model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-ModelSimp.html#a-better-maximal-model">
+   A better maximal model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-ModelSimp.html#model-simplification">
    Model simplification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-ModelSimp.html#exercise">
+   Exercise
   </a>
  </li>
  <li class="toctree-l1">
@@ -229,7 +254,47 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Appendix-JupyIntro.html">
-   Introduction to Jupyter
+   What is Jupyter?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#key-jupyter-features">
+   Key Jupyter features
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#installing-jupyter">
+   Installing Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#launching-running-a-jupyter-notebook">
+   Launching/Running a Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#key-elements-of-the-jupyter-nb-content">
+   Key elements of the Jupyter nb content
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#keyboard-shortcuts">
+   Keyboard shortcuts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#running-code">
+   Running code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#exiting-a-jupyter-notebook">
+   Exiting a Jupyter Notebook
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-JupyIntro.html#readings-and-resources">
+   Readings and Resources
   </a>
  </li>
  <li class="toctree-l1">
@@ -1618,7 +1683,6 @@ z          str     88
 <li><p>use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check if an element exists in the tuple (more on this in the control flow tools sections below).</p></li>
 </ul>
 <p>The key point is that tuples are faster than lists, as you might expect for an immutable object (it has a fixed memory space, which makes it more efficient to retrieve). using tuples also makes your code safer as it effectively write-protects data (as long as you don’t plan to modify those particular data).</p>
-<p><a class="reference external" href="https://diveintopython3.problemsolving.io/native-datatypes.html">Read more about tuples here.</a></p>
 <p>Tuples may be immutable, but you <em>can</em> append to them by first creating an “empty space” for the new item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1928,7 +1992,7 @@ z          str     88
 <div><p>Tuples that contain immutable values like strings, numbers, and other tuples  can be used as dictionary keys. Lists can never be used as dictionary keys, because they are mutable</p>
 </div></blockquote>
 <hr class="docutils" />
-<p>So, in summary:</p>
+<p>In summary, the guidelines for choosing a Python data structure are:</p>
 <ul class="simple">
 <li><p>If your elements/data are unordered and indexed by numbers use a <em>list</em></p></li>
 <li><p>If you’re defining a constant set of values (or ordered sequences) and all you’re ever going to do with them is iterate through them, use a <em>tuple</em>.</p></li>
@@ -2177,17 +2241,8 @@ z          str     88
 <div class="section" id="getting-help">
 <h3>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h3>
 <p>You can do this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>s.upper<span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>?s.upper
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Object `s.upper()` not found.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Also try <code class="docutils literal notranslate"><span class="pre">help()</span></code> at the python/ipython prompt.</p>
 </div>
@@ -2201,7 +2256,8 @@ z          str     88
 <li><p>Separate functions using a blank line</p></li>
 <li><p>When possible, write comments on separate lines</p></li>
 </ul>
-<p>Make sure you have chosen a particular indent type (space or tab) in or whatever code IDE/editor you are using — indentation is all-important in python. Furthermore,</p>
+<p>Make sure you have chosen a particular indent type (space or tab) in whatever code IDE/editor you are using — indentation is all-important in python.</p>
+<p>Furthermore,</p>
 <ul class="simple">
 <li><p>Use “docstrings” to <strong>document how to use the code</strong>, and <strong>comments to explain why and how the code works</strong></p></li>
 <li><p>Naming conventions (bit of a mess, you’ll learn as you go!):</p>
@@ -2414,7 +2470,7 @@ z          str     88
 <p>OK, let’s get deeper into python code. A computer script or program’s control flow is the order in which the code executes. Upto now, you have written scripts with simple control flows, with the code executing statements from the top to bottom. But very often, you want more flexible flows of commands and statements, for example, where you can switch between alternative commands depending on some condition. This is possible using <em>control flow tools</em>. Let’s learn python’s control flow tools hands-on.</p>
 <div class="section" id="conditionals">
 <h3>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h3>
-<p>Try these <em>function by function</em>, pasting the block in the ipython command line (hopefully you have set your code editor to send a selection to the command line by now (see the <a class="reference internal" href="01-Unix.html"><span class="doc std std-doc">Unix Chapter</span></a>)).</p>
+<p>Try these <em>function by function</em>, pasting the block in the ipython command line (hopefully you have set your code editor to send a selection to the command line by now).</p>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Now type these and save them as <code class="docutils literal notranslate"><span class="pre">cfexercises1.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># What does each of foo_x do? </span>
 <span class="k">def</span> <span class="nf">foo_1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -2491,7 +2547,7 @@ z            str         88
 </div>
 </div>
 </div>
-<p>So python tells you it is a function object. Now test it:</p>
+<p>So python tells you that <code class="docutils literal notranslate"><span class="pre">foo_1</span></code> is a function object. Now test it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo_1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -2984,18 +3040,6 @@ The value of a_global in main workspace / namespace is  20
 <p>And again, like before, you can also execute this program file from within the <code class="docutils literal notranslate"><span class="pre">ipython</span></code> shell with <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">MyScript.py</span></code>. Enter <code class="docutils literal notranslate"><span class="pre">ipython</span></code> from bash (or switch to a terminal where you are already in the ipython shell), and do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="s2">&quot;../code&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mhasoba/Documents/Teaching/SilBioComp/TheMulQuaBio/content/code
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> boilerplate.py
 </pre></div>
 </div>
@@ -3013,7 +3057,6 @@ The value of a_global in main workspace / namespace is  20
 <h4>The shebang<a class="headerlink" href="#the-shebang" title="Permalink to this headline">¶</a></h4>
 <p>Just like UNIX shell scripts, the first “shebang” line tells the computer where to look for python. It determines the script’s ability to be executed when compiled as part of a standalone program. It isn’t absolutely necessary, but it is good practice to use it, and it is also also useful because when someone examines the file in an editor, they immediately know what they’re looking at.</p>
 <p>However, which shebang line you use is important. Here by using <code class="docutils literal notranslate"><span class="pre">\#!/usr/bin/env</span> <span class="pre">python3</span></code> we are specifying the location to the python executable in your machine that the rest of the script needs to be interpreted with. You may use <code class="docutils literal notranslate"><span class="pre">\#!/usr/bin/python</span></code> instead, but this might not work on somebody else’s machine if the Python executable isn’t actually located at <code class="docutils literal notranslate"><span class="pre">/usr/bin/</span></code>.</p>
-<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0394/#recommendation">Read more about the python shebang here.</a></p>
 </div>
 <div class="section" id="the-docstring">
 <h4>The Docstring<a class="headerlink" href="#the-docstring" title="Permalink to this headline">¶</a></h4>
@@ -3063,7 +3106,6 @@ FILE
 </div>
 </div>
 </div>
-<p>For more info, see the official <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">doctring conventions</a>.</p>
 </div>
 <div class="section" id="internal-variables">
 <h4>Internal Variables<a class="headerlink" href="#internal-variables" title="Permalink to this headline">¶</a></h4>
@@ -3074,7 +3116,6 @@ FILE
 <p><code class="docutils literal notranslate"><span class="pre">def</span></code> indicates the start of a python function (aka “module”); all subsequent lines must be indented.</p>
 <p>It’s important to know that somewhat confusingly, Pythonistas call a file containing function <code class="docutils literal notranslate"><span class="pre">def</span></code>itions) and statements (e.g., assignments of constant variables) a “module”. There is a practical reason (there’s always one!) for this. You might want to use a particular set of python <code class="docutils literal notranslate"><span class="pre">def</span></code>’s (functions) and statements either as a standalone function, or use it or subsets of it from other scripts. So in theory, every function you <code class="docutils literal notranslate"><span class="pre">def</span></code>ine can be a sub-module usable by other scripts.</p>
 <p><em>In other words, <code class="docutils literal notranslate"><span class="pre">def</span></code>initions from a module can be imported into other modules and scripts, or into the main program itself.</em></p>
-<p>Remember, you can define your own Python “class”es. Have a look <a class="reference external" href="http://learnpythonthehardway.org/book/ex40.html">at this</a> (very likely available in your University library) — a nice, intuitive tutorial that should help you understand functions vs. modules vs. classes in Python.</p>
 <p>The last few lines, including the <code class="docutils literal notranslate"><span class="pre">main</span></code> function/module are somewhat esoteric but important; more on this below.</p>
 </div>
 <div class="section" id="why-include-name-main-and-all-that-jazz">
@@ -3858,10 +3899,14 @@ Genus
 <li><p>Code like a Pythonista: Idiomatic python (Google it)</p></li>
 <li><p>Also good: the Google python Style Guide</p></li>
 <li><p>Shaw, Zed. 2017. Learn Python 3 the Hard Way : A Very Simple Introduction to the Terrifyingly Beautiful World of Computers and Code. Boston : Addison-Wesley (likely available in your University library)</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/tutorial">Browse the python tutorial</a></p></li>
-<li><p><a class="reference external" href="https://learnpythonthehardway.org/book/ex40.html">For functions and modules</a></p></li>
-<li><p>The <a class="reference external" href="https://ipython.readthedocs.io/en/stable">IPython documentation</a></p></li>
-<li><p>Cookbooks can be very useful: <a class="reference external" href="https://github.com/ipython/ipython/wiki">https://github.com/ipython/ipython/wiki</a></p></li>
+<li><p>See the <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">official docstring conventions</a>.</p></li>
+<li><p>For functions vs. modules vs. classes in Python, have a look <a class="reference external" href="http://learnpythonthehardway.org/book/ex40.html">at this</a>.</p></li>
+<li><p>Browse the Python <a class="reference external" href="https://docs.python.org/3/tutorial">tutorial</a></p></li>
+<li><p>The IPython <a class="reference external" href="https://ipython.readthedocs.io/en/stable">documentation</a></p></li>
+<li><p>Read more about native Python data structures <a class="reference external" href="https://diveintopython3.problemsolving.io/native-datatypes.html">here</a></p></li>
+<li><p>For functions and modules, see <a class="reference external" href="https://learnpythonthehardway.org/book/ex40.html">this</a></p></li>
+<li><p>Read more about the python shebang <a class="reference external" href="https://www.python.org/dev/peps/pep-0394/#recommendation">here</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ipython/ipython/wiki">Cookbooks</a> can be very useful</p></li>
 <li><p>Look up <a class="reference external" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a> – Read about the packages you think will be important to you</p></li>
 </ul>
 </div>
