@@ -1042,20 +1042,14 @@ a          int     1
 <hr class="docutils" />
 <blockquote>
 <div><p>You can configure ipython’s environment and behavior by editing the <code class="docutils literal notranslate"><span class="pre">ipython_config.py</span></code> file, which is located in the <code class="docutils literal notranslate"><span class="pre">.ipython</span></code> directory of your <code class="docutils literal notranslate"><span class="pre">home</span></code> (on Linux/Ubuntu). This file does not initially exist, but you can create it by running <code class="docutils literal notranslate"><span class="pre">ipython</span> <span class="pre">profile</span> <span class="pre">create</span> <span class="pre">[profilename]</span></code> in a bash terminal. Then, edit it. For example, on Ubuntu you can</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">gedit</span> <span class="pre">~/.ipython/profile_default/ipython_config.py</span> <span class="pre">&amp;</span></code></p>
+<p>And then make the changes you want to the default ipython configuration. For example, If you don’t like the blue
+<code class="docutils literal notranslate"><span class="pre">ipython</span></code> prompt, you can type <code class="docutils literal notranslate"><span class="pre">%colors</span> <span class="pre">linux</span></code> (once inside the shell). If you want to make this color the default,
+then edit the <code class="docutils literal notranslate"><span class="pre">ipython_config.py</span></code> — search for “Set the color scheme” option in the file.</p>
 </div></blockquote>
-<p>gedit ~/.ipython/profile_default/ipython_config.py &amp;</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>And then make the changes you want to the default ipython configuration. For example, If you don&#39;t like the blue
-`ipython` prompt, you can type `%colors linux` (once inside the shell). If you want to make this color the default,
-then edit the `ipython_config.py` — search for &quot;Set the color scheme&quot; option in the file.
-
----
-</pre></div>
 </div>
 </div>
-</div>
+<hr class="docutils" />
 <div class="section" id="python-variables">
 <h2>Python variables<a class="headerlink" href="#python-variables" title="Permalink to this headline">¶</a></h2>
 <p>Now, let’s continue our python intro. We will first learn about the python variable types that were mentioned above. The types are:</p>
