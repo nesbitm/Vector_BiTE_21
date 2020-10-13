@@ -2076,7 +2076,7 @@ z          str     88
 </div>
 <div class="section" id="copying-mutable-objects">
 <h3>Copying mutable objects<a class="headerlink" href="#copying-mutable-objects" title="Permalink to this headline">¶</a></h3>
-<p>Copying mutable objects can be tricky.</p>
+<p>Copying mutable objects can be tricky because by default, when you create a new variable based on an existing one, , Python only creates a reference to the original (that is it does not create a new, duplicate variable in memory as such). To understand this, let’s see an example.</p>
 <p>First, try this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2096,22 +2096,24 @@ z          str     88
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+[1, 2, 3, 4]
 </pre></div>
 </div>
 </div>
 </div>
-<p>So <code class="docutils literal notranslate"><span class="pre">b</span></code> changed as well!</p>
+<p>So <code class="docutils literal notranslate"><span class="pre">b</span></code> changed as well! This is because <code class="docutils literal notranslate"><span class="pre">b</span></code> is just a “pointer” or “reference” to <code class="docutils literal notranslate"><span class="pre">a</span></code>, not an actual copy in memory.</p>
 <p>Now, try:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>  <span class="c1"># This is a &quot;shallow&quot; copy</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>  <span class="c1"># This is a &quot;shallow&quot; copy; one level deep</span>
 </pre></div>
 </div>
 </div>
@@ -2119,12 +2121,14 @@ z          str     88
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4]
+[1, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -2134,30 +2138,36 @@ z          str     88
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
-<span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2], [3, 4]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2], [3, 4]]
+[[1, 2], [3, 4]]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now, modify <code class="docutils literal notranslate"><span class="pre">a</span></code>, and then inspect both <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">22</span> <span class="c1"># Note how I accessed this 2D list</span>
-<span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 22], [3, 4]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 22], [3, 4]]
+[[1, 22], [3, 4]]
 </pre></div>
 </div>
 </div>
 </div>
-<p>So shallow copy is not recursive, that is, it does not copy beyond the first level of the list, leaving the values in the nested list still linked in memory to the  original object <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<p>So <code class="docutils literal notranslate"><span class="pre">b</span></code> still got modified!</p>
+<p>This is because shallow copy is not recursive, that is, it does not copy beyond the first level of the list, leaving the values in the nested list still linked in memory to the  original object <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <p>The solution is to do a “deep” copy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2166,12 +2176,14 @@ z          str     88
 <span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">22</span>
-<span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 2], [3, 4]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1, 22], [3, 4]]
+[[1, 2], [3, 4]]
 </pre></div>
 </div>
 </div>
@@ -2179,7 +2191,7 @@ z          str     88
 <p>So, you need to employ <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code> to really copy an existing object or variable and assign a new name to the copy. So, in summary, shallow copying an object won’t create objects that are independent clones, i.e., the copy is not fully independent of the original. A deep copy of an object will recursively clone “child” objects (like nested parts of a list). The clone is fully independent of the original, but creating a deep copy is slower, as it involves assigning new memory space. Keep in mind that this shallow vs. deep copy business does  not just apply to lists. You can copy arbitrary objects (including custom classes) with the copy module.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Why Python “shallow” copies objects:</strong> Python does shallow copying of mutable objects for (computing) performance considerations. By not copying the underlaying object when you re-assign a mutable object to a new (“variable”) name, python avoids unnecessary memory copying ( aka “passing by reference”). That does not change the fact that shallow vs. deep copying can be confusing, of course!</p>
+<p><strong>Why Python “shallow” copies objects:</strong> Python does shallow copying of mutable objects for (computing) performance considerations. By not copying the underlying object when you re-assign a mutable object to a new (“variable”) name, Python avoids unnecessary memory usage. This is known as “passing by reference” (in contrast to passing  ). That does not change the fact that shallow vs. deep copying can be confusing, of course!</p>
 </div>
 </div>
 <div class="section" id="python-with-strings">
@@ -3062,6 +3074,100 @@ The value of a_global in main workspace / namespace is  20
 <p>Now, because <code class="docutils literal notranslate"><span class="pre">_a_global</span></code> was defined in advance (outside the first function), it get modified when changes in the inner function (it does not exist as a local within the scope of <code class="docutils literal notranslate"><span class="pre">_a_function</span></code>, but is “inherited” from the main scope / workspace / namespace).</p>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Collect all three blocks of code above illustrating variable scope into one script called <code class="docutils literal notranslate"><span class="pre">scope.py</span></code> and test it (run and check for errors).</p>
 <p>In general, avoid assigning globals because you run the risk of “exposing” unwanted variables to all functions within your workspace / namespace. However, in some cases, you may find it useful to impose one or more global variables that are available across multiple modules/functions. You can do this by assigning the global variables at the start of the script/program, or by creating a separate module (say, called <code class="docutils literal notranslate"><span class="pre">config.py</span></code>) to hold the global variables and then import it.</p>
+<p>In this context, it important for you to note that in Python, arguments are passed to a function <a class="reference external" href="https://docs.python.org/3/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference">by assignment</a>.</p>
+<p>“passing by assignment” means by just creating a reference to the object being passed (just like <code class="docutils literal notranslate"><span class="pre">b</span></code> was merely a reference to <code class="docutils literal notranslate"><span class="pre">a</span></code> in our <a class="reference external" href="#Copying-mutable-objects">shallow copy example</a>).</p>
+<p>Let’s look at an example to understand this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modify_list_by_reference</span><span class="p">(</span><span class="n">some_list</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;got&#39;</span><span class="p">,</span> <span class="n">some_list</span><span class="p">)</span>
+    <span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;set to&#39;</span><span class="p">,</span> <span class="n">some_list</span><span class="p">)</span>
+
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;before, my_list =&#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before, my_list = [1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modify_list_by_reference</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>got [1, 2, 3]
+set to [1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after, my_list =&#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>after, my_list = [1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The original list remains the same even though it is changed inside the function!</p>
+<p>Now let’s try to change the list using <code class="docutils literal notranslate"><span class="pre">append</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modify_list_contents</span><span class="p">(</span><span class="n">some_list</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;got&#39;</span><span class="p">,</span> <span class="n">some_list</span><span class="p">)</span>
+    <span class="n">some_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># an actual modification of the list</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;changed to&#39;</span><span class="p">,</span> <span class="n">some_list</span><span class="p">)</span>
+
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;before, my_list =&#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before, my_list = [1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modify_list_contents</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>got [1, 2, 3, 4]
+changed to [1, 2, 3, 4, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after, my_list =&#39;</span><span class="p">,</span> <span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>after, my_list = [1, 2, 3, 4, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>That did it. So <code class="docutils literal notranslate"><span class="pre">append</span></code> will actually change the original list object.</p>
 </div>
 <div class="section" id="writing-python-programs">
 <h2>Writing Python programs<a class="headerlink" href="#writing-python-programs" title="Permalink to this headline">¶</a></h2>
