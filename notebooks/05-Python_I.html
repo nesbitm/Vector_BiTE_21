@@ -3192,7 +3192,7 @@ The value of a_global in main workspace / namespace is  20
 </div>
 </div>
 <p>Now, because <code class="docutils literal notranslate"><span class="pre">_a_global</span></code> was defined in advance (outside the first function), it get modified when changes in the inner function (it does not exist as a local within the scope of <code class="docutils literal notranslate"><span class="pre">_a_function</span></code>, but is “inherited” from the main scope / workspace / namespace).</p>
-<p><span class="math notranslate nohighlight">\(\star\)</span> Collect all three blocks of code above illustrating variable scope into one script called <code class="docutils literal notranslate"><span class="pre">scope.py</span></code> and test it (run and check for errors).</p>
+<p><span class="math notranslate nohighlight">\(\star\)</span> Collect all blocks of code above illustrating variable scope into one script called <code class="docutils literal notranslate"><span class="pre">scope.py</span></code> and test it (run and check for errors).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In general, avoid assigning globals because you run the risk of “exposing” unwanted variables to all functions within your workspace / namespace.</p>
