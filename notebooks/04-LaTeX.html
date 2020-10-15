@@ -701,7 +701,8 @@ Gummi, TeXShop, etc.) There are also WYSIWYG frontends (e.g., Lyx, TeXmacs).</p>
 </li>
 </ul>
 <p>Throughout all this, the <code class="docutils literal notranslate"><span class="pre">.log</span></code> file plays no role except to record info about how the commands are running.</p>
-<p>PHEW! Why go through this repetitive sequence of commands? Well, “it is what it is” – <span class="math notranslate nohighlight">\(\LaTeX\)</span>, with all its advantages does have its quirks. As such, you don’t have to run these commands literally step by step, because you can create a bash script that does it for you, as we will now learn.</p>
+<p>PHEW! Why go through this repetitive sequence of commands? Well, “it is what it is” – <span class="math notranslate nohighlight">\(\LaTeX\)</span>, with all its advantages does have its quirks. The reason why it is this way, is probably that back then (Donald Knuth’s PhD Thesis writing days – late 1950’s to early 1960’s), computers had <em>tiny</em> memories (RAMs), and writing files to disk and then reading them back in for the next step of the algorithm/program was the best (and only) way to go. Why has this not been fixed? I am not sure - keep an eye out, and it might well be (and then, raise an issue on TheMulQuaBio’s <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/issues">Github</a>!)</p>
+<p>Anyway, as such, you don’t have to run these commands literally step by step, because you can create a bash script that does it for you, as we will now learn.</p>
 <div class="section" id="a-bash-script-to-compile-latex">
 <h3>A bash script to compile LaTeX<a class="headerlink" href="#a-bash-script-to-compile-latex" title="Permalink to this headline">¶</a></h3>
 <p>Let’s write a useful little bash script to compile latex with bibtex.</p>
