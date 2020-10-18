@@ -207,32 +207,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="18-ModelSimp.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-ModelSimp.html#an-example">
-   An example
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-ModelSimp.html#a-maximal-model">
-   A Maximal model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-ModelSimp.html#a-better-maximal-model">
-   A better maximal model
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-ModelSimp.html#model-simplification">
    Model simplification
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="18-ModelSimp.html#exercise">
-   Exercise
   </a>
  </li>
  <li class="toctree-l1">
@@ -254,57 +229,12 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Appendix-JupyIntro.html">
-   What is Jupyter?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#key-jupyter-features">
-   Key Jupyter features
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#installing-jupyter">
-   Installing Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#launching-running-a-jupyter-notebook">
-   Launching/Running a Jupyter Notebook
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#key-elements-of-the-jupyter-nb-content">
-   Key elements of the Jupyter nb content
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#keyboard-shortcuts">
-   Keyboard shortcuts
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#running-code">
-   Running code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#exiting-a-jupyter-notebook">
-   Exiting a Jupyter Notebook
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-JupyIntro.html#readings-and-resources">
-   Readings and Resources
+   Introduction to Jupyter
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Appendix-Maths.html">
    Mathematical models in Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Appendix-Assessment.html">
-   Coursework Assessment
   </a>
  </li>
  <li class="toctree-l1">
@@ -324,6 +254,11 @@
    The Computing Miniproject
    <a name="Apx:Miniproj">
    </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendix-Assessment.html">
+   Coursework Assessment
   </a>
  </li>
 </ul>
@@ -467,16 +402,6 @@
      Conventions used in this document
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#to-ide-or-not-to-ide">
-     To IDE or not to IDE?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assessment">
-     Assessment
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -588,30 +513,71 @@ Logical workflows are important, but don’t get married to yours!
 <li><p>Your typical approach should be to serach online the main keywords along the programming language name (e.g., “unix mv vs cp” or “R create empty dataframe”).</p></li>
 <li><p>Look for <a class="reference external" href="https://stackoverflow.com/">stackoverflow</a> or <a class="reference external" href="https://stackexchange.com/">stackexchange</a> based results in particular. Look for number of endorsements for both the question that has been asked, and for its answer.</p></li>
 <li><p>Be selective - there will often be multiple solutions to the same issue or problem - don’t just blindly use the first one you find.</p></li>
-<li><p>Also, every time a mysterious, geeky-sounding term like “relative path” or “version control” appears, please google it as well!</p></li>
+<li><p>Also, every time a mysterious, geeky-sounding term like “relative path” or “version control” appears, please search (e.g., google) it online it as well!</p></li>
 </ul>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>### To IDE or not to IDE?
+
+As you embark on your journey to becoming a competent practitioner of biological computing, you will be faced with a Hamletian question: &quot;To IDE or not to IDE&quot; (anagram alert!). *OK, maybe not that dramatic or Hamletian...*
+
+An interactive Development Environment (IDE) is a text editor with additional features that can make life easy by allowing auto-formatting of code, running code, providing a graphic view of the workspace (your active functions, variables, etc.), graphic debugging and profiling (you will see these delightful things later), and allowing integrated version control (e.g., using `git`). 
+
+You will benefit a lot if you use a code editor that can also offer an IDE. At the very least, your IDE should offer:
+
+* Auto-indentation
+
+* Automatic code wrapping (e.g., keeping lines &lt;80 characters long)
+
+* [Syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting)  (e.g., commands vs. variables)
+
+* Code folding (fold large blocks of code, say an entire function or loop)
+
+* Keyboard control of commenting/uncommenting, code wrapping, etc.
+
+* Embedded terminal / shell / commandline console
+
+* Sending commands to terminal / shell
+
+* Debugging
+
+
+If you end up using multiple programming languages, you will want an IDE that can handle them. For example, `RStudio` is great for R, but cannot handle other languages. Four commonly-used and very powerful multi-lingual code editors/IDEs are: Emacs, Vim, Visual Studio Code (AKA vscode), and Atom.  We will use [Visual Studio Code](https://code.visualstudio.com) in this course, because it is freedy available, is relatively easy to master,  and has many plugins that make multilingual code development easier. Atom, Vim and Emacs are also great alternatives. The last having a steeper learning curve, but are very powerful once you have mastered them. 
+
+#### Gooey IDEs
+
+Some IDEs go over and above the call of duty to offer further useful features like  embedded data and plot viewing. One such example is [RStudio](http://rstudio.org). These IDEs come with graphic user interfaces (GUI&#39;s, or &quot;gooeys&quot;) of differing levels of sophistication and shiny-ness. Please re-visit this section of the course&#39;s introduction if you are not familiar with IDEs.
+
+In fact, one of the reasons that R has become so popular is that there are some very nice, freely available GUI IDE&#39;s for it where you can use your mouse to do certain &quot;stuff&quot;. In particular, [RStudio](http://rstudio.org) is very good. 
+
+A big advantage of using these IDEs is that you will get &quot;syntax highlighting&quot; wherein R language elements such as variables, commands, and brackets are differently colored. This is very handy and will make your R programming far more convenient and error-free. If you are using your own desktop/laptop, you can [download it freely](https://www.rstudio.com) and install (versions are available for all computer platforms). If you are using a college computer, it should already be available.
+
+The R chapters do not require you to use RStudio (everything will be command line based), but I would recommend that you to use it, or some other IDE like vscode or emacs. 
+
+Here&#39;s what the RStudio window looks like: 
+
+![image](./graphics/RStudio.png)
+
+You are still in the R environment, but with some useful frills and  thrills. There are four main elements here (you can hide or resize any of them using the RStudio GUI options):
+
+* *Console*: This is the same R terminal you saw above. In this week we will work mainly in this console
+
+* *Source code*: This panel is the code editor with syntax  highlighting and other handy features that we will explore soon. This  is where you will write your scripts/programs, and save them. To save,  you will use `Ctrl + S` and to execute it you will use `Ctrl + Shift + S`
+
+* *Environment*: This panel lists all the variables you created (more on this later). It has another tab that shows you the history of  the commands you typed
+
+* *Plots*: This panel shows you all the plots you drew. Other tabs in this panel allow you to access the list of packages you have loaded, and the help page for commands (just type `help(command_name)` in the Console) and packages
+
+In RStudio, you can feed your mouse habit, but I strongly suggest using the terminal/console, and resist, to the extent possible, the  temptation to do everything using the shiny buttons you see (that is  the dark side pulling, my young *padawan*).
+
+### Assessment
+
+Your computing coursework may be assessed. If you have been told that it will, please see [this Appendix](Appendix-Assessment.rst) if you are a *Masters student*. If you are an *Undergrad student*, you may have a computer based test, the format for which will be explained to you elsewhere.
+</pre></div>
 </div>
-<div class="section" id="to-ide-or-not-to-ide">
-<h3>To IDE or not to IDE?<a class="headerlink" href="#to-ide-or-not-to-ide" title="Permalink to this headline">¶</a></h3>
-<p>As you embark on your journey to becoming a competent practitioner of biological computing, you will be faced with a Hamletian question: “To IDE or not to IDE” (anagram alert!). <em>OK, maybe not that dramatic or Hamletian…</em></p>
-<p>An interactive Development Environment (IDE) is a text editor with additional features that can make life easy by allowing auto-formatting of code, running code, providing a graphic view of the workspace (your active functions, variables, etc.), graphic debugging and profiling (you will see these delightful things later), and allowing integrated version control (e.g., using <code class="docutils literal notranslate"><span class="pre">git</span></code>).</p>
-<p>You will benefit a lot if you use a code editor that can also offer an IDE. Four commonly-used and very powerful multi-lingual code editors/IDEs are: Emacs, Vim, Visual Studio Code (AKA vscode), and Atom.</p>
-<p>At the very least, your IDE should offer:</p>
-<ul class="simple">
-<li><p>Auto-indentation</p></li>
-<li><p>Automatic code wrapping (e.g., keeping lines &lt;80 characters long)</p></li>
-<li><p>Syntax highlighting (e.g., commands vs. variables)</p></li>
-<li><p>Code folding (fold large blocks of code, say an entire function or loop)</p></li>
-<li><p>Keyboard control of commenting/uncommenting, code wrapping, etc.</p></li>
-<li><p>Embedded terminal / shell / commandline console</p></li>
-<li><p>Sending commands to terminal / shell</p></li>
-</ul>
-<p>And if you end up using multiple programming languages, you will want an IDE that can handle them. For example, <code class="docutils literal notranslate"><span class="pre">RStudio</span></code> is great for R, but cannot handle other languages. I use visual studio <code class="docutils literal notranslate"><span class="pre">code</span></code>, which has many plugins that make multi-language (multilingual!) code development much easier. Other good options are <code class="docutils literal notranslate"><span class="pre">atom</span></code>, <code class="docutils literal notranslate"><span class="pre">vim</span></code> or <code class="docutils literal notranslate"><span class="pre">emacs</span></code>. The last two have a steeper learning curve, but are very powerful once you have mastered them.</p>
 </div>
-<div class="section" id="assessment">
-<h3>Assessment<a class="headerlink" href="#assessment" title="Permalink to this headline">¶</a></h3>
-<p>Your computing coursework may be assessed. If you have been told that it will, please see <a class="reference internal" href="Appendix-Assessment.html"><span class="doc std std-doc">this Appendix</span></a> if you are a <em>Masters student</em>. If you are an <em>Undergrad student</em>, you may have a computer based test, the format for which will be explained to you elsewhere.</p>
+</div>
 <hr class="docutils" />
 <p><strong>Footnotes</strong></p>
 <p><a name="intro:robot">1</a>: That way you can traipse around the forest catching rare butterflies and frogs while the robot does the boring data collecting for you</p>
