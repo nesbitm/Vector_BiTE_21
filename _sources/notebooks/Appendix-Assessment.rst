@@ -107,7 +107,7 @@ Execution
     * Every group member MUST create their own branch and work on each of the groupwork practicals. 
 * Once the group has reached a solution, all branches should be merged and the final script transferred to each student's main coursework repository.
 * Please read about git brancing/merging, including the resources given at the end of the `Git Chapter <03-Git.ipynb>`__    
-* You are not expected to finish an the groupwork assignments within a week. These will be taken into account only at the final assessment (next section). The specific dealine will be given in class.
+* You are not expected to finish an the groupwork assignments within a week. These will be taken into account only at the final assessment (next section). The specific deadline will be given in class.
 
 Assessment
 ----------

@@ -522,20 +522,20 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sub-plots">
-     Sub-plots
+    <a class="reference internal nav-link" href="#body-mass-distributions">
+     Body mass distributions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#high-quality-graphics-in-r">
-   High-quality graphics in R
+  <a class="reference internal nav-link" href="#beautiful-graphics-in-r">
+   Beautiful graphics in R
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-plotting-with-qplot">
-     Basic plotting with
+    <a class="reference internal nav-link" href="#quick-plotting-with-qplot">
+     Quick plotting with
      <code class="docutils literal notranslate">
       <span class="pre">
        qplot
@@ -646,14 +646,14 @@
     <a class="reference internal nav-link" href="#annotating-plots">
      Annotating plots
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       Exercise
-      </a>
-     </li>
-    </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Practicals
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mathematical-display">
      Mathematical display
@@ -676,13 +676,6 @@
      ggthemes
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
-   Practicals
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualizing-regression-analyses">
      Visualizing Regression analyses
@@ -793,7 +786,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">'matrix'</div></div>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'matrix'</li><li>'array'</li></ol>
+</div></div>
 </div>
 <p>Note that:</p>
 <ul class="simple">
@@ -831,14 +830,17 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>V1</th><th scope=col>V2</th><th scope=col>V3</th><th scope=col>V4</th><th scope=col>V5</th><th scope=col>V6</th><th scope=col>V7</th><th scope=col>V8</th><th scope=col>V9</th><th scope=col>V10</th><th scope=col>⋯</th><th scope=col>V51</th><th scope=col>V52</th><th scope=col>V53</th><th scope=col>V54</th><th scope=col>V55</th><th scope=col>V56</th><th scope=col>V57</th><th scope=col>V58</th><th scope=col>V59</th><th scope=col>V60</th></tr></thead>
+<caption>A matrix: 6 × 60 of type chr</caption>
+<thead>
+	<tr><th scope=col>V1</th><th scope=col>V2</th><th scope=col>V3</th><th scope=col>V4</th><th scope=col>V5</th><th scope=col>V6</th><th scope=col>V7</th><th scope=col>V8</th><th scope=col>V9</th><th scope=col>V10</th><th scope=col>⋯</th><th scope=col>V51</th><th scope=col>V52</th><th scope=col>V53</th><th scope=col>V54</th><th scope=col>V55</th><th scope=col>V56</th><th scope=col>V57</th><th scope=col>V58</th><th scope=col>V59</th><th scope=col>V60</th></tr>
+</thead>
 <tbody>
-	<tr><td>Cultivation         </td><td>october             </td><td>october             </td><td>october             </td><td>october             </td><td>october             </td><td>may                 </td><td>may                 </td><td>may                 </td><td>may                 </td><td>⋯                   </td><td>march               </td><td>march               </td><td>may                 </td><td>may                 </td><td>may                 </td><td>october             </td><td>october             </td><td>october             </td><td>october             </td><td>october             </td></tr>
-	<tr><td>Block               </td><td>a                   </td><td>a                   </td><td>a                   </td><td>a                   </td><td>a                   </td><td>a                   </td><td>a                   </td><td>a                   </td><td>a                   </td><td>⋯                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td><td>d                   </td></tr>
-	<tr><td>Plot                </td><td>1                   </td><td>1                   </td><td>1                   </td><td>1                   </td><td>1                   </td><td>2                   </td><td>2                   </td><td>2                   </td><td>2                   </td><td>⋯                   </td><td>10                  </td><td>10                  </td><td>12                  </td><td>12                  </td><td>12                  </td><td>11                  </td><td>11                  </td><td>11                  </td><td>11                  </td><td>11                  </td></tr>
-	<tr><td>Quadrat             </td><td>Q1                  </td><td>Q2                  </td><td>Q3                  </td><td>Q4                  </td><td>Q5                  </td><td>Q1                  </td><td>Q2                  </td><td>Q3                  </td><td>Q4                  </td><td>⋯                   </td><td>Q5                  </td><td>Q6                  </td><td>Q1                  </td><td>Q2                  </td><td>Q4                  </td><td>Q1                  </td><td>Q2                  </td><td>Q3                  </td><td>Q4                  </td><td>Q5                  </td></tr>
-	<tr><td>Achillea millefolium</td><td>4                   </td><td>8                   </td><td>3                   </td><td>20                  </td><td>6                   </td><td>4                   </td><td>                    </td><td>                    </td><td>                    </td><td>⋯                   </td><td>4                   </td><td>10                  </td><td>                    </td><td>                    </td><td>                    </td><td>                    </td><td>                    </td><td>12                  </td><td>6                   </td><td>5                   </td></tr>
-	<tr><td>Agrostis gigantea   </td><td>                    </td><td>                    </td><td>                    </td><td>                    </td><td>15                  </td><td>                    </td><td>                    </td><td>                    </td><td>                    </td><td>⋯                   </td><td>19                  </td><td>80                  </td><td>33                  </td><td>145                 </td><td>45                  </td><td>62                  </td><td>25                  </td><td>57                  </td><td>113                 </td><td>12                  </td></tr>
+	<tr><td>Cultivation         </td><td>october</td><td>october</td><td>october</td><td>october</td><td>october</td><td>may</td><td>may</td><td>may</td><td>may</td><td>⋯</td><td>march</td><td>march</td><td>may</td><td>may</td><td>may</td><td>october</td><td>october</td><td>october</td><td>october</td><td>october</td></tr>
+	<tr><td>Block               </td><td>a      </td><td>a      </td><td>a      </td><td>a      </td><td>a      </td><td>a  </td><td>a  </td><td>a  </td><td>a  </td><td>⋯</td><td>d    </td><td>d    </td><td>d  </td><td>d  </td><td>d  </td><td>d      </td><td>d      </td><td>d      </td><td>d      </td><td>d      </td></tr>
+	<tr><td>Plot                </td><td>1      </td><td>1      </td><td>1      </td><td>1      </td><td>1      </td><td>2  </td><td>2  </td><td>2  </td><td>2  </td><td>⋯</td><td>10   </td><td>10   </td><td>12 </td><td>12 </td><td>12 </td><td>11     </td><td>11     </td><td>11     </td><td>11     </td><td>11     </td></tr>
+	<tr><td>Quadrat             </td><td>Q1     </td><td>Q2     </td><td>Q3     </td><td>Q4     </td><td>Q5     </td><td>Q1 </td><td>Q2 </td><td>Q3 </td><td>Q4 </td><td>⋯</td><td>Q5   </td><td>Q6   </td><td>Q1 </td><td>Q2 </td><td>Q4 </td><td>Q1     </td><td>Q2     </td><td>Q3     </td><td>Q4     </td><td>Q5     </td></tr>
+	<tr><td>Achillea millefolium</td><td>4      </td><td>8      </td><td>3      </td><td>20     </td><td>6      </td><td>4  </td><td>   </td><td>   </td><td>   </td><td>⋯</td><td>4    </td><td>10   </td><td>   </td><td>   </td><td>   </td><td>       </td><td>       </td><td>12     </td><td>6      </td><td>5      </td></tr>
+	<tr><td>Agrostis gigantea   </td><td>       </td><td>       </td><td>       </td><td>       </td><td>15     </td><td>   </td><td>   </td><td>   </td><td>   </td><td>⋯</td><td>19   </td><td>80   </td><td>33 </td><td>145</td><td>45 </td><td>62     </td><td>25     </td><td>57     </td><td>113    </td><td>12     </td></tr>
 </tbody>
 </table>
 </div></div>
@@ -872,13 +874,17 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>FieldName</th><th scope=col>Description</th></tr></thead>
+<caption>A data.frame: 5 × 2</caption>
+<thead>
+	<tr><th scope=col>FieldName</th><th scope=col>Description</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td>Cultivation                                                         </td><td> Cultivation treatments applied in three months: october, may, march</td></tr>
-	<tr><td>Block                                                               </td><td> Treatment blocks ids: a-d                                          </td></tr>
-	<tr><td>Plot                                                                </td><td> Plot ids under each treatment : 1-12                               </td></tr>
-	<tr><td>Quadrat                                                             </td><td> Sampling quadrats (25x50 cm each) per plot: Q1--Q6                 </td></tr>
-	<tr><td>SpeciesCount                                                        </td><td> Number of individuals of species (count) per quadrat               </td></tr>
+	<tr><td>Cultivation </td><td> Cultivation treatments applied in three months: october, may, march</td></tr>
+	<tr><td>Block       </td><td> Treatment blocks ids: a-d                                          </td></tr>
+	<tr><td>Plot        </td><td> Plot ids under each treatment : 1-12                               </td></tr>
+	<tr><td>Quadrat     </td><td> Sampling quadrats (25x50 cm each) per plot: Q1--Q6                 </td></tr>
+	<tr><td>SpeciesCount</td><td> Number of individuals of species (count) per quadrat               </td></tr>
 </tbody>
 </table>
 </div></div>
@@ -903,7 +909,7 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 <p>One typically records data in the field or experiments using a “wide” format, where a subject’s (e.g., habitat, plot, treatment, species etc) repeated responses or observations (e.g., species count, biomass, etc) will be in a single row, and each response in a separate column. The raw Pound Hill data were recorded in this way. However, the wide format is not ideal for data analysis — instead you need the data in a “long” format, where each row is one observation point per subject. So each subject will have data in multiple rows. Any measures/variables/observations that don’t change across the subjects will have the same value in all the rows. For humans, the wide format is generally more intuitive for recording (e.g., in field data sheets) data. However, for data inspection and analysis, the long format is preferable for two main reasons:</p>
 <ul class="simple">
 <li><p>If you have many response and/or treatment variables, it is hard to inspect the data values in a wide-form version of the dataset. In the case of the pound hill dataset, the response variable is species, and treatment variable is cultivation month (with sequentially nested replicates—block, plot, quadrat— within it), and the data values are the number (count) of individuals of each species per quadrat. As you can see, there are a a large number of columns (60 to be exact), with columns V2-V60 containing different treatment combinations. This makes it hard to visually see problems with the data values. You would have to look across all these columns to see any issues, or if you wanted to run a single command on all the data values (e.g., <code class="docutils literal notranslate"><span class="pre">is.integer()</span></code> to check if they are all integers, as you would expect), it would be harder to do so or interpret the output if all the species counts were in a single column.</p></li>
-<li><p>Long-form datasets are typically required for statistical analysis and visualization packages or commands in R (or Python, for that matter). For example, if you wanted to fit a linear model usimg R’s <code class="docutils literal notranslate"><span class="pre">lm()</span></code> command, with treatment (cultivation month) as the independent variable, you would need to structure your data in long form. Similarly, and if you wanted to plot histograms of species numbers by treatment using ggplot (coming up), you would also need these data in long format.</p></li>
+<li><p>Long-form datasets are typically required for statistical analysis and visualization packages or commands in R (or Python, for that matter). For example, if you wanted to fit a linear model using R’s <code class="docutils literal notranslate"><span class="pre">lm()</span></code> command, with treatment (cultivation month) as the independent variable, you would need to structure your data in long form. Similarly, and if you wanted to plot histograms of species numbers by treatment using ggplot (coming up), you would also need these data in long format.</p></li>
 </ul>
 <p><em>OK, so let’s go from wide to long format already!</em></p>
 <p>You can switch between wide and long formats using <code class="docutils literal notranslate"><span class="pre">melt()</span></code> and <code class="docutils literal notranslate"><span class="pre">dcast()</span></code> from the <code class="docutils literal notranslate"><span class="pre">reshape2</span></code> package, as illustrated in <code class="docutils literal notranslate"><span class="pre">DataWrang.R</span></code>. But first, let’s transpose the data, because for a long format, the (nested) treatments variables should be in rows:</p>
@@ -916,13 +922,14 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
+<caption>A matrix: 6 × 45 of type chr</caption>
 <tbody>
-	<tr><th scope=row>V1</th><td>Cultivation               </td><td>Block                     </td><td>Plot                      </td><td>Quadrat                   </td><td>Achillea millefolium      </td><td>Agrostis gigantea         </td><td>Anagallis arvensis        </td><td>Anchusa arvensis          </td><td>Anisantha sterilis        </td><td>Aphanes australis         </td><td>⋯                         </td><td>Semecio jacobaea          </td><td>Sonchus asper             </td><td>Spergula arvensis         </td><td>Stellaria graminea        </td><td>Taraxacum officinale      </td><td>Tripleurospermum inodorum </td><td>Veronica arvensis         </td><td>Veronica persica          </td><td>Viola arvensis            </td><td>Vulpia myuros             </td></tr>
-	<tr><th scope=row>V2</th><td>october                   </td><td>a                         </td><td>1                         </td><td>Q1                        </td><td>4                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>⋯                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>8                         </td><td>0                         </td><td>11                        </td><td>0                         </td><td>1                         </td><td>0                         </td><td>0                         </td></tr>
-	<tr><th scope=row>V3</th><td>october                   </td><td>a                         </td><td>1                         </td><td>Q2                        </td><td>8                         </td><td>0                         </td><td>0                         </td><td>3                         </td><td>0                         </td><td>0                         </td><td>⋯                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>4                         </td><td>0                         </td><td>1                         </td><td>0                         </td><td>0                         </td><td>3                         </td><td>0                         </td></tr>
-	<tr><th scope=row>V4</th><td>october                   </td><td>a                         </td><td>1                         </td><td>Q3                        </td><td>3                         </td><td>0                         </td><td>0                         </td><td>1                         </td><td>0                         </td><td>0                         </td><td>⋯                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>1                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>1                         </td><td>0                         </td></tr>
-	<tr><th scope=row>V5</th><td>october                   </td><td>a                         </td><td>1                         </td><td>Q4                        </td><td>20                        </td><td>0                         </td><td>0                         </td><td>1                         </td><td>0                         </td><td>0                         </td><td>⋯                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>1                         </td><td>0                         </td></tr>
-	<tr><th scope=row>V6</th><td>october                   </td><td>a                         </td><td>1                         </td><td>Q5                        </td><td>6                         </td><td>15                        </td><td>0                         </td><td>0                         </td><td>5                         </td><td>0                         </td><td>⋯                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>1                         </td><td>10                        </td><td>0                         </td><td>0                         </td><td>0                         </td><td>0                         </td><td>7                         </td></tr>
+	<tr><th scope=row>V1</th><td>Cultivation</td><td>Block</td><td>Plot</td><td>Quadrat</td><td>Achillea millefolium</td><td>Agrostis gigantea</td><td>Anagallis arvensis</td><td>Anchusa arvensis</td><td>Anisantha sterilis</td><td>Aphanes australis</td><td>⋯</td><td>Semecio jacobaea</td><td>Sonchus asper</td><td>Spergula arvensis</td><td>Stellaria graminea</td><td>Taraxacum officinale</td><td>Tripleurospermum inodorum </td><td>Veronica arvensis</td><td>Veronica persica</td><td>Viola arvensis</td><td>Vulpia myuros </td></tr>
+	<tr><th scope=row>V2</th><td>october    </td><td>a    </td><td>1   </td><td>Q1     </td><td>4                   </td><td>0                </td><td>0                 </td><td>0               </td><td>0                 </td><td>0                </td><td>⋯</td><td>0               </td><td>0            </td><td>0                </td><td>8                 </td><td>0                   </td><td>11                        </td><td>0                </td><td>1               </td><td>0             </td><td>0             </td></tr>
+	<tr><th scope=row>V3</th><td>october    </td><td>a    </td><td>1   </td><td>Q2     </td><td>8                   </td><td>0                </td><td>0                 </td><td>3               </td><td>0                 </td><td>0                </td><td>⋯</td><td>0               </td><td>0            </td><td>0                </td><td>4                 </td><td>0                   </td><td>1                         </td><td>0                </td><td>0               </td><td>3             </td><td>0             </td></tr>
+	<tr><th scope=row>V4</th><td>october    </td><td>a    </td><td>1   </td><td>Q3     </td><td>3                   </td><td>0                </td><td>0                 </td><td>1               </td><td>0                 </td><td>0                </td><td>⋯</td><td>0               </td><td>0            </td><td>0                </td><td>1                 </td><td>0                   </td><td>0                         </td><td>0                </td><td>0               </td><td>1             </td><td>0             </td></tr>
+	<tr><th scope=row>V5</th><td>october    </td><td>a    </td><td>1   </td><td>Q4     </td><td>20                  </td><td>0                </td><td>0                 </td><td>1               </td><td>0                 </td><td>0                </td><td>⋯</td><td>0               </td><td>0            </td><td>0                </td><td>0                 </td><td>0                   </td><td>0                         </td><td>0                </td><td>0               </td><td>1             </td><td>0             </td></tr>
+	<tr><th scope=row>V6</th><td>october    </td><td>a    </td><td>1   </td><td>Q5     </td><td>6                   </td><td>15               </td><td>0                 </td><td>0               </td><td>5                 </td><td>0                </td><td>⋯</td><td>0               </td><td>0            </td><td>0                </td><td>1                 </td><td>10                  </td><td>0                         </td><td>0                </td><td>0               </td><td>0             </td><td>7             </td></tr>
 </tbody>
 </table>
 </div></div>
@@ -950,14 +957,18 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th></th><th scope=col>V1</th><th scope=col>V2</th><th scope=col>V3</th><th scope=col>V4</th><th scope=col>V5</th><th scope=col>V6</th><th scope=col>V7</th><th scope=col>V8</th><th scope=col>V9</th><th scope=col>V10</th><th scope=col>⋯</th><th scope=col>V36</th><th scope=col>V37</th><th scope=col>V38</th><th scope=col>V39</th><th scope=col>V40</th><th scope=col>V41</th><th scope=col>V42</th><th scope=col>V43</th><th scope=col>V44</th><th scope=col>V45</th></tr></thead>
+<caption>A data.frame: 6 × 45</caption>
+<thead>
+	<tr><th></th><th scope=col>V1</th><th scope=col>V2</th><th scope=col>V3</th><th scope=col>V4</th><th scope=col>V5</th><th scope=col>V6</th><th scope=col>V7</th><th scope=col>V8</th><th scope=col>V9</th><th scope=col>V10</th><th scope=col>⋯</th><th scope=col>V36</th><th scope=col>V37</th><th scope=col>V38</th><th scope=col>V39</th><th scope=col>V40</th><th scope=col>V41</th><th scope=col>V42</th><th scope=col>V43</th><th scope=col>V44</th><th scope=col>V45</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>⋯</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><th scope=row>V2</th><td>october</td><td>a      </td><td>1      </td><td>Q1     </td><td>4      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>8      </td><td>0      </td><td>11     </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td></tr>
-	<tr><th scope=row>V3</th><td>october</td><td>a      </td><td>1      </td><td>Q2     </td><td>8      </td><td>0      </td><td>0      </td><td>3      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>4      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>3      </td><td>0      </td></tr>
-	<tr><th scope=row>V4</th><td>october</td><td>a      </td><td>1      </td><td>Q3     </td><td>3      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td></tr>
-	<tr><th scope=row>V5</th><td>october</td><td>a      </td><td>1      </td><td>Q4     </td><td>20     </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td></tr>
-	<tr><th scope=row>V6</th><td>october</td><td>a      </td><td>1      </td><td>Q5     </td><td>6      </td><td>15     </td><td>0      </td><td>0      </td><td>5      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>10     </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>7      </td></tr>
-	<tr><th scope=row>V7</th><td>may    </td><td>a      </td><td>2      </td><td>Q1     </td><td>4      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>2      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>2      </td><td>0      </td><td>0      </td></tr>
+	<tr><th scope=row>V2</th><td>october</td><td>a</td><td>1</td><td>Q1</td><td>4 </td><td>0 </td><td>0</td><td>0</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>8</td><td>0 </td><td>11</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+	<tr><th scope=row>V3</th><td>october</td><td>a</td><td>1</td><td>Q2</td><td>8 </td><td>0 </td><td>0</td><td>3</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0 </td><td>1 </td><td>0</td><td>0</td><td>3</td><td>0</td></tr>
+	<tr><th scope=row>V4</th><td>october</td><td>a</td><td>1</td><td>Q3</td><td>3 </td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0 </td><td>0 </td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>V5</th><td>october</td><td>a</td><td>1</td><td>Q4</td><td>20</td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 </td><td>0 </td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>V6</th><td>october</td><td>a</td><td>1</td><td>Q5</td><td>6 </td><td>15</td><td>0</td><td>0</td><td>5</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>1</td><td>10</td><td>0 </td><td>0</td><td>0</td><td>0</td><td>7</td></tr>
+	<tr><th scope=row>V7</th><td>may    </td><td>a</td><td>2</td><td>Q1</td><td>4 </td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0 </td><td>0 </td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -978,14 +989,18 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th></th><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Achillea millefolium</th><th scope=col>Agrostis gigantea</th><th scope=col>Anagallis arvensis</th><th scope=col>Anchusa arvensis</th><th scope=col>Anisantha sterilis</th><th scope=col>Aphanes australis</th><th scope=col>⋯</th><th scope=col>Semecio jacobaea</th><th scope=col>Sonchus asper</th><th scope=col>Spergula arvensis</th><th scope=col>Stellaria graminea</th><th scope=col>Taraxacum officinale</th><th scope=col>Tripleurospermum inodorum </th><th scope=col>Veronica arvensis</th><th scope=col>Veronica persica</th><th scope=col>Viola arvensis</th><th scope=col>Vulpia myuros </th></tr></thead>
+<caption>A data.frame: 6 × 45</caption>
+<thead>
+	<tr><th></th><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Achillea millefolium</th><th scope=col>Agrostis gigantea</th><th scope=col>Anagallis arvensis</th><th scope=col>Anchusa arvensis</th><th scope=col>Anisantha sterilis</th><th scope=col>Aphanes australis</th><th scope=col>⋯</th><th scope=col>Semecio jacobaea</th><th scope=col>Sonchus asper</th><th scope=col>Spergula arvensis</th><th scope=col>Stellaria graminea</th><th scope=col>Taraxacum officinale</th><th scope=col>Tripleurospermum inodorum </th><th scope=col>Veronica arvensis</th><th scope=col>Veronica persica</th><th scope=col>Viola arvensis</th><th scope=col>Vulpia myuros </th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>⋯</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><th scope=row>V2</th><td>october</td><td>a      </td><td>1      </td><td>Q1     </td><td>4      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>8      </td><td>0      </td><td>11     </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td></tr>
-	<tr><th scope=row>V3</th><td>october</td><td>a      </td><td>1      </td><td>Q2     </td><td>8      </td><td>0      </td><td>0      </td><td>3      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>4      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>3      </td><td>0      </td></tr>
-	<tr><th scope=row>V4</th><td>october</td><td>a      </td><td>1      </td><td>Q3     </td><td>3      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td></tr>
-	<tr><th scope=row>V5</th><td>october</td><td>a      </td><td>1      </td><td>Q4     </td><td>20     </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td></tr>
-	<tr><th scope=row>V6</th><td>october</td><td>a      </td><td>1      </td><td>Q5     </td><td>6      </td><td>15     </td><td>0      </td><td>0      </td><td>5      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>10     </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>7      </td></tr>
-	<tr><th scope=row>V7</th><td>may    </td><td>a      </td><td>2      </td><td>Q1     </td><td>4      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>2      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>2      </td><td>0      </td><td>0      </td></tr>
+	<tr><th scope=row>V2</th><td>october</td><td>a</td><td>1</td><td>Q1</td><td>4 </td><td>0 </td><td>0</td><td>0</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>8</td><td>0 </td><td>11</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+	<tr><th scope=row>V3</th><td>october</td><td>a</td><td>1</td><td>Q2</td><td>8 </td><td>0 </td><td>0</td><td>3</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0 </td><td>1 </td><td>0</td><td>0</td><td>3</td><td>0</td></tr>
+	<tr><th scope=row>V4</th><td>october</td><td>a</td><td>1</td><td>Q3</td><td>3 </td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0 </td><td>0 </td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>V5</th><td>october</td><td>a</td><td>1</td><td>Q4</td><td>20</td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 </td><td>0 </td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>V6</th><td>october</td><td>a</td><td>1</td><td>Q5</td><td>6 </td><td>15</td><td>0</td><td>0</td><td>5</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>1</td><td>10</td><td>0 </td><td>0</td><td>0</td><td>0</td><td>7</td></tr>
+	<tr><th scope=row>V7</th><td>may    </td><td>a</td><td>2</td><td>Q1</td><td>4 </td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0 </td><td>0 </td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1000,14 +1015,18 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Achillea millefolium</th><th scope=col>Agrostis gigantea</th><th scope=col>Anagallis arvensis</th><th scope=col>Anchusa arvensis</th><th scope=col>Anisantha sterilis</th><th scope=col>Aphanes australis</th><th scope=col>⋯</th><th scope=col>Semecio jacobaea</th><th scope=col>Sonchus asper</th><th scope=col>Spergula arvensis</th><th scope=col>Stellaria graminea</th><th scope=col>Taraxacum officinale</th><th scope=col>Tripleurospermum inodorum </th><th scope=col>Veronica arvensis</th><th scope=col>Veronica persica</th><th scope=col>Viola arvensis</th><th scope=col>Vulpia myuros </th></tr></thead>
+<caption>A data.frame: 6 × 45</caption>
+<thead>
+	<tr><th></th><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Achillea millefolium</th><th scope=col>Agrostis gigantea</th><th scope=col>Anagallis arvensis</th><th scope=col>Anchusa arvensis</th><th scope=col>Anisantha sterilis</th><th scope=col>Aphanes australis</th><th scope=col>⋯</th><th scope=col>Semecio jacobaea</th><th scope=col>Sonchus asper</th><th scope=col>Spergula arvensis</th><th scope=col>Stellaria graminea</th><th scope=col>Taraxacum officinale</th><th scope=col>Tripleurospermum inodorum </th><th scope=col>Veronica arvensis</th><th scope=col>Veronica persica</th><th scope=col>Viola arvensis</th><th scope=col>Vulpia myuros </th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>⋯</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td>october</td><td>a      </td><td>1      </td><td>Q1     </td><td>4      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>8      </td><td>0      </td><td>11     </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td></tr>
-	<tr><td>october</td><td>a      </td><td>1      </td><td>Q2     </td><td>8      </td><td>0      </td><td>0      </td><td>3      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>4      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>3      </td><td>0      </td></tr>
-	<tr><td>october</td><td>a      </td><td>1      </td><td>Q3     </td><td>3      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td></tr>
-	<tr><td>october</td><td>a      </td><td>1      </td><td>Q4     </td><td>20     </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td></tr>
-	<tr><td>october</td><td>a      </td><td>1      </td><td>Q5     </td><td>6      </td><td>15     </td><td>0      </td><td>0      </td><td>5      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>0      </td><td>1      </td><td>10     </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>7      </td></tr>
-	<tr><td>may    </td><td>a      </td><td>2      </td><td>Q1     </td><td>4      </td><td>0      </td><td>0      </td><td>1      </td><td>0      </td><td>0      </td><td>⋯      </td><td>0      </td><td>0      </td><td>2      </td><td>0      </td><td>0      </td><td>0      </td><td>0      </td><td>2      </td><td>0      </td><td>0      </td></tr>
+	<tr><th scope=row>1</th><td>october</td><td>a</td><td>1</td><td>Q1</td><td>4 </td><td>0 </td><td>0</td><td>0</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>8</td><td>0 </td><td>11</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+	<tr><th scope=row>2</th><td>october</td><td>a</td><td>1</td><td>Q2</td><td>8 </td><td>0 </td><td>0</td><td>3</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0 </td><td>1 </td><td>0</td><td>0</td><td>3</td><td>0</td></tr>
+	<tr><th scope=row>3</th><td>october</td><td>a</td><td>1</td><td>Q3</td><td>3 </td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0 </td><td>0 </td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>4</th><td>october</td><td>a</td><td>1</td><td>Q4</td><td>20</td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0 </td><td>0 </td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>5</th><td>october</td><td>a</td><td>1</td><td>Q5</td><td>6 </td><td>15</td><td>0</td><td>0</td><td>5</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>0</td><td>1</td><td>10</td><td>0 </td><td>0</td><td>0</td><td>0</td><td>7</td></tr>
+	<tr><th scope=row>6</th><td>may    </td><td>a</td><td>2</td><td>Q1</td><td>4 </td><td>0 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>⋯</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0 </td><td>0 </td><td>0</td><td>2</td><td>0</td><td>0</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1021,9 +1040,6 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: reshape2
-
-Error: package or namespace load failed for ‘reshape2’:
- package ‘reshape2’ was installed by an R version with different internals; it needs to be reinstalled for use with this R version
 </pre></div>
 </div>
 </div>
@@ -1038,11 +1054,37 @@ Error: package or namespace load failed for ‘reshape2’:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">melt</span><span class="p">(</span><span class="n">TempData</span><span class="p">,</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;Cultivation&quot;</span><span class="p">,</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span> <span class="s2">&quot;Plot&quot;</span><span class="p">,</span> <span class="s2">&quot;Quadrat&quot;</span><span class="p">),</span> <span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;melt&quot;</span>
-<span class="ne">Traceback</span>:
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table>
+<caption>A data.frame: 6 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>october</td><td>a</td><td>1</td><td>Q1</td><td>Achillea millefolium</td><td>4 </td></tr>
+	<tr><th scope=row>2</th><td>october</td><td>a</td><td>1</td><td>Q2</td><td>Achillea millefolium</td><td>8 </td></tr>
+	<tr><th scope=row>3</th><td>october</td><td>a</td><td>1</td><td>Q3</td><td>Achillea millefolium</td><td>3 </td></tr>
+	<tr><th scope=row>4</th><td>october</td><td>a</td><td>1</td><td>Q4</td><td>Achillea millefolium</td><td>20</td></tr>
+	<tr><th scope=row>5</th><td>october</td><td>a</td><td>1</td><td>Q5</td><td>Achillea millefolium</td><td>6 </td></tr>
+	<tr><th scope=row>6</th><td>may    </td><td>a</td><td>2</td><td>Q1</td><td>Achillea millefolium</td><td>4 </td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><table>
+<caption>A data.frame: 6 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>2414</th><td>may    </td><td>d</td><td>12</td><td>Q4</td><td>Vulpia myuros </td><td>0</td></tr>
+	<tr><th scope=row>2415</th><td>october</td><td>d</td><td>11</td><td>Q1</td><td>Vulpia myuros </td><td>0</td></tr>
+	<tr><th scope=row>2416</th><td>october</td><td>d</td><td>11</td><td>Q2</td><td>Vulpia myuros </td><td>0</td></tr>
+	<tr><th scope=row>2417</th><td>october</td><td>d</td><td>11</td><td>Q3</td><td>Vulpia myuros </td><td>0</td></tr>
+	<tr><th scope=row>2418</th><td>october</td><td>d</td><td>11</td><td>Q4</td><td>Vulpia myuros </td><td>0</td></tr>
+	<tr><th scope=row>2419</th><td>october</td><td>d</td><td>11</td><td>Q5</td><td>Vulpia myuros </td><td>0</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>This is the long format we have been extolling! It looks much simpler, with all the count data in a single, long column with each count value associated with some “attributes”. It is now clear that the fundamental unit of analysis is a species’ count in a quadrat, each nested within a plot, each in turn nested within a block, and finally, each of which is nested within a cultivation month (the main treatment).</p>
 <p>We can also now assign the correct data types to each column:</p>
@@ -1058,11 +1100,13 @@ Error: package or namespace load failed for ‘reshape2’:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="ow">is</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;MyWrangledData&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="k">as</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">[,</span> <span class="s2">&quot;Cultivation&quot;</span><span class="p">])</span>
-<span class="mi">2</span><span class="o">.</span> <span class="ow">is</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	2419 obs. of  6 variables:
+ $ Cultivation: Factor w/ 3 levels &quot;march&quot;,&quot;may&quot;,..: 3 3 3 3 3 2 2 2 2 2 ...
+ $ Block      : Factor w/ 4 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+ $ Plot       : Factor w/ 12 levels &quot;1&quot;,&quot;10&quot;,&quot;11&quot;,..: 1 1 1 1 1 5 5 5 5 5 ...
+ $ Quadrat    : Factor w/ 6 levels &quot;Q1&quot;,&quot;Q2&quot;,&quot;Q3&quot;,..: 1 2 3 4 5 1 2 3 4 5 ...
+ $ Species    : Factor w/ 41 levels &quot;Achillea millefolium&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ Count      : int  4 8 3 20 6 4 0 0 0 0 ...
 </pre></div>
 </div>
 </div>
@@ -1121,18 +1165,93 @@ This warning is displayed once every 8 hours.
 Call `lifecycle::last_warnings()` to see where this warning was generated.”
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">as_tibble</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">.</span><span class="n">name_repair</span> <span class="o">=</span> <span class="s2">&quot;check_unique&quot;</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;MyWrangledData&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">dplyr</span><span class="p">::</span><span class="n">tbl_df</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">as_tibble</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">.</span><span class="n">name_repair</span> <span class="o">=</span> <span class="s2">&quot;check_unique&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table>
+<caption>A tibble: 2419 × 6</caption>
+<thead>
+	<tr><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr>
+	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>october</td><td>a</td><td>1</td><td>Q1</td><td>Achillea millefolium</td><td> 4</td></tr>
+	<tr><td>october</td><td>a</td><td>1</td><td>Q2</td><td>Achillea millefolium</td><td> 8</td></tr>
+	<tr><td>october</td><td>a</td><td>1</td><td>Q3</td><td>Achillea millefolium</td><td> 3</td></tr>
+	<tr><td>october</td><td>a</td><td>1</td><td>Q4</td><td>Achillea millefolium</td><td>20</td></tr>
+	<tr><td>october</td><td>a</td><td>1</td><td>Q5</td><td>Achillea millefolium</td><td> 6</td></tr>
+	<tr><td>may    </td><td>a</td><td>2</td><td>Q1</td><td>Achillea millefolium</td><td> 4</td></tr>
+	<tr><td>may    </td><td>a</td><td>2</td><td>Q2</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>a</td><td>2</td><td>Q3</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>a</td><td>2</td><td>Q4</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>a</td><td>2</td><td>Q5</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>march  </td><td>a</td><td>3</td><td>Q1</td><td>Achillea millefolium</td><td> 1</td></tr>
+	<tr><td>march  </td><td>a</td><td>3</td><td>Q2</td><td>Achillea millefolium</td><td> 2</td></tr>
+	<tr><td>march  </td><td>a</td><td>3</td><td>Q3</td><td>Achillea millefolium</td><td> 5</td></tr>
+	<tr><td>march  </td><td>a</td><td>3</td><td>Q4</td><td>Achillea millefolium</td><td>12</td></tr>
+	<tr><td>march  </td><td>a</td><td>3</td><td>Q5</td><td>Achillea millefolium</td><td> 2</td></tr>
+	<tr><td>march  </td><td>a</td><td>3</td><td>Q6</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>b</td><td>4</td><td>Q1</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>b</td><td>4</td><td>Q2</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>b</td><td>4</td><td>Q3</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>b</td><td>4</td><td>Q4</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>may    </td><td>b</td><td>4</td><td>Q5</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>march  </td><td>b</td><td>5</td><td>Q1</td><td>Achillea millefolium</td><td> 3</td></tr>
+	<tr><td>march  </td><td>b</td><td>5</td><td>Q2</td><td>Achillea millefolium</td><td> 8</td></tr>
+	<tr><td>march  </td><td>b</td><td>5</td><td>Q3</td><td>Achillea millefolium</td><td> 3</td></tr>
+	<tr><td>march  </td><td>b</td><td>5</td><td>Q4</td><td>Achillea millefolium</td><td> 7</td></tr>
+	<tr><td>march  </td><td>b</td><td>5</td><td>Q5</td><td>Achillea millefolium</td><td>20</td></tr>
+	<tr><td>october</td><td>b</td><td>6</td><td>Q1</td><td>Achillea millefolium</td><td> 1</td></tr>
+	<tr><td>october</td><td>b</td><td>6</td><td>Q2</td><td>Achillea millefolium</td><td> 0</td></tr>
+	<tr><td>october</td><td>b</td><td>6</td><td>Q3</td><td>Achillea millefolium</td><td> 3</td></tr>
+	<tr><td>october</td><td>b</td><td>6</td><td>Q4</td><td>Achillea millefolium</td><td> 1</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>october</td><td>b</td><td>6 </td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>c</td><td>7 </td><td>Q1</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>c</td><td>7 </td><td>Q2</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>c</td><td>7 </td><td>Q3</td><td>Vulpia myuros </td><td> 1</td></tr>
+	<tr><td>march  </td><td>c</td><td>7 </td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>c</td><td>7 </td><td>Q5</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>c</td><td>8 </td><td>Q1</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>c</td><td>8 </td><td>Q2</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>c</td><td>8 </td><td>Q3</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>c</td><td>8 </td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>c</td><td>8 </td><td>Q5</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>c</td><td>9 </td><td>Q1</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>c</td><td>9 </td><td>Q2</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>c</td><td>9 </td><td>Q3</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>c</td><td>9 </td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>c</td><td>9 </td><td>Q5</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>d</td><td>10</td><td>Q1</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>d</td><td>10</td><td>Q2</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>d</td><td>10</td><td>Q3</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>d</td><td>10</td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>march  </td><td>d</td><td>10</td><td>Q5</td><td>Vulpia myuros </td><td>25</td></tr>
+	<tr><td>march  </td><td>d</td><td>10</td><td>Q6</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>d</td><td>12</td><td>Q1</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>d</td><td>12</td><td>Q2</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>may    </td><td>d</td><td>12</td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>d</td><td>11</td><td>Q1</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>d</td><td>11</td><td>Q2</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>d</td><td>11</td><td>Q3</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>d</td><td>11</td><td>Q4</td><td>Vulpia myuros </td><td> 0</td></tr>
+	<tr><td>october</td><td>d</td><td>11</td><td>Q5</td><td>Vulpia myuros </td><td> 0</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dplyr</span><span class="o">::</span><span class="nf">glimpse</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">)</span> <span class="c1">#like str(), but nicer!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 2,419
+Columns: 6
+$ Cultivation <span class=" -Color -Color-C246">&lt;fct&gt;</span> october, october, october, october, october, may, may, ma…
+$ Block       <span class=" -Color -Color-C246">&lt;fct&gt;</span> a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, b, b, b, …
+$ Plot        <span class=" -Color -Color-C246">&lt;fct&gt;</span> 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, …
+$ Quadrat     <span class=" -Color -Color-C246">&lt;fct&gt;</span> Q1, Q2, Q3, Q4, Q5, Q1, Q2, Q3, Q4, Q5, Q1, Q2, Q3, Q4, Q…
+$ Species     <span class=" -Color -Color-C246">&lt;fct&gt;</span> Achillea millefolium, Achillea millefolium, Achillea mill…
+$ Count       <span class=" -Color -Color-C246">&lt;int&gt;</span> 4, 8, 3, 20, 6, 4, 0, 0, 0, 0, 1, 2, 5, 12, 2, 0, 0, 0, 0…
 </pre></div>
 </div>
 </div>
@@ -1276,10 +1395,12 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><ol class=list-inline>
-	<li>34931</li>
-	<li>15</li>
-</ol>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>34931</li><li>15</li></ol>
 </div></div>
 </div>
 <p>Let’s look at what the data contain. Type <code class="docutils literal notranslate"><span class="pre">MyDF</span></code> and hit the TAB key twice in the R commandline.</p>
@@ -1297,20 +1418,20 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	34931 obs. of  15 variables:
  $ Record.number              : int  1 2 3 4 5 6 7 8 9 10 ...
- $ In.refID                   : Factor w/ 1218 levels &quot;07/08/12&quot;,&quot;111-10&quot;,..: 1000 1004 1007 1012 1013 1014 1015 1017 1018 1018 ...
- $ IndividualID               : Factor w/ 17625 levels &quot;1&quot;,&quot;10&quot;,&quot;100&quot;,..: 1 8781 9875 10984 12076 13187 14298 15407 16518 16518 ...
- $ Predator                   : Factor w/ 93 levels &quot;Acanthocepola sp.&quot;,..: 72 72 72 72 72 72 72 72 72 72 ...
- $ Predator.common.name       : Factor w/ 87 levels &quot;4-spot megrim&quot;,..: 10 10 10 10 10 10 10 10 10 10 ...
- $ Predator.taxon             : Factor w/ 2 levels &quot;cephalopod&quot;,&quot;ectotherm vertebrate&quot;: 2 2 2 2 2 2 2 2 2 2 ...
- $ Predator.lifestage         : Factor w/ 6 levels &quot;adult&quot;,&quot;juvenile&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
- $ Type.of.feeding.interaction: Factor w/ 5 levels &quot;insectivorous&quot;,..: 5 5 5 5 5 5 5 5 5 5 ...
+ $ In.refID                   : chr  &quot;ATSH063&quot; &quot;ATSH080&quot; &quot;ATSH089&quot; &quot;ATSH143&quot; ...
+ $ IndividualID               : chr  &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+ $ Predator                   : chr  &quot;Rhizoprionodon terraenovae&quot; &quot;Rhizoprionodon terraenovae&quot; &quot;Rhizoprionodon terraenovae&quot; &quot;Rhizoprionodon terraenovae&quot; ...
+ $ Predator.common.name       : chr  &quot;Atlantic sharpnose shark&quot; &quot;Atlantic sharpnose shark&quot; &quot;Atlantic sharpnose shark&quot; &quot;Atlantic sharpnose shark&quot; ...
+ $ Predator.taxon             : chr  &quot;ectotherm vertebrate&quot; &quot;ectotherm vertebrate&quot; &quot;ectotherm vertebrate&quot; &quot;ectotherm vertebrate&quot; ...
+ $ Predator.lifestage         : chr  &quot;adult&quot; &quot;adult&quot; &quot;adult&quot; &quot;adult&quot; ...
+ $ Type.of.feeding.interaction: chr  &quot;predacious/piscivorous&quot; &quot;predacious/piscivorous&quot; &quot;predacious/piscivorous&quot; &quot;predacious/piscivorous&quot; ...
  $ Predator.mass              : num  1540 1600 1840 87.6 63.9 79.2 71.2 92.1 79.2 79.2 ...
- $ Prey                       : Factor w/ 192 levels &quot;Agonus cataphractus&quot;,..: 170 170 170 170 170 170 170 170 170 170 ...
- $ Prey.common.name           : Factor w/ 145 levels &quot;Alaska pollack&quot;,..: 134 134 134 134 134 134 134 134 134 134 ...
- $ Prey.taxon                 : Factor w/ 5 levels &quot;ectotherm invertebrate&quot;,..: 5 5 5 5 5 5 5 5 5 5 ...
+ $ Prey                       : chr  &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; ...
+ $ Prey.common.name           : chr  &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; ...
+ $ Prey.taxon                 : chr  &quot;mixed&quot; &quot;mixed&quot; &quot;mixed&quot; &quot;mixed&quot; ...
  $ Prey.mass                  : num  14.3 6.02 11.9 8.12 6.56 5.41 4.45 5.98 6.95 5.6 ...
- $ Prey.mass.unit             : Factor w/ 2 levels &quot;g&quot;,&quot;mg&quot;: 1 1 1 1 1 1 1 1 1 1 ...
- $ Location                   : Factor w/ 25 levels &quot;Andaman Sea (West of South Thailand)&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ Prey.mass.unit             : chr  &quot;g&quot; &quot;g&quot; &quot;g&quot; &quot;g&quot; ...
+ $ Location                   : chr  &quot;Apalachicola Bay, Florida&quot; &quot;Apalachicola Bay, Florida&quot; &quot;Apalachicola Bay, Florida&quot; &quot;Apalachicola Bay, Florida&quot; ...
 </pre></div>
 </div>
 </div>
@@ -1323,14 +1444,18 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>Record.number</th><th scope=col>In.refID</th><th scope=col>IndividualID</th><th scope=col>Predator</th><th scope=col>Predator.common.name</th><th scope=col>Predator.taxon</th><th scope=col>Predator.lifestage</th><th scope=col>Type.of.feeding.interaction</th><th scope=col>Predator.mass</th><th scope=col>Prey</th><th scope=col>Prey.common.name</th><th scope=col>Prey.taxon</th><th scope=col>Prey.mass</th><th scope=col>Prey.mass.unit</th><th scope=col>Location</th></tr></thead>
+<caption>A data.frame: 6 × 15</caption>
+<thead>
+	<tr><th></th><th scope=col>Record.number</th><th scope=col>In.refID</th><th scope=col>IndividualID</th><th scope=col>Predator</th><th scope=col>Predator.common.name</th><th scope=col>Predator.taxon</th><th scope=col>Predator.lifestage</th><th scope=col>Type.of.feeding.interaction</th><th scope=col>Predator.mass</th><th scope=col>Prey</th><th scope=col>Prey.common.name</th><th scope=col>Prey.taxon</th><th scope=col>Prey.mass</th><th scope=col>Prey.mass.unit</th><th scope=col>Location</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td>1                            </td><td>ATSH063                      </td><td>1                            </td><td>Rhizoprionodon terraenovae   </td><td>Atlantic sharpnose shark     </td><td>ectotherm vertebrate         </td><td>adult                        </td><td>predacious/piscivorous       </td><td>1540.0                       </td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed                        </td><td>14.30                        </td><td>g                            </td><td>Apalachicola Bay, Florida    </td></tr>
-	<tr><td>2                            </td><td>ATSH080                      </td><td>2                            </td><td>Rhizoprionodon terraenovae   </td><td>Atlantic sharpnose shark     </td><td>ectotherm vertebrate         </td><td>adult                        </td><td>predacious/piscivorous       </td><td>1600.0                       </td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed                        </td><td> 6.02                        </td><td>g                            </td><td>Apalachicola Bay, Florida    </td></tr>
-	<tr><td>3                            </td><td>ATSH089                      </td><td>3                            </td><td>Rhizoprionodon terraenovae   </td><td>Atlantic sharpnose shark     </td><td>ectotherm vertebrate         </td><td>adult                        </td><td>predacious/piscivorous       </td><td>1840.0                       </td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed                        </td><td>11.90                        </td><td>g                            </td><td>Apalachicola Bay, Florida    </td></tr>
-	<tr><td>4                            </td><td>ATSH143                      </td><td>4                            </td><td>Rhizoprionodon terraenovae   </td><td>Atlantic sharpnose shark     </td><td>ectotherm vertebrate         </td><td>adult                        </td><td>predacious/piscivorous       </td><td>  87.6                       </td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed                        </td><td> 8.12                        </td><td>g                            </td><td>Apalachicola Bay, Florida    </td></tr>
-	<tr><td>5                            </td><td>ATSH161                      </td><td>5                            </td><td>Rhizoprionodon terraenovae   </td><td>Atlantic sharpnose shark     </td><td>ectotherm vertebrate         </td><td>adult                        </td><td>predacious/piscivorous       </td><td>  63.9                       </td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed                        </td><td> 6.56                        </td><td>g                            </td><td>Apalachicola Bay, Florida    </td></tr>
-	<tr><td>6                            </td><td>ATSH166                      </td><td>6                            </td><td>Rhizoprionodon terraenovae   </td><td>Atlantic sharpnose shark     </td><td>ectotherm vertebrate         </td><td>adult                        </td><td>predacious/piscivorous       </td><td>  79.2                       </td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed                        </td><td> 5.41                        </td><td>g                            </td><td>Apalachicola Bay, Florida    </td></tr>
+	<tr><th scope=row>1</th><td>1</td><td>ATSH063</td><td>1</td><td>Rhizoprionodon terraenovae</td><td>Atlantic sharpnose shark</td><td>ectotherm vertebrate</td><td>adult</td><td>predacious/piscivorous</td><td>1540.0</td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed</td><td>14.30</td><td>g</td><td>Apalachicola Bay, Florida</td></tr>
+	<tr><th scope=row>2</th><td>2</td><td>ATSH080</td><td>2</td><td>Rhizoprionodon terraenovae</td><td>Atlantic sharpnose shark</td><td>ectotherm vertebrate</td><td>adult</td><td>predacious/piscivorous</td><td>1600.0</td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed</td><td> 6.02</td><td>g</td><td>Apalachicola Bay, Florida</td></tr>
+	<tr><th scope=row>3</th><td>3</td><td>ATSH089</td><td>3</td><td>Rhizoprionodon terraenovae</td><td>Atlantic sharpnose shark</td><td>ectotherm vertebrate</td><td>adult</td><td>predacious/piscivorous</td><td>1840.0</td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed</td><td>11.90</td><td>g</td><td>Apalachicola Bay, Florida</td></tr>
+	<tr><th scope=row>4</th><td>4</td><td>ATSH143</td><td>4</td><td>Rhizoprionodon terraenovae</td><td>Atlantic sharpnose shark</td><td>ectotherm vertebrate</td><td>adult</td><td>predacious/piscivorous</td><td>  87.6</td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed</td><td> 8.12</td><td>g</td><td>Apalachicola Bay, Florida</td></tr>
+	<tr><th scope=row>5</th><td>5</td><td>ATSH161</td><td>5</td><td>Rhizoprionodon terraenovae</td><td>Atlantic sharpnose shark</td><td>ectotherm vertebrate</td><td>adult</td><td>predacious/piscivorous</td><td>  63.9</td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed</td><td> 6.56</td><td>g</td><td>Apalachicola Bay, Florida</td></tr>
+	<tr><th scope=row>6</th><td>6</td><td>ATSH166</td><td>6</td><td>Rhizoprionodon terraenovae</td><td>Atlantic sharpnose shark</td><td>ectotherm vertebrate</td><td>adult</td><td>predacious/piscivorous</td><td>  79.2</td><td>teleosts/molluscs/crustaceans</td><td>teleosts/molluscs/crustaceans</td><td>mixed</td><td> 5.41</td><td>g</td><td>Apalachicola Bay, Florida</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1346,27 +1471,21 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 34,931
 Columns: 15
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: package ‘fansi’ was installed by an R version with different internals; it needs to be reinstalled for use with this R version
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">dplyr</span><span class="p">::</span><span class="n">glimpse</span><span class="p">(</span><span class="n">MyDF</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">glimpse</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">MyDF</span><span class="p">)</span>
-<span class="mi">3</span><span class="o">.</span> <span class="n">map_chr</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">new_pillar_type</span><span class="p">),</span> <span class="nb">format</span><span class="p">)</span>
-<span class="mi">4</span><span class="o">.</span> <span class="n">map_mold</span><span class="p">(</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="n">character</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">5</span><span class="o">.</span> <span class="n">vapply</span><span class="p">(</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">.</span><span class="n">mold</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">USE</span><span class="o">.</span><span class="n">NAMES</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">)</span>
-<span class="mi">6</span><span class="o">.</span> <span class="nb">map</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">new_pillar_type</span><span class="p">)</span>
-<span class="mi">7</span><span class="o">.</span> <span class="n">lapply</span><span class="p">(</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">8</span><span class="o">.</span> <span class="n">FUN</span><span class="p">(</span><span class="n">X</span><span class="p">[[</span><span class="n">i</span><span class="p">]],</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">9</span><span class="o">.</span> <span class="n">get_extent</span><span class="p">(</span><span class="n">format_type_sum</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">NULL</span><span class="p">))</span>
-<span class="mi">10</span><span class="o">.</span> <span class="n">fansi</span><span class="p">::</span><span class="n">strip_sgr</span>
-<span class="mi">11</span><span class="o">.</span> <span class="n">getExportedValue</span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="mi">12</span><span class="o">.</span> <span class="n">asNamespace</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
-<span class="mi">13</span><span class="o">.</span> <span class="n">getNamespace</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
-<span class="mi">14</span><span class="o">.</span> <span class="n">loadNamespace</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="mi">15</span><span class="o">.</span> <span class="n">stop</span><span class="p">(</span><span class="n">gettextf</span><span class="p">(</span><span class="s2">&quot;package </span><span class="si">%s</span><span class="s2"> was installed by an R version with different internals; it needs to be reinstalled for use with this R version&quot;</span><span class="p">,</span> 
-  <span class="o">.</span>     <span class="n">sQuote</span><span class="p">(</span><span class="n">package</span><span class="p">)),</span> <span class="n">call</span><span class="o">.</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">,</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">NA</span><span class="p">)</span>
+$ Record.number               <span class=" -Color -Color-C246">&lt;int&gt;</span> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13…
+$ In.refID                    <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;ATSH063&quot;, &quot;ATSH080&quot;, &quot;ATSH089&quot;, &quot;ATSH143…
+$ IndividualID                <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;…
+$ Predator                    <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;Rhizoprionodon terraenovae&quot;, &quot;Rhizoprion…
+$ Predator.common.name        <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;Atlantic sharpnose shark&quot;, &quot;Atlantic sha…
+$ Predator.taxon              <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;ectotherm vertebrate&quot;, &quot;ectotherm verteb…
+$ Predator.lifestage          <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;adult&quot;, &quot;adult&quot;, &quot;adult&quot;, &quot;adult&quot;, &quot;adul…
+$ Type.of.feeding.interaction <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;predacious/piscivorous&quot;, &quot;predacious/pis…
+$ Predator.mass               <span class=" -Color -Color-C246">&lt;dbl&gt;</span> 1540.0, 1600.0, 1840.0, 87.6, 63.9, 79.2,…
+$ Prey                        <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;teleosts/molluscs/crustaceans&quot;, &quot;teleost…
+$ Prey.common.name            <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;teleosts/molluscs/crustaceans&quot;, &quot;teleost…
+$ Prey.taxon                  <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;mixed&quot;, &quot;mixed&quot;, &quot;mixed&quot;, &quot;mixed&quot;, &quot;mixe…
+$ Prey.mass                   <span class=" -Color -Color-C246">&lt;dbl&gt;</span> 14.30, 6.02, 11.90, 8.12, 6.56, 5.41, 4.4…
+$ Prey.mass.unit              <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;g&quot;, &quot;g&quot;, &quot;g&quot;, &quot;g&quot;, &quot;g&quot;, &quot;g&quot;, &quot;g&quot;, &quot;g&quot;, &quot;…
+$ Location                    <span class=" -Color -Color-C246">&lt;chr&gt;</span> &quot;Apalachicola Bay, Florida&quot;, &quot;Apalachicol…
 </pre></div>
 </div>
 </div>
@@ -1381,6 +1500,26 @@ Columns: 15
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	34931 obs. of  15 variables:
+ $ Record.number              : int  1 2 3 4 5 6 7 8 9 10 ...
+ $ In.refID                   : chr  &quot;ATSH063&quot; &quot;ATSH080&quot; &quot;ATSH089&quot; &quot;ATSH143&quot; ...
+ $ IndividualID               : chr  &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+ $ Predator                   : chr  &quot;Rhizoprionodon terraenovae&quot; &quot;Rhizoprionodon terraenovae&quot; &quot;Rhizoprionodon terraenovae&quot; &quot;Rhizoprionodon terraenovae&quot; ...
+ $ Predator.common.name       : chr  &quot;Atlantic sharpnose shark&quot; &quot;Atlantic sharpnose shark&quot; &quot;Atlantic sharpnose shark&quot; &quot;Atlantic sharpnose shark&quot; ...
+ $ Predator.taxon             : chr  &quot;ectotherm vertebrate&quot; &quot;ectotherm vertebrate&quot; &quot;ectotherm vertebrate&quot; &quot;ectotherm vertebrate&quot; ...
+ $ Predator.lifestage         : chr  &quot;adult&quot; &quot;adult&quot; &quot;adult&quot; &quot;adult&quot; ...
+ $ Type.of.feeding.interaction: Factor w/ 5 levels &quot;insectivorous&quot;,..: 5 5 5 5 5 5 5 5 5 5 ...
+ $ Predator.mass              : num  1540 1600 1840 87.6 63.9 79.2 71.2 92.1 79.2 79.2 ...
+ $ Prey                       : chr  &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; ...
+ $ Prey.common.name           : chr  &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; &quot;teleosts/molluscs/crustaceans&quot; ...
+ $ Prey.taxon                 : chr  &quot;mixed&quot; &quot;mixed&quot; &quot;mixed&quot; &quot;mixed&quot; ...
+ $ Prey.mass                  : num  14.3 6.02 11.9 8.12 6.56 5.41 4.45 5.98 6.95 5.6 ...
+ $ Prey.mass.unit             : chr  &quot;g&quot; &quot;g&quot; &quot;g&quot; &quot;g&quot; ...
+ $ Location                   : Factor w/ 25 levels &quot;Andaman Sea (West of South Thailand)&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1392,6 +1531,9 @@ Columns: 15
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">MyDF</span><span class="o">$</span><span class="n">Predator.mass</span><span class="p">,</span><span class="n">MyDF</span><span class="o">$</span><span class="n">Prey.mass</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/08-Data_R_58_0.png" src="../_images/08-Data_R_58_0.png" />
 </div>
 </div>
 <p>That doesn’t look very meaningful! Let’s try taking logarithms. <em>Why?</em> - Because body sizes across species tend to be log-normally distributed, with a lot of small species and a few large ones. Taking a log allows you to inspect the body size range in a meaningful (logarithmic) scale and reveals the true relationship. This also illustrates a important point. Just like statistical analyses, the effectiveness of data visualization too depends on the type of distribution of the data.</p>
@@ -1619,27 +1761,23 @@ clicking on the figure, doing “save as”, etc. So let’s save the figure as 
 </div>
 </div>
 <p>Always try to save results in a vector format, which can be scaled up to any size. For more on vector vs raster images/graphics, <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_graphics">see this</a>.</p>
-<p>Note that you are saving to the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory now. This is a recommended project organization and workflow: store and retrieve data from a <code class="docutils literal notranslate"> <span class="pre">Data</span></code> directory, keep your code and work from a <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory, and save outputs to a <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory.</p>
+<p>Note that you are saving to the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory now. This is a recommended project organization and workflow: store and retrieve data from a <code class="docutils literal notranslate"> <span class="pre">Data</span></code> directory, keep your code and work from a <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory, and save outputs to a <code class="docutils literal notranslate"><span class="pre">results</span></code> directory.</p>
 <p>You can also try other graphic output formats. For example, <code class="docutils literal notranslate"><span class="pre">png()</span></code> (a raster format) instead of <code class="docutils literal notranslate"><span class="pre">pdf()</span></code>. As always, look at the help documentation of each of these commands!</p>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>Practicals<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="sub-plots">
-<h3>Sub-plots<a class="headerlink" href="#sub-plots" title="Permalink to this headline">¶</a></h3>
-<p>In this practical, you will write script that draws and saves three figures containing subplots by feeding interaction type: one of predator mass, one of prey mass and one of the size ratio of prey mass over predator mass. Note that you should use logarithms of masses (or mass-ratios)for all three plots. In addition, the script will calculate the mean and median predator mass, prey mass and predator-prey size-ratios to a csv file. So:</p>
-<ul class="simple">
-<li><p>Write a script file called <code class="docutils literal notranslate"><span class="pre">PP_Subplots.R</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory — sourcing or running this script should result in three files called <code class="docutils literal notranslate"><span class="pre">Pred_Subplots.pdf</span></code>, <code class="docutils literal notranslate"> <span class="pre">Prey_Subplots.pdf</span></code>, and <code class="docutils literal notranslate"><span class="pre">SizeRatio_Subplors.pdf</span></code> being
-saved in the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory (the names should be self-explanatory).</p></li>
-</ul>
-<p>In addition, the script should calculate the mean and median log predator mass, prey mass, and predator-prey size ratio, <em>by feeding type</em>, and save it as a single csv output table called <code class="docutils literal notranslate"><span class="pre">PP_Results.csv</span></code> to the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory. The table should have appropriate headers (e.g., Feeding type, Mean, Median). (Hint: you will have to initialize a new dataframe or matrix in the script to first store the calculations)</p>
-<p>The script should be self-sufficient and not need any external inputs — it should import the above predator-prey dataset from the appropriate directory, and save the graphic plots to the appropriate directory (Hint: use relative paths!).</p>
-<p>There are multiple ways to do this practical. The plotting and saving component is simple enough. For calculating the statistics by feeding type, you can either use the “loopy” way — first obtaining a list of feeding types (look up the <code class="docutils literal notranslate"><span class="pre">unique</span></code> or <code class="docutils literal notranslate"><span class="pre">levels</span></code> functions) and then loop over them, using <code class="docutils literal notranslate"><span class="pre">subset</span></code> to extract the dataset by feeding type at each iteration, or the R-savvy way, by using <code class="docutils literal notranslate"><span class="pre">tapply</span></code> or <code class="docutils literal notranslate"><span class="pre">ddply</span></code> and avoiding looping altogether.</p>
+<div class="section" id="body-mass-distributions">
+<h3>Body mass distributions<a class="headerlink" href="#body-mass-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Write a script that draws and saves three figures, each containing subplots of distributions of predator mass, prey mass, and the size ratio of prey mass over predator mass <em>by feeding interaction type</em>. Use logarithms of masses (or size ratios)for all three plots. In addition, the script should calculate the (log) mean and median predator mass, prey mass and predator-prey size-ratios to a csv file.</p>
+<p>Call the script <code class="docutils literal notranslate"><span class="pre">PP_Dists.R</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory — sourcing or running this script should result in three files called <code class="docutils literal notranslate"><span class="pre">Pred_Subplots.pdf</span></code>, <code class="docutils literal notranslate"> <span class="pre">Prey_Subplots.pdf</span></code>, and <code class="docutils literal notranslate"><span class="pre">SizeRatio_Subplots.pdf</span></code> (the names should be self-explanatory), and a single csv file <code class="docutils literal notranslate"><span class="pre">PP_Results.csv</span></code> containing the mean and median log predator mass, prey mass, and predator-prey size ratio, by feeding type. The csv file should have appropriate headers (e.g., Feeding type, Mean, Median). (Hint: you will have to initialize a new dataframe or matrix in the script to first store the calculations)</p>
+<p>The script should be self-sufficient and not need any external inputs. It should import the above predator-prey dataset from the appropriate directory, and save the graphic plots to the appropriate directory (Hint: use relative paths!).</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">par()</span></code> function to create the subplots. For calculating the body size statistics by feeding type, you can either use the “loopy” way — first obtaining a list of feeding types (look up the <code class="docutils literal notranslate"><span class="pre">unique</span></code> or <code class="docutils literal notranslate"><span class="pre">levels</span></code> functions) and then loop over them, using <code class="docutils literal notranslate"><span class="pre">subset</span></code> to extract the dataset by feeding type at each iteration, or the R-savvy way, by using <code class="docutils literal notranslate"><span class="pre">tapply</span></code> or <code class="docutils literal notranslate"><span class="pre">ddply</span></code> and avoiding looping altogether.</p>
 </div>
 </div>
-<div class="section" id="high-quality-graphics-in-r">
-<h2>High-quality graphics in R<a class="headerlink" href="#high-quality-graphics-in-r" title="Permalink to this headline">¶</a></h2>
-<p>R can produce beautiful graphics/visualizations, but it typically takes a lot of work to obtain the desired result. This is because the starting point is pretty much a “bare” plot, and adding features commonly required for publication-grade figures (legends, statistics, regressions, sub-plotting etc.) can require a lot of small and painful additional arguments to the plotting commands <em>at the same time</em>, or even additional steps (such as the <a class="reference external" href="#Combining-plot-types">fancy predator-prey scatterplot</a> above).</p>
+<div class="section" id="beautiful-graphics-in-r">
+<h2>Beautiful graphics in R<a class="headerlink" href="#beautiful-graphics-in-r" title="Permalink to this headline">¶</a></h2>
+<p>R can produce beautiful visualizations, but it typically takes a lot of work to obtain the desired result. This is because the starting point is pretty much a “bare” plot, and adding features commonly required for publication-grade figures (legends, statistics, regressions, sub-plotting etc.) can require a lot of small and painful additional arguments to the plotting commands <em>at the same time</em>, or even additional steps (such as the <a class="reference external" href="#Combining-plot-types">fancy predator-prey scatterplot</a> above).</p>
 <p>Moreover, it is very difficult to switch from one representation of the data to another (i.e., from boxplots to scatterplots), or to plot several datasets together. The R package <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> overcomes these issues, and produces truly high-quality, publication-ready graphics suitable for papers, theses and reports.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1650,14 +1788,14 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 <p>If <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is not available on your computer, look up the section on installing packages in the <a class="reference internal" href="07-R.html"><span class="doc std std-doc">R Chapter</span></a>.</p>
 <p>ggplot can be used in two ways: with <code class="docutils literal notranslate"><span class="pre">qplot</span></code> (for <code class="docutils literal notranslate"><span class="pre">q</span></code>uick <code class="docutils literal notranslate"> <span class="pre">plot</span></code>ting) and <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> for fully customized plotting.</p>
 <p><em>Note that <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> only accepts data in data frames.</em></p>
-<div class="section" id="basic-plotting-with-qplot">
-<h3>Basic plotting with <code class="docutils literal notranslate"><span class="pre">qplot</span></code><a class="headerlink" href="#basic-plotting-with-qplot" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="quick-plotting-with-qplot">
+<h3>Quick plotting with <code class="docutils literal notranslate"><span class="pre">qplot</span></code><a class="headerlink" href="#quick-plotting-with-qplot" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">qplot</span></code> can be used to quickly produce graphics for exploratory data analysis, and as a base for more complex graphics. It uses syntax that is closer to the standard R plotting commands.</p>
 <p>We will use the same predator-prey body size dataset again – you will soon see how much nice the same types of plots you made above look when done with ggplot!</p>
 <p>First, load the package:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>  <span class="c1">## Load the package</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1722,7 +1860,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 <div class="section" id="aesthetic-mappings">
 <h4>Aesthetic mappings<a class="headerlink" href="#aesthetic-mappings" title="Permalink to this headline">¶</a></h4>
-<p>These examples demonstrate a key difference between <code class="docutils literal notranslate"><span class="pre">qplot</span></code> and the standard <code class="docutils literal notranslate"><span class="pre">plot</span></code> command: When you want to assign colours, sizes or shapes to the points on your plot, using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command, it’s your responsibility to convert (i.e., “map”) a categorical variable in your data (e.g., type of feeding interaction in the above case) onto colors (or shapes) that <code class="docutils literal notranslate"><span class="pre">plot</span></code> knows how to use (e.g., by specifying “red”, “blue”, “green”, etc).</p>
+<p>These examples demonstrate a key difference between <code class="docutils literal notranslate"><span class="pre">qplot</span></code> (and indeed, ggplot2’s approach) and the standard <code class="docutils literal notranslate"><span class="pre">plot</span></code> command: When you want to assign colours, sizes or shapes to the points on your plot, using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command, it’s your responsibility to convert (i.e., “map”) a categorical variable in your data (e.g., type of feeding interaction in the above case) onto colors (or shapes) that <code class="docutils literal notranslate"><span class="pre">plot</span></code> knows how to use (e.g., by specifying “red”, “blue”, “green”, etc).</p>
 <p>ggplot does this mapping for you automatically, and also provides a legend! This makes it really easy to quickly include additional data (e.g., if a new feeding interaction type was added to the data) on the plot.</p>
 <p>Instead of using ggplot’s automatic mapping, if you want to manually set a color or a shape, you have to use <code class="docutils literal notranslate"><span class="pre">I()</span></code> (meaning “Identity”). To see this in practice, try the following:</p>
 <div class="cell docutils container">
@@ -1834,7 +1972,7 @@ being <code class="docutils literal notranslate"><span class="pre">lm</span></co
 <img alt="../_images/08-Data_R_113_1.png" src="../_images/08-Data_R_113_1.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">lm</span></code> stands for <code class="docutils literal notranslate"><span class="pre">l</span></code>inear <code class="docutils literal notranslate"><span class="pre">m</span></code>odels (linear regression is a type of linear model).</p>
+<p><code class="docutils literal notranslate"><span class="pre">lm</span></code> stands for <code class="docutils literal notranslate"><span class="pre">l</span></code>inear <code class="docutils literal notranslate"><span class="pre">m</span></code>odels. Linear regression is a type of linear model. More on this in the <a class="reference internal" href="11-Stats-Intro.html"><span class="doc std std-doc">Analysis and Statistics Chapters</span></a> of these notes.</p>
 <p>We can also add a “smoother” for each type of interaction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1938,7 +2076,7 @@ idea of the spread:</p>
 <img alt="../_images/08-Data_R_127_1.png" src="../_images/08-Data_R_127_1.png" />
 </div>
 </div>
-<p>You may want to define binwidth (in units of x axis):</p>
+<p>You can also define your own  bin widths (in units of the x axis):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;histogram&quot;</span><span class="p">,</span> 
@@ -2013,7 +2151,6 @@ idea of the spread:</p>
 <img alt="../_images/08-Data_R_139_0.png" src="../_images/08-Data_R_139_0.png" />
 </div>
 </div>
-<p>You can also facet by a combination of categories (this is going to be a big plot!):</p>
 </div>
 <div class="section" id="logarithmic-axes">
 <h4>Logarithmic axes<a class="headerlink" href="#logarithmic-axes" title="Permalink to this headline">¶</a></h4>
@@ -2025,7 +2162,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_142_0.png" src="../_images/08-Data_R_142_0.png" />
+<img alt="../_images/08-Data_R_141_0.png" src="../_images/08-Data_R_141_0.png" />
 </div>
 </div>
 </div>
@@ -2042,7 +2179,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_144_0.png" src="../_images/08-Data_R_144_0.png" />
+<img alt="../_images/08-Data_R_143_0.png" src="../_images/08-Data_R_143_0.png" />
 </div>
 </div>
 <p>Adding <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">theme_bw()</span></code> makes it suitable for black and white printing.</p>
@@ -2056,7 +2193,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_146_0.png" src="../_images/08-Data_R_146_0.png" />
+<img alt="../_images/08-Data_R_145_0.png" src="../_images/08-Data_R_145_0.png" />
 </div>
 </div>
 </div>
@@ -2132,7 +2269,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_150_0.png" src="../_images/08-Data_R_150_0.png" />
+<img alt="../_images/08-Data_R_149_0.png" src="../_images/08-Data_R_149_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2143,7 +2280,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_151_0.png" src="../_images/08-Data_R_151_0.png" />
+<img alt="../_images/08-Data_R_150_0.png" src="../_images/08-Data_R_150_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2154,7 +2291,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_152_0.png" src="../_images/08-Data_R_152_0.png" />
+<img alt="../_images/08-Data_R_151_0.png" src="../_images/08-Data_R_151_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2165,7 +2302,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_153_0.png" src="../_images/08-Data_R_153_0.png" />
+<img alt="../_images/08-Data_R_152_0.png" src="../_images/08-Data_R_152_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2179,7 +2316,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_154_1.png" src="../_images/08-Data_R_154_1.png" />
+<img alt="../_images/08-Data_R_153_1.png" src="../_images/08-Data_R_153_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2190,7 +2327,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_155_0.png" src="../_images/08-Data_R_155_0.png" />
+<img alt="../_images/08-Data_R_154_0.png" src="../_images/08-Data_R_154_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2204,7 +2341,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_156_1.png" src="../_images/08-Data_R_156_1.png" />
+<img alt="../_images/08-Data_R_155_1.png" src="../_images/08-Data_R_155_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2217,7 +2354,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula &#39;y ~ x&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_157_1.png" src="../_images/08-Data_R_157_1.png" />
+<img alt="../_images/08-Data_R_156_1.png" src="../_images/08-Data_R_156_1.png" />
 </div>
 </div>
 </div>
@@ -2250,7 +2387,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_161_0.png" src="../_images/08-Data_R_161_0.png" />
+<img alt="../_images/08-Data_R_160_0.png" src="../_images/08-Data_R_160_0.png" />
 </div>
 </div>
 <p>Plot is blank because we are yet to specify a geometry — only then can we see the graph:</p>
@@ -2261,7 +2398,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_163_0.png" src="../_images/08-Data_R_163_0.png" />
+<img alt="../_images/08-Data_R_162_0.png" src="../_images/08-Data_R_162_0.png" />
 </div>
 </div>
 <p>We can use the “+” sign to concatenate different commands:</p>
@@ -2277,7 +2414,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_165_0.png" src="../_images/08-Data_R_165_0.png" />
+<img alt="../_images/08-Data_R_164_0.png" src="../_images/08-Data_R_164_0.png" />
 </div>
 </div>
 <p>Let’s remove the legend:</p>
@@ -2288,66 +2425,28 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_167_0.png" src="../_images/08-Data_R_167_0.png" />
+<img alt="../_images/08-Data_R_166_0.png" src="../_images/08-Data_R_166_0.png" />
 </div>
 </div>
+<p>You can also create a multifaceted plot by a combination of categories (this is going to be a big plot!):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">.</span><span class="o">~</span> <span class="n">Type.of.feeding.interaction</span> <span class="o">+</span> <span class="n">Location</span><span class="p">,</span> 
-      <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#p &lt;- ggplot(MyDF, aes(x = log(log(Prey.mass/Predator.mass)), y = log(Prey.mass), colour = Type.of.feeding.interaction ))</span>
 
-<span class="nf">facet_grid</span><span class="p">(</span><span class="n">.</span> <span class="o">~</span> <span class="n">vs</span> <span class="o">+</span> <span class="n">carb</span><span class="p">)</span>
+
+<span class="c1">#qplot(log(Prey.mass/Predator.mass), facets = .~ Type.of.feeding.interaction + Location, </span>
+<span class="c1">#      data = MyDF, geom =  &quot;density&quot;)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in Ops.factor(Type.of.feeding.interaction, Location):
-“‘+’ not meaningful for factors”
-Warning message in Ops.factor(Type.of.feeding.interaction, Location):
-“‘+’ not meaningful for factors”
-Warning message in Ops.factor(Type.of.feeding.interaction, Location):
-“‘+’ not meaningful for factors”
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggproto object: Class FacetGrid, Facet, gg&gt;
-    compute_layout: function
-    draw_back: function
-    draw_front: function
-    draw_labels: function
-    draw_panels: function
-    finish_data: function
-    init_scales: function
-    map_data: function
-    params: list
-    setup_data: function
-    setup_params: function
-    shrink: TRUE
-    train_scales: function
-    vars: function
-    super:  &lt;ggproto object: Class FacetGrid, Facet, gg&gt;
-</pre></div>
-</div>
-<img alt="../_images/08-Data_R_168_2.png" src="../_images/08-Data_R_168_2.png" />
 </div>
 </div>
 <p>And you can also change the order of the combination:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">.</span><span class="o">~</span> <span class="n">Location</span> <span class="o">+</span> <span class="n">Type.of.feeding.interaction</span><span class="p">,</span> 
-    <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#qplot(log(Prey.mass/Predator.mass), facets = .~ Location + Type.of.feeding.interaction, </span>
+ <span class="c1">#   data = MyDF, geom =  &quot;density&quot;)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in Ops.factor(Location, Type.of.feeding.interaction):
-“‘+’ not meaningful for factors”
-Warning message in Ops.factor(Location, Type.of.feeding.interaction):
-“‘+’ not meaningful for factors”
-Warning message in Ops.factor(Location, Type.of.feeding.interaction):
-“‘+’ not meaningful for factors”
-</pre></div>
-</div>
-<img alt="../_images/08-Data_R_170_1.png" src="../_images/08-Data_R_170_1.png" />
 </div>
 </div>
 <p>For more fine-tuned faceting, look up the <code class="docutils literal notranslate"><span class="pre">facet_grid()</span></code> and <code class="docutils literal notranslate"><span class="pre">facet_wrap()</span></code> functions within <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. Look up this variant of the <a class="reference external" href="http://www.cookbook-r.com/Graphs">R Cookbook</a> for more examples.</p>
@@ -2361,11 +2460,6 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: reshape2
 </pre></div>
 </div>
 </div>
@@ -2390,7 +2484,7 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">Melt</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">Var1</span><span class="p">,</span> <span class="n">Var2</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">value</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_tile</span><span class="p">()</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">aspect.ratio</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">Melt</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">Var1</span><span class="p">,</span> <span class="n">Var2</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">value</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_tile</span><span class="p">()</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">aspect.ratio</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
 <span class="n">p</span>
 </pre></div>
 </div>
@@ -2402,7 +2496,7 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 <p>Add a black line dividing cells:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">+</span> <span class="nf">geom_tile</span><span class="p">(</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">aspect.ratio</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">+</span> <span class="nf">geom_tile</span><span class="p">(</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">aspect.ratio</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2413,7 +2507,7 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 <p>Remove the legend:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span> <span class="o">=</span> <span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">aspect.ratio</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span> <span class="o">=</span> <span class="s">&quot;none&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">aspect.ratio</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2575,14 +2669,18 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>x</th><th scope=col>y1</th><th scope=col>y2</th><th scope=col>y3</th><th scope=col>Label</th></tr></thead>
+<caption>A data.frame: 6 × 5</caption>
+<thead>
+	<tr><th></th><th scope=col>x</th><th scope=col>y1</th><th scope=col>y2</th><th scope=col>y3</th><th scope=col>Label</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td>3.515424</td><td>4320    </td><td>4320    </td><td>0       </td><td>NA      </td></tr>
-	<tr><td>3.533984</td><td>2160    </td><td>2160    </td><td>0       </td><td>NA      </td></tr>
-	<tr><td>3.557647</td><td>4320    </td><td>4320    </td><td>0       </td><td>NA      </td></tr>
-	<tr><td>3.569953</td><td>4320    </td><td>4320    </td><td>0       </td><td>NA      </td></tr>
-	<tr><td>3.578984</td><td>8640    </td><td>8640    </td><td>0       </td><td>NA      </td></tr>
-	<tr><td>3.585665</td><td>2160    </td><td>2160    </td><td>0       </td><td>NA      </td></tr>
+	<tr><th scope=row>1</th><td>3.515424</td><td>4320</td><td>4320</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>2</th><td>3.533984</td><td>2160</td><td>2160</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>3</th><td>3.557647</td><td>4320</td><td>4320</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>4</th><td>3.569953</td><td>4320</td><td>4320</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>5</th><td>3.578984</td><td>8640</td><td>8640</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>6</th><td>3.585665</td><td>2160</td><td>2160</td><td>0</td><td>NA</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -2643,11 +2741,11 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 <img alt="../_images/08-Data_R_199_1.png" src="../_images/08-Data_R_199_1.png" />
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="id5">
-<h4>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h2>Practicals<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Create a self-sufficient R Script called <code class="docutils literal notranslate"><span class="pre">MyBars.pdf</span></code> that combines all the above commands for annotating a plot, including saving the result figure as a file called <code class="docutils literal notranslate"><span class="pre">MyBars.pdf</span></code> in the results directory.</p>
-</div>
-</div>
 <div class="section" id="mathematical-display">
 <h3>Mathematical display<a class="headerlink" href="#mathematical-display" title="Permalink to this headline">¶</a></h3>
 <p>Let’s try mathematical annotation on a axis, and in the plot area.</p>
@@ -2732,22 +2830,19 @@ Warning message in Ops.factor(Location, Type.of.feeding.interaction):
 <p>Both <code class="docutils literal notranslate"><span class="pre">library()</span></code> and <code class="docutils literal notranslate"><span class="pre">require()</span></code> are commands/functions to load packages. The difference is that <code class="docutils literal notranslate"><span class="pre">require()</span></code> is designed for use inside other functions, so it returns <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and gives a warning, whereas<code class="docutils literal notranslate"><span class="pre">library()</span></code> returns an error by default if the package does not exist.</p>
 </div>
 </div>
-</div>
-<div class="section" id="id7">
-<h2>Practicals<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="visualizing-regression-analyses">
 <h3>Visualizing Regression analyses<a class="headerlink" href="#visualizing-regression-analyses" title="Permalink to this headline">¶</a></h3>
 <p>In this practical, you will write script that draws and saves a pdf file of the following figure, and writes the accompanying regression results to a formatted table in csv. Note that as the plot suggests, that the analysis must be subsetted by the <code class="docutils literal notranslate"><span class="pre">Predator.lifestage</span></code> field of the dataset.</p>
 <hr class="docutils" />
 <p><img alt="image" src="../_images/Figure1.png" />
-&lt;small&lt;center
+<small><center>
 Write a script that generates this figure
-&lt;/center&lt;/small</p>
+</center></small></p>
 <p><em>Guidelines</em>:</p>
 <ul class="simple">
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">R</span></code> script file called <code class="docutils literal notranslate"><span class="pre">PP_Regress.R</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory. Sourcing or running this
-script should result in one pdf file containing the following figure being saved in the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory: (Hint: Use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> command to write to the pdf)</p></li>
-<li><p>In addition, the script should calculate the regression results corresponding to the lines fitted in the figure and save it to a csv delimited table called (<code class="docutils literal notranslate"><span class="pre">PP_Regress_Results.csv</span></code>), in the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory. (Hint: you will have to initialize a new dataframe in the script to first store the calculations and then <code class="docutils literal notranslate"><span class="pre">write.csv()</span></code> or <code class="docutils literal notranslate"><span class="pre">write.table()</span></code> it.)</p></li>
+script should result in one pdf file containing the following figure being saved in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory: (Hint: Use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> command to write to the pdf)</p></li>
+<li><p>In addition, the script should calculate the regression results corresponding to the lines fitted in the figure and save it to a csv delimited table called (<code class="docutils literal notranslate"><span class="pre">PP_Regress_Results.csv</span></code>), in the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory. (Hint: you will have to initialize a new dataframe in the script to first store the calculations and then <code class="docutils literal notranslate"><span class="pre">write.csv()</span></code> or <code class="docutils literal notranslate"><span class="pre">write.table()</span></code> it.)</p></li>
 <li><p>All that you are being asked for here is results of an analysis of Linear regression on subsets of the data corresponding to available Feeding Type <span class="math notranslate nohighlight">\(\times\)</span> Predator life Stage combination — not a multivariate linear model with these two as separate covariates!</p></li>
 <li><p>The regression results should include the following with appropriate headers (e.g., slope, intercept, etc, in each Feeding type <span class="math notranslate nohighlight">\(\times\)</span> life stage category): regression slope, regression intercept, R<span class="math notranslate nohighlight">\(^2\)</span>, F-statistic value, and p-value of the overall regression (Hint: Review the Stats week!).</p></li>
 <li><p>The script should be self-sufficient and not need any external inputs — it should import the above predator-prey dataset from the appropriate directory, and save the graphic plots to the appropriate directory (Hint: use relative paths). Anybody should be able to <code class="docutils literal notranslate"><span class="pre">source</span></code> it without errors.</p></li>

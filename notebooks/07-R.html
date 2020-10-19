@@ -515,32 +515,32 @@
      Strings and Pasting
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-r-functions">
+   Useful R functions
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#useful-r-functions">
-     Useful R functions
+    <a class="reference internal nav-link" href="#for-manipulating-strings">
+     For manipulating strings
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#for-manipulating-strings">
-       For manipulating strings
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mathematical">
-       Mathematical
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#statistical">
-       Statistical
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sets">
-       Sets
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical">
+     Mathematical
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#statistical">
+     Statistical
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sets">
+     Sets
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#generating-random-numbers">
@@ -804,12 +804,12 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-vectorization-challenge">
-     *A vectorization challenge
+     A vectorization challenge
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vectorization-groupwork-practical">
-     Vectorization Groupwork Practical
+    <a class="reference internal nav-link" href="#groupwork-practical-on-vectorization">
+     Groupwork Practical on Vectorization
     </a>
    </li>
   </ul>
@@ -844,11 +844,6 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sweave-and-knitr">
-   Sweave and knitr
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
    Practicals
   </a>
@@ -859,13 +854,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tree-heights-groupwork-practical">
-     Tree Heights Groupwork Practical
+    <a class="reference internal nav-link" href="#groupwork-practical-on-tree-heights">
+     Groupwork Practical on Tree Heights
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tree-heights-groupwork-practical-2">
-     Tree Heights Groupwork Practical 2
+    <a class="reference internal nav-link" href="#groupwork-practical-tree-heights-2">
+     Groupwork Practical Tree Heights  2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -896,7 +891,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#sweave-and-knitr">
      Sweave and knitr
     </a>
    </li>
@@ -1290,6 +1285,22 @@
 </tr>
 </tbody>
 </table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">li</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">li</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'list'</div></div>
+</div>
 </div>
 </div>
 <div class="section" id="variable-types">
@@ -3026,11 +3037,12 @@ Traceback:
 </div>
 <p>Note that this last example creates a vector of 11 strings as it is 1990:2000 <em>inclusive</em>.</p>
 </div>
+</div>
 <div class="section" id="useful-r-functions">
-<h3>Useful R functions<a class="headerlink" href="#useful-r-functions" title="Permalink to this headline">¶</a></h3>
+<h2>Useful R functions<a class="headerlink" href="#useful-r-functions" title="Permalink to this headline">¶</a></h2>
 <p>There are a number of very useful functions available by default (in the “base packages”). Some particularly useful ones are listed below.</p>
 <div class="section" id="for-manipulating-strings">
-<h4>For manipulating strings<a class="headerlink" href="#for-manipulating-strings" title="Permalink to this headline">¶</a></h4>
+<h3>For manipulating strings<a class="headerlink" href="#for-manipulating-strings" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Function</p></th>
@@ -3057,7 +3069,7 @@ Traceback:
 </table>
 </div>
 <div class="section" id="mathematical">
-<h4>Mathematical<a class="headerlink" href="#mathematical" title="Permalink to this headline">¶</a></h4>
+<h3>Mathematical<a class="headerlink" href="#mathematical" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Function</p></th>
@@ -3096,7 +3108,7 @@ Traceback:
 </table>
 </div>
 <div class="section" id="statistical">
-<h4>Statistical<a class="headerlink" href="#statistical" title="Permalink to this headline">¶</a></h4>
+<h3>Statistical<a class="headerlink" href="#statistical" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Function</p></th>
@@ -3138,7 +3150,7 @@ Traceback:
 </table>
 </div>
 <div class="section" id="sets">
-<h4>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h4>
+<h3>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Function</p></th>
@@ -3158,8 +3170,8 @@ Traceback:
 <tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">setequal(x,</span> <span class="pre">y)</span></code></p></td>
 <td class="text-align:left"><p>Check if two vectors x &amp; y are the same set (have same unique elements)</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">element(x,</span> <span class="pre">y)</span></code></p></td>
-<td class="text-align:left"><p>Check if an element x is in vector y</p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">is.element(x,</span> <span class="pre">y)</span></code></p></td>
+<td class="text-align:left"><p>Check if an element x is in vector y (same as <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%in%</span> <span class="pre">y</span></code>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -3181,7 +3193,6 @@ Traceback:
 </li>
 </ol>
 </div></div>
-</div>
 </div>
 </div>
 <div class="section" id="generating-random-numbers">
@@ -3214,7 +3225,7 @@ Traceback:
 </table>
 <div class="section" id="seeding-random-number-generators">
 <h4>“Seeding” random number generators<a class="headerlink" href="#seeding-random-number-generators" title="Permalink to this headline">¶</a></h4>
-<p>Before proceeding further, note that computers <em>can’t</em> generate <em>true</em> mathematically random numbers. This may seem surprising, but basically a computer cannot be programmed to do things purely by chance; it can only follow given instructions blindly and is therefore completely predictable. Instead, computers have algorithms called “pseudo-random number generators” that generate <em>practically random</em> sequences of numbers. These are typically based on a iterative formula that generates a sequence of random numbers, starting with a first number called the “<strong>seed</strong>”. This sequence is completely “deterministic”, that is, starting with a particular seed yields exactly the same sequence of pseudo-random numbers every time you re-run the generator.</p>
+<p>Computers <em>can’t</em> generate <em>true</em> mathematically random numbers. This may seem surprising, but basically a computer cannot be programmed to do things purely by chance; it can only follow given instructions blindly and is therefore completely predictable. Instead, computers have algorithms called “pseudo-random number generators” that generate <em>practically random</em> sequences of numbers. These are typically based on a iterative formula that generates a sequence of random numbers, starting with a first number called the “<strong>seed</strong>”. This sequence is completely “deterministic”, that is, starting with a particular seed yields exactly the same sequence of pseudo-random numbers every time you re-run the generator.</p>
 <p>Try this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3619,8 +3630,8 @@ your R Workspace during the current R session. But the main thing is, you should
 <p>In addition to <code class="docutils literal notranslate"> <span class="pre">Rscript</span></code>, there is another way to run you R script without opening the R console. In Mac or Linux, you can do so by typing:</p>
 <p><code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">CMD</span> <span class="pre">BATCH</span> <span class="pre">MyCode.R</span> <span class="pre">MyResults.Rout</span></code></p>
 <p>This will create an <code class="docutils literal notranslate"><span class="pre">MyResults.Rout</span></code>file containing all the output. On Microsoft Windows, it’s more complicated — change the path to <code class="docutils literal notranslate"><span class="pre">R.exe</span></code>and output file as needed:</p>
-<p><code class="docutils literal notranslate"><span class="pre">&quot;C:\Program</span> <span class="pre">Files\R\R-3.x.x\bin\R.exe&quot;</span> <span class="pre">CMD</span> <span class="pre">BATCH</span> <span class="pre">-vanilla</span> <span class="pre">-slave</span> <span class="pre">&quot;C:\PathToMyResults\Results\MyCode.R&quot;</span></code></p>
-<p>Here, replace 3.x.x with the R version you have.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;C:\Program</span> <span class="pre">Files\R\R-4.x.x\bin\R.exe&quot;</span> <span class="pre">CMD</span> <span class="pre">BATCH</span> <span class="pre">-vanilla</span> <span class="pre">-slave</span> <span class="pre">&quot;C:\PathToMyResults\Results\MyCode.R&quot;</span></code></p>
+<p>Here, replace 4.x.x with the R version you have.</p>
 </div>
 </div>
 <div class="section" id="control-flow-tools">
@@ -3940,9 +3951,17 @@ The syntax for R functions is quite simple, with each function accepting “argu
   <span class="p">}</span> 
   <span class="nf">return</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s">&#39;is odd!&#39;</span><span class="p">))</span>
 <span class="p">}</span>
-<span class="nf">is.even</span><span class="p">(</span><span class="m">6</span><span class="p">)</span>
 
-<span class="c1"># Checks if a number is a power of 2</span>
+<span class="nf">is.even</span><span class="p">(</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'6 is even!'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checks if a number is a power of 2</span>
 <span class="n">is.power2</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">2</span><span class="p">){</span>
   <span class="nf">if </span><span class="p">(</span><span class="nf">log2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">%%</span> <span class="m">1</span><span class="o">==</span><span class="m">0</span><span class="p">)</span>
   <span class="p">{</span>
@@ -3950,9 +3969,17 @@ The syntax for R functions is quite simple, with each function accepting “argu
   <span class="p">}</span> 
   <span class="nf">return</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s">&#39;is not a power of 2!&#39;</span><span class="p">))</span>
 <span class="p">}</span>
-<span class="nf">is.power2</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
 
-<span class="c1"># Checks if a number is prime</span>
+<span class="nf">is.power2</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'4 is a power of 2!'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checks if a number is prime</span>
 <span class="n">is.prime</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">){</span>
   <span class="nf">if </span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="m">0</span><span class="p">){</span>
     <span class="nf">return</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s">&#39;is a zero!&#39;</span><span class="p">))</span>
@@ -3966,14 +3993,15 @@ The syntax for R functions is quite simple, with each function accepting “argu
   <span class="p">}</span> 
   <span class="nf">return</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="s">&#39;is a composite!&#39;</span><span class="p">))</span>
 <span class="p">}</span>
+
 <span class="nf">is.prime</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">'6 is even!'</div><div class="output text_html">'4 is a power of 2!'</div><div class="output text_html">'3 is a prime!'</div></div>
+<div class="output text_html">'3 is a prime!'</div></div>
 </div>
-<p><span class="math notranslate nohighlight">\(\star\)</span> Run this code in R block by block and check make sure you understand what each function is doing and how.</p>
+<p><span class="math notranslate nohighlight">\(\star\)</span> Run the three blocks of code in R one at a time and make sure you understand what each function is doing and how. Save all three blocks to a single script file called <code class="docutils literal notranslate"><span class="pre">R_conditionals.R</span></code> in your <code class="docutils literal notranslate"><span class="pre">code</span></code> directory, and make sure it runs using <code class="docutils literal notranslate"><span class="pre">source</span></code> and <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> (in the Linux/Ubuntu terminal) .</p>
 </div>
 <div class="section" id="an-example-utility-function">
 <h3>An example utility function<a class="headerlink" href="#an-example-utility-function" title="Permalink to this headline">¶</a></h3>
@@ -3992,19 +4020,19 @@ The syntax for R functions is quite simple, with each function accepting “argu
 <span class="c1"># The heights of the tree, same units as &quot;distance&quot;</span>
 
 <span class="n">TreeHeight</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">degrees</span><span class="p">,</span> <span class="n">distance</span><span class="p">){</span>
-  <span class="n">radians</span> <span class="o">&lt;-</span> <span class="n">degrees</span> <span class="o">*</span> <span class="kc">pi</span> <span class="o">/</span> <span class="m">180</span>
-  <span class="n">height</span> <span class="o">&lt;-</span> <span class="n">distance</span> <span class="o">*</span> <span class="nf">tan</span><span class="p">(</span><span class="n">radians</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Tree height is:&quot;</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    <span class="n">radians</span> <span class="o">&lt;-</span> <span class="n">degrees</span> <span class="o">*</span> <span class="kc">pi</span> <span class="o">/</span> <span class="m">180</span>
+    <span class="n">height</span> <span class="o">&lt;-</span> <span class="n">distance</span> <span class="o">*</span> <span class="nf">tan</span><span class="p">(</span><span class="n">radians</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Tree height is:&quot;</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
   
-  <span class="nf">return </span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+    <span class="nf">return </span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="nf">TreeHeight</span><span class="p">(</span><span class="m">37</span><span class="p">,</span> <span class="m">40</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">TreeHeight.R</span></code> block by block and check what each line is doing.</p></li>
-<li><p>Now test it using <code class="docutils literal notranslate"><span class="pre">source</span></code> and/or <code class="docutils literal notranslate"><span class="pre">Rscript</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">TreeHeight.R</span></code>’s two blocks (the <code class="docutils literal notranslate"><span class="pre">TreeHeight</span></code> function, and the call to the function, <code class="docutils literal notranslate"><span class="pre">TreeHeight(37,</span> <span class="pre">40)</span></code>) by pasting them sequentially into the R console. Try and understand what each line is doing.</p></li>
+<li><p>Now test the whole <code class="docutils literal notranslate"><span class="pre">TreeHeight.R</span></code> script at one go using <code class="docutils literal notranslate"><span class="pre">source</span></code> and/or <code class="docutils literal notranslate"><span class="pre">Rscript</span></code> (in Linux/Ubuntu).</p></li>
 </ul>
 </div>
 </div>
@@ -4339,7 +4367,7 @@ for some guidelines.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_281_0.png" src="../_images/07-R_281_0.png" />
+<img alt="../_images/07-R_288_0.png" src="../_images/07-R_288_0.png" />
 </div>
 </div>
 <p>Now run and time the different functions:</p>
@@ -4699,7 +4727,7 @@ for examples.    There you will also see a comparison of speed of <code class="d
 <div class="section" id="id1">
 <h2>Practicals<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="a-vectorization-challenge">
-<h3>*A vectorization challenge<a class="headerlink" href="#a-vectorization-challenge" title="Permalink to this headline">¶</a></h3>
+<h3>A vectorization challenge<a class="headerlink" href="#a-vectorization-challenge" title="Permalink to this headline">¶</a></h3>
 <p>The Ricker model is a classic discrete population model which was introduced in 1954 by Ricker to model recruitment of stock in fisheries. It gives the expected number (or density) <span class="math notranslate nohighlight">\(N_{t+1}\)</span> of individuals in generation <span class="math notranslate nohighlight">\(t + 1\)</span> as a function of the number of individuals in the previous generation <span class="math notranslate nohighlight">\(t\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ N_{t+1}= N_t e^{r\left(1-\frac{N_t}{k}\right)} \]</div>
@@ -4726,14 +4754,14 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_301_0.png" src="../_images/07-R_301_0.png" />
+<img alt="../_images/07-R_308_0.png" src="../_images/07-R_308_0.png" />
 </div>
 </div>
 <p>Now open and run the script <code class="docutils literal notranslate"><span class="pre">Vectorize2.R</span></code> (available on the TheMulQuaBio repository). This is the stochastic Ricker model (compare with the above script to see where the stochasticity (random error) enters). Now modify the script to complete the exercise given.
 <em>Your goal is to come up with a solution better than mine!</em></p>
 </div>
-<div class="section" id="vectorization-groupwork-practical">
-<h3>Vectorization Groupwork Practical<a class="headerlink" href="#vectorization-groupwork-practical" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="groupwork-practical-on-vectorization">
+<h3>Groupwork Practical on Vectorization<a class="headerlink" href="#groupwork-practical-on-vectorization" title="Permalink to this headline">¶</a></h3>
 <p>Implement the python versions of <code class="docutils literal notranslate"><span class="pre">Vectorize1.R</span></code>and <code class="docutils literal notranslate"> <span class="pre">Vectorize2.R</span></code> (call them <code class="docutils literal notranslate"><span class="pre">Vectorize1.py</span></code> and <code class="docutils literal notranslate"><span class="pre">Vectorize2.py</span></code> respectively). Then write a bash script that compares the computational speed of the four scripts. the bash script should display meaningful summary of the results in the terminal.</p>
 </div>
 </div>
@@ -4981,22 +5009,26 @@ attr(,&quot;condition&quot;)
 </div>
 <div class="section" id="packages">
 <h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
-<p>The main strength of R is that users can easily build and share  packages through <a class="reference external" href="https://cran.r-project.org">cran.r-project.org</a>. There are packages to do most statistical and mathematical analysis you might conceive, so check them out before reinventing the wheel! Visit <a class="reference external" href="https://cran.r-project.org">cran.r-project.org</a> and go to packages to see a list and a brief description.</p>
-<p>In UNIX, you can use the bash terminal to install R packages:</p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">r-cran-ggplot2</span> <span class="pre">r-cran-plyr</span> <span class="pre">r-cran-reshape2</span></code></p>
-<p>In Windows and Macs and Linux, you can install a package within R by using the <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code>command. Install the following packages:</p>
-<p><code class="docutils literal notranslate"><span class="pre">install.packages(c(&quot;ggplot2&quot;,&quot;plyr&quot;,&quot;reshape2&quot;))</span></code></p>
-<p>You can also use the RStudio GUI to install packages using your mouse and menu. In Linux, you will have to launch a <code class="docutils literal notranslate"> <span class="pre">sudo</span> <span class="pre">R</span></code>session to get <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code>to work properly. Otherwise, you be forced to install the package in a non-standard location on your drive that does not require <code class="docutils literal notranslate"><span class="pre">sudo</span></code> privileges (nor recommended).</p>
+<p>The big strength of R is that users can easily build and share packages through <a class="reference external" href="https://cran.r-project.org">cran.r-project.org</a>.</p>
+<p>There are R packages for practically all statistical and mathematical analysis you might conceive, so check them out before reinventing the wheel. Visit <a class="reference external" href="https://cran.r-project.org">cran.r-project.org</a> and go to packages to see a list and a brief description.</p>
+<p>In Windows and Macs and Linux, you can install a package within R by using the <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code>command.</p>
+<p>For example:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>You can also install multiple packages by concatenating their names: <code class="docutils literal notranslate"><span class="pre">install.packages(c(&quot;pack1&quot;,&quot;pack2&quot;,&quot;pack3&quot;))</span></code>
+(three packages in this hypothetical example)</p>
+<p>In Ubuntu, you will have to launch a <code class="docutils literal notranslate"> <span class="pre">sudo</span> <span class="pre">R</span></code>session to get <code class="docutils literal notranslate"><span class="pre">install.packages()</span></code>to work properly. Otherwise, you be forced to install the package in a non-standard location on your drive that does not require <code class="docutils literal notranslate"><span class="pre">sudo</span></code> privileges (nor recommended).</p>
+<p>You can also use the RStudio GUI to install packages using your mouse and menu.</p>
+<p>In Ubuntu, you can also use the bash terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install r-cran-tidyverse
+</pre></div>
+</div>
 <div class="section" id="building-your-own">
 <h3>Building your own<a class="headerlink" href="#building-your-own" title="Permalink to this headline">¶</a></h3>
 <p>You can combine your code, data sets and documentation to make a <em>bona fide</em> R package. You may wish to do this for particularly large projects that you think will be useful for others. Read the <a class="reference external" href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html"><em>Writing R Extensions</em></a> manual and see <em>package.skeleton</em> to get started.</p>
 <p>The R tool set <a class="reference external" href="https://github.com/DomBennett/EcoDataTools">EcoDataTools</a> and the package <a class="reference external" href="https://github.com/quicklizard99/cheddar">cheddar</a> were written by Silwood Grad Students!</p>
 </div>
-</div>
-<div class="section" id="sweave-and-knitr">
-<h2>Sweave and knitr<a class="headerlink" href="#sweave-and-knitr" title="Permalink to this headline">¶</a></h2>
-<p>Sweave and knitr are tools that allows you to write your Dissertation Report or some other document such that it can be updated automatically if data or R analysis change. Instead of inserting a prefabricated graph or table into the report, the master document contains the R code necessary to obtain it. When run through R, all data analysis output (tables, graphs, etc.) is created on the fly and inserted into a final document, which can be written using <span class="math notranslate nohighlight">\(\LaTeX\)</span>, LyX, HTML, or Markdown. The report can be automatically updated if data or analysis change, which allows for truly reproducible research.</p>
-<p><a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr">Check this out</a> and <a class="reference external" href="http://yihui.name/knitr/">also this</a>.</p>
 </div>
 <div class="section" id="id2">
 <h2>Practicals<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -5013,8 +5045,8 @@ attr(,&quot;condition&quot;)
 *  Then calculate what fraction of the correlation coefficients from the previous step were greater than that from step 1 (this is your approximate p-value).
 * <em>How do you interpret these results? Why?</em> Present your results and their interpretation in a pdf document written in <span class="math notranslate nohighlight">\(\LaTeX\)</span> (please include the the document’s source code as well).</p>
 </div>
-<div class="section" id="tree-heights-groupwork-practical">
-<h3>Tree Heights Groupwork Practical<a class="headerlink" href="#tree-heights-groupwork-practical" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="groupwork-practical-on-tree-heights">
+<h3>Groupwork Practical on Tree Heights<a class="headerlink" href="#groupwork-practical-on-tree-heights" title="Permalink to this headline">¶</a></h3>
 <p>The goal of this practical is to make the <code class="docutils literal notranslate"><span class="pre">TreeHeight.R</span></code> Groupwork script more general, so that it could be used for other datasets, not just <code class="docutils literal notranslate"><span class="pre">trees.csv</span></code>.</p>
 <p>Guidelines:</p>
 <ul class="simple">
@@ -5022,8 +5054,8 @@ attr(,&quot;condition&quot;)
 <li><p>Write a Unix shell script called <code class="docutils literal notranslate"> <span class="pre">run_get_TreeHeight.sh</span></code> that tests <code class="docutils literal notranslate"> <span class="pre">get_TreeHeight.R</span></code>. Include <code class="docutils literal notranslate"><span class="pre">trees.csv</span></code>as your example file. Note that     <code class="docutils literal notranslate"> <span class="pre">source</span></code>will not work in this case as it does not allow scripts with arguments to be run; you will have to use <code class="docutils literal notranslate"> <span class="pre">Rscript</span></code>instead.</p></li>
 </ul>
 </div>
-<div class="section" id="tree-heights-groupwork-practical-2">
-<h3>Tree Heights Groupwork Practical 2<a class="headerlink" href="#tree-heights-groupwork-practical-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="groupwork-practical-tree-heights-2">
+<h3>Groupwork Practical Tree Heights  2<a class="headerlink" href="#groupwork-practical-tree-heights-2" title="Permalink to this headline">¶</a></h3>
 <p>Assuming you have already worked through <a class="reference internal" href="05-Python_I.html"><span class="doc std std-doc">Python Chapter I</span></a>, write a Python version of <code class="docutils literal notranslate"><span class="pre">get_TreeHeight.R</span></code> (call it <code class="docutils literal notranslate"> <span class="pre">get_TreeHeight.py</span></code>). Include a test of this script into <code class="docutils literal notranslate"> <span class="pre">run_get_TreeHeight.sh</span></code>.</p>
 </div>
 <div class="section" id="practicals-wrap-up">
@@ -5063,8 +5095,9 @@ attr(,&quot;condition&quot;)
 <li><p>If you are sticking with RStudio, <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">see this</a></p></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>Sweave and knitr<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sweave-and-knitr">
+<h3>Sweave and knitr<a class="headerlink" href="#sweave-and-knitr" title="Permalink to this headline">¶</a></h3>
+<p>Sweave and knitr are tools that allows you to write your Dissertation Report or some other document such that it can be updated automatically if data or R analysis change. Instead of inserting a prefabricated graph or table into the report, the master document contains the R code necessary to obtain it. When run through R, all data analysis output (tables, graphs, etc.) is created on the fly and inserted into a final document, which can be written using <span class="math notranslate nohighlight">\(\LaTeX\)</span>, LyX, HTML, or Markdown. The report can be automatically updated if data or analysis change, which allows for truly reproducible research.</p>
 <ul class="simple">
 <li><p>For a practical intro to Sweave and knitr, see <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr">this</a> and <a class="reference external" href="http://yihui.name/knitr/">this</a>.</p></li>
 </ul>
