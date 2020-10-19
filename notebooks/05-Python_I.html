@@ -165,7 +165,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08-Data_R.html">
-   Data management, Exploration and Visualization
+   Data Management, Exploration and Visualization
   </a>
  </li>
  <li class="toctree-l1">
@@ -769,30 +769,26 @@
     <a class="reference internal nav-link" href="#align-dna-sequences">
      Align DNA sequences
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#align-dna-sequences-groupwork-practical-1">
-       Align DNA sequences Groupwork Practical 1
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#align-dna-sequences-groupwork-practical-2">
-       Align DNA sequences Groupwork Practical 2
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupwork-practical-on-align-dna-sequences">
+     Groupwork Practical on Align DNA sequences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupwork-practical-on-align-dna-sequences-2">
+     Groupwork Practical on Align DNA sequences 2
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#missing-oaks-problem">
      Missing oaks problem
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#missing-oaks-problem-groupwork-practical-1">
-       Missing oaks problem Groupwork Practical 1
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupwork-practical-on-missing-oaks-problem">
+     Groupwork Practical on Missing oaks problem
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#practicals-wrap-up">
@@ -3505,16 +3501,17 @@ for efficient data crunching</p></li>
 <li><p>Convert <code class="docutils literal notranslate"><span class="pre">align_seqs.py</span></code> to a Python program that takes the DNA sequences as an input from a single external file and saves the best alignment along with its corresponding score in a single text file (your choice of format and file type) to an appropriate location. No external input should be required; that is, you should still only need to use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">align_seq.py</span></code> to run it.
 For example, the input file can be a single <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file with the two example sequences given at the top of the original script.</p></li>
 </ul>
-<div class="section" id="align-dna-sequences-groupwork-practical-1">
-<h4>Align DNA sequences Groupwork Practical 1<a class="headerlink" href="#align-dna-sequences-groupwork-practical-1" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="groupwork-practical-on-align-dna-sequences">
+<h3>Groupwork Practical on Align DNA sequences<a class="headerlink" href="#groupwork-practical-on-align-dna-sequences" title="Permalink to this headline">¶</a></h3>
 <p>Align all the <code class="docutils literal notranslate"><span class="pre">.fasta</span></code> sequences from the <a class="reference internal" href="01-Unix.html"><span class="doc std std-doc">Unix chapter</span></a>. Call the new script <code class="docutils literal notranslate"><span class="pre">align_seqs_fasta.py</span></code>. Unlike <code class="docutils literal notranslate"><span class="pre">align_seqs.py</span></code>, this script should take <em>any</em> two fasta sequences (in separate files) to be aligned as input. So this script would typically run by using explicit inputs, for example, when called with something like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python align_seqs_fasta.py seq1.csv seq2.csv
 </pre></div>
 </div>
 <p>However, it should still run if no inputs were given, using two fasta sequences from the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory as defaults.</p>
 </div>
-<div class="section" id="align-dna-sequences-groupwork-practical-2">
-<h4>Align DNA sequences Groupwork Practical 2<a class="headerlink" href="#align-dna-sequences-groupwork-practical-2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="groupwork-practical-on-align-dna-sequences-2">
+<h3>Groupwork Practical on Align DNA sequences 2<a class="headerlink" href="#groupwork-practical-on-align-dna-sequences-2" title="Permalink to this headline">¶</a></h3>
 <p>The current script/program runs through all possible starting points on the main sequence and then just takes the first of the alignments with the highest score. This should be apparent if you closely examine this part of the script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l1</span><span class="p">):</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">calculate_score</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
@@ -3528,7 +3525,6 @@ For example, the input file can be a single <code class="docutils literal notran
 <li><p>Modify the script so that all the equally best alignments are recorded and saved to the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory in an appropriate file format (Hint: recall <code class="docutils literal notranslate"><span class="pre">pickle</span></code>). Call your new script <code class="docutils literal notranslate"><span class="pre">align_seqs_better.py</span></code>.</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="missing-oaks-problem">
 <h3>Missing oaks problem<a class="headerlink" href="#missing-oaks-problem" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -3540,8 +3536,9 @@ For example, the input file can be a single <code class="docutils literal notran
 <ul class="simple">
 <li><p>Modify your doctests approriately, and  modify your script such that it can handle cases where there is a typo (such as ‘Quercuss’) or there is a genus name that is not strictly ‘Quercus’.</p></li>
 </ul>
-<div class="section" id="missing-oaks-problem-groupwork-practical-1">
-<h4>Missing oaks problem Groupwork Practical 1<a class="headerlink" href="#missing-oaks-problem-groupwork-practical-1" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="groupwork-practical-on-missing-oaks-problem">
+<h3>Groupwork Practical on Missing oaks problem<a class="headerlink" href="#groupwork-practical-on-missing-oaks-problem" title="Permalink to this headline">¶</a></h3>
 <p>You might have noticed that the headers in the data column are being included in the program as if they were a genus and species. That is, the first block of the program’s output is:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="s1">&#39;Genus&#39;</span>, <span class="s1">&#39; species&#39;</span><span class="o">]</span>
 The genus is:
@@ -3552,7 +3549,6 @@ Genus
 <li><p>Modify the script so that it excludes the header row (if it exists) in its search for oaks in a given dataset.</p></li>
 <li><p>You might also have noticed that the output of the program writes a new file containing just the names of oaks. However, it does not include the column headers (“Genus”, “species”). Fix this.</p></li>
 </ul>
-</div>
 </div>
 <div class="section" id="practicals-wrap-up">
 <h3>Practicals wrap-up<a class="headerlink" href="#practicals-wrap-up" title="Permalink to this headline">¶</a></h3>

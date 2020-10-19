@@ -423,6 +423,18 @@
   <a class="reference internal nav-link" href="#practicals">
    Practicals
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-wrangling-with-tidyverse">
+     Data wrangling with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       tidyverse
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#handling-big-data-in-r">
@@ -498,11 +510,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lattice-plots">
-     Lattice plots
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#saving-your-graphics">
      Saving your graphics
     </a>
@@ -513,6 +520,13 @@
   <a class="reference internal nav-link" href="#id2">
    Practicals
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sub-plots">
+     Sub-plots
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#high-quality-graphics-in-r">
@@ -644,13 +658,18 @@
     <a class="reference internal nav-link" href="#mathematical-display">
      Mathematical display
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       Exercise
-      </a>
-     </li>
-    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Practicals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-script">
+     Plotting script
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ggthemes">
@@ -663,11 +682,40 @@
   <a class="reference internal nav-link" href="#id7">
    Practicals
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-regression-analyses">
+     Visualizing Regression analyses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mapping">
+     Mapping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupwork-practical-regression-analysis">
+     Groupwork practical: Regression analysis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#readings-resources">
    Readings &amp; Resources
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-management-reformatting-and-cleaning">
+     Data management, reformatting and cleaning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization">
+     Visualization
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -759,26 +807,22 @@
 </li>
 <li><p>I have avoided spaces in the columns headers (so “FieldName” instead of “Field Name”) — please avoid spaces in field or column names because R will replace each space in a column header with a dot, which may be confusing.</p></li>
 </ul>
-<blockquote>
-<div><p><strong>The text encoding of your data file:</strong> If you have a string, in memory (e.g., a named variable in your R workspace) or in a file the computer has to know what encoding it is in or it cannot interpret or display it to you correctly. Usually, the encoding will be UTF-8 or ASCII, which is easily handled by most computer languages. Sometimes you may run into (unexpected) bugs when importing and running scripts in <code class="docutils literal notranslate"><span class="pre">R</span></code> because your file has a non-standard text encoding. You will need to specify the encoding in that case, using the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> argument of <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> and <code class="docutils literal notranslate"><span class="pre">read.table()</span></code>. You can check the encoding of a file by using <code class="docutils literal notranslate"><span class="pre">find</span></code> in Linux/Mac. Try in your UNIX terminal:</p>
-</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>The text encoding of your data file:</strong> If you have a string, in memory (e.g., a named variable in your R workspace) or in a file the computer has to know what encoding it is in or it cannot interpret or display it to you correctly. Usually, the encoding will be UTF-8 or ASCII, which is easily handled by most computer languages. Sometimes you may run into (unexpected) bugs when importing and running scripts in <code class="docutils literal notranslate"><span class="pre">R</span></code> because your file has a non-standard text encoding. You will need to specify the encoding in that case, using the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> argument of <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> and <code class="docutils literal notranslate"><span class="pre">read.table()</span></code>. You can check the encoding of a file by using <code class="docutils literal notranslate"><span class="pre">find</span></code> in Linux/Mac. Try in your UNIX terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>file -i ../data/PoundHillData.csv
 </pre></div>
+</div>
 </div>
 <p>or, check encoding of all files in the <code class="docutils literal notranslate"><span class="pre">Data</span></code> directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>file -i ../data/*.csv
 </pre></div>
 </div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">-I</span></code> instead of <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">-i</span></code> in a Mac terminal.</p>
-<blockquote>
-<div><p><strong>Boolean arguments in R</strong>: In <code class="docutils literal notranslate"><span class="pre">R</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code> for boolean <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> respectively. To see this, type</p>
-</div></blockquote>
-<div class="highlight-rscript notranslate"><div class="highlight"><pre><span></span>a &lt;- T``` 
-in the R commandline, and then see what R returns when you type `a`
-
-Now check out what the data look like:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p>Now check out what the data look like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">MyData</span><span class="p">)</span>
@@ -809,6 +853,17 @@ Now check out what the data look like:
 <h3>Keep a metadata file for each unique dataset<a class="headerlink" href="#keep-a-metadata-file-for-each-unique-dataset" title="Permalink to this headline">¶</a></h3>
 <p>Data wrangling really begins immediately after data collection. You may collect data of different kinds (e.g., diversity, biomass, tree girth), etc. Keep the original spreadsheet well documented using a “metadata” file that describes the data (you would hopefully have written the first version of this even before you started collecting the data!). The minimum information needed to make a metadata file useful is a description of each of the <em>fields</em> — the column or row headers under which the information is stored in your data/spreadsheet.</p>
 <p>Have a look at the metadata file for the Pound Hill dataset:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Boolean arguments in R</strong>: In <code class="docutils literal notranslate"><span class="pre">R</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code> for boolean <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> respectively. To see this, type</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="bp">T</span>
+</pre></div>
+</div>
+</div>
+<p>in the R commandline, and then see what R returns when you type <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">MyMetaData</span>
@@ -908,6 +963,11 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div></div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">stringsAsFactors</span> <span class="pre">=</span> <span class="pre">F</span></code> is important here because we don’t want R to convert columns to the factor class without supervision. This might be a good idea in may cases, but let’s just do it manually later. This will also force you to think carefully about what data each of you columns contains.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of R version 4.0.0 of R released in April 2020, the default for
+<code class="docutils literal notranslate"><span class="pre">stringsAsFactors</span></code> <a class="reference external" href="https://cran.r-project.org/doc/manuals/r-devel/NEWS.html">was changed to false</a>.</p>
+</div>
 <p>Now let’s assign the original column names to the temporary dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -959,6 +1019,14 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: reshape2
+
+Error: package or namespace load failed for ‘reshape2’:
+ package ‘reshape2’ was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+</pre></div>
+</div>
+</div>
 </div>
 <p>Check out the help for the <code class="docutils literal notranslate"><span class="pre">melt</span></code> command of <code class="docutils literal notranslate"><span class="pre">reshape2</span></code>: <code class="docutils literal notranslate"><span class="pre">?melt</span></code>.</p>
 <p>And finally, let’s wrangle this dataset into submission!</p>
@@ -970,29 +1038,11 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr></thead>
-<tbody>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q1                  </td><td>Achillea millefolium</td><td>4                   </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q2                  </td><td>Achillea millefolium</td><td>8                   </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q3                  </td><td>Achillea millefolium</td><td>3                   </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q4                  </td><td>Achillea millefolium</td><td>20                  </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q5                  </td><td>Achillea millefolium</td><td>6                   </td></tr>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q1                  </td><td>Achillea millefolium</td><td>4                   </td></tr>
-</tbody>
-</table>
-</div><div class="output text_html"><table>
-<thead><tr><th></th><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr></thead>
-<tbody>
-	<tr><th scope=row>2414</th><td>may           </td><td>d             </td><td>12            </td><td>Q4            </td><td>Vulpia myuros </td><td>0             </td></tr>
-	<tr><th scope=row>2415</th><td>october       </td><td>d             </td><td>11            </td><td>Q1            </td><td>Vulpia myuros </td><td>0             </td></tr>
-	<tr><th scope=row>2416</th><td>october       </td><td>d             </td><td>11            </td><td>Q2            </td><td>Vulpia myuros </td><td>0             </td></tr>
-	<tr><th scope=row>2417</th><td>october       </td><td>d             </td><td>11            </td><td>Q3            </td><td>Vulpia myuros </td><td>0             </td></tr>
-	<tr><th scope=row>2418</th><td>october       </td><td>d             </td><td>11            </td><td>Q4            </td><td>Vulpia myuros </td><td>0             </td></tr>
-	<tr><th scope=row>2419</th><td>october       </td><td>d             </td><td>11            </td><td>Q5            </td><td>Vulpia myuros </td><td>0             </td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">melt</span><span class="p">(</span><span class="n">TempData</span><span class="p">,</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s2">&quot;Cultivation&quot;</span><span class="p">,</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span> <span class="s2">&quot;Plot&quot;</span><span class="p">,</span> <span class="s2">&quot;Quadrat&quot;</span><span class="p">),</span> <span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;melt&quot;</span>
+<span class="ne">Traceback</span>:
+</pre></div>
+</div>
+</div>
 </div>
 <p>This is the long format we have been extolling! It looks much simpler, with all the count data in a single, long column with each count value associated with some “attributes”. It is now clear that the fundamental unit of analysis is a species’ count in a quadrat, each nested within a plot, each in turn nested within a block, and finally, each of which is nested within a cultivation month (the main treatment).</p>
 <p>We can also now assign the correct data types to each column:</p>
@@ -1008,13 +1058,11 @@ file</em>—make a copy (with a meaningful tag in the file name to indicate the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	2419 obs. of  6 variables:
- $ Cultivation: Factor w/ 3 levels &quot;march&quot;,&quot;may&quot;,..: 3 3 3 3 3 2 2 2 2 2 ...
- $ Block      : Factor w/ 4 levels &quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;: 1 1 1 1 1 1 1 1 1 1 ...
- $ Plot       : Factor w/ 12 levels &quot;1&quot;,&quot;10&quot;,&quot;11&quot;,..: 1 1 1 1 1 5 5 5 5 5 ...
- $ Quadrat    : Factor w/ 6 levels &quot;Q1&quot;,&quot;Q2&quot;,&quot;Q3&quot;,..: 1 2 3 4 5 1 2 3 4 5 ...
- $ Species    : Factor w/ 41 levels &quot;Achillea millefolium&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
- $ Count      : int  4 8 3 20 6 4 0 0 0 0 ...
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="ow">is</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;MyWrangledData&#39;</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="k">as</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">[,</span> <span class="s2">&quot;Cultivation&quot;</span><span class="p">])</span>
+<span class="mi">2</span><span class="o">.</span> <span class="ow">is</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1039,6 +1087,24 @@ platforms (recall the <a class="reference internal" href="07-R.html"><span class
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: dplyr
+
+
+Attaching package: ‘dplyr’
+
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
 </div>
 <p>Then try these commands:</p>
 <div class="cell docutils container">
@@ -1048,89 +1114,25 @@ platforms (recall the <a class="reference internal" href="07-R.html"><span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr></thead>
-<tbody>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 4                  </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 8                  </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 3                  </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q4                  </td><td>Achillea millefolium</td><td>20                  </td></tr>
-	<tr><td>october             </td><td>a                   </td><td>1                   </td><td>Q5                  </td><td>Achillea millefolium</td><td> 6                  </td></tr>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 4                  </td></tr>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q4                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q5                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 1                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 2                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 5                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q4                  </td><td>Achillea millefolium</td><td>12                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q5                  </td><td>Achillea millefolium</td><td> 2                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q6                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>b                   </td><td>4                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>b                   </td><td>4                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>b                   </td><td>4                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>b                   </td><td>4                   </td><td>Q4                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>may                 </td><td>b                   </td><td>4                   </td><td>Q5                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>march               </td><td>b                   </td><td>5                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 3                  </td></tr>
-	<tr><td>march               </td><td>b                   </td><td>5                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 8                  </td></tr>
-	<tr><td>march               </td><td>b                   </td><td>5                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 3                  </td></tr>
-	<tr><td>march               </td><td>b                   </td><td>5                   </td><td>Q4                  </td><td>Achillea millefolium</td><td> 7                  </td></tr>
-	<tr><td>march               </td><td>b                   </td><td>5                   </td><td>Q5                  </td><td>Achillea millefolium</td><td>20                  </td></tr>
-	<tr><td>october             </td><td>b                   </td><td>6                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 1                  </td></tr>
-	<tr><td>october             </td><td>b                   </td><td>6                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>october             </td><td>b                   </td><td>6                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 3                  </td></tr>
-	<tr><td>october             </td><td>b                   </td><td>6                   </td><td>Q4                  </td><td>Achillea millefolium</td><td> 1                  </td></tr>
-	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
-	<tr><td>october       </td><td>b             </td><td>6             </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>c             </td><td>7             </td><td>Q1            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>c             </td><td>7             </td><td>Q2            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>c             </td><td>7             </td><td>Q3            </td><td>Vulpia myuros </td><td> 1            </td></tr>
-	<tr><td>march         </td><td>c             </td><td>7             </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>c             </td><td>7             </td><td>Q5            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>c             </td><td>8             </td><td>Q1            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>c             </td><td>8             </td><td>Q2            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>c             </td><td>8             </td><td>Q3            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>c             </td><td>8             </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>c             </td><td>8             </td><td>Q5            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>c             </td><td>9             </td><td>Q1            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>c             </td><td>9             </td><td>Q2            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>c             </td><td>9             </td><td>Q3            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>c             </td><td>9             </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>c             </td><td>9             </td><td>Q5            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>d             </td><td>10            </td><td>Q1            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>d             </td><td>10            </td><td>Q2            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>d             </td><td>10            </td><td>Q3            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>d             </td><td>10            </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>march         </td><td>d             </td><td>10            </td><td>Q5            </td><td>Vulpia myuros </td><td>25            </td></tr>
-	<tr><td>march         </td><td>d             </td><td>10            </td><td>Q6            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>d             </td><td>12            </td><td>Q1            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>d             </td><td>12            </td><td>Q2            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>may           </td><td>d             </td><td>12            </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>d             </td><td>11            </td><td>Q1            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>d             </td><td>11            </td><td>Q2            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>d             </td><td>11            </td><td>Q3            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>d             </td><td>11            </td><td>Q4            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-	<tr><td>october       </td><td>d             </td><td>11            </td><td>Q5            </td><td>Vulpia myuros </td><td> 0            </td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“`tbl_df()` is deprecated as of dplyr 1.0.0.
+Please use `tibble::as_tibble()` instead.
+This warning is displayed once every 8 hours.
+Call `lifecycle::last_warnings()` to see where this warning was generated.”
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">as_tibble</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">.</span><span class="n">name_repair</span> <span class="o">=</span> <span class="s2">&quot;check_unique&quot;</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;MyWrangledData&#39;</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">dplyr</span><span class="p">::</span><span class="n">tbl_df</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">as_tibble</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">.</span><span class="n">name_repair</span> <span class="o">=</span> <span class="s2">&quot;check_unique&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dplyr</span><span class="o">::</span><span class="nf">glimpse</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">)</span> <span class="c1">#like str(), but nicer!</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Observations: 2,419
-Variables: 6
-$ Cultivation &lt;fct&gt; october, october, october, october, october, may, may, ma…
-$ Block       &lt;fct&gt; a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, a, b, b, b, …
-$ Plot        &lt;fct&gt; 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, …
-$ Quadrat     &lt;fct&gt; Q1, Q2, Q3, Q4, Q5, Q1, Q2, Q3, Q4, Q5, Q1, Q2, Q3, Q4, Q…
-$ Species     &lt;fct&gt; Achillea millefolium, Achillea millefolium, Achillea mill…
-$ Count       &lt;int&gt; 4, 8, 3, 20, 6, 4, 0, 0, 0, 0, 1, 2, 5, 12, 2, 0, 0, 0, 0…
 </pre></div>
 </div>
 </div>
@@ -1139,38 +1141,18 @@ $ Count       &lt;int&gt; 4, 8, 3, 20, 6, 4, 0, 0, 0, 0, 1, 2, 5, 12, 2, 0, 0, 0
 <p><code class="docutils literal notranslate"><span class="pre">utils::View(MyWrangledData)</span> <span class="pre">#same</span> <span class="pre">as</span> <span class="pre">fix()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">,</span> <span class="n">Count</span> <span class="o">&gt;</span> <span class="m">100</span><span class="p">)</span> <span class="c1">#like subset(), but nicer!</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">,</span> <span class="n">Count</span>  <span class="m">100</span><span class="p">)</span> <span class="c1">#like subset(), but nicer!</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr></thead>
-<tbody>
-	<tr><td>october           </td><td>b                 </td><td>6                 </td><td>Q1                </td><td>Agrostis gigantea </td><td>143               </td></tr>
-	<tr><td>october           </td><td>c                 </td><td>8                 </td><td>Q1                </td><td>Agrostis gigantea </td><td>198               </td></tr>
-	<tr><td>october           </td><td>c                 </td><td>8                 </td><td>Q5                </td><td>Agrostis gigantea </td><td>351               </td></tr>
-	<tr><td>march             </td><td>d                 </td><td>10                </td><td>Q1                </td><td>Agrostis gigantea </td><td>259               </td></tr>
-	<tr><td>march             </td><td>d                 </td><td>10                </td><td>Q4                </td><td>Agrostis gigantea </td><td>291               </td></tr>
-	<tr><td>may               </td><td>d                 </td><td>12                </td><td>Q2                </td><td>Agrostis gigantea </td><td>145               </td></tr>
-	<tr><td>october           </td><td>d                 </td><td>11                </td><td>Q4                </td><td>Agrostis gigantea </td><td>113               </td></tr>
-	<tr><td>may               </td><td>c                 </td><td>9                 </td><td>Q2                </td><td>Anisantha sterilis</td><td>120               </td></tr>
-	<tr><td>october           </td><td>a                 </td><td>1                 </td><td>Q1                </td><td>Holcus mollis     </td><td>159               </td></tr>
-	<tr><td>october           </td><td>a                 </td><td>1                 </td><td>Q3                </td><td>Holcus mollis     </td><td>144               </td></tr>
-	<tr><td>october           </td><td>a                 </td><td>1                 </td><td>Q4                </td><td>Holcus mollis     </td><td>124               </td></tr>
-	<tr><td>october           </td><td>a                 </td><td>1                 </td><td>Q5                </td><td>Holcus mollis     </td><td>115               </td></tr>
-	<tr><td>may               </td><td>a                 </td><td>2                 </td><td>Q1                </td><td>Holcus mollis     </td><td>120               </td></tr>
-	<tr><td>october           </td><td>b                 </td><td>6                 </td><td>Q2                </td><td>Holcus mollis     </td><td>129               </td></tr>
-	<tr><td>october           </td><td>b                 </td><td>6                 </td><td>Q3                </td><td>Holcus mollis     </td><td>123               </td></tr>
-	<tr><td>october           </td><td>c                 </td><td>8                 </td><td>Q2                </td><td>Holcus mollis     </td><td>256               </td></tr>
-	<tr><td>october           </td><td>c                 </td><td>8                 </td><td>Q3                </td><td>Holcus mollis     </td><td>147               </td></tr>
-	<tr><td>october           </td><td>c                 </td><td>8                 </td><td>Q4                </td><td>Holcus mollis     </td><td>128               </td></tr>
-	<tr><td>october           </td><td>d                 </td><td>11                </td><td>Q1                </td><td>Holcus mollis     </td><td>104               </td></tr>
-	<tr><td>october           </td><td>d                 </td><td>11                </td><td>Q2                </td><td>Holcus mollis     </td><td>131               </td></tr>
-	<tr><td>march             </td><td>d                 </td><td>10                </td><td>Q3                </td><td>Medicago lupulina </td><td>114               </td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">numeric</span> <span class="n">constant</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">dplyr</span><span class="p">::</span><span class="nb">filter</span><span class="p">(</span><span class="n">MyWrangledData</span><span class="p">,</span> <span class="n">Count</span>  <span class="mi">100</span>
+                                         <span class="o">^</span>
+<span class="ne">Traceback</span>:
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1178,24 +1160,8 @@ $ Count       &lt;int&gt; 4, 8, 3, 20, 6, 4, 0, 0, 0, 0, 1, 2, 5, 12, 2, 0, 0, 0
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>Cultivation</th><th scope=col>Block</th><th scope=col>Plot</th><th scope=col>Quadrat</th><th scope=col>Species</th><th scope=col>Count</th></tr></thead>
-<tbody>
-	<tr><td>may                 </td><td>a                   </td><td>2                   </td><td>Q5                  </td><td>Achillea millefolium</td><td> 0                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q1                  </td><td>Achillea millefolium</td><td> 1                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q2                  </td><td>Achillea millefolium</td><td> 2                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q3                  </td><td>Achillea millefolium</td><td> 5                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q4                  </td><td>Achillea millefolium</td><td>12                  </td></tr>
-	<tr><td>march               </td><td>a                   </td><td>3                   </td><td>Q5                  </td><td>Achillea millefolium</td><td> 2                  </td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
-<hr class="docutils" />
-<blockquote>
-<div><p><strong>The <code class="docutils literal notranslate"><span class="pre">::</span></code> notation</strong>: The double colon (<code class="docutils literal notranslate"><span class="pre">::</span></code>) notation of <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> is like the dot notation in Python — it allows you to access a particular function (like a Python module) from these packages. So, for instance, if you want to use <code class="docutils literal notranslate"><span class="pre">tbl_df()</span></code> from <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>, the command syntax would be <code class="docutils literal notranslate"><span class="pre">dplyr::tbl_df(MyData)</span></code>.</p>
-</div></blockquote>
+<p>The double colon (<code class="docutils literal notranslate"><span class="pre">::</span></code>) notation of <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> is like the dot notation in Python — it allows you to access a particular function (like a Python module) from these packages. So, for instance, if you want to use <code class="docutils literal notranslate"><span class="pre">tbl_df()</span></code> from <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>, the command syntax would be <code class="docutils literal notranslate"><span class="pre">dplyr::tbl_df(MyData)</span></code>.</p>
 <p>This new syntax is basically to avoid conflict in names of functions in by these new packages with the function names that already exist in the base R packages. For example, the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> function <code class="docutils literal notranslate"><span class="pre">filter</span></code> already exists in the base R package <code class="docutils literal notranslate"><span class="pre">stats</span></code>. Thus, when you first load <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>, you will get:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1216,22 +1182,23 @@ The following objects are masked from <span class="s1">&#39;package:base&#39;</s
 </pre></div>
 </div>
 <p>Learning to use <code class="docutils literal notranslate"><span class="pre">ddply</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> involves learning some new syntax and a lot of new commands, but if you plan to do a lot of data wrangling, you may want to get to know them well. Have a look at <a class="reference external" href="https://blog.rstudio.org/2014/01/17/introducing-dplyr">this website</a> and this <a class="reference external" href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>, also available in the <code class="docutils literal notranslate"><span class="pre">readings</span></code> directory under <code class="docutils literal notranslate"><span class="pre">DataDataData!</span></code> in the TheMulQuaBio repository.</p>
-<p>One additional thing that you would need to get used to in the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> is piping multiple commands using the <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> notation, which makes your code ore compact, and in theory, more readable (see the <a class="reference external" href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>).</p>
+<p>One additional thing that you would need to get used to in the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code> is piping multiple commands using the <code class="docutils literal notranslate"><span class="pre">%%</span></code> notation, which makes your code ore compact, and in theory, more readable (see the <a class="reference external" href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>).</p>
 </div>
 <div class="section" id="practicals">
 <h2>Practicals<a class="headerlink" href="#practicals" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>We used <code class="docutils literal notranslate"><span class="pre">reshape2</span></code> in <code class="docutils literal notranslate"><span class="pre">DataWrang.R</span></code> for wrangling that dataset. Write a new script called <code class="docutils literal notranslate"><span class="pre">DataWrangTidy.R</span></code> that uses <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> for the same data wrangling steps. The best way to do this is to copy <code class="docutils literal notranslate"><span class="pre">DataWrang.R</span></code> and rename it <code class="docutils literal notranslate"><span class="pre">DataWrangTidy.R</span></code>. Then systematically redo the script from start to end, looking for a function in <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"> <span class="pre">tidyr</span></code> that does the same thing in each wrangling step.</p></li>
-</ol>
+<div class="section" id="data-wrangling-with-tidyverse">
+<h3>Data wrangling with <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code><a class="headerlink" href="#data-wrangling-with-tidyverse" title="Permalink to this headline">¶</a></h3>
+<p>We used <code class="docutils literal notranslate"><span class="pre">reshape2</span></code> in <code class="docutils literal notranslate"><span class="pre">DataWrang.R</span></code> for wrangling that dataset. Write a new script called <code class="docutils literal notranslate"><span class="pre">DataWrangTidy.R</span></code> that uses <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> for the same data wrangling steps. The best way to do this is to copy <code class="docutils literal notranslate"><span class="pre">DataWrang.R</span></code> and rename it <code class="docutils literal notranslate"><span class="pre">DataWrangTidy.R</span></code>. Then systematically redo the script from start to end, looking for a function in <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and <code class="docutils literal notranslate"> <span class="pre">tidyr</span></code> that does the same thing in each wrangling step.</p>
 <p>For example, to convert from wide to long format, instead of using <code class="docutils literal notranslate"> <span class="pre">melt()</span></code> (or <code class="docutils literal notranslate"><span class="pre">dcast()</span></code>) from the <code class="docutils literal notranslate"><span class="pre">reshape2</span></code> package, you can use <code class="docutils literal notranslate"><span class="pre">gather()</span></code> from <code class="docutils literal notranslate"><span class="pre">tidyr</span></code>.</p>
 <p>Don’t forget the <a class="reference external" href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">cheatsheet</a>
 (also available in the <code class="docutils literal notranslate"><span class="pre">readings</span></code> directory under <code class="docutils literal notranslate"><span class="pre">DataDataData!</span></code> in the TheMulQuaBio repository).</p>
+</div>
 </div>
 <div class="section" id="handling-big-data-in-r">
 <h2>Handling Big Data in R<a class="headerlink" href="#handling-big-data-in-r" title="Permalink to this headline">¶</a></h2>
 <p>The buzzword ‘Big Data’ basically refers to datasets that have the following properties:</p>
 <ol class="simple">
-<li><p>A dataset that does not fit into available RAM on one system (say, &gt;2 gigabytes).</p></li>
+<li><p>A dataset that does not fit into available RAM on one system (say, 2 gigabytes).</p></li>
 <li><p>A dataset that has so many rows (when in it’s long format — see above sections) that it significantly slows down your analysis or simulation without vectorization (that is, when looping).</p></li>
 </ol>
 <p>Both these criteria are programming language-, and computer hardware-dependent, of course. For example, a 32-bit OS can only handle ~2 GB of RAM, so this computer will struggle every time you try to handle a dataset in that size range.</p>
@@ -1261,10 +1228,8 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 <div class="section" id="data-exploration-with-basic-plotting">
 <h3>Data exploration with basic plotting<a class="headerlink" href="#data-exploration-with-basic-plotting" title="Permalink to this headline">¶</a></h3>
 <p>Before you do any statistical analyses with data, you must clean, explore, and visualize it. And eventually, you want to produce a finished product that presents visualizations of your data and your results clearly and concisely.</p>
-<p>Ultimately, at both, the data exploration and the finished product stages, the goal of graphics is to present information such that it provides intuitive ideas. As Edward Tufte says:</p>
-<blockquote>
-<div><p><em>“Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space.”</em></p>
-</div></blockquote>
+<p>Ultimately, at both, the data exploration and the finished product stages, the goal of graphics is to present information such that it provides intuitive ideas. As Edward Tufte says:
+<em>“Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space.”</em></p>
 <p>R can produce beautiful graphics without the time-consuming and fiddly methods that you might have used in Excel or equivalent. You should also make it a habit to quickly plot the data for exploratory analysis. So we are going to learn some basic plotting first.</p>
 <div class="section" id="basic-plotting-commands-in-r">
 <h4>Basic plotting commands in R<a class="headerlink" href="#basic-plotting-commands-in-r" title="Permalink to this headline">¶</a></h4>
@@ -1296,10 +1261,11 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><p><strong>R graphics devices</strong>: In all that follows, you may often end up plotting multiple plots on the same graphics window without intending to do so, because R by default keeps plotting in the most recent plotting window that was opened. You can close a particular graphics window or “device” by using <code class="docutils literal notranslate"><span class="pre">dev.off()</span></code>, and all open devices/windows with <code class="docutils literal notranslate"><span class="pre">graphics.off()</span></code>. By default, <code class="docutils literal notranslate"><span class="pre">dev.off()</span></code> will close the most recent figure device that was opened.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>R graphics devices</strong>: In all that follows, you may often end up plotting multiple plots on the same graphics window without intending to do so, because R by default keeps plotting in the most recent plotting window that was opened. You can close a particular graphics window or “device” by using <code class="docutils literal notranslate"><span class="pre">dev.off()</span></code>, and all open devices/windows with <code class="docutils literal notranslate"><span class="pre">graphics.off()</span></code>. By default, <code class="docutils literal notranslate"><span class="pre">dev.off()</span></code> will close the most recent figure device that was opened.</p>
+</div>
 <p>Note that there are invisible devices as well! For example, if you are printing to pdf (coming up below), the device or graphics window will not be visible on your computer screen.</p>
-</div></blockquote>
 <p>Now let’s try some simple plotting for data exploration. As a case study, we will use a dataset on Consumer-Resource (e.g., Predator-Prey) body mass ratios taken from the Ecological Archives of the ESA (Barnes <em>et al.</em> 2008, Ecology 89:881).</p>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Copy <code class="docutils literal notranslate"><span class="pre">EcolArchives-E089-51-D1.csv</span></code> from the TheMulQuaBio <code class="docutils literal notranslate"><span class="pre">data</span></code> to your own data directory. Then, launch R and read in these data to a data frame (note the relative path):</p>
 <div class="cell docutils container">
@@ -1317,9 +1283,10 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 </div></div>
 </div>
 <p>Let’s look at what the data contain. Type <code class="docutils literal notranslate"><span class="pre">MyDF</span></code> and hit the TAB key twice in the R commandline.</p>
-<blockquote>
-<div><p><strong>Remember Tabbing</strong>: In your smart code editor or IDE such as vscode or RStudio, you will see a drop-down list of all the column headers in a dataframe when you hit TAB once after <code class="docutils literal notranslate"><span class="pre">MyDF$</span></code></p>
-</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Remember Tabbing</strong>: In your smart code editor or IDE such as vscode or RStudio, you will see a drop-down list of all the column headers in a dataframe when you hit TAB once after <code class="docutils literal notranslate"><span class="pre">MyDF$</span></code></p>
+</div>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">str()</span></code> and <code class="docutils literal notranslate"><span class="pre">head()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,29 +1344,44 @@ you have realized by now that <code class="docutils literal notranslate"><span c
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Observations: 34,931
-Variables: 15
-$ Record.number               &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13…
-$ In.refID                    &lt;fct&gt; ATSH063, ATSH080, ATSH089, ATSH143, ATSH1…
-$ IndividualID                &lt;fct&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12,…
-$ Predator                    &lt;fct&gt; Rhizoprionodon terraenovae, Rhizoprionodo…
-$ Predator.common.name        &lt;fct&gt; Atlantic sharpnose shark, Atlantic sharpn…
-$ Predator.taxon              &lt;fct&gt; ectotherm vertebrate, ectotherm vertebrat…
-$ Predator.lifestage          &lt;fct&gt; adult, adult, adult, adult, adult, adult,…
-$ Type.of.feeding.interaction &lt;fct&gt; predacious/piscivorous, predacious/pisciv…
-$ Predator.mass               &lt;dbl&gt; 1540.0, 1600.0, 1840.0, 87.6, 63.9, 79.2,…
-$ Prey                        &lt;fct&gt; teleosts/molluscs/crustaceans, teleosts/m…
-$ Prey.common.name            &lt;fct&gt; teleosts/molluscs/crustaceans, teleosts/m…
-$ Prey.taxon                  &lt;fct&gt; mixed, mixed, mixed, mixed, mixed, mixed,…
-$ Prey.mass                   &lt;dbl&gt; 14.30, 6.02, 11.90, 8.12, 6.56, 5.41, 4.4…
-$ Prey.mass.unit              &lt;fct&gt; g, g, g, g, g, g, g, g, g, g, g, g, g, g,…
-$ Location                    &lt;fct&gt; &quot;Apalachicola Bay, Florida&quot;, &quot;Apalachicol…
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 34,931
+Columns: 15
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">Error</span>: package ‘fansi’ was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">dplyr</span><span class="p">::</span><span class="n">glimpse</span><span class="p">(</span><span class="n">MyDF</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">glimpse</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">MyDF</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">map_chr</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">new_pillar_type</span><span class="p">),</span> <span class="nb">format</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">.</span> <span class="n">map_mold</span><span class="p">(</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="n">character</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">5</span><span class="o">.</span> <span class="n">vapply</span><span class="p">(</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">.</span><span class="n">mold</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">USE</span><span class="o">.</span><span class="n">NAMES</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">)</span>
+<span class="mi">6</span><span class="o">.</span> <span class="nb">map</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">new_pillar_type</span><span class="p">)</span>
+<span class="mi">7</span><span class="o">.</span> <span class="n">lapply</span><span class="p">(</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">8</span><span class="o">.</span> <span class="n">FUN</span><span class="p">(</span><span class="n">X</span><span class="p">[[</span><span class="n">i</span><span class="p">]],</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">9</span><span class="o">.</span> <span class="n">get_extent</span><span class="p">(</span><span class="n">format_type_sum</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">NULL</span><span class="p">))</span>
+<span class="mi">10</span><span class="o">.</span> <span class="n">fansi</span><span class="p">::</span><span class="n">strip_sgr</span>
+<span class="mi">11</span><span class="o">.</span> <span class="n">getExportedValue</span><span class="p">(</span><span class="n">pkg</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="mi">12</span><span class="o">.</span> <span class="n">asNamespace</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
+<span class="mi">13</span><span class="o">.</span> <span class="n">getNamespace</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
+<span class="mi">14</span><span class="o">.</span> <span class="n">loadNamespace</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="mi">15</span><span class="o">.</span> <span class="n">stop</span><span class="p">(</span><span class="n">gettextf</span><span class="p">(</span><span class="s2">&quot;package </span><span class="si">%s</span><span class="s2"> was installed by an R version with different internals; it needs to be reinstalled for use with this R version&quot;</span><span class="p">,</span> 
+  <span class="o">.</span>     <span class="n">sQuote</span><span class="p">(</span><span class="n">package</span><span class="p">)),</span> <span class="n">call</span><span class="o">.</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">,</span> <span class="n">domain</span> <span class="o">=</span> <span class="n">NA</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>As you can see, these data contain predator-prey body size information. This is an interesting dataset because it is huge, and covers a wide range of body sizes of aquatic species involved in consumer-resource interactions — from unicells to whales. Analyzing this dataset should tell us a lot about what sizes of prey predators like to eat.</p>
-<img src="./graphics/SeaLion.png" alt="A consumer-resource (predator-prey) interaction waiting to happen" style="width: 500px;"/>
+<img src="./graphics/SeaLion.png" alt="A consumer-resource (predator-prey) interaction waiting to happen" style="width: 500px;"/><p>Let’s change the type of certain columns to <code class="docutils literal notranslate"><span class="pre">factor</span></code> because we will want to use them as grouping variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">MyDF</span><span class="o">$</span><span class="n">Type.of.feeding.interaction</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">MyDF</span><span class="o">$</span><span class="n">Type.of.feeding.interaction</span><span class="p">)</span>
+<span class="n">MyDF</span><span class="o">$</span><span class="n">Location</span> <span class="o">&lt;-</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">MyDF</span><span class="o">$</span><span class="n">Location</span><span class="p">)</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">MyDF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="scatter-plots">
@@ -1411,9 +1393,6 @@ $ Location                    &lt;fct&gt; &quot;Apalachicola Bay, Florida&quot;,
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_53_0.png" src="../_images/08-Data_R_53_0.png" />
-</div>
 </div>
 <p>That doesn’t look very meaningful! Let’s try taking logarithms. <em>Why?</em> - Because body sizes across species tend to be log-normally distributed, with a lot of small species and a few large ones. Taking a log allows you to inspect the body size range in a meaningful (logarithmic) scale and reveals the true relationship. This also illustrates a important point. Just like statistical analyses, the effectiveness of data visualization too depends on the type of distribution of the data.</p>
 <div class="cell docutils container">
@@ -1423,7 +1402,7 @@ $ Location                    &lt;fct&gt; &quot;Apalachicola Bay, Florida&quot;,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_55_0.png" src="../_images/08-Data_R_55_0.png" />
+<img alt="../_images/08-Data_R_60_0.png" src="../_images/08-Data_R_60_0.png" />
 </div>
 </div>
 <p>Let’s look at the same using a base-10 log transform:</p>
@@ -1434,7 +1413,7 @@ $ Location                    &lt;fct&gt; &quot;Apalachicola Bay, Florida&quot;,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_57_0.png" src="../_images/08-Data_R_57_0.png" />
+<img alt="../_images/08-Data_R_62_0.png" src="../_images/08-Data_R_62_0.png" />
 </div>
 </div>
 <p>Using a <code class="docutils literal notranslate"><span class="pre">log10</span></code> transform is often a good idea because then you can see things in terms of “orders of magnitude”, (<span class="math notranslate nohighlight">\(10^1\)</span>, <span class="math notranslate nohighlight">\(10^2\)</span>, <span class="math notranslate nohighlight">\(10^3\)</span>, etc), which makes it easier to determine  what the actual values in the original scale are.</p>
@@ -1446,7 +1425,7 @@ $ Location                    &lt;fct&gt; &quot;Apalachicola Bay, Florida&quot;,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_59_0.png" src="../_images/08-Data_R_59_0.png" />
+<img alt="../_images/08-Data_R_64_0.png" src="../_images/08-Data_R_64_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1456,7 +1435,7 @@ $ Location                    &lt;fct&gt; &quot;Apalachicola Bay, Florida&quot;,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_60_0.png" src="../_images/08-Data_R_60_0.png" />
+<img alt="../_images/08-Data_R_65_0.png" src="../_images/08-Data_R_65_0.png" />
 </div>
 </div>
 <p>A really great summary of basic R graphical parameters can be <a class="reference external" href="https://www.statmethods.net/advgraphs/parameters.html">found here</a>.</p>
@@ -1475,7 +1454,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_62_0.png" src="../_images/08-Data_R_62_0.png" />
+<img alt="../_images/08-Data_R_67_0.png" src="../_images/08-Data_R_67_0.png" />
 </div>
 </div>
 <p>Clearly, the data are heavily right skewed, with small body sized organisms dominating (that’s a general pattern, as mentioned above). Let’s now take a logarithm and see if we can get a better idea of what the distribution of predator sizes looks like:</p>
@@ -1486,7 +1465,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_64_0.png" src="../_images/08-Data_R_64_0.png" />
+<img alt="../_images/08-Data_R_69_0.png" src="../_images/08-Data_R_69_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1497,7 +1476,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_65_0.png" src="../_images/08-Data_R_65_0.png" />
+<img alt="../_images/08-Data_R_70_0.png" src="../_images/08-Data_R_70_0.png" />
 </div>
 </div>
 <p>So, taking a log really makes clearer what the distribution of body predator sizes looks like. <em>Try the same with prey body masses.</em></p>
@@ -1522,7 +1501,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_67_0.png" src="../_images/08-Data_R_67_0.png" />
+<img alt="../_images/08-Data_R_72_0.png" src="../_images/08-Data_R_72_0.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">par()</span></code> function can set multiple graphics parameters (not just multi-panel plots), including figure margins, axis labels, and more. Check out the <a class="reference external" href="https://www.rdocumentation.org/packages/graphics/versions/3.5.1/topics/par">help for this function</a>.</p>
@@ -1544,7 +1523,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_69_0.png" src="../_images/08-Data_R_69_0.png" />
+<img alt="../_images/08-Data_R_74_0.png" src="../_images/08-Data_R_74_0.png" />
 </div>
 </div>
 <p>Plot annotation with text can be done with either single or double quotes, i.e., ‘Plot Title’ or “Plot Title”, respectively. But it is  generally a good idea to use double quotes because sometimes you would like to use an apostrophe in your title or axis label strings.</p>
@@ -1565,7 +1544,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_71_0.png" src="../_images/08-Data_R_71_0.png" />
+<img alt="../_images/08-Data_R_76_0.png" src="../_images/08-Data_R_76_0.png" />
 </div>
 </div>
 <p>Now let’s see how many locations the data are from:</p>
@@ -1578,7 +1557,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_73_0.png" src="../_images/08-Data_R_73_0.png" />
+<img alt="../_images/08-Data_R_78_0.png" src="../_images/08-Data_R_78_0.png" />
 </div>
 </div>
 <p>Note the tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>). This is to tell R to subdivide or categorize your analysis and plot by the “Factor” location. More on this later.</p>
@@ -1592,7 +1571,7 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_75_0.png" src="../_images/08-Data_R_75_0.png" />
+<img alt="../_images/08-Data_R_80_0.png" src="../_images/08-Data_R_80_0.png" />
 </div>
 </div>
 </div>
@@ -1612,34 +1591,12 @@ distributions of the two variables.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_77_0.png" src="../_images/08-Data_R_77_0.png" />
+<img alt="../_images/08-Data_R_82_0.png" src="../_images/08-Data_R_82_0.png" />
 </div>
 </div>
 <p>To understand this plotting method, think of the full graph area as going from (0,0) in the lower left corner to (1,1) in the upper right corner. The format of the <code class="docutils literal notranslate"><span class="pre">fig=</span></code> parameter is a numerical vector of the form <code class="docutils literal notranslate"><span class="pre">c(x1,</span> <span class="pre">x2,</span> <span class="pre">y1,</span> <span class="pre">y2)</span></code>, corresponding to <code class="docutils literal notranslate"><span class="pre">c(bottom,</span> <span class="pre">left,</span> <span class="pre">top,</span> <span class="pre">right)</span></code>. First, <code class="docutils literal notranslate"> <span class="pre">par(fig=c(0,0.8,0,0.8))</span></code> sets up the scatterplot going from 0 to 0.8 on the x axis and 0 to 0.8 on the y axis, leaving some area for the boxplots at the top and right. The top boxplot goes from 0 to 0.8 on the x axis and 0.4 to 1 on the y axis. The right hand boxplot goes from 0.55 to 1 on the x axis and 0 to 0.8 on the y axis. You can experiment with these proportions to change the spacings between plots.</p>
 <p>This plot is useful, because it shows you what the marginal distributions of the two variables (Predator mass and Prey mass) are.</p>
-</div>
-<div class="section" id="lattice-plots">
-<h3>Lattice plots<a class="headerlink" href="#lattice-plots" title="Permalink to this headline">¶</a></h3>
-<p>You can also make lattice graphs to avoid the somewhat laborious <code class="docutils literal notranslate"><span class="pre">par()</span></code> approach above of getting multi-panel plots. For this, you will need to load a library that isn’t included by default when you run R:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s make a lattice plot of body mass by densities (distributions) by type of feeding interaction:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">densityplot</span><span class="p">(</span><span class="o">~</span><span class="nf">log</span><span class="p">(</span><span class="n">Predator.mass</span><span class="p">)</span> <span class="o">|</span> <span class="n">Type.of.feeding.interaction</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">MyDF</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_81_1.png" src="../_images/08-Data_R_81_1.png" />
-</div>
-</div>
-<p>This is not very pretty, but does the job. Below you will learn to use <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> to produce a much more elegant, pretty multi-panel plots.</p>
+<p>Below you will learn to use <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> to produce a much more elegant, pretty multi-panel plots.</p>
 </div>
 <div class="section" id="saving-your-graphics">
 <h3>Saving your graphics<a class="headerlink" href="#saving-your-graphics" title="Permalink to this headline">¶</a></h3>
@@ -1668,22 +1625,26 @@ clicking on the figure, doing “save as”, etc. So let’s save the figure as 
 </div>
 <div class="section" id="id2">
 <h2>Practicals<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>In this practical, you will write script that draws and saves three lattice graphs by feeding interaction type: one of predator mass, one of prey mass and one of the size ratio of prey mass over predator mass. Note that you would want to use logarithms of masses (or mass-ratios)for all three plots. In addition, the script will calculate the mean and median predator mass, prey mass and predator-prey size-ratios to a csv file. So:</p>
+<div class="section" id="sub-plots">
+<h3>Sub-plots<a class="headerlink" href="#sub-plots" title="Permalink to this headline">¶</a></h3>
+<p>In this practical, you will write script that draws and saves three figures containing subplots by feeding interaction type: one of predator mass, one of prey mass and one of the size ratio of prey mass over predator mass. Note that you should use logarithms of masses (or mass-ratios)for all three plots. In addition, the script will calculate the mean and median predator mass, prey mass and predator-prey size-ratios to a csv file. So:</p>
 <ul class="simple">
-<li><p>Write a script file called <code class="docutils literal notranslate"><span class="pre">PP_Lattice.R</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory — sourcing or running this script should result in three files called <code class="docutils literal notranslate"><span class="pre">Pred_Lattice.pdf</span></code>, <code class="docutils literal notranslate"> <span class="pre">Prey_Lattice.pdf</span></code>, and <code class="docutils literal notranslate"><span class="pre">SizeRatio_Lattice.pdf</span></code> being
+<li><p>Write a script file called <code class="docutils literal notranslate"><span class="pre">PP_Subplots.R</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory — sourcing or running this script should result in three files called <code class="docutils literal notranslate"><span class="pre">Pred_Subplots.pdf</span></code>, <code class="docutils literal notranslate"> <span class="pre">Prey_Subplots.pdf</span></code>, and <code class="docutils literal notranslate"><span class="pre">SizeRatio_Subplors.pdf</span></code> being
 saved in the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory (the names should be self-explanatory).</p></li>
 </ul>
 <p>In addition, the script should calculate the mean and median log predator mass, prey mass, and predator-prey size ratio, <em>by feeding type</em>, and save it as a single csv output table called <code class="docutils literal notranslate"><span class="pre">PP_Results.csv</span></code> to the <code class="docutils literal notranslate"><span class="pre">Results</span></code> directory. The table should have appropriate headers (e.g., Feeding type, Mean, Median). (Hint: you will have to initialize a new dataframe or matrix in the script to first store the calculations)</p>
 <p>The script should be self-sufficient and not need any external inputs — it should import the above predator-prey dataset from the appropriate directory, and save the graphic plots to the appropriate directory (Hint: use relative paths!).</p>
 <p>There are multiple ways to do this practical. The plotting and saving component is simple enough. For calculating the statistics by feeding type, you can either use the “loopy” way — first obtaining a list of feeding types (look up the <code class="docutils literal notranslate"><span class="pre">unique</span></code> or <code class="docutils literal notranslate"><span class="pre">levels</span></code> functions) and then loop over them, using <code class="docutils literal notranslate"><span class="pre">subset</span></code> to extract the dataset by feeding type at each iteration, or the R-savvy way, by using <code class="docutils literal notranslate"><span class="pre">tapply</span></code> or <code class="docutils literal notranslate"><span class="pre">ddply</span></code> and avoiding looping altogether.</p>
 </div>
+</div>
 <div class="section" id="high-quality-graphics-in-r">
 <h2>High-quality graphics in R<a class="headerlink" href="#high-quality-graphics-in-r" title="Permalink to this headline">¶</a></h2>
 <p>R can produce beautiful graphics/visualizations, but it typically takes a lot of work to obtain the desired result. This is because the starting point is pretty much a “bare” plot, and adding features commonly required for publication-grade figures (legends, statistics, regressions, sub-plotting etc.) can require a lot of small and painful additional arguments to the plotting commands <em>at the same time</em>, or even additional steps (such as the <a class="reference external" href="#Combining-plot-types">fancy predator-prey scatterplot</a> above).</p>
 <p>Moreover, it is very difficult to switch from one representation of the data to another (i.e., from boxplots to scatterplots), or to plot several datasets together. The R package <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> overcomes these issues, and produces truly high-quality, publication-ready graphics suitable for papers, theses and reports.</p>
-<blockquote>
-<div><p><strong>3D plots:</strong> <em>Currently, <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> cannot be used to create 3D graphs or mosaic plots. In any case, most of you won’t be needing 3D plots. If you do, there are many ways to do 3D plots using other plotting packages in R. In particular, look up the <code class="docutils literal notranslate"><span class="pre">scatterplot3d</span></code> and <code class="docutils literal notranslate"><span class="pre">plot3D</span></code> packages.</em></p>
-</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>3D plots:</strong> <em>Currently, <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> cannot be used to create 3D graphs or mosaic plots (but <a class="reference external" href="https://www.tylermw.com/3d-ggplots-with-rayshader">see this</a>). In any case, most of you won’t be needing 3D plots. If you do, there are many ways to do 3D plots using other plotting packages in R. In particular, look up the <code class="docutils literal notranslate"><span class="pre">scatterplot3d</span></code> and <code class="docutils literal notranslate"><span class="pre">plot3D</span></code> packages.</em></p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> differs from other approaches as it attempts to provide a “grammar” for graphics in which each layer is the equivalent of a verb, subject etc. and a plot is the equivalent of a sentence. All graphs start with a layer showing the data, other layers and attributes/styles are added to modify the plot. Specifically, according to this grammar, a statistical graphic is a “mapping” from data to geometric objects (points, lines, bars; set using <code class="docutils literal notranslate"><span class="pre">geom</span></code>) with aesthetic attributes (colour, shape, size; set using <code class="docutils literal notranslate"><span class="pre">aes</span></code>).</p>
 <p>For more on the ideas underlying ggplot, see the book “ggplot2: Elegant Graphics for Data Analysis”, by H. Wickham (in your Reading directory). Also, the <a class="reference external" href="http://ggplot2.tidyverse.org/">ggplot2 website</a> is an excellent resource.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> is not available on your computer, look up the section on installing packages in the <a class="reference internal" href="07-R.html"><span class="doc std std-doc">R Chapter</span></a>.</p>
@@ -1700,11 +1661,6 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: ggplot2
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="scatterplots">
 <h4>Scatterplots<a class="headerlink" href="#scatterplots" title="Permalink to this headline">¶</a></h4>
@@ -1716,7 +1672,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_88_1.png" src="../_images/08-Data_R_88_1.png" />
+<img alt="../_images/08-Data_R_90_0.png" src="../_images/08-Data_R_90_0.png" />
 </div>
 </div>
 <p>As before, let’s take logarithms and plot:</p>
@@ -1727,7 +1683,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_90_1.png" src="../_images/08-Data_R_90_1.png" />
+<img alt="../_images/08-Data_R_92_0.png" src="../_images/08-Data_R_92_0.png" />
 </div>
 </div>
 <p>Now, color the points according to the type of feeding interaction:</p>
@@ -1738,7 +1694,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_92_1.png" src="../_images/08-Data_R_92_1.png" />
+<img alt="../_images/08-Data_R_94_0.png" src="../_images/08-Data_R_94_0.png" />
 </div>
 </div>
 <p>But the figure’s aspect ratio is not very nice. Let’s change it using the <code class="docutils literal notranslate"><span class="pre">asp</span></code> option:</p>
@@ -1749,7 +1705,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_94_1.png" src="../_images/08-Data_R_94_1.png" />
+<img alt="../_images/08-Data_R_96_0.png" src="../_images/08-Data_R_96_0.png" />
 </div>
 </div>
 <p>The same as above, but changing the shape:</p>
@@ -1760,7 +1716,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_96_1.png" src="../_images/08-Data_R_96_1.png" />
+<img alt="../_images/08-Data_R_98_0.png" src="../_images/08-Data_R_98_0.png" />
 </div>
 </div>
 </div>
@@ -1777,7 +1733,7 @@ saved in the <code class="docutils literal notranslate"><span class="pre">Result
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_98_1.png" src="../_images/08-Data_R_98_1.png" />
+<img alt="../_images/08-Data_R_100_0.png" src="../_images/08-Data_R_100_0.png" />
 </div>
 </div>
 <p>You chose red, but ggplot used mapping to convert it to a particular
@@ -1789,7 +1745,7 @@ shade of red. To set it manually to the real red, do this:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_100_1.png" src="../_images/08-Data_R_100_1.png" />
+<img alt="../_images/08-Data_R_102_0.png" src="../_images/08-Data_R_102_0.png" />
 </div>
 </div>
 <p>Similarly, for point size, compare these two:</p>
@@ -1800,7 +1756,7 @@ shade of red. To set it manually to the real red, do this:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_102_1.png" src="../_images/08-Data_R_102_1.png" />
+<img alt="../_images/08-Data_R_104_0.png" src="../_images/08-Data_R_104_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1810,7 +1766,7 @@ shade of red. To set it manually to the real red, do this:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_103_1.png" src="../_images/08-Data_R_103_1.png" />
+<img alt="../_images/08-Data_R_105_0.png" src="../_images/08-Data_R_105_0.png" />
 </div>
 </div>
 <p>But for shape, ggplot doesn’t have a continuous mapping because shapes are a discrete variable.So</p>
@@ -1826,7 +1782,7 @@ shade of red. To set it manually to the real red, do this:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_105_1.png" src="../_images/08-Data_R_105_1.png" />
+<img alt="../_images/08-Data_R_107_0.png" src="../_images/08-Data_R_107_0.png" />
 </div>
 </div>
 </div>
@@ -1840,7 +1796,7 @@ shade of red. To set it manually to the real red, do this:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_107_1.png" src="../_images/08-Data_R_107_1.png" />
+<img alt="../_images/08-Data_R_109_0.png" src="../_images/08-Data_R_109_0.png" />
 </div>
 </div>
 <p>Here, try using <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">.5</span></code> instead of <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">I(.5)</span></code> and see what happens.</p>
@@ -1858,7 +1814,7 @@ shade of red. To set it manually to the real red, do this:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_109_2.png" src="../_images/08-Data_R_109_2.png" />
+<img alt="../_images/08-Data_R_111_1.png" src="../_images/08-Data_R_111_1.png" />
 </div>
 </div>
 <p>If we want to have a linear regression, we need to specify the method as
@@ -1871,9 +1827,11 @@ being <code class="docutils literal notranslate"><span class="pre">lm</span></co
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
+
+`geom_smooth()` using formula &#39;y ~ x&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_111_2.png" src="../_images/08-Data_R_111_2.png" />
+<img alt="../_images/08-Data_R_113_1.png" src="../_images/08-Data_R_113_1.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">lm</span></code> stands for <code class="docutils literal notranslate"><span class="pre">l</span></code>inear <code class="docutils literal notranslate"><span class="pre">m</span></code>odels (linear regression is a type of linear model).</p>
@@ -1887,9 +1845,11 @@ being <code class="docutils literal notranslate"><span class="pre">lm</span></co
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
+
+`geom_smooth()` using formula &#39;y ~ x&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_113_2.png" src="../_images/08-Data_R_113_2.png" />
+<img alt="../_images/08-Data_R_115_1.png" src="../_images/08-Data_R_115_1.png" />
 </div>
 </div>
 <p>To extend the lines to the full range, use <code class="docutils literal notranslate"><span class="pre">fullrange</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>:</p>
@@ -1902,9 +1862,11 @@ being <code class="docutils literal notranslate"><span class="pre">lm</span></co
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
+
+`geom_smooth()` using formula &#39;y ~ x&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_115_2.png" src="../_images/08-Data_R_115_2.png" />
+<img alt="../_images/08-Data_R_117_1.png" src="../_images/08-Data_R_117_1.png" />
 </div>
 </div>
 <p>Now let’s see how the ratio between prey and predator mass changes according to the type of interaction:</p>
@@ -1915,7 +1877,7 @@ being <code class="docutils literal notranslate"><span class="pre">lm</span></co
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_117_1.png" src="../_images/08-Data_R_117_1.png" />
+<img alt="../_images/08-Data_R_119_0.png" src="../_images/08-Data_R_119_0.png" />
 </div>
 </div>
 <p>Because there are so many points, we can “jitter” them to get a better
@@ -1927,7 +1889,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_119_1.png" src="../_images/08-Data_R_119_1.png" />
+<img alt="../_images/08-Data_R_121_0.png" src="../_images/08-Data_R_121_0.png" />
 </div>
 </div>
 </div>
@@ -1941,7 +1903,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_121_1.png" src="../_images/08-Data_R_121_1.png" />
+<img alt="../_images/08-Data_R_123_0.png" src="../_images/08-Data_R_123_0.png" />
 </div>
 </div>
 </div>
@@ -1958,7 +1920,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_123_2.png" src="../_images/08-Data_R_123_2.png" />
+<img alt="../_images/08-Data_R_125_1.png" src="../_images/08-Data_R_125_1.png" />
 </div>
 </div>
 <p>Color the histogram according to the interaction type:</p>
@@ -1973,7 +1935,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_125_2.png" src="../_images/08-Data_R_125_2.png" />
+<img alt="../_images/08-Data_R_127_1.png" src="../_images/08-Data_R_127_1.png" />
 </div>
 </div>
 <p>You may want to define binwidth (in units of x axis):</p>
@@ -1985,7 +1947,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_127_1.png" src="../_images/08-Data_R_127_1.png" />
+<img alt="../_images/08-Data_R_129_0.png" src="../_images/08-Data_R_129_0.png" />
 </div>
 </div>
 <p>To make it easier to read, we can plot the smoothed density of the data:</p>
@@ -1997,7 +1959,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_129_1.png" src="../_images/08-Data_R_129_1.png" />
+<img alt="../_images/08-Data_R_131_0.png" src="../_images/08-Data_R_131_0.png" />
 </div>
 </div>
 <p>And you can make the densities transparent so that the overlaps are visible:</p>
@@ -2010,7 +1972,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_131_1.png" src="../_images/08-Data_R_131_1.png" />
+<img alt="../_images/08-Data_R_133_0.png" src="../_images/08-Data_R_133_0.png" />
 </div>
 </div>
 <p>or using <code class="docutils literal notranslate"><span class="pre">colour</span></code> instead of <code class="docutils literal notranslate"><span class="pre">fill</span></code> draws only the edge of the curve:</p>
@@ -2022,14 +1984,14 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_133_1.png" src="../_images/08-Data_R_133_1.png" />
+<img alt="../_images/08-Data_R_135_0.png" src="../_images/08-Data_R_135_0.png" />
 </div>
 </div>
 <p>Similarly, <code class="docutils literal notranslate"><span class="pre">geom</span> <span class="pre">=</span> <span class="pre">&quot;bar&quot;</span></code> produces a barplot, <code class="docutils literal notranslate"><span class="pre">geom</span> <span class="pre">=</span> <span class="pre">&quot;line&quot;</span></code> a series of points joined by a line, etc.</p>
 </div>
 <div class="section" id="multi-faceted-plots">
 <h4>Multi-faceted plots<a class="headerlink" href="#multi-faceted-plots" title="Permalink to this headline">¶</a></h4>
-<p>An alternative way of displaying data belonging to different classes is using “faceting”. We did this using <code class="docutils literal notranslate"> <span class="pre">lattice()</span></code> previously, but ggplot does a much nicer job:</p>
+<p>An alternative way of displaying data belonging to different classes is using “faceting”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">Type.of.feeding.interaction</span> <span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
@@ -2037,7 +1999,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_135_1.png" src="../_images/08-Data_R_135_1.png" />
+<img alt="../_images/08-Data_R_137_0.png" src="../_images/08-Data_R_137_0.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">~.</span></code> (the space is not important) notation tells ggplot whether to do the faceting by row or by column. So if you want a by-column configuration, switch <code class="docutils literal notranslate"><span class="pre">~</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code>, and also swap the position of the <code class="docutils literal notranslate"><span class="pre">.~</span></code>:</p>
@@ -2048,46 +2010,10 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_137_1.png" src="../_images/08-Data_R_137_1.png" />
+<img alt="../_images/08-Data_R_139_0.png" src="../_images/08-Data_R_139_0.png" />
 </div>
 </div>
 <p>You can also facet by a combination of categories (this is going to be a big plot!):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">.</span><span class="o">~</span> <span class="n">Type.of.feeding.interaction</span> <span class="o">+</span> <span class="n">Location</span><span class="p">,</span> 
-      <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in Ops.factor(Type.of.feeding.interaction, Location):
-“‘+’ not meaningful for factors”Warning message in Ops.factor(Type.of.feeding.interaction, Location):
-“‘+’ not meaningful for factors”Warning message in Ops.factor(Type.of.feeding.interaction, Location):
-“‘+’ not meaningful for factors”
-</pre></div>
-</div>
-<img alt="../_images/08-Data_R_139_2.png" src="../_images/08-Data_R_139_2.png" />
-</div>
-</div>
-<p>And you can also change the order of the combination:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">.</span><span class="o">~</span> <span class="n">Location</span> <span class="o">+</span> <span class="n">Type.of.feeding.interaction</span><span class="p">,</span> 
-    <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in Ops.factor(Location, Type.of.feeding.interaction):
-“‘+’ not meaningful for factors”Warning message in Ops.factor(Location, Type.of.feeding.interaction):
-“‘+’ not meaningful for factors”Warning message in Ops.factor(Location, Type.of.feeding.interaction):
-“‘+’ not meaningful for factors”
-</pre></div>
-</div>
-<img alt="../_images/08-Data_R_141_2.png" src="../_images/08-Data_R_141_2.png" />
-</div>
-</div>
-<p>For more fine-tuned faceting, look up the <code class="docutils literal notranslate"><span class="pre">facet_grid()</span></code> and <code class="docutils literal notranslate"><span class="pre">facet_wrap()</span></code> functions within <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. Look up this variant of the <a class="reference external" href="http://www.cookbook-r.com/Graphs">R Cookbook</a> for more examples.</p>
 </div>
 <div class="section" id="logarithmic-axes">
 <h4>Logarithmic axes<a class="headerlink" href="#logarithmic-axes" title="Permalink to this headline">¶</a></h4>
@@ -2099,7 +2025,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_143_1.png" src="../_images/08-Data_R_143_1.png" />
+<img alt="../_images/08-Data_R_142_0.png" src="../_images/08-Data_R_142_0.png" />
 </div>
 </div>
 </div>
@@ -2116,7 +2042,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_145_1.png" src="../_images/08-Data_R_145_1.png" />
+<img alt="../_images/08-Data_R_144_0.png" src="../_images/08-Data_R_144_0.png" />
 </div>
 </div>
 <p>Adding <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">theme_bw()</span></code> makes it suitable for black and white printing.</p>
@@ -2130,7 +2056,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_147_1.png" src="../_images/08-Data_R_147_1.png" />
+<img alt="../_images/08-Data_R_146_0.png" src="../_images/08-Data_R_146_0.png" />
 </div>
 </div>
 </div>
@@ -2206,7 +2132,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_151_1.png" src="../_images/08-Data_R_151_1.png" />
+<img alt="../_images/08-Data_R_150_0.png" src="../_images/08-Data_R_150_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2217,7 +2143,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_152_1.png" src="../_images/08-Data_R_152_1.png" />
+<img alt="../_images/08-Data_R_151_0.png" src="../_images/08-Data_R_151_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2228,7 +2154,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_153_1.png" src="../_images/08-Data_R_153_1.png" />
+<img alt="../_images/08-Data_R_152_0.png" src="../_images/08-Data_R_152_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2239,7 +2165,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_154_1.png" src="../_images/08-Data_R_154_1.png" />
+<img alt="../_images/08-Data_R_153_0.png" src="../_images/08-Data_R_153_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2253,7 +2179,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_155_2.png" src="../_images/08-Data_R_155_2.png" />
+<img alt="../_images/08-Data_R_154_1.png" src="../_images/08-Data_R_154_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2264,7 +2190,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_156_1.png" src="../_images/08-Data_R_156_1.png" />
+<img alt="../_images/08-Data_R_155_0.png" src="../_images/08-Data_R_155_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2278,7 +2204,7 @@ idea of the spread:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
 </pre></div>
 </div>
-<img alt="../_images/08-Data_R_157_2.png" src="../_images/08-Data_R_157_2.png" />
+<img alt="../_images/08-Data_R_156_1.png" src="../_images/08-Data_R_156_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2288,7 +2214,10 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_158_1.png" src="../_images/08-Data_R_158_1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="../_images/08-Data_R_157_1.png" src="../_images/08-Data_R_157_1.png" />
 </div>
 </div>
 </div>
@@ -2321,7 +2250,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_162_1.png" src="../_images/08-Data_R_162_1.png" />
+<img alt="../_images/08-Data_R_161_0.png" src="../_images/08-Data_R_161_0.png" />
 </div>
 </div>
 <p>Plot is blank because we are yet to specify a geometry — only then can we see the graph:</p>
@@ -2332,7 +2261,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_164_1.png" src="../_images/08-Data_R_164_1.png" />
+<img alt="../_images/08-Data_R_163_0.png" src="../_images/08-Data_R_163_0.png" />
 </div>
 </div>
 <p>We can use the “+” sign to concatenate different commands:</p>
@@ -2348,7 +2277,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_166_1.png" src="../_images/08-Data_R_166_1.png" />
+<img alt="../_images/08-Data_R_165_0.png" src="../_images/08-Data_R_165_0.png" />
 </div>
 </div>
 <p>Let’s remove the legend:</p>
@@ -2359,9 +2288,69 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_168_1.png" src="../_images/08-Data_R_168_1.png" />
+<img alt="../_images/08-Data_R_167_0.png" src="../_images/08-Data_R_167_0.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">.</span><span class="o">~</span> <span class="n">Type.of.feeding.interaction</span> <span class="o">+</span> <span class="n">Location</span><span class="p">,</span> 
+      <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
+
+<span class="nf">facet_grid</span><span class="p">(</span><span class="n">.</span> <span class="o">~</span> <span class="n">vs</span> <span class="o">+</span> <span class="n">carb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in Ops.factor(Type.of.feeding.interaction, Location):
+“‘+’ not meaningful for factors”
+Warning message in Ops.factor(Type.of.feeding.interaction, Location):
+“‘+’ not meaningful for factors”
+Warning message in Ops.factor(Type.of.feeding.interaction, Location):
+“‘+’ not meaningful for factors”
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ggproto object: Class FacetGrid, Facet, gg&gt;
+    compute_layout: function
+    draw_back: function
+    draw_front: function
+    draw_labels: function
+    draw_panels: function
+    finish_data: function
+    init_scales: function
+    map_data: function
+    params: list
+    setup_data: function
+    setup_params: function
+    shrink: TRUE
+    train_scales: function
+    vars: function
+    super:  &lt;ggproto object: Class FacetGrid, Facet, gg&gt;
+</pre></div>
+</div>
+<img alt="../_images/08-Data_R_168_2.png" src="../_images/08-Data_R_168_2.png" />
+</div>
+</div>
+<p>And you can also change the order of the combination:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qplot</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">Prey.mass</span><span class="o">/</span><span class="n">Predator.mass</span><span class="p">),</span> <span class="n">facets</span> <span class="o">=</span> <span class="n">.</span><span class="o">~</span> <span class="n">Location</span> <span class="o">+</span> <span class="n">Type.of.feeding.interaction</span><span class="p">,</span> 
+    <span class="n">data</span> <span class="o">=</span> <span class="n">MyDF</span><span class="p">,</span> <span class="n">geom</span> <span class="o">=</span>  <span class="s">&quot;density&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in Ops.factor(Location, Type.of.feeding.interaction):
+“‘+’ not meaningful for factors”
+Warning message in Ops.factor(Location, Type.of.feeding.interaction):
+“‘+’ not meaningful for factors”
+Warning message in Ops.factor(Location, Type.of.feeding.interaction):
+“‘+’ not meaningful for factors”
+</pre></div>
+</div>
+<img alt="../_images/08-Data_R_170_1.png" src="../_images/08-Data_R_170_1.png" />
+</div>
+</div>
+<p>For more fine-tuned faceting, look up the <code class="docutils literal notranslate"><span class="pre">facet_grid()</span></code> and <code class="docutils literal notranslate"><span class="pre">facet_wrap()</span></code> functions within <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code>. Look up this variant of the <a class="reference external" href="http://www.cookbook-r.com/Graphs">R Cookbook</a> for more examples.</p>
 </div>
 <div class="section" id="some-useful-ggplot-examples">
 <h3>Some useful ggplot examples<a class="headerlink" href="#some-useful-ggplot-examples" title="Permalink to this headline">¶</a></h3>
@@ -2372,6 +2361,11 @@ idea of the spread:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">require</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: reshape2
 </pre></div>
 </div>
 </div>
@@ -2402,7 +2396,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_173_1.png" src="../_images/08-Data_R_173_1.png" />
+<img alt="../_images/08-Data_R_176_0.png" src="../_images/08-Data_R_176_0.png" />
 </div>
 </div>
 <p>Add a black line dividing cells:</p>
@@ -2413,7 +2407,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_175_1.png" src="../_images/08-Data_R_175_1.png" />
+<img alt="../_images/08-Data_R_178_0.png" src="../_images/08-Data_R_178_0.png" />
 </div>
 </div>
 <p>Remove the legend:</p>
@@ -2424,7 +2418,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_177_1.png" src="../_images/08-Data_R_177_1.png" />
+<img alt="../_images/08-Data_R_180_0.png" src="../_images/08-Data_R_180_0.png" />
 </div>
 </div>
 <p>Remove all the rest:</p>
@@ -2443,7 +2437,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_179_1.png" src="../_images/08-Data_R_179_1.png" />
+<img alt="../_images/08-Data_R_182_0.png" src="../_images/08-Data_R_182_0.png" />
 </div>
 </div>
 <p>Explore some colors:</p>
@@ -2454,7 +2448,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_181_1.png" src="../_images/08-Data_R_181_1.png" />
+<img alt="../_images/08-Data_R_184_0.png" src="../_images/08-Data_R_184_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2464,7 +2458,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_182_1.png" src="../_images/08-Data_R_182_1.png" />
+<img alt="../_images/08-Data_R_185_0.png" src="../_images/08-Data_R_185_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2474,7 +2468,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_183_1.png" src="../_images/08-Data_R_183_1.png" />
+<img alt="../_images/08-Data_R_186_0.png" src="../_images/08-Data_R_186_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2484,7 +2478,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_184_1.png" src="../_images/08-Data_R_184_1.png" />
+<img alt="../_images/08-Data_R_187_0.png" src="../_images/08-Data_R_187_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2494,7 +2488,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_185_1.png" src="../_images/08-Data_R_185_1.png" />
+<img alt="../_images/08-Data_R_188_0.png" src="../_images/08-Data_R_188_0.png" />
 </div>
 </div>
 </div>
@@ -2554,7 +2548,7 @@ idea of the spread:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08-Data_R_190_1.png" src="../_images/08-Data_R_190_1.png" />
+<img alt="../_images/08-Data_R_193_0.png" src="../_images/08-Data_R_193_0.png" />
 </div>
 </div>
 <div class="section" id="id4">
@@ -2571,19 +2565,6 @@ idea of the spread:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
-“cannot open file &#39;../data/Results.txt&#39;: No such file or directory”
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;../data/Results.txt&quot;</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>Check what the data look like:</p>
 <div class="cell docutils container">
@@ -2592,6 +2573,19 @@ idea of the spread:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>x</th><th scope=col>y1</th><th scope=col>y2</th><th scope=col>y3</th><th scope=col>Label</th></tr></thead>
+<tbody>
+	<tr><td>3.515424</td><td>4320    </td><td>4320    </td><td>0       </td><td>NA      </td></tr>
+	<tr><td>3.533984</td><td>2160    </td><td>2160    </td><td>0       </td><td>NA      </td></tr>
+	<tr><td>3.557647</td><td>4320    </td><td>4320    </td><td>0       </td><td>NA      </td></tr>
+	<tr><td>3.569953</td><td>4320    </td><td>4320    </td><td>0       </td><td>NA      </td></tr>
+	<tr><td>3.578984</td><td>8640    </td><td>8640    </td><td>0       </td><td>NA      </td></tr>
+	<tr><td>3.585665</td><td>2160    </td><td>2160    </td><td>0       </td><td>NA      </td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2641,6 +2635,13 @@ idea of the spread:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Removed 91 rows containing missing values (geom_text).”
+</pre></div>
+</div>
+<img alt="../_images/08-Data_R_199_1.png" src="../_images/08-Data_R_199_1.png" />
+</div>
 </div>
 <div class="section" id="id5">
 <h4>Exercise<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
@@ -2688,11 +2689,17 @@ idea of the spread:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/08-Data_R_202_0.png" src="../_images/08-Data_R_202_0.png" />
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id6">
-<h4>Exercise<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h2>Practicals<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plotting-script">
+<h3>Plotting script<a class="headerlink" href="#plotting-script" title="Permalink to this headline">¶</a></h3>
 <p>Create a self-sufficient R Script called <code class="docutils literal notranslate"><span class="pre">plotLin.R</span></code> that combines all the above commands for annotating a plot, including saving the resulting figure as a file called <code class="docutils literal notranslate"><span class="pre">MyLinReg.pdf</span></code> in the results directory.</p>
-</div>
 </div>
 <div class="section" id="ggthemes">
 <h3>ggthemes<a class="headerlink" href="#ggthemes" title="Permalink to this headline">¶</a></h3>
@@ -2715,24 +2722,27 @@ idea of the spread:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/08-Data_R_205_0.png" src="../_images/08-Data_R_205_0.png" />
 </div>
-<p>Go to <a class="reference external" href="https://github.com/jrnold/ggthemes">https://github.com/jrnold/ggthemes</a> for more information and a list of <code class="docutils literal notranslate"><span class="pre">geom</span></code>s, <code class="docutils literal notranslate"><span class="pre">theme</span></code>s, and <code class="docutils literal notranslate"><span class="pre">scale</span></code>s.</p>
-<blockquote>
-<div><p><strong>Tip:</strong> <em>Both <code class="docutils literal notranslate"><span class="pre">library()</span></code> and <code class="docutils literal notranslate"><span class="pre">require()</span></code> are commands/functions to load packages. The difference is that <code class="docutils literal notranslate"><span class="pre">require()</span></code> is designed for use inside other functions, so it returns <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and gives a warning, whereas<code class="docutils literal notranslate"><span class="pre">library()</span></code> returns an error by default if the package does not exist.</em></p>
-</div></blockquote>
+</div>
+<p>Go to &lt;https://github.com/jrnold/ggthemes for more information and a list of <code class="docutils literal notranslate"><span class="pre">geom</span></code>s, <code class="docutils literal notranslate"><span class="pre">theme</span></code>s, and <code class="docutils literal notranslate"><span class="pre">scale</span></code>s.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">library()</span></code> and <code class="docutils literal notranslate"><span class="pre">require()</span></code> are commands/functions to load packages. The difference is that <code class="docutils literal notranslate"><span class="pre">require()</span></code> is designed for use inside other functions, so it returns <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and gives a warning, whereas<code class="docutils literal notranslate"><span class="pre">library()</span></code> returns an error by default if the package does not exist.</p>
+</div>
 </div>
 </div>
 <div class="section" id="id7">
 <h2>Practicals<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>In this practical, you will write script that draws and saves a pdf file of the following figure, and writes the accompanying regression results to a formatted table in csv. Note that as the plot suggests, that the analysis must be subsetted by the <code class="docutils literal notranslate"><span class="pre">Predator.lifestage</span></code> field of the dataset.</p></li>
-</ol>
+<div class="section" id="visualizing-regression-analyses">
+<h3>Visualizing Regression analyses<a class="headerlink" href="#visualizing-regression-analyses" title="Permalink to this headline">¶</a></h3>
+<p>In this practical, you will write script that draws and saves a pdf file of the following figure, and writes the accompanying regression results to a formatted table in csv. Note that as the plot suggests, that the analysis must be subsetted by the <code class="docutils literal notranslate"><span class="pre">Predator.lifestage</span></code> field of the dataset.</p>
 <hr class="docutils" />
 <p><img alt="image" src="../_images/Figure1.png" />
-<small><center>
-Write a script that generates this figure</p>
-</center></small>
-<hr class="docutils" />
+&lt;small&lt;center
+Write a script that generates this figure
+&lt;/center&lt;/small</p>
 <p><em>Guidelines</em>:</p>
 <ul class="simple">
 <li><p>Write a <code class="docutils literal notranslate"><span class="pre">R</span></code> script file called <code class="docutils literal notranslate"><span class="pre">PP_Regress.R</span></code> and save it in the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory. Sourcing or running this
@@ -2743,10 +2753,9 @@ script should result in one pdf file containing the following figure being saved
 <li><p>The script should be self-sufficient and not need any external inputs — it should import the above predator-prey dataset from the appropriate directory, and save the graphic plots to the appropriate directory (Hint: use relative paths). Anybody should be able to <code class="docutils literal notranslate"><span class="pre">source</span></code> it without errors.</p></li>
 <li><p>You can also use the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> function instead of looping (see R Chapter, and the <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> command instead of <code class="docutils literal notranslate"><span class="pre">qplot</span></code>.</p></li>
 </ul>
-<hr class="docutils" />
-<ol class="simple">
-<li><p><strong>Mapping</strong>:</p></li>
-</ol>
+</div>
+<div class="section" id="mapping">
+<h3>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h3>
 <p>You can do mapping in R using the <code class="docutils literal notranslate"><span class="pre">maps</span></code> package. In this practical, you will map the Global Population Dynamics Database (GPDD). This is a freely available database that was developed at Silwood. The <a class="reference external" href="http://livingplanetindex.org/home/index">Living Planet Index</a> is based upon these data.</p>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">load()</span></code> from <code class="docutils literal notranslate"><span class="pre">GPDDFiltered.RData</span></code> that is available on the TheMulQuaBio git repository — have a look at the data contents.</p></li>
@@ -2762,29 +2771,37 @@ script should result in one pdf file containing the following figure being saved
 </li>
 <li><p>Looking at the map, what biases might you expect in any analysis based on the data represented? <em>include your answer as a comment at the end of your R script</em>.</p></li>
 </ul>
-<hr class="docutils" />
-<ol class="simple">
-<li><p><strong>Extra Credit</strong>:</p></li>
-</ol>
+</div>
+<div class="section" id="groupwork-practical-regression-analysis">
+<h3>Groupwork practical: Regression analysis<a class="headerlink" href="#groupwork-practical-regression-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Do the same as (1) above, but the analysis this time should be separate by the dataset’s <code class="docutils literal notranslate"><span class="pre">Location</span></code> field. Call it <code class="docutils literal notranslate"><span class="pre">PP_Regress_loc.R</span></code>. No need to generate plots for this (just the analysis results to a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file), as a combination of <code class="docutils literal notranslate"><span class="pre">Type.of.feeding.interaction</span></code>, <code class="docutils literal notranslate"><span class="pre">Predator.lifestage</span></code>, and <code class="docutils literal notranslate"> <span class="pre">Location</span></code> will be far too busy (faceting by three variables is too much to be meaningful)!</p>
+</div>
 </div>
 <div class="section" id="readings-resources">
 <h2>Readings &amp; Resources<a class="headerlink" href="#readings-resources" title="Permalink to this headline">¶</a></h2>
-<p>Check out <code class="docutils literal notranslate"><span class="pre">DataDataData!</span></code>, <code class="docutils literal notranslate"><span class="pre">Visualization</span></code> and <code class="docutils literal notranslate"><span class="pre">R</span></code>, under <code class="docutils literal notranslate"><span class="pre">readings</span></code> on the TheMulQuaBio repository.</p>
+<p>Check out <em>DataDataData!</em>, <em>Visualization</em> and <em>R</em>, under <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/tree/master/content/readings"><em>readings</em> on the TheMulQuaBio repository</a>.</p>
+<div class="section" id="data-management-reformatting-and-cleaning">
+<h3>Data management, reformatting and cleaning<a class="headerlink" href="#data-management-reformatting-and-cleaning" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>https://clauswilke.com/dataviz/</p></li>
+<li><p>Brian McGill’s <a class="reference external" href="https://dynamicecology.wordpress.com/2016/08/22/ten-commandments-for-good-data-management">Ten commandments for data management</a></p></li>
+<li><p>This paper covers similar ground (available in the readings directory): <a class="reference external" href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205">Borer et al (2009). Some Simple Guidelines for Effective Data Management. Bulletin of the Ecological Society of America, 90(2), 205-214.</a></p></li>
 <li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/book/10.1002/0471448354">Dasu, T. &amp; Johnson, T. Exploratory Data Mining and Data Cleaning. (John Wiley &amp; Sons, Inc., 2003). doi:10.1002/0471448354</a></p></li>
 <li><p><a class="reference external" href="http://www.theanalysisfactor.com/wide-and-long-data/">Wide vs. long data</a></p></li>
 <li><p><a class="reference external" href="http://vita.had.co.nz/papers/tidy-data.pdf">Hadley Wickham’s excellent article about “tidy” data</a>.</p></li>
-<li><p>Brian McGill’s <a class="reference external" href="https://dynamicecology.wordpress.com/2016/08/22/ten-commandments-for-good-data-management">Ten commandments for data management</a></p></li>
-<li><p>This paper covers similar ground (available in the readings directory): <a class="reference external" href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9623-90.2.205">Borer et al (2009). Some Simple Guidelines for Effective Data Management. Bulletin of the Ecological Society of America, 90(2), 205-214.</a></p></li>
 <li><p><a class="reference external" href="http://vis.stanford.edu/papers/wrangler">Wrangler</a></p></li>
 <li><p><a class="reference external" href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2000/CSD-00-1110.pdf">An interactive framework for data cleaning</a></p></li>
+</ul>
+</div>
+<div class="section" id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833">Ten Simple Rules for Better Figures</a></p></li>
+<li><p>https://clauswilke.com/dataviz/</p></li>
 <li><p><a class="reference external" href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/adma.201102518?casa_token=48b0PGtaUiYAAAAA:DQ9bHugikOkHDkf4uLTYIq74negyWefZjAbexYcgYObHn0sks2Q8ulvHcTUWxteqwTb5qAa0IV71Mg">Rolandi et al. “A Brief Guide to Designing Effective Figures for the Scientific Paper”, doi:10.1002/adma.201102518</a></p></li>
 <li><p>The classic <a class="reference external" href="https://www.edwardtufte.com/tufte/books_vdqi">Tufte</a>; Available in the Imperial College Central Library. I have also added extracts and a related book in pdf on the git repository. BTW, check out what Tufte thinks of <a class="reference external" href="https://www.edwardtufte.com/tufte/powerpoint">PowerPoint</a>.</p></li>
 <li><p><a class="reference external" href="http://motioninsocial.com/tufte">Tufte in R</a></p></li>
-<li><p><a class="reference external" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833">Ten Simple Rules for Better Figures</a></p></li>
 </ul>
+</div>
 </div>
 </div>
 

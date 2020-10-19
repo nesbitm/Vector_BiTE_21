@@ -879,6 +879,28 @@
   <a class="reference internal nav-link" href="#readings-and-resources">
    Readings and Resources
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general">
+     General
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Vectorization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Debugging
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Sweave and knitr
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -5002,7 +5024,7 @@ attr(,&quot;condition&quot;)
 </div>
 <div class="section" id="tree-heights-groupwork-practical-2">
 <h3>Tree Heights Groupwork Practical 2<a class="headerlink" href="#tree-heights-groupwork-practical-2" title="Permalink to this headline">¶</a></h3>
-<p>Assuming you have already started on Python (Python Chapter I), write a Python version of <code class="docutils literal notranslate"><span class="pre">get_TreeHeight.R</span></code> (call it <code class="docutils literal notranslate"> <span class="pre">get_TreeHeight.py</span></code>). Include a test of this script into <code class="docutils literal notranslate"> <span class="pre">run_get_TreeHeight.sh</span></code>.</p>
+<p>Assuming you have already worked through <a class="reference internal" href="05-Python_I.html"><span class="doc std std-doc">Python Chapter I</span></a>, write a Python version of <code class="docutils literal notranslate"><span class="pre">get_TreeHeight.R</span></code> (call it <code class="docutils literal notranslate"> <span class="pre">get_TreeHeight.py</span></code>). Include a test of this script into <code class="docutils literal notranslate"> <span class="pre">run_get_TreeHeight.sh</span></code>.</p>
 </div>
 <div class="section" id="practicals-wrap-up">
 <h3>Practicals wrap-up<a class="headerlink" href="#practicals-wrap-up" title="Permalink to this headline">¶</a></h3>
@@ -5016,20 +5038,37 @@ attr(,&quot;condition&quot;)
 </div>
 <div class="section" id="readings-and-resources">
 <h2>Readings and Resources<a class="headerlink" href="#readings-and-resources" title="Permalink to this headline">¶</a></h2>
-<p>Check the readings under the R directory in the TheMulQuaBio repository. Also, search online for “R tutorial”, and plenty will pop up. Choose ones that seem the most intuitive to you.</p>
+<p>Check the readings under the R directory in the TheMulQuaBio repository. Also, search online for “R tutorial”, and plenty will pop up. Choose ones that seem the most intuitive to you. * <em>Remember, all R packages come with pdf guides/documentation!</em></p>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The Use R! series (all yellow books) by Springer are really good. In particular, consider: “A Beginner’s Guide to R”, “R by Example”, “Numerical Ecology With R”, “ggplot2” (coming up in the <a class="reference internal" href="08-Data_R.html"><span class="doc std std-doc">Visualization Chapter</span></a>, “A Primer of Ecology with R”, “Nonlinear Regression with R”, and “Analysis of Phylogenetics and Evolution with R”.</p></li>
 <li><p>For more focus on dynamical models: Soetaert &amp; Herman. 2009 “A practical guide to ecological modelling: using R as a simulation platform”.</p></li>
 <li><p>There are excellent websites besides cran. In particular, check out
 <a class="reference external" href="https://www.statmethods.net/">statmethods.net</a> and the <a class="reference external" href="https://en.wikibooks.org/wiki/R_Programming">R Wiki</a>.</p></li>
 <li><p>For those who are coming with Matlab experience, <a class="reference external" href="http://www.math.umaine.edu/~hiebeler/comp/matlabR.html">see this</a></p></li>
-<li><p>Read this nice, <a class="reference external" href="http://www.noamross.net/blog/2014/4/16/vectorization-in-r%E2%80%93why.html">intuitive article about R and Vectorization</a>.</p></li>
-<li><p>See <a class="reference external" href="http://www.biostat.jhsph.edu/~rpeng/docs/R-debug-tools.pdf">An introduction to the Interactive Debugging Tools in R</a> by Roger D Peng.</p></li>
-<li><p>If you are sticking with RStudio, <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">see this</a></p></li>
-<li><p>For a practical intro to Sweave and knitr, see <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr">this</a> and <a class="reference external" href="http://yihui.name/knitr/">this</a>.</p></li>
-<li><p>There is a <a class="reference external" href="https://mailman.ic.ac.uk/mailman/listinfo/silwood-r">Silwood R list</a></p></li>
-<li><p><em>Remember, R packages come with pdf guides/documentation!</em></p></li>
 </ul>
+</div>
+<div class="section" id="id3">
+<h3>Vectorization<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Read this nice, <a class="reference external" href="http://www.noamross.net/blog/2014/4/16/vectorization-in-r%E2%80%93why.html">intuitive article about R and Vectorization</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Debugging<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://adv-r.hadley.nz/debugging.html">Debugging in R</a></p></li>
+<li><p><a class="reference external" href="http://www.biostat.jhsph.edu/~rpeng/docs/R-debug-tools.pdf">An introduction to the Interactive Debugging Tools in R</a> by Roger D Peng.</p></li>
+<li><p>If you are sticking with RStudio, <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">see this</a></p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>Sweave and knitr<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>For a practical intro to Sweave and knitr, see <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/200552056-Using-Sweave-and-knitr">this</a> and <a class="reference external" href="http://yihui.name/knitr/">this</a>.</p></li>
+</ul>
+</div>
 </div>
 </div>
 
