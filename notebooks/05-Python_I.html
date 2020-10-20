@@ -105,15 +105,6 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="00-Intro.html">
-   Introduction
-   <span class="tocSkip">
-   </span>
-   <a name="chap:Intro">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="01-Unix.html">
    UNIX and Linux
   </a>
@@ -159,13 +150,13 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="11-Stats-Intro.html">
-   Introduction
+  <a class="reference internal" href="../Stats-Intro.html">
+   Introduction to this section
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08-Data_R.html">
-   Data Management, Exploration and Visualization
+   Data Management and Visualization
   </a>
  </li>
  <li class="toctree-l1">
@@ -701,7 +692,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#errors-in-your-python-code">
-   Errors in your python code
+   Errors in your Python code
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -730,15 +721,22 @@
     <a class="reference internal nav-link" href="#debugging">
      Debugging
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paranoid-programming-debugging-with-breakpoints">
+       Paranoid programming: debugging with breakpoints
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#debugging-using-your-ide">
+       Debugging using your IDE
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paranoid-programming-debugging-with-breakpoints">
-     Paranoid programming: debugging with breakpoints
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#debugging-using-your-ide">
-     Debugging using your IDE
+    <a class="reference internal nav-link" href="#errors-that-cannot-be-debugged">
+     Errors that cannot be debugged
     </a>
    </li>
   </ul>
@@ -813,13 +811,18 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Python data structures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#elements-of-the-python-program">
      Elements of the Python program
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Python data structures
+    <a class="reference internal nav-link" href="#errors-and-debugging">
+     Errors and Debugging
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -3201,7 +3204,7 @@ this main function where the printing of the line “This is a boilerplate” ha
 </div>
 </div>
 <div class="section" id="errors-in-your-python-code">
-<h2>Errors in your python code<a class="headerlink" href="#errors-in-your-python-code" title="Permalink to this headline">¶</a></h2>
+<span id="python-errors"></span><h2>Errors in your Python code<a class="headerlink" href="#errors-in-your-python-code" title="Permalink to this headline">¶</a></h2>
 <p>What do you want from your code? Rank the following by importance:</p>
 <ol class="simple">
 <li><p>it is very fast</p></li>
@@ -3305,7 +3308,7 @@ this main function where the printing of the line “This is a boilerplate” ha
 </div>
 </div>
 <div class="section" id="debugging">
-<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<span id="python-debugging"></span><h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
 <p>OK, so you unit-tested, let’s go look at life through beer-goggles… BUT NO! YOU WILL VERY LIKELY RUN INTO BUGS!</p>
 <p>Bugs (unexpected errors) happen, almost inevitably, in life and programming. You need to find and debug them. Banish all thoughts of littering your code with <code class="docutils literal notranslate"><span class="pre">print</span></code> statements to find bugs.</p>
 <p>Enter the debugger. The command <code class="docutils literal notranslate"><span class="pre">pdb</span></code> turns on the python debugger. Type the following in a file and save as
@@ -3428,9 +3431,8 @@ Automatic pdb calling has been turned OFF
 </pre></div>
 </div>
 <p>Once in the debugger, use <code class="docutils literal notranslate"><span class="pre">pp</span> <span class="pre">locals()</span></code> and/or <code class="docutils literal notranslate"><span class="pre">pp</span> <span class="pre">globals()</span></code> to see all local or global objects (including variables and functions) available at the point where the debugger stopped in the script. <code class="docutils literal notranslate"><span class="pre">pp</span></code> stands for “pretty print”.</p>
-</div>
 <div class="section" id="paranoid-programming-debugging-with-breakpoints">
-<h3>Paranoid programming: debugging with breakpoints<a class="headerlink" href="#paranoid-programming-debugging-with-breakpoints" title="Permalink to this headline">¶</a></h3>
+<h4>Paranoid programming: debugging with breakpoints<a class="headerlink" href="#paranoid-programming-debugging-with-breakpoints" title="Permalink to this headline">¶</a></h4>
 <p>You may want to pause the program run and inspect a given line or block  of code (<code class="docutils literal notranslate"><span class="pre">*why?*</span></code> — impromptu unit-testing is one reason). To do so, simply put this snippet of code where you want to pause and start a debugging session and then run the program again:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipdb</span><span class="p">;</span> <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
 </pre></div>
@@ -3440,8 +3442,97 @@ Automatic pdb calling has been turned OFF
 <p><em>If you are serious about programming, please start using a debugger (R, Python, whatever…)!</em></p>
 </div>
 <div class="section" id="debugging-using-your-ide">
-<h3>Debugging using your IDE<a class="headerlink" href="#debugging-using-your-ide" title="Permalink to this headline">¶</a></h3>
+<h4>Debugging using your IDE<a class="headerlink" href="#debugging-using-your-ide" title="Permalink to this headline">¶</a></h4>
 <p>If you are using a python-dedicated IDE like Spyder or PyCharm, you should do debugging, including setting breakpoints using a graphic user interface. Even more general-purpose code editors / IDEs like Visual Studio Code allow very good <a class="reference external" href="https://code.visualstudio.com/docs/editor/debugging">graphical debugging</a>.</p>
+</div>
+</div>
+<div class="section" id="errors-that-cannot-be-debugged">
+<h3>Errors that cannot be debugged<a class="headerlink" href="#errors-that-cannot-be-debugged" title="Permalink to this headline">¶</a></h3>
+<p>In many scenarios, you <em>do not</em> want to, or cannot, debug away an error in your program. The two most common such scenarios are:</p>
+<ul class="simple">
+<li><p>An error that arises when a particular condition is not met in your program.</p></li>
+<li><p>You <em>want</em> the code to continue running despite an error.</p></li>
+</ul>
+<p>to “handle” such errors, you can use the <code class="docutils literal notranslate"><span class="pre">try</span></code> - <code class="docutils literal notranslate"><span class="pre">except</span></code> keywords.</p>
+<p>Let’s expand our previous <code class="docutils literal notranslate"><span class="pre">debugme.py</span></code> example to understand how this works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buggyfunc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span> 
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">-</span><span class="mi">1</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This didn&#39;t work; x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">; y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="n">buggyfunc</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This didn&#39;t work; x = 20; y = 0
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\star\)</span> Run this block of code yourself in the ipython console using <code class="docutils literal notranslate"><span class="pre">%cpaste</span></code>.</p>
+<p>So, <code class="docutils literal notranslate"><span class="pre">try</span></code> does what the name suggests - tries to do something (the division), and if it does not work (any error happens), transfers control to the <code class="docutils literal notranslate"><span class="pre">except</span></code> block and whatever you ask Python to do in that block gets executed. This is a good strategy if you want your program to give feedback, or that particular error is not common.</p>
+<p>You can also “catch” specific types of errors. For example, modify the code further:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buggyfunc</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span> 
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">-</span><span class="mi">1</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The result of dividing a number by zero is undefined&quot;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This didn&#39;t work; x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">; y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OK; x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">; y = </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="n">buggyfunc</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OK; x = 20; y = 19, z = 1.0526315789473684;
+OK; x = 20; y = 18, z = 1.1111111111111112;
+OK; x = 20; y = 17, z = 1.1764705882352942;
+OK; x = 20; y = 16, z = 1.25;
+OK; x = 20; y = 15, z = 1.3333333333333333;
+OK; x = 20; y = 14, z = 1.4285714285714286;
+OK; x = 20; y = 13, z = 1.5384615384615385;
+OK; x = 20; y = 12, z = 1.6666666666666667;
+OK; x = 20; y = 11, z = 1.8181818181818181;
+OK; x = 20; y = 10, z = 2.0;
+OK; x = 20; y = 9, z = 2.2222222222222223;
+OK; x = 20; y = 8, z = 2.5;
+OK; x = 20; y = 7, z = 2.857142857142857;
+OK; x = 20; y = 6, z = 3.3333333333333335;
+OK; x = 20; y = 5, z = 4.0;
+OK; x = 20; y = 4, z = 5.0;
+OK; x = 20; y = 3, z = 6.666666666666667;
+OK; x = 20; y = 2, z = 10.0;
+OK; x = 20; y = 1, z = 20.0;
+The result of dividing a number by zero is undefined
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>So here we anticipated a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> and gave feedback on that. As such, <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> is a pre-defined error type in Python. Another example is <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>, which you will get if you try to run the above script with something non-numeric, such as a string.</p>
+<p>Note that we also used <code class="docutils literal notranslate"><span class="pre">else</span></code> (just like in the case of <code class="docutils literal notranslate"><span class="pre">if</span></code>-<code class="docutils literal notranslate"><span class="pre">else</span></code>) here to give feedback on every successful calculation. There is also a <code class="docutils literal notranslate"><span class="pre">finally</span></code> keyword that enables you to execute sections of code that should always run, with or without any previously encountered exceptions.</p>
 </div>
 </div>
 <div class="section" id="functions-modules-and-code-compartmentalization">
@@ -3581,6 +3672,12 @@ Genus
 <li><p><a class="reference external" href="https://github.com/ipython/ipython/wiki">Cookbooks</a> can be very useful</p></li>
 </ul>
 </div>
+<div class="section" id="id4">
+<h3>Python data structures<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Read more about native Python data structures <a class="reference external" href="https://diveintopython3.problemsolving.io/native-datatypes.html">here</a></p></li>
+</ul>
+</div>
 <div class="section" id="elements-of-the-python-program">
 <h3>Elements of the Python program<a class="headerlink" href="#elements-of-the-python-program" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -3588,10 +3685,10 @@ Genus
 <li><p>See the <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">official docstring conventions</a>.</p></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h3>Python data structures<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="errors-and-debugging">
+<h3>Errors and Debugging<a class="headerlink" href="#errors-and-debugging" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Read more about native Python data structures <a class="reference external" href="https://diveintopython3.problemsolving.io/native-datatypes.html">here</a></p></li>
+<li><p>https://docs.python.org/3/tutorial/errors.html</p></li>
 </ul>
 </div>
 <div class="section" id="functions-modules-and-classes">

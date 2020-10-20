@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction" href="11-Stats-Intro.html" />
+    <link rel="next" title="Introduction to this section" href="../Stats-Intro.html" />
     <link rel="prev" title="Biological Computing in Python II" href="06-Python_II.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -105,15 +105,6 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="00-Intro.html">
-   Introduction
-   <span class="tocSkip">
-   </span>
-   <a name="chap:Intro">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="01-Unix.html">
    UNIX and Linux
   </a>
@@ -159,13 +150,13 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="11-Stats-Intro.html">
-   Introduction
+  <a class="reference internal" href="../Stats-Intro.html">
+   Introduction to this section
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08-Data_R.html">
-   Data Management, Exploration and Visualization
+   Data Management and Visualization
   </a>
  </li>
  <li class="toctree-l1">
@@ -820,13 +811,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#catching-errors">
-     “Catching” errors
+    <a class="reference internal nav-link" href="#debugging">
+     Debugging
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#debugging">
-     Debugging
+    <a class="reference internal nav-link" href="#catching-errors">
+     “Catching” errors
     </a>
    </li>
   </ul>
@@ -859,8 +850,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#groupwork-practical-tree-heights-2">
-     Groupwork Practical Tree Heights  2
+    <a class="reference internal nav-link" href="#groupwork-practical-on-tree-heights-2">
+     Groupwork Practical  on Tree Heights  2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -882,11 +873,6 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     Vectorization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
      Debugging
     </a>
    </li>
@@ -968,7 +954,7 @@
 </div>
 <div class="section" id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>You should be using an IDE for R. Please re-visit the <a class="reference internal" href="00-Intro.html"><span class="doc std std-doc">“To IDE or not to IDE” section of the course’s introduction</span></a> if you are not familiar with IDEs.</p>
+<p>You should be using an IDE for R. Please re-visit the <a class="reference internal" href="../intro.html"><span class="doc std std-doc">“To IDE or not to IDE” section of the introduction</span></a> if you are not familiar with IDEs.</p>
 <p>Let’s briefly look at the bare-bones R interface and command line  interface (CLI), and then switch to an IDE like VS Code or RStudio.</p>
 <p>Launch R (From Applications menu on Window or Mac, from terminal in  Linux/Ubuntu) — it should look something like this (on Linux/Ubuntu or Mac terminal):</p>
 <p><img alt="image" src="../_images/R_Linux.png" /></p>
@@ -2174,7 +2160,11 @@ Traceback:
 </div>
 <div class="section" id="lists">
 <h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
-<p>A list is used to collect a group of data objects of different sizes and types (e.g., one whole data frame and one vector can both be in a single list). It is simply an ordered collection of objects (that can be variables). The outputs of many statistical functions in R are lists (e.g. linear model fitting using <code class="docutils literal notranslate"> <span class="pre">lm()</span></code>), to return all relevant information in one output object. So you need to know how to unpack and manipulate lists.</p>
+<p>A list is used to collect a group of data objects of different sizes and types (e.g., one whole data frame and one vector can both be in a single list). It is simply an ordered collection of objects (that can be variables).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The outputs of many statistical functions in R are lists (e.g. linear model fitting using <code class="docutils literal notranslate"> <span class="pre">lm()</span></code>), to return all relevant information in one output object. So you need to know how to unpack and manipulate lists.</p>
+</div>
 <p>As a budding multilingual quantitative biologist, you should not be perturbed by the fact that a <code class="docutils literal notranslate"><span class="pre">list</span></code> is a very different data structure in python vs R. It will take some practice — sometimes the same word means different things in different human languages too!</p>
 <p>Try this:</p>
 <div class="cell docutils container">
@@ -2371,6 +2361,44 @@ Traceback:
 </dl>
 </dd>
 </dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pops</span><span class="o">$</span><span class="n">sp1</span> <span class="c1"># check out species 1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><dl>
+	<dt>$lat</dt>
+		<dd>19</dd>
+	<dt>$long</dt>
+		<dd>57</dd>
+	<dt>$pop</dt>
+		<dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>100</li><li>101</li><li>99</li></ol>
+</dd>
+</dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pops</span><span class="o">$</span><span class="n">sp1</span><span class="p">[</span><span class="s">&quot;pop&quot;</span><span class="p">]</span> <span class="c1"># sp1&#39;s population sizes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><strong>$pop</strong> = <style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>100</li><li>101</li><li>99</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -3271,8 +3299,8 @@ Traceback:
 <ol class=list-inline><li>0.156703769128359</li><li>1.37381119149164</li><li>0.73067024376365</li><li>-1.35080092669852</li><li>-0.00851496085595985</li><li>0.320981862836429</li><li>-1.77814840855737</li><li>0.909503835073888</li><li>-0.919404336160487</li><li>-0.157714830888067</li><li>1.10199738945752</li></ol>
 </div></div>
 </div>
-<p>Thus, setting the seed allows you to reliably generate the identical sequence of “random” numbers. These numbers are not truly random, but have the properties of random numbers. Note also that pseudo-random number generators are periodic, which means that the sequence will eventually repeat itself. However, this  period is so long that it can be ignored for most practical purposes. So effectively, <code class="docutils literal notranslate"> <span class="pre">rnorm</span></code> has an enormous list that it cycles through. The random seed starts the process, i.e., indicates where in the list to start. This is usually taken from the clock when you start R.</p>
-<p>But why bother with randiom number seeds? Setting a particular seed can be useful when debugging programs (coming up below). Bugs in code can be hard to find — harder still if you are generating random numbers, so repeat runs of your code may or may not all trigger the same behaviour. You can set the seed once at the beginning of the code — ensuring repeatability, retaining (pseudo) randomness. Once  debugged, if you want, you can remove the set seed line.</p>
+<p>Thus, setting the seed allows you to reliably generate the identical sequence of “random” numbers. These numbers are not truly random, but have the properties of random numbers. Note also that pseudo-random number generators are periodic, which means that the sequence will eventually repeat itself. However, this  period is so long that it can be ignored for most practical purposes. So effectively, <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> has an enormous list that it cycles through. The random seed starts the process, i.e., indicates where in the list to start. This is usually taken from the clock when you start R.</p>
+<p>But why bother with random number seeds? Setting a particular seed can be useful when debugging programs (coming up below). Bugs in code can be hard to find — harder still if you are generating random numbers, so repeat runs of your code may or may not all trigger the same behavior. You can set the seed once at the beginning of the code — ensuring repeatability, retaining (pseudo) randomness. Once  debugged, if you want, you can remove the set seed line.</p>
 </div>
 </div>
 </div>
@@ -4075,7 +4103,8 @@ The syntax for R functions is quite simple, with each function accepting “argu
 <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p><em>Vectorization is an approach where you directly apply compiled, optimized code to run an operation on a vector, matrix, or an higher-dimensional data structure (like an R array), instead of performing the operation element-wise on the data structure</em>.</p>
+<p><em>Vectorization is an approach where you directly apply compiled, optimized code to run an operation on a vector, matrix, or an higher-dimensional data structure (like an R array), instead of performing the operation element-wise (each row or column element one at a time) on the data structure</em>.</p>
+<p>Apart from computational efficiency vectorization makes writing code more concise, easy to read, and less error prone.</p>
 <p>Let’s try an example that illustrates this point.</p>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Type (save in <code class="docutils literal notranslate"><span class="pre">Code</span></code>) as <code class="docutils literal notranslate"><span class="pre">Vectorize1.R</span></code> the following script, and run it (it sums all elements of a matrix):</p>
 <div class="cell docutils container">
@@ -4104,10 +4133,10 @@ The syntax for R functions is quite simple, with each function accepting “argu
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Using loops, the time taken is:&quot;
    user  system elapsed 
-  0.107   0.000   0.107 
+  0.101   0.000   0.101 
 [1] &quot;Using the in-built vectorized function, the time taken is:&quot;
    user  system elapsed 
-  0.001   0.000   0.001 
+  0.002   0.000   0.002 
 </pre></div>
 </div>
 </div>
@@ -4121,51 +4150,62 @@ The syntax for R functions is quite simple, with each function accepting “argu
 <p>And if you are using loops, one operation that is slow in R (and somewhat slow in all languages) is memory allocation for a particular variable that will change during loping (e.g., a variable that is a dataframe). So writing a for loop that resizes a vector repeatedly makes R re-allocate memory repeatedly, which makes it slow. Try this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="nf">print</span><span class="p">(</span><span class="nf">object.size</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">NoPreallocFun</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">vector</span><span class="p">()</span> <span class="c1"># empty vector</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">object.size</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="nf">system.time</span><span class="p">(</span><span class="nf">NoPreallocFun</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] NA  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 1
 56 bytes
-[1] NA  1  2
+[1] 1 2
+56 bytes
+[1] 1 2 3
 64 bytes
-[1] NA  1  2  3
+[1] 1 2 3 4
 64 bytes
-[1] NA  1  2  3  4
+[1] 1 2 3 4 5
 80 bytes
-[1] NA  1  2  3  4  5
+[1] 1 2 3 4 5 6
 80 bytes
-[1] NA  1  2  3  4  5  6
+[1] 1 2 3 4 5 6 7
 80 bytes
-[1] NA  1  2  3  4  5  6  7
+[1] 1 2 3 4 5 6 7 8
 80 bytes
-[1] NA  1  2  3  4  5  6  7  8
+[1] 1 2 3 4 5 6 7 8 9
 96 bytes
- [1] NA  1  2  3  4  5  6  7  8  9
+ [1]  1  2  3  4  5  6  7  8  9 10
 96 bytes
- [1] NA  1  2  3  4  5  6  7  8  9 10
-96 bytes
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
+  0.006   0.000   0.005 
 </pre></div>
 </div>
 </div>
 </div>
 <p>Here, in each repetition of the for loop, R has to re-size the vector and re-allocate memory. It has to find the vector in memory, create a new vector that will fit more data, copy the old data over, insert the new data, and erase the old vector. This can get very slow as vectors get big.</p>
-<p>On the other hand, if you “pre-allocate” a vector that fits all the values, R doesn’t have to re-allocate memory each iteration, and the results can be much faster. Here’s how you’d do that for the above case:</p>
+<p>On the other hand, if you “pre-allocate” a vector that fits all the values, R doesn’t have to re-allocate memory each iteration, and the results can be much faster, especially when the vector lets large. Here’s how you’d do that for the above case:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
-
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">i</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="nf">print</span><span class="p">(</span><span class="nf">object.size</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">PreallocFun</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="n">a</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># pre-allocated vector</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">i</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nf">object.size</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="nf">system.time</span><span class="p">(</span><span class="nf">PreallocFun</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -4192,10 +4232,14 @@ The syntax for R functions is quite simple, with each function accepting “argu
 96 bytes
 </pre></div>
 </div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   user  system elapsed 
+  0.006   0.000   0.006 
+</pre></div>
 </div>
 </div>
+</div>
+<p>You can’t really see the difference in timing here using <code class="docutils literal notranslate"><span class="pre">system.time()</span></code> because the vector is really small (just 10 elements). To really see the difference, increase the iterations from 10 to, say, 100000.</p>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Write the above two blocks of code into a script called <code class="docutils literal notranslate"><span class="pre">preallocate.R</span></code>.</p>
-<p><em>Try timing each of these as you did above using <code class="docutils literal notranslate"><span class="pre">system.time()</span></code></em>. To really see the difference, increase the iterations from 10 to, say, 10000.</p>
 <p>Fortunately, R has several functions that can operate on entire vectors and matrices without requiring looping (Vectorization). That is, vectorizing a computer program means you write it such that as many operations as possible are applied to whole data structure (vectors, matrices, dataframes, lists, etc) at one go, instead of its individual elements.</p>
 <p>You will learn about some important R functions that allow vectorization in the following sections.</p>
 </div>
@@ -4367,7 +4411,7 @@ for some guidelines.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_288_0.png" src="../_images/07-R_288_0.png" />
+<img alt="../_images/07-R_290_0.png" src="../_images/07-R_290_0.png" />
 </div>
 </div>
 <p>Now run and time the different functions:</p>
@@ -4396,19 +4440,19 @@ for some guidelines.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;The loopy, non-preallocation approach takes:&quot;
    user  system elapsed 
-  0.022   0.004   0.026 
+  0.019   0.000   0.018 
 [1] &quot;The loopy, but with preallocation approach takes:&quot;
    user  system elapsed 
-  0.025   0.000   0.025 
+  0.023   0.000   0.022 
 [1] &quot;The loopy, non-preallocation approach on a list takes:&quot;
    user  system elapsed 
-  0.023   0.000   0.023 
+  0.021   0.000   0.021 
 [1] &quot;The vectorized sapply approach takes:&quot;
    user  system elapsed 
-  0.015   0.000   0.016 
+  0.013   0.000   0.013 
 [1] &quot;The vectorized lapply approach takes:&quot;
    user  system elapsed 
-  0.021   0.000   0.021 
+  0.011   0.000   0.012 
 </pre></div>
 </div>
 </div>
@@ -4754,7 +4798,7 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_308_0.png" src="../_images/07-R_308_0.png" />
+<img alt="../_images/07-R_310_0.png" src="../_images/07-R_310_0.png" />
 </div>
 </div>
 <p>Now open and run the script <code class="docutils literal notranslate"><span class="pre">Vectorize2.R</span></code> (available on the TheMulQuaBio repository). This is the stochastic Ricker model (compare with the above script to see where the stochasticity (random error) enters). Now modify the script to complete the exercise given.
@@ -4767,6 +4811,48 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 <div class="section" id="errors-and-debugging">
 <h2>Errors and Debugging<a class="headerlink" href="#errors-and-debugging" title="Permalink to this headline">¶</a></h2>
+<p>As we learned in <a class="reference internal" href="05-Python_I.html#python-errors"><span class="std std-ref">this section of the Python Chapter</span></a>, dealing with errors is a fundamental programming task that never really goes away!</p>
+<div class="section" id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<p>Once you have found an error, you would like to fix it, or worse, there may be “silent” errors that pass without you noticing them. The solution is to debug your code. Here are some useful debugging functions in R :</p>
+<ul class="simple">
+<li><p>Warnings vs Errors; converting warnings to errors: <code class="docutils literal notranslate"><span class="pre">stopifnot()</span></code>– a bit like <code class="docutils literal notranslate"> <span class="pre">try</span></code> (which we will cover below)</p></li>
+<li><p>What to do when you get an error: <code class="docutils literal notranslate"><span class="pre">traceback()</span></code></p></li>
+<li><p>Simple <code class="docutils literal notranslate"><span class="pre">print</span></code> commands in the right places can be useful for testing (but not strongly recommended)</p></li>
+<li><p>Use of <code class="docutils literal notranslate"><span class="pre">browser()</span></code> at key points in code — my favourite option (also look up  <code class="docutils literal notranslate"><span class="pre">recover()</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debug(fn)</span></code>, <code class="docutils literal notranslate"><span class="pre">undebug(fn)</span></code> : More technical approach to debugging — explore them</p></li>
+</ul>
+<p>Let’s look at an example using <code class="docutils literal notranslate"> <span class="pre">browser()</span></code>, which is particularly handy because it will allow you to insert a breakpoint in your script (where the running of the script is stopped) and then step through your code. Place it within your script at the point you want to examine local variables  (e.g. inside a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop).</p>
+<p>Here’s an  example usage of <code class="docutils literal notranslate"><span class="pre">browser()</span></code>.</p>
+<p><span class="math notranslate nohighlight">\(\star\)</span> Type the following in a script file called <code class="docutils literal notranslate"><span class="pre">browse.R</span></code> and save in <code class="docutils literal notranslate"><span class="pre">code</span></code>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Exponential</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">N0</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">generations</span> <span class="o">=</span> <span class="m">10</span><span class="p">){</span>
+  <span class="c1"># Runs a simulation of exponential growth</span>
+  <span class="c1"># Returns a vector of length generations</span>
+  
+  <span class="n">N</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="n">generations</span><span class="p">)</span>    <span class="c1"># Creates a vector of NA</span>
+  
+  <span class="n">N</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">N0</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="n">generations</span><span class="p">){</span>
+    <span class="n">N</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">N</span><span class="p">[</span><span class="n">t</span><span class="m">-1</span><span class="p">]</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="nf">browser</span><span class="p">()</span>
+  <span class="p">}</span>
+  <span class="nf">return </span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="nf">Exponential</span><span class="p">(),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Exponential growth&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The script will be run till the first iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and the console will enter the browser mode, which looks like this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Browse</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Now, you can examine the variables present at that point. Also, at the browser console, you can enter expressions as normal, or use a few particularly useful debug commands (similar to the Python debugger):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: single-step</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: exit browser and continue</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q</span></code>: exit browser and abort, return to top-level.</p></li>
+</ul>
+</div>
 <div class="section" id="catching-errors">
 <h3>“Catching” errors<a class="headerlink" href="#catching-errors" title="Permalink to this headline">¶</a></h3>
 <p>Often, you don’t know if a simulation or a R function will work on a particular data or variable, or a value of a variable (can happen in many stats functions).</p>
@@ -4960,51 +5046,11 @@ attr(,&quot;condition&quot;)
 </div>
 </div>
 <p>Now have a look at the new <code class="docutils literal notranslate"><span class="pre">result</span></code>; it will have similar content as the one you got from using <code class="docutils literal notranslate"><span class="pre">lapply</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; Also check out `tryCatch` as an alternative to `try`.
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Also check out <code class="docutils literal notranslate"><span class="pre">tryCatch</span></code> as an alternative to <code class="docutils literal notranslate"><span class="pre">try</span></code>.</p>
 </div>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Type the above blocks of code illustrating <code class="docutils literal notranslate"><span class="pre">try</span></code> into a script file called <code class="docutils literal notranslate"><span class="pre">try.R</span></code> and save in <code class="docutils literal notranslate"><span class="pre">code</span></code>. The script, when <code class="docutils literal notranslate"><span class="pre">source</span></code>d, should run without errors (that is, don’t run the sampling function without <code class="docutils literal notranslate"><span class="pre">try</span></code>!).</p>
-</div>
-<div class="section" id="debugging">
-<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
-<p>Once you have found an error, you would like to fix it, or worse, there may be “silent” errors that pass without you noticing them. The solution is to debug your code. Here are some useful debugging functions in R :</p>
-<ul class="simple">
-<li><p>Warnings vs Errors; converting warnings to errors: <code class="docutils literal notranslate"><span class="pre">stopifnot()</span></code>—a bit like <code class="docutils literal notranslate"> <span class="pre">try</span></code></p></li>
-<li><p>What to do when you get an error: <code class="docutils literal notranslate"><span class="pre">traceback()</span></code></p></li>
-<li><p>Simple <code class="docutils literal notranslate"><span class="pre">print</span></code> commands in the right places can be useful for testing (but not strongly recommended)</p></li>
-<li><p>Use of <code class="docutils literal notranslate"><span class="pre">browser()</span></code> at key points in code — my favourite option (also look up  <code class="docutils literal notranslate"><span class="pre">recover()</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">debug(fn)</span></code>, <code class="docutils literal notranslate"><span class="pre">undebug(fn)</span></code> : More technical approach to debugging — explore them</p></li>
-</ul>
-<p>Let’s look at an example using <code class="docutils literal notranslate"> <span class="pre">browser()</span></code>, which is particularly handy because it will allow you to insert a breakpoint in your script (where the running of the script is stopped) and then step through your code. Place it within your script at the point you want to examine local variables  (e.g. inside a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop).</p>
-<p>Here’s an  example usage of <code class="docutils literal notranslate"><span class="pre">browser()</span></code>.</p>
-<p><span class="math notranslate nohighlight">\(\star\)</span> Type the following in a script file called <code class="docutils literal notranslate"><span class="pre">browse.R</span></code> and save in <code class="docutils literal notranslate"><span class="pre">code</span></code>:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Exponential</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">N0</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">generations</span> <span class="o">=</span> <span class="m">10</span><span class="p">){</span>
-  <span class="c1"># Runs a simulation of exponential growth</span>
-  <span class="c1"># Returns a vector of length generations</span>
-  
-  <span class="n">N</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="n">generations</span><span class="p">)</span>    <span class="c1"># Creates a vector of NA</span>
-  
-  <span class="n">N</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">N0</span>
-  <span class="nf">for </span><span class="p">(</span><span class="n">t</span> <span class="n">in</span> <span class="m">2</span><span class="o">:</span><span class="n">generations</span><span class="p">){</span>
-    <span class="n">N</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">N</span><span class="p">[</span><span class="n">t</span><span class="m">-1</span><span class="p">]</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-    <span class="nf">browser</span><span class="p">()</span>
-  <span class="p">}</span>
-  <span class="nf">return </span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nf">plot</span><span class="p">(</span><span class="nf">Exponential</span><span class="p">(),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Exponential growth&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The script will be run till the first iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and the console will enter the browser mode, which looks like this:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Browse</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>Now, you can examine the variables present at that point. Also, at the browser console, you can enter expressions as normal, or use a few particularly useful debug commands (similar to the Python debugger):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code>: single-step</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: exit browser and continue</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Q</span></code>: exit browser and abort, return to top-level.</p></li>
-</ul>
 </div>
 </div>
 <div class="section" id="packages">
@@ -5054,8 +5100,8 @@ attr(,&quot;condition&quot;)
 <li><p>Write a Unix shell script called <code class="docutils literal notranslate"> <span class="pre">run_get_TreeHeight.sh</span></code> that tests <code class="docutils literal notranslate"> <span class="pre">get_TreeHeight.R</span></code>. Include <code class="docutils literal notranslate"><span class="pre">trees.csv</span></code>as your example file. Note that     <code class="docutils literal notranslate"> <span class="pre">source</span></code>will not work in this case as it does not allow scripts with arguments to be run; you will have to use <code class="docutils literal notranslate"> <span class="pre">Rscript</span></code>instead.</p></li>
 </ul>
 </div>
-<div class="section" id="groupwork-practical-tree-heights-2">
-<h3>Groupwork Practical Tree Heights  2<a class="headerlink" href="#groupwork-practical-tree-heights-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="groupwork-practical-on-tree-heights-2">
+<h3>Groupwork Practical  on Tree Heights  2<a class="headerlink" href="#groupwork-practical-on-tree-heights-2" title="Permalink to this headline">¶</a></h3>
 <p>Assuming you have already worked through <a class="reference internal" href="05-Python_I.html"><span class="doc std std-doc">Python Chapter I</span></a>, write a Python version of <code class="docutils literal notranslate"><span class="pre">get_TreeHeight.R</span></code> (call it <code class="docutils literal notranslate"> <span class="pre">get_TreeHeight.py</span></code>). Include a test of this script into <code class="docutils literal notranslate"> <span class="pre">run_get_TreeHeight.sh</span></code>.</p>
 </div>
 <div class="section" id="practicals-wrap-up">
@@ -5078,21 +5124,14 @@ attr(,&quot;condition&quot;)
 <li><p>For more focus on dynamical models: Soetaert &amp; Herman. 2009 “A practical guide to ecological modelling: using R as a simulation platform”.</p></li>
 <li><p>There are excellent websites besides cran. In particular, check out
 <a class="reference external" href="https://www.statmethods.net/">statmethods.net</a> and the <a class="reference external" href="https://en.wikibooks.org/wiki/R_Programming">R Wiki</a>.</p></li>
-<li><p>For those who are coming with Matlab experience, <a class="reference external" href="http://www.math.umaine.edu/~hiebeler/comp/matlabR.html">see this</a></p></li>
 </ul>
 </div>
 <div class="section" id="id3">
-<h3>Vectorization<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Read this nice, <a class="reference external" href="http://www.noamross.net/blog/2014/4/16/vectorization-in-r%E2%80%93why.html">intuitive article about R and Vectorization</a>.</p></li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>Debugging<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3>Debugging<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://adv-r.hadley.nz/debugging.html">Debugging in R</a></p></li>
 <li><p><a class="reference external" href="http://www.biostat.jhsph.edu/~rpeng/docs/R-debug-tools.pdf">An introduction to the Interactive Debugging Tools in R</a> by Roger D Peng.</p></li>
-<li><p>If you are sticking with RStudio, <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">see this</a></p></li>
+<li><p>If you are using RStudio, <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">see this</a></p></li>
 </ul>
 </div>
 <div class="section" id="sweave-and-knitr">
@@ -5134,7 +5173,7 @@ attr(,&quot;condition&quot;)
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="06-Python_II.html" title="previous page">Biological Computing in Python II</a>
-    <a class='right-next' id="next-link" href="11-Stats-Intro.html" title="next page">Introduction</a>
+    <a class='right-next' id="next-link" href="../Stats-Intro.html" title="next page">Introduction to this section</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
