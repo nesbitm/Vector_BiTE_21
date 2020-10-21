@@ -5081,15 +5081,20 @@ attr(,&quot;condition&quot;)
 <div class="section" id="autocorrelation-in-weather">
 <h3>Autocorrelation in weather<a class="headerlink" href="#autocorrelation-in-weather" title="Permalink to this headline">¶</a></h3>
 <p>This Practical assumes you know about correlation coefficients and p-values.</p>
-<p>Your goal is to write an R script that will help answer the question: <em>Are temperatures of one year significantly correlated with the next year (successive years), across years in a given location</em>? For this, you need to calculate the correlation between <span class="math notranslate nohighlight">\(n-1\)</span> pairs of years, where <span class="math notranslate nohighlight">\(n\)</span> is the total number of years. However, you can’t use the standard p-value calculated for a correlation coefficient, because measurements of climatic variables in successive time-points in a time series (successive seconds, minutes, hours, months, years, etc.) are <em>not independent</em>. The general guidelines are:
-* Make a new script named <code class="docutils literal notranslate"> <span class="pre">TAutoCorr.R</span></code>, and save in <code class="docutils literal notranslate"> <span class="pre">code</span></code>directory
-* At the start of the script, load and examine and plot <code class="docutils literal notranslate"><span class="pre">KeyWestAnnualMeanTemperature.Rdata</span></code>, using <code class="docutils literal notranslate"> <span class="pre">load()</span></code>. This is the temperature in Key West, Florida for the 20th century.
-* Now extend the script to:
-* Compute the appropriate correlation coefficient between successive years and store it (look at the help file for <code class="docutils literal notranslate"><span class="pre">cor()</span></code>
-* Repeat this calculation 10000 times by – randomly permuting the time series, and then recalculating the correlation coefficient for each randomly permuted year sequence and storing it.
-<em>Hint</em>: you can use the <code class="docutils literal notranslate"><span class="pre">sample</span></code> function that we learned about). Read the help file for this function and experiment with it.
-*  Then calculate what fraction of the correlation coefficients from the previous step were greater than that from step 1 (this is your approximate p-value).
-* <em>How do you interpret these results? Why?</em> Present your results and their interpretation in a pdf document written in <span class="math notranslate nohighlight">\(\LaTeX\)</span> (please include the the document’s source code as well).</p>
+<p>Your goal is to write an R script that will help answer the question: <em>Are temperatures of one year significantly correlated with the next year (successive years), across years in a given location</em>? For this, you need to calculate the correlation between <span class="math notranslate nohighlight">\(n-1\)</span> pairs of years, where <span class="math notranslate nohighlight">\(n\)</span> is the total number of years. However, you can’t use the standard p-value calculated for a correlation coefficient, because measurements of climatic variables in successive time-points in a time series (successive seconds, minutes, hours, months, years, etc.) are <em>not independent</em>. The general guidelines are:</p>
+<ul class="simple">
+<li><p>Make a new script named <code class="docutils literal notranslate"> <span class="pre">TAutoCorr.R</span></code>, and save in <code class="docutils literal notranslate"> <span class="pre">code</span></code>directory</p></li>
+<li><p>At the start of the script, load and examine and plot <code class="docutils literal notranslate"><span class="pre">KeyWestAnnualMeanTemperature.Rdata</span></code>, using <code class="docutils literal notranslate"> <span class="pre">load()</span></code>. This is the temperature in Key West, Florida for the 20th century.</p></li>
+<li><p>Now extend the script to:</p>
+<ul>
+<li><p>Compute the appropriate correlation coefficient between successive years and store it (look at the help file for <code class="docutils literal notranslate"><span class="pre">cor()</span></code></p></li>
+<li><p>Repeat this calculation 10000 times by – randomly permuting the time series, and then recalculating the correlation coefficient for each randomly permuted year sequence and storing it.
+<em>Hint</em>: you can use the <code class="docutils literal notranslate"><span class="pre">sample</span></code> function that we learned about). Read the help file for this function and experiment with it.</p></li>
+<li><p>Then calculate what fraction of the correlation coefficients from the previous step were greater than that from step 1 (this is your approximate p-value).</p></li>
+</ul>
+</li>
+<li><p><em>How do you interpret these results? Why?</em> Present your results and their interpretation in a pdf document written in <span class="math notranslate nohighlight">\(\LaTeX\)</span> (please include the the document’s source code as well).</p></li>
+</ul>
 </div>
 <div class="section" id="groupwork-practical-on-tree-heights">
 <h3>Groupwork Practical on Tree Heights<a class="headerlink" href="#groupwork-practical-on-tree-heights" title="Permalink to this headline">¶</a></h3>
