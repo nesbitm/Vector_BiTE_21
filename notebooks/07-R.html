@@ -4915,11 +4915,17 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">doit</span><span class="p">(</span><span class="n">popn</span><span class="p">):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;doit&quot;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Mean of this sample was: -0.0819495413387692&quot;
+[1] &quot;Mean of this sample was: 0.0239552450301257&quot;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">doit</span><span class="p">(</span><span class="n">popn</span><span class="p">):</span> <span class="n">Couldn</span><span class="s1">&#39;t calculate mean: too few unique values!</span>
 <span class="ne">Traceback</span>:
 
 <span class="mi">1</span><span class="o">.</span> <span class="n">lapply</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="n">doit</span><span class="p">(</span><span class="n">popn</span><span class="p">))</span>
 <span class="mi">2</span><span class="o">.</span> <span class="n">FUN</span><span class="p">(</span><span class="n">X</span><span class="p">[[</span><span class="n">i</span><span class="p">]],</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">doit</span><span class="p">(</span><span class="n">popn</span><span class="p">)</span>   <span class="c1"># at line 1 of file &lt;text&gt;</span>
+<span class="mi">4</span><span class="o">.</span> <span class="n">stop</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t calculate mean: too few unique values!&quot;</span><span class="p">)</span>   <span class="c1"># at line 7 of file &lt;text&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -4933,21 +4939,21 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Mean of this sample was: -0.0749210536751678&quot;
-[1] &quot;Mean of this sample was: 0.309587889027464&quot;
-[1] &quot;Mean of this sample was: -0.0302045891614826&quot;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Mean of this sample was: -0.121221064404979&quot;
 Error in doit(popn) : Couldn&#39;t calculate mean: too few unique values!
-[1] &quot;Mean of this sample was: 0.0531384819728952&quot;
-[1] &quot;Mean of this sample was: 0.230357914714637&quot;
-[1] &quot;Mean of this sample was: 0.160404748347107&quot;
-[1] &quot;Mean of this sample was: 0.258898568120462&quot;
-[1] &quot;Mean of this sample was: 0.298835673168724&quot;
-[1] &quot;Mean of this sample was: 0.40940643543227&quot;
+[1] &quot;Mean of this sample was: -0.173759374437533&quot;
 Error in doit(popn) : Couldn&#39;t calculate mean: too few unique values!
+[1] &quot;Mean of this sample was: 0.00274247326407021&quot;
+[1] &quot;Mean of this sample was: -0.193057628828299&quot;
 Error in doit(popn) : Couldn&#39;t calculate mean: too few unique values!
-[1] &quot;Mean of this sample was: 0.193746178208431&quot;
-[1] &quot;Mean of this sample was: 0.049761708834821&quot;
-[1] &quot;Mean of this sample was: 0.0139927255534974&quot;
+[1] &quot;Mean of this sample was: -0.259135797305263&quot;
+[1] &quot;Mean of this sample was: -0.177113866182732&quot;
+[1] &quot;Mean of this sample was: -0.15086835618164&quot;
+Error in doit(popn) : Couldn&#39;t calculate mean: too few unique values!
+[1] &quot;Mean of this sample was: -0.177809532764058&quot;
+[1] &quot;Mean of this sample was: -0.0554061223415571&quot;
+[1] &quot;Mean of this sample was: -0.144011561341331&quot;
+[1] &quot;Mean of this sample was: -0.186395187133434&quot;
 </pre></div>
 </div>
 </div>
