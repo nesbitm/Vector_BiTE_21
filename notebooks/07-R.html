@@ -1304,7 +1304,7 @@
 <div class="section" id="variable-types">
 <h2>Variable types<a class="headerlink" href="#variable-types" title="Permalink to this headline">¶</a></h2>
 <p>There are different kinds of data variable types in R, but you will basically need to know four for most of your work: integer, float (or “numeric”, including real numbers), string (or “character”, e.g.,
-text), and Boolean (“logical”; <code class="docutils literal notranslate"> <span class="pre">True</span></code>or <code class="docutils literal notranslate"> <span class="pre">False</span></code>).</p>
+text), and Boolean (“logical”; <code class="docutils literal notranslate"> <span class="pre">True</span></code>or <code class="docutils literal notranslate"> <span class="pre">FALSE</span></code>).</p>
 <p>Try this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1560,6 +1560,12 @@ text), and Boolean (“logical”; <code class="docutils literal notranslate"> <
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">3.33333333333333e-09</div></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Boolean arguments in R</strong>: In <code class="docutils literal notranslate"><span class="pre">R</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code> for boolean <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> respectively. To see this, type</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;-</span> <span class="pre">T</span></code></p>
+<p>in the R commandline, and then see what R returns when you type <code class="docutils literal notranslate"><span class="pre">a</span></code>. Using <code class="docutils literal notranslate"><span class="pre">F</span></code> and <code class="docutils literal notranslate"><span class="pre">T</span></code> for boolean <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> and <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> respectively is not necessarily good practice, but be aware that this option exists.</p>
 </div>
 </div>
 </div>
@@ -4423,7 +4429,7 @@ for some guidelines.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_290_0.png" src="../_images/07-R_290_0.png" />
+<img alt="../_images/07-R_291_0.png" src="../_images/07-R_291_0.png" />
 </div>
 </div>
 <p>Now run and time the different functions:</p>
@@ -4810,7 +4816,7 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_310_0.png" src="../_images/07-R_310_0.png" />
+<img alt="../_images/07-R_311_0.png" src="../_images/07-R_311_0.png" />
 </div>
 </div>
 <p>Now open and run the script <code class="docutils literal notranslate"><span class="pre">Vectorize2.R</span></code> (available on the TheMulQuaBio repository). This is the stochastic Ricker model (compare with the above script to see where the stochasticity (random error) enters). Now modify the script to complete the exercise given.
@@ -4904,7 +4910,7 @@ for examples.    There you will also see a comparison of speed of <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07-R_317_0.png" src="../_images/07-R_317_0.png" />
+<img alt="../_images/07-R_318_0.png" src="../_images/07-R_318_0.png" />
 </div>
 </div>
 <p>Now try running it using <code class="docutils literal notranslate"><span class="pre">lapply</span></code> as you did above, repeating the sampling exercise 15 times:</p>
