@@ -753,7 +753,8 @@
         
               <div>
                 
-  <div class="section" id="model-fitting-in-ecology-and-evolution">
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Model-Fitting-in-Ecology-and-Evolution" data-toc-modified-id="Model-Fitting-in-Ecology-and-Evolution-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Model Fitting in Ecology and Evolution</a></span><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Model-fitting-using-Non-linear-least-squares" data-toc-modified-id="Model-fitting-using-Non-linear-least-squares-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Model fitting using Non-linear least squares</a></span><ul class="toc-item"><li><span><a href="#Traits-data-as-an-example" data-toc-modified-id="Traits-data-as-an-example-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>Traits data as an example</a></span></li><li><span><a href="#Abundances-as-an-example" data-toc-modified-id="Abundances-as-an-example-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>Abundances as an example</a></span></li><li><span><a href="#Exercises" data-toc-modified-id="Exercises-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>Exercises</a></span></li></ul></li><li><span><a href="#Model-fitting-using-Maximum-Likelihood" data-toc-modified-id="Model-fitting-using-Maximum-Likelihood-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Model fitting using Maximum Likelihood</a></span><ul class="toc-item"><li><span><a href="#Implementing-the-Likelihood-in-R" data-toc-modified-id="Implementing-the-Likelihood-in-R-1.3.1"><span class="toc-item-num">1.3.1&nbsp;&nbsp;</span>Implementing the Likelihood in R</a></span></li><li><span><a href="#Alternatives-to-Grid-Search" data-toc-modified-id="Alternatives-to-Grid-Search-1.3.2"><span class="toc-item-num">1.3.2&nbsp;&nbsp;</span>Alternatives to Grid Search</a></span></li><li><span><a href="#Maximum-Likelihood-using-optim()" data-toc-modified-id="Maximum-Likelihood-using-optim()-1.3.3"><span class="toc-item-num">1.3.3&nbsp;&nbsp;</span>Maximum Likelihood using <code>optim()</code></a></span></li><li><span><a href="#Confidence-intervals" data-toc-modified-id="Confidence-intervals-1.3.4"><span class="toc-item-num">1.3.4&nbsp;&nbsp;</span>Confidence intervals</a></span></li><li><span><a href="#Comparison-to-fitting-with-least-squares" data-toc-modified-id="Comparison-to-fitting-with-least-squares-1.3.5"><span class="toc-item-num">1.3.5&nbsp;&nbsp;</span>Comparison to fitting with least squares</a></span></li><li><span><a href="#Model-Selection" data-toc-modified-id="Model-Selection-1.3.6"><span class="toc-item-num">1.3.6&nbsp;&nbsp;</span>Model Selection</a></span></li></ul></li><li><span><a href="#Fitting-Models-the-Bayesian-way" data-toc-modified-id="Fitting-Models-the-Bayesian-way-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Fitting Models the Bayesian way</a></span><ul class="toc-item"><li><span><a href="#A-Likelihoods-exercise" data-toc-modified-id="A-Likelihoods-exercise-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>A Likelihoods exercise</a></span></li><li><span><a href="#Example:-Midge-Wing-Length" data-toc-modified-id="Example:-Midge-Wing-Length-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Example: Midge Wing Length</a></span></li><li><span><a href="#Non-Bayesian-analysis" data-toc-modified-id="Non-Bayesian-analysis-1.4.3"><span class="toc-item-num">1.4.3&nbsp;&nbsp;</span>Non-Bayesian analysis</a></span></li><li><span><a href="#Setting-up-the-Bayesian-Model" data-toc-modified-id="Setting-up-the-Bayesian-Model-1.4.4"><span class="toc-item-num">1.4.4&nbsp;&nbsp;</span>Setting up the Bayesian Model</a></span></li><li><span><a href="#Analytic-Posterior" data-toc-modified-id="Analytic-Posterior-1.4.5"><span class="toc-item-num">1.4.5&nbsp;&nbsp;</span>Analytic Posterior</a></span></li><li><span><a href="#Exercise:-Prior-sensitivity" data-toc-modified-id="Exercise:-Prior-sensitivity-1.4.6"><span class="toc-item-num">1.4.6&nbsp;&nbsp;</span>Exercise: Prior sensitivity</a></span></li><li><span><a href="#Numerical-evaluation-of-the-posterior-with-JAGS" data-toc-modified-id="Numerical-evaluation-of-the-posterior-with-JAGS-1.4.7"><span class="toc-item-num">1.4.7&nbsp;&nbsp;</span>Numerical evaluation of the posterior with JAGS</a></span></li><li><span><a href="#Estimating-the-population-variance" data-toc-modified-id="Estimating-the-population-variance-1.4.8"><span class="toc-item-num">1.4.8&nbsp;&nbsp;</span>Estimating the population variance</a></span></li><li><span><a href="#Exercise:-Updating-the-Bayesian-model" data-toc-modified-id="Exercise:-Updating-the-Bayesian-model-1.4.9"><span class="toc-item-num">1.4.9&nbsp;&nbsp;</span>Exercise: Updating the Bayesian model</a></span></li><li><span><a href="#Aedes-data-revisited-using-Bayesian-fitting" data-toc-modified-id="Aedes-data-revisited-using-Bayesian-fitting-1.4.10"><span class="toc-item-num">1.4.10&nbsp;&nbsp;</span>Aedes data revisited using Bayesian fitting</a></span></li><li><span><a href="#A-Bayesian-model-fitting-of-abundance-data" data-toc-modified-id="A-Bayesian-model-fitting-of-abundance-data-1.4.11"><span class="toc-item-num">1.4.11&nbsp;&nbsp;</span>A Bayesian model fitting of abundance data</a></span></li></ul></li><li><span><a href="#Readings-and-Resources-" data-toc-modified-id="Readings-and-Resources--1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Readings and Resources <a id="Readings"></a></a></span></li></ul></li></ul></div><div class="section" id="model-fitting-in-ecology-and-evolution">
 <h1>Model Fitting in Ecology and Evolution<a class="headerlink" href="#model-fitting-in-ecology-and-evolution" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
@@ -856,7 +857,7 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_18_0.png" src="../_images/20-ModelFitting_18_0.png" />
+<img alt="../_images/20-ModelFitting_19_0.png" src="../_images/20-ModelFitting_19_0.png" />
 </div>
 </div>
 <p>Or, using <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>:</p>
@@ -871,7 +872,7 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_20_0.png" src="../_images/20-ModelFitting_20_0.png" />
+<img alt="../_images/20-ModelFitting_21_0.png" src="../_images/20-ModelFitting_21_0.png" />
 </div>
 </div>
 <p><em>Remember, when you write this analysis into a stand-alone R script, you should put all commands for loading packages (<code class="docutils literal notranslate"><span class="pre">library()</span></code>, <code class="docutils literal notranslate"><span class="pre">require()</span></code>) at the start of the script.</em></p>
@@ -1032,7 +1033,7 @@ y = a + b x + c x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_44_0.png" src="../_images/20-ModelFitting_44_0.png" />
+<img alt="../_images/20-ModelFitting_45_0.png" src="../_images/20-ModelFitting_45_0.png" />
 </div>
 </div>
 <p>Very similar fits, except that the quadratic model seems to deviate a bit from the data at the lower end of the data range. Let’s do a proper, formal model comparison now to check which model better-fits the data.</p>
@@ -1104,7 +1105,7 @@ y = a + b x + c x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_54_0.png" src="../_images/20-ModelFitting_54_0.png" />
+<img alt="../_images/20-ModelFitting_55_0.png" src="../_images/20-ModelFitting_55_0.png" />
 </div>
 </div>
 <div class="section" id="fitting-the-three-models-using-nlls">
@@ -1189,7 +1190,7 @@ N_t =   \frac{N_0  K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_63_0.png" src="../_images/20-ModelFitting_63_0.png" />
+<img alt="../_images/20-ModelFitting_64_0.png" src="../_images/20-ModelFitting_64_0.png" />
 </div>
 </div>
 <p>Next examine the residuals between the 3 models:</p>
@@ -1203,7 +1204,7 @@ N_t =   \frac{N_0  K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_65_0.png" src="../_images/20-ModelFitting_65_0.png" />
+<img alt="../_images/20-ModelFitting_66_0.png" src="../_images/20-ModelFitting_66_0.png" />
 </div>
 </div>
 <p>The residuals for all 3 models still exhibit some patterns. In particular, the data seems to go down near the end of the observation period, but none of these models can capture that behavior.</p>
@@ -1250,7 +1251,7 @@ N_t =   \frac{N_0  K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_71_0.png" src="../_images/20-ModelFitting_71_0.png" />
+<img alt="../_images/20-ModelFitting_72_0.png" src="../_images/20-ModelFitting_72_0.png" />
 </div>
 </div>
 <div class="section" id="the-tpc-models">
@@ -1345,7 +1346,7 @@ N_t =   \frac{N_0  K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_81_0.png" src="../_images/20-ModelFitting_81_0.png" />
+<img alt="../_images/20-ModelFitting_82_0.png" src="../_images/20-ModelFitting_82_0.png" />
 </div>
 </div>
 </div>
@@ -1372,7 +1373,7 @@ r = \frac{\log(N(t)) - \log(N_0)}{t} ,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_83_0.png" src="../_images/20-ModelFitting_83_0.png" />
+<img alt="../_images/20-ModelFitting_84_0.png" src="../_images/20-ModelFitting_84_0.png" />
 </div>
 </div>
 <p>By eye the logged data looks fairly linear (beyond the initial “lag phase” of growth; see below) between hours 5 and 10, so we’ll use that time-period to calculate the growth rate.</p>
@@ -1525,7 +1526,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_99_0.png" src="../_images/20-ModelFitting_99_0.png" />
+<img alt="../_images/20-ModelFitting_100_0.png" src="../_images/20-ModelFitting_100_0.png" />
 </div>
 </div>
 <p>That looks nice, and the <span class="math notranslate nohighlight">\(r_{max}\)</span> estimate we get (0.64) is fairly close to what we got above with OLS fitting.</p>
@@ -1541,7 +1542,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_101_0.png" src="../_images/20-ModelFitting_101_0.png" />
+<img alt="../_images/20-ModelFitting_102_0.png" src="../_images/20-ModelFitting_102_0.png" />
 </div>
 </div>
 <p>The model actually diverges from the data at the lower end! This was not visible in the previous plot where you examined the model in linear scale (without taking a log) because the deviation of the model is small, and only becomes clear in the log scale. This is because of the way logarithms work. Let’s have a look at this in our Cell counts “data”:</p>
@@ -1555,7 +1556,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_103_0.png" src="../_images/20-ModelFitting_103_0.png" />
+<img alt="../_images/20-ModelFitting_104_0.png" src="../_images/20-ModelFitting_104_0.png" />
 </div>
 </div>
 <p>As you can see the logarithm is a strongly nonlinear transformation of any sequence of real numbers, with small numbers close to zero yielding disproportionately large deviations.</p>
@@ -1568,17 +1569,21 @@ Achieved convergence tolerance: 1.49e-08
 <p>One of these is the modified Gompertz model (Zwietering et. al., 1990), which has been used frequently in the literature to model bacterial growth:</p>
 <div class="math notranslate nohighlight">
 \[ \label{eq:Gompertz}
-\log(N_t) = \log\left(\frac{N_{max}}{N_0}\right) e^{-e^{\frac{r_{max}e(t_{lag} - t)}{\log\left(\frac{N_{max}}{N_0}\right)} + 1}}
+     \log(N_t) =  N_0 + (N_{max} - N_0) e^{-e^{r_{max} \exp(1) \frac{t_{lag} - t}{(N_{max} - N_0) \log(10)} + 1}}
 \]</div>
-<p>Here maximum growth rate (<span class="math notranslate nohighlight">\(r_{max}\)</span>) is the tangent to the inflection point, <span class="math notranslate nohighlight">\(t_{lag}\)</span> is the x-axis intercept to this tangent (duration of the delay before the population starts growing exponentially) and <span class="math notranslate nohighlight">\(\ln\left(\frac{N_{max}}{N_0}\right)\)</span> is the asymptote of the log-transformed population growth trajectory, i.e., the log ratio of maximum population density <span class="math notranslate nohighlight">\(N_{max}\)</span> (aka “carrying capacity”) and initial cell (Population) <span class="math notranslate nohighlight">\(N_0\)</span> density.</p>
+<p>Here maximum growth rate (<span class="math notranslate nohighlight">\(r_{max}\)</span>) is the tangent to the inflection point, <span class="math notranslate nohighlight">\(t_{lag}\)</span> is the x-axis intercept to this tangent (duration of the delay before the population starts growing exponentially) and <span class="math notranslate nohighlight">\(\log\left(\frac{N_{max}}{N_0}\right)\)</span> is the asymptote of the log-transformed population growth trajectory, i.e., the log ratio of maximum population density <span class="math notranslate nohighlight">\(N_{max}\)</span> (aka “carrying capacity”) and initial cell (Population) <span class="math notranslate nohighlight">\(N_0\)</span> density.</p>
 <p><em>Note that this model has been written in log scale.</em></p>
 <p>Now let’s fit and compare the two alternative nonlinear growth models: Logistic and Gompertz.</p>
 <p>First, specify the function object for the Gompertz model (we already defined the function for the Logistic model above):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gompertz_model</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r_max</span><span class="p">,</span> <span class="n">N_max</span><span class="p">,</span> <span class="n">N_0</span><span class="p">,</span> <span class="n">t_lag</span><span class="p">){</span> <span class="c1"># Modified gompertz growth model (Zwietering 1990)</span>
-    <span class="nf">return</span><span class="p">(</span><span class="nf">log</span><span class="p">(</span><span class="n">N_max</span> <span class="o">/</span> <span class="n">N_0</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="nf">exp</span><span class="p">(</span><span class="n">r_max</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t_lag</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="nf">log</span><span class="p">(</span><span class="n">N_max</span> <span class="o">/</span> <span class="n">N_0</span><span class="p">)</span> <span class="o">+</span> <span class="m">1</span><span class="p">)))</span>
-<span class="p">}</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># gompertz_model &lt;- function(t, r_max, N_max, N_0, t_lag){ # Modified gompertz growth model (Zwietering 1990)</span>
+<span class="c1">#     return(log(N_max / N_0) * exp(-exp(r_max * exp(1) * (t_lag - t)/log(N_max / N_0) + 1)))</span>
+<span class="c1"># }</span>
+
+<span class="n">gompertz_model</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">r_max</span><span class="p">,</span> <span class="n">N_max</span><span class="p">,</span> <span class="n">N_0</span><span class="p">,</span> <span class="n">t_lag</span><span class="p">){</span> <span class="c1"># Modified gompertz growth model (Zwietering 1990)</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">N_0</span> <span class="o">+</span> <span class="p">(</span><span class="n">N_max</span> <span class="o">-</span> <span class="n">N_0</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="nf">exp</span><span class="p">(</span><span class="n">r_max</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">t_lag</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">N_max</span> <span class="o">-</span> <span class="n">N_0</span><span class="p">)</span> <span class="o">*</span> <span class="nf">log</span><span class="p">(</span><span class="m">10</span><span class="p">))</span> <span class="o">+</span> <span class="m">1</span><span class="p">)))</span>
+<span class="p">}</span>           
 </pre></div>
 </div>
 </div>
@@ -1588,9 +1593,9 @@ Achieved convergence tolerance: 1.49e-08
 <p>As we did above for the logistic equation, let’s derive the starting values by using the actual data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N_0_start</span> <span class="o">&lt;-</span> <span class="nf">min</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">N</span><span class="p">)</span> <span class="c1"># lowest population size</span>
-<span class="n">N_max_start</span> <span class="o">&lt;-</span> <span class="nf">max</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">N</span><span class="p">)</span> <span class="c1"># highest population size</span>
-<span class="n">r_max_start</span> <span class="o">&lt;-</span> <span class="m">0.62</span> <span class="c1"># use our estimate from the OLS fitting from above</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">N_0_start</span> <span class="o">&lt;-</span> <span class="nf">min</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">LogN</span><span class="p">)</span> <span class="c1"># lowest population size, note log scale</span>
+<span class="n">N_max_start</span> <span class="o">&lt;-</span> <span class="nf">max</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">LogN</span><span class="p">)</span> <span class="c1"># highest population size, note log scale</span>
+<span class="n">r_max_start</span> <span class="o">&lt;-</span> <span class="m">0.62</span> <span class="c1"># use our previous estimate from the OLS fitting from above</span>
 <span class="n">t_lag_start</span> <span class="o">&lt;-</span> <span class="n">data</span><span class="o">$</span><span class="n">Time</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="nf">diff</span><span class="p">(</span><span class="nf">diff</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">LogN</span><span class="p">)))]</span> <span class="c1"># find last timepoint of lag phase</span>
 </pre></div>
 </div>
@@ -1654,46 +1659,6 @@ Achieved convergence tolerance: 1.49e-08
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-Warning message in log(N_max/N_0):
-“NaNs produced”
-</pre></div>
-</div>
-</div>
 </div>
 <p>You might one or more warning(s) that the model fitting iterations generated NaNs during the fitting procedure for these data (because at some point the NLLS fitting algorithm “wandered” to a combination of N_max and N_0 values that yields a NaN for log(N_max/N_0)).</p>
 <p>You can ignore these warning in this case. But not always – sometimes these NaNs mean that the equation is wrongly written, or that it generates NaNs across the whole range of the x-values, in which case the model is inappropriate for these data.</p>
@@ -1708,17 +1673,17 @@ Warning message in log(N_max/N_0):
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Formula: LogN ~ gompertz_model(t = Time, r_max, N_max, N_0, t_lag)
 
 Parameters:
-        Estimate Std. Error t value Pr(&gt;|t|)   
-t_lag -1.577e+01  5.165e+00  -3.053  0.01575 * 
-r_max  6.086e-01  1.752e-01   3.474  0.00839 **
-N_0    5.471e+01  5.912e+07   0.000  1.00000   
-N_max  1.701e+09  1.838e+15   0.000  1.00000   
+      Estimate Std. Error t value Pr(&gt;|t|)    
+t_lag  4.80680    0.18433   26.08 5.02e-09 ***
+r_max  1.86616    0.08749   21.33 2.45e-08 ***
+N_0   10.39142    0.05998  173.24 1.38e-15 ***
+N_max 15.54956    0.05056  307.57  &lt; 2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.6834 on 8 degrees of freedom
+Residual standard error: 0.09418 on 8 degrees of freedom
 
-Number of iterations to convergence: 31 
+Number of iterations to convergence: 10 
 Achieved convergence tolerance: 1.49e-08
 </pre></div>
 </div>
@@ -1760,10 +1725,10 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_122_0.png" src="../_images/20-ModelFitting_122_0.png" />
+<img alt="../_images/20-ModelFitting_123_0.png" src="../_images/20-ModelFitting_123_0.png" />
 </div>
 </div>
-<p>Clearly, the Gompertz model does not fit quite as well as the logistic growth equation in this case.</p>
+<p>Clearly, the Gompertz model fits way better than the logistic growth equation in this case! Note also that there is a big difference in the fitted value of <span class="math notranslate nohighlight">\(r_{max}\)</span> from the two models; the value is much lower from the Logistic model because it ignores the lag phase, including it into the exponential growth phase.</p>
 <p>You can now perform model selection like you did above in the allometric scaling example.</p>
 </div>
 </div>
@@ -1845,7 +1810,7 @@ f(y_i|\beta_0, \beta_1, x_i) = \frac{1}{\sqrt{2\sigma^2 \pi}} \exp\left(-\frac{(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_132_0.png" src="../_images/20-ModelFitting_132_0.png" />
+<img alt="../_images/20-ModelFitting_133_0.png" src="../_images/20-ModelFitting_133_0.png" />
 </div>
 </div>
 <div class="section" id="likelihood-profile">
@@ -1874,7 +1839,7 @@ f(y_i|\beta_0, \beta_1, x_i) = \frac{1}{\sqrt{2\sigma^2 \pi}} \exp\left(-\frac{(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_137_0.png" src="../_images/20-ModelFitting_137_0.png" />
+<img alt="../_images/20-ModelFitting_138_0.png" src="../_images/20-ModelFitting_138_0.png" />
 </div>
 </div>
 <p>The true value for b0 (10) is the red line, while the value that minimizes the log-likelihood (i.e., maximizes the negative log-likelihood) is the green line. These are not the same because maximum likelihood is providing an <em>estimate</em> of the true value given the measurement errors (that we ourselves generated in tgis synthetic dataset).</p>
@@ -1913,7 +1878,7 @@ f(y_i|\beta_0, \beta_1, x_i) = \frac{1}{\sqrt{2\sigma^2 \pi}} \exp\left(-\frac{(
 	<tr><td>10.48485</td><td>2.96    </td></tr>
 </tbody>
 </table>
-</div><img alt="../_images/20-ModelFitting_140_1.png" src="../_images/20-ModelFitting_140_1.png" />
+</div><img alt="../_images/20-ModelFitting_141_1.png" src="../_images/20-ModelFitting_141_1.png" />
 </div>
 </div>
 <p>There is a lot going on here. Make sure you ask one of us if some of the code does not make sense!</p>
@@ -1931,7 +1896,7 @@ f(y_i|\beta_0, \beta_1, x_i) = \frac{1}{\sqrt{2\sigma^2 \pi}} \exp\left(-\frac{(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_143_0.png" src="../_images/20-ModelFitting_143_0.png" />
+<img alt="../_images/20-ModelFitting_144_0.png" src="../_images/20-ModelFitting_144_0.png" />
 </div>
 </div>
 </div>
@@ -2010,7 +1975,7 @@ f(y_i|\beta_0, \beta_1, x_i) = \frac{1}{\sqrt{2\sigma^2 \pi}} \exp\left(-\frac{(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_150_0.png" src="../_images/20-ModelFitting_150_0.png" />
+<img alt="../_images/20-ModelFitting_151_0.png" src="../_images/20-ModelFitting_151_0.png" />
 </div>
 </div>
 </div>
@@ -2209,7 +2174,7 @@ such that \)</span>\mathrm{E}[x]=Np<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_172_0.png" src="../_images/20-ModelFitting_172_0.png" />
+<img alt="../_images/20-ModelFitting_173_0.png" src="../_images/20-ModelFitting_173_0.png" />
 </div>
 </div>
 </div>
@@ -2240,7 +2205,7 @@ such that \)</span>\mathrm{E}[x]=Np<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_175_0.png" src="../_images/20-ModelFitting_175_0.png" />
+<img alt="../_images/20-ModelFitting_176_0.png" src="../_images/20-ModelFitting_176_0.png" />
 </div>
 </div>
 <p><strong>NOTE:</strong> I’ve plotted the estimate of the <em>population</em> distribution here, but this is not the <em><strong>predictive distribution</strong></em> (which would be a Student T because we’re estimating both the mean and variance…).</p>
@@ -2348,7 +2313,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_181_0.png" src="../_images/20-ModelFitting_181_0.png" />
+<img alt="../_images/20-ModelFitting_182_0.png" src="../_images/20-ModelFitting_182_0.png" />
 </div>
 </div>
 </div>
@@ -2676,7 +2641,7 @@ Error: package or namespace load failed for ‘rjags’:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_209_0.png" src="../_images/20-ModelFitting_209_0.png" />
+<img alt="../_images/20-ModelFitting_210_0.png" src="../_images/20-ModelFitting_210_0.png" />
 </div>
 </div>
 <p>Note that the <span class="math notranslate nohighlight">\(\mu\)</span> data is u-shaped and the lifespan data is unimodal (hump-shaped).</p>
@@ -2692,7 +2657,7 @@ Error: package or namespace load failed for ‘rjags’:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_211_0.png" src="../_images/20-ModelFitting_211_0.png" />
+<img alt="../_images/20-ModelFitting_212_0.png" src="../_images/20-ModelFitting_212_0.png" />
 </div>
 </div>
 </div>
@@ -2965,7 +2930,7 @@ Traceback:
 7. eval(predvars, data, env)
 </pre></div>
 </div>
-<img alt="../_images/20-ModelFitting_226_1.png" src="../_images/20-ModelFitting_226_1.png" />
+<img alt="../_images/20-ModelFitting_227_1.png" src="../_images/20-ModelFitting_227_1.png" />
 </div>
 </div>
 </div>
@@ -3103,7 +3068,7 @@ Loading required package: lattice
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting_238_0.png" src="../_images/20-ModelFitting_238_0.png" />
+<img alt="../_images/20-ModelFitting_239_0.png" src="../_images/20-ModelFitting_239_0.png" />
 </div>
 </div>
 </div>
@@ -3484,7 +3449,7 @@ for the \)</span>i^{\mathrm th}<span class="math notranslate nohighlight">\( set
 <span class="mi">4</span><span class="o">.</span> <span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/20-ModelFitting_273_1.png" src="../_images/20-ModelFitting_273_1.png" />
+<img alt="../_images/20-ModelFitting_274_1.png" src="../_images/20-ModelFitting_274_1.png" />
 </div>
 </div>
 <p>Note that this only shows the uncertainty in the <em>mean function</em> – the assumed model with log normal noise says that the observations simply have this mean. The fit is attributing the majority of the observed noise to process error rather than parameter uncertainty.</p>
