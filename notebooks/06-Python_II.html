@@ -1564,10 +1564,11 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<p>\begin{aligned}
-\frac{dR}{dt} &amp;= r R - a C R \
-\frac{dC}{dt} &amp;= - z C + e a C R
-\end{aligned}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d60609bc-3aef-467d-b13f-9c590ef030af">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d60609bc-3aef-467d-b13f-9c590ef030af" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \frac{dR}{dt} &amp;= r R - a C R \\
+    \frac{dC}{dt} &amp;= - z C + e a C R
+\end{align}\]</div>
 <p>where,</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(R\)</span> are consumer (e.g., predator) and resource (e.g., prey) population abundances (either number <span class="math notranslate nohighlight">\(\times\)</span> area<span class="math notranslate nohighlight">\(^{-1}\)</span> ).</p></li>
@@ -2131,11 +2132,14 @@ vectorized method took 78 ms on average.
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,
-\begin{aligned}
-\frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R \
-\frac{dC}{dt} &amp;= - z C + e a C R
-\end{aligned}</p></li>
+<li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-fa361855-7f13-4495-bd35-ac877e962b18">
+<span class="eqno">(2)<a class="headerlink" href="#equation-fa361855-7f13-4495-bd35-ac877e962b18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
+    \frac{dC}{dt} &amp;= - z C + e a C R
+\end{align}\]</div>
+<ul class="simple">
 <li><p>It saves the plot as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> in an appropriate location.</p></li>
 <li><p>The chosen parameter values should show in the plot (e.g., <span class="math notranslate nohighlight">\(r = 1, a = .5 \)</span>, etc) You can change time length <span class="math notranslate nohighlight">\(t\)</span> too.</p></li>
 <li><p>The parameters values should be adjusted such that both predator and prey persist with prey density dependence ( the final (non-zero) population values should be printed to screen).</p></li>
@@ -2148,10 +2152,11 @@ vectorized method took 78 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<p>\begin{align}
-R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\
-C_{t+1} &amp;= C_t (1 - z + e a R_t)
-\end{align}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e03cbf8-6069-405d-81cb-e2bc514cabfa">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3e03cbf8-6069-405d-81cb-e2bc514cabfa" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+    R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
+    C_{t+1} &amp;= C_t (1 - z + e a R_t) 
+\end{align}\]</div>
 <p>Include this script in <code class="docutils literal notranslate"><span class="pre">run_LV.py</span></code>, and profile it as well.</p>
 </div>
 <div class="section" id="groupwork-practical-2">
@@ -2159,16 +2164,18 @@ C_{t+1} &amp;= C_t (1 - z + e a R_t)
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<p>\begin{aligned}
-R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\
-C_{t+1} &amp;= C_t (1 - z + e a R_t)
-\end{aligned}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec3c3771-68f0-4878-a0a7-3c350d439b9f">
+<span class="eqno">(4)<a class="headerlink" href="#equation-ec3c3771-68f0-4878-a0a7-3c350d439b9f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+        R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
+        C_{t+1} &amp;= C_t (1 - z + e a R_t)
+\end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code>). Include this
 script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<p>\begin{aligned}
-R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\
-C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
-\end{aligned}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aa2457ba-2d26-4a96-a667-2d0c6dae4dff">
+<span class="eqno">(5)<a class="headerlink" href="#equation-aa2457ba-2d26-4a96-a667-2d0c6dae4dff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
+    C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
+\end{align}\]</div>
 <p><em>As always, test, add, commit and push all your new code and data to your git repository.</em></p>
 </div>
 </div>
