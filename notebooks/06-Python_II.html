@@ -421,14 +421,14 @@
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-particularly-useful-scipy-sub-packages">
-     Two particularly useful
+    <a class="reference internal nav-link" href="#the-scipy-package">
+     The
      <code class="docutils literal notranslate">
       <span class="pre">
        scipy
       </span>
      </code>
-     sub-packages
+     package
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -759,33 +759,38 @@
 <p>In this chapter, we will build on the <a class="reference internal" href="05-Python_I.html"><span class="doc std std-doc">first Python Chapter</span></a>, covering some more advanced topics.</p>
 <div class="section" id="numerical-computing-in-python">
 <h2>Numerical computing in Python<a class="headerlink" href="#numerical-computing-in-python" title="Permalink to this headline">¶</a></h2>
-<p>Python is a good choice for numerical computing (recall <a class="reference internal" href="05-Python_I.html#why-python"><span class="std std-ref">this comparison</span></a>). The Python package <code class="docutils literal notranslate"><span class="pre">scipy</span></code> allows you to do serious number crunching, including:</p>
+<p>Python is a good choice for numerical computing (recall <a class="reference internal" href="05-Python_I.html#why-python"><span class="std std-ref">this comparison</span></a>). Using the right packages, you can do some serious number crunching in Python.</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code> packages. The latter offers a data structure called numpy array that is suitable for efficient computing, along with basic operations on these arrays, while scipy is proper numerical computing package (which <em>uses</em> numpy arrays) that can do a lot of things, including:</p>
 <ul class="simple">
 <li><p>Linear algebra (matrix and vector operations) using <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code></p></li>
 <li><p>Dealing with sparse matrix problems using <code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code></p></li>
 <li><p>Numerical integration (including solving of Ordinary Differential Equations (ODEs)) using <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></li>
 <li><p>Random number generation and using statistical functions and transformations using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code></p></li>
 <li><p>Optimization using <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code></p></li>
-<li><p>Signal Processing using <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></p></li>
+<li><p>Signal Processing (e.g., Fourier transforms) using <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></p></li>
 </ul>
 <div class="section" id="numpy-arrays">
 <h3>Numpy arrays<a class="headerlink" href="#numpy-arrays" title="Permalink to this headline">¶</a></h3>
 <p>In the following sections, we will use the <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> data structure for data manipulations and calculations. These arrays are similar in some respects to Python lists, but are homogeneous in type (the default is float), allow efficient (fast) manipulations, and are more naturally multidimensional (e.g., you can store multiple matrices in one array).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Thus numpy arrays are analogous to the <a class="reference internal" href="07-R.html#r-matrices"><span class="std std-ref">R <code class="docutils literal notranslate"><span class="pre">matrix</span></code></span></a> data structure.</p>
+<p>numpy arrays are analogous to the <a class="reference internal" href="07-R.html#r-matrices"><span class="std std-ref">R <code class="docutils literal notranslate"><span class="pre">matrix</span></code></span></a> data structure.</p>
 </div>
-<p>We will use the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> package, which includes <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, and a lot more. Let’s try it:</p>
+<p>Let’s start by importing numpy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>scipy vs numpy</strong>: It’s a bit confusing. Please have a look at <a class="reference external" href="https://www.scipy.org/scipylib/faq.html#what-is-the-difference-between-numpy-and-scipy">this</a>. Basically, there is some overlap between what these two packages can do, and this redundancy which will eventually be phased out completely. The safest approach is to import both scipy and numpy as we have done above, and use numpy for creating and manipulating data and scipy for more complex numerical operations.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># a one-dimensional array</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># a one-dimensional array</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -828,7 +833,7 @@ Source: <a class="reference external" href="http://pages.physics.cornell.edu/~my
 <p>You can also specify the data type of the array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -854,7 +859,7 @@ Source: <a class="reference external" href="http://pages.physics.cornell.edu/~my
 <p>You can also get a 1-D arrays as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">x</span>
 </pre></div>
 </div>
@@ -867,7 +872,7 @@ Source: <a class="reference external" href="http://pages.physics.cornell.edu/~my
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">5.</span><span class="p">)</span> <span class="c1">#directly specify float using decimal</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">5.</span><span class="p">)</span> <span class="c1">#directly specify float using decimal</span>
 <span class="n">x</span>
 </pre></div>
 </div>
@@ -895,7 +900,7 @@ Source: <a class="reference external" href="http://pages.physics.cornell.edu/~my
 <p>You can also convert to and from Python lists (recall <a class="reference external" href="./05-Python_I.ipynb#Comprehensions">list comprehensions</a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span> <span class="c1">#odd numbers between 1 and 10 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">])</span> <span class="c1">#odd numbers between 1 and 10 </span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -922,7 +927,7 @@ Source: <a class="reference external" href="http://pages.physics.cornell.edu/~my
 <p>To make a matrix, you need a 2-D numpy array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
 <span class="n">mat</span>
 </pre></div>
 </div>
@@ -1104,7 +1109,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#append row, note axis specification</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#append row, note axis specification</span>
 </pre></div>
 </div>
 </div>
@@ -1118,7 +1123,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="p">[[</span><span class="mi">12</span><span class="p">],[</span><span class="mi">12</span><span class="p">]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#append column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="p">[[</span><span class="mi">12</span><span class="p">],[</span><span class="mi">12</span><span class="p">]],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#append column</span>
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1143,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">newRow</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#append that existing row</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">newRow</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#append that existing row</span>
 <span class="n">mat</span>
 </pre></div>
 </div>
@@ -1153,7 +1158,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#Delete 3rd row</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#Delete 3rd row</span>
 </pre></div>
 </div>
 </div>
@@ -1167,9 +1172,9 @@ from the end of an array:</p>
 <p>And concatenation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">mat0</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">mat</span><span class="p">,</span> <span class="n">mat0</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">mat0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">mat</span><span class="p">,</span> <span class="n">mat0</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1213,7 +1218,7 @@ from the end of an array:</p>
 </div>
 </div>
 </div>
-<p>This is different from ravel: check the documentation by using <code class="docutils literal notranslate"><span class="pre">?sc.reshape</span></code>.</p>
+<p>This is different from ravel: check the documentation by using <code class="docutils literal notranslate"><span class="pre">?np.reshape</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -1239,7 +1244,7 @@ from the end of an array:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">76</span><span class="o">-</span><span class="mi">87</span><span class="n">bbd101e41a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">114</span><span class="o">-</span><span class="mi">87</span><span class="n">bbd101e41a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mat</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="ne">ValueError</span>: cannot reshape array of size 4 into shape (3,1)
@@ -1257,7 +1262,7 @@ from the end of an array:</p>
 <p>For example, if you know the size of your matrix or array, you can initialize it with ones or zeros:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#(4,2) are the (row,col) array dimensions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#(4,2) are the (row,col) array dimensions</span>
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1277,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># or zeros</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># or zeros</span>
 </pre></div>
 </div>
 </div>
@@ -1287,7 +1292,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#create an identity matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#create an identity matrix</span>
 <span class="n">m</span>
 </pre></div>
 </div>
@@ -1327,7 +1332,7 @@ from the end of an array:</p>
 <p>Now let’s perform some common matrix-vector operations on arrays (you can also try the same using matrices instead of arrays):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">mm</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#Convert to matrix</span>
 <span class="n">mm</span>
 </pre></div>
@@ -1409,7 +1414,7 @@ from the end of an array:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-86-2d8eab61478f&gt;:1: RuntimeWarning: divide by zero encountered in floor_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-124-2d8eab61478f&gt;:1: RuntimeWarning: divide by zero encountered in floor_divide
   mm // mm.transpose()
 </pre></div>
 </div>
@@ -1439,7 +1444,7 @@ from the end of an array:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">pi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 </pre></div>
 </div>
 </div>
@@ -1470,7 +1475,7 @@ from the end of an array:</p>
 <p>There is also a numpy matrix class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="c1"># convert to scipy/numpy matrix class</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="c1"># convert to scipy/numpy matrix class</span>
 <span class="n">mm</span>
 </pre></div>
 </div>
@@ -1512,47 +1517,51 @@ from the end of an array:</p>
 </div>
 </div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>However, it is not recommended that you use the numpy matrix class because it may be removed <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.matrix.html">in the future</a>.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can do a lot more by importing the <code class="docutils literal notranslate"><span class="pre">linalg</span></code> sub-package: <code class="docutils literal notranslate"><span class="pre">sc.linalg</span></code>.</p>
+<p>You can do a lot more with matrices and vectors by importing the <code class="docutils literal notranslate"><span class="pre">linalg</span></code> sub-package from scipy: <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code>.</p>
 </div>
 </div>
 </div>
-<div class="section" id="two-particularly-useful-scipy-sub-packages">
-<h3>Two particularly useful <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-packages<a class="headerlink" href="#two-particularly-useful-scipy-sub-packages" title="Permalink to this headline">¶</a></h3>
-<p>Two particularly useful <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-packages are <code class="docutils literal notranslate"><span class="pre">sc.integrate</span></code> (<em>what will I need this for?</em>) and <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code>. <em>Why not use <code class="docutils literal notranslate"><span class="pre">R</span></code> for this?</em> — because often you might just want to calculate some summary stats of your simulation results within Python.</p>
+<div class="section" id="the-scipy-package">
+<h3>The <code class="docutils literal notranslate"><span class="pre">scipy</span></code> package<a class="headerlink" href="#the-scipy-package" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s move on to <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p>
+<p>Two particularly useful <code class="docutils literal notranslate"><span class="pre">scipy</span></code> sub-packages are <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>. <em>Why not use <code class="docutils literal notranslate"><span class="pre">R</span></code> for stats?</em> — because often you might just want to calculate some summary stats of your simulation results within Python.</p>
 <div class="section" id="scipy-stats">
 <h4>Scipy stats<a class="headerlink" href="#scipy-stats" title="Permalink to this headline">¶</a></h4>
-<p>Let’s take a quick spin in <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code>.</p>
+<p>Let’s take a quick spin in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>. First, import scipy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sc</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># 10 samples from N(0,1)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># 10 samples from N(0,1)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.94063675, -0.21134036,  0.01927974,  0.56461412, -0.50988525,
-        0.93774628,  0.52943473,  0.27558981,  0.342435  , -1.00983042])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.0225044 , -0.34287195, -0.62843728, -0.16482955,  0.16442579,
+        0.60908981, -3.13843369,  0.64669245, -1.19273824,  0.67663954])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">randint</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Random integers between 0 and 10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">randint</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span><span class="mi">7</span><span class="p">)</span> <span class="c1"># Random integers between 0 and 10</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 6, 0, 6, 8, 4, 4])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 7, 3, 8, 5, 9, 9])
 </pre></div>
 </div>
 </div>
@@ -1564,8 +1573,8 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d60609bc-3aef-467d-b13f-9c590ef030af">
-<span class="eqno">(1)<a class="headerlink" href="#equation-d60609bc-3aef-467d-b13f-9c590ef030af" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-24b88c70-b017-439d-8277-424f1d6f6b11">
+<span class="eqno">(1)<a class="headerlink" href="#equation-24b88c70-b017-439d-8277-424f1d6f6b11" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R - a C R \\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -1595,7 +1604,7 @@ from the end of an array:</p>
     <span class="n">dRdt</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">R</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">C</span> 
     <span class="n">dCdt</span> <span class="o">=</span> <span class="o">-</span><span class="n">z</span> <span class="o">*</span> <span class="n">C</span> <span class="o">+</span> <span class="n">e</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">C</span>
     
-    <span class="k">return</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dRdt</span><span class="p">,</span> <span class="n">dCdt</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dRdt</span><span class="p">,</span> <span class="n">dCdt</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1627,7 +1636,7 @@ from the end of an array:</p>
 <p>Define the time vector; let’s integrate from time point 0 to 15, using 1000 sub-divisions of time:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1638,7 +1647,7 @@ from the end of an array:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R0</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">C0</span> <span class="o">=</span> <span class="mi">5</span> 
-<span class="n">RC0</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">R0</span><span class="p">,</span> <span class="n">C0</span><span class="p">])</span>
+<span class="n">RC0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">R0</span><span class="p">,</span> <span class="n">C0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1748,7 +1757,7 @@ from the end of an array:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06-Python_II_104_0.png" src="../_images/06-Python_II_104_0.png" />
+<img alt="../_images/06-Python_II_105_0.png" src="../_images/06-Python_II_105_0.png" />
 </div>
 </div>
 <p>Finally, save the figure as a pdf:</p>
@@ -1968,8 +1977,8 @@ Generate this figure as part of the <code class="docutils literal notranslate"><
 <p>Now run the two sets of comparisons using <code class="docutils literal notranslate"><span class="pre">timeit()</span></code> in ipython and make sure every line makes sense:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">timeit</span> <span class="n">my_squares_loops</span><span class="p">(</span><span class="n">iters</span><span class="p">)</span>
 <span class="o">%</span><span class="n">timeit</span> <span class="n">my_squares_lc</span><span class="p">(</span><span class="n">iters</span><span class="p">)</span>
-<span class="o">%</span><span class="n">timeit</span><span class="p">(</span><span class="n">my_join_join</span><span class="p">(</span><span class="n">iters</span><span class="p">,</span> <span class="n">mystring</span><span class="p">))</span>
-<span class="o">%</span><span class="n">timeit</span><span class="p">(</span><span class="n">my_join</span><span class="p">(</span><span class="n">iters</span><span class="p">,</span> <span class="n">mystring</span><span class="p">))</span>
+<span class="o">%</span><span class="n">timeit</span> <span class="p">(</span><span class="n">my_join_join</span><span class="p">(</span><span class="n">iters</span><span class="p">,</span> <span class="n">mystring</span><span class="p">))</span>
+<span class="o">%</span><span class="n">timeit</span> <span class="p">(</span><span class="n">my_join</span><span class="p">(</span><span class="n">iters</span><span class="p">,</span> <span class="n">mystring</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Note that embedding the <code class="docutils literal notranslate"><span class="pre">%timeit()</span></code> commands within the script won’t work calling magic commands from inside a script is not a good idea!</p>
@@ -2009,14 +2018,14 @@ Generate this figure as part of the <code class="docutils literal notranslate"><
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">loop_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
         <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>   
     <span class="k">return</span> <span class="n">c</span>
 
 
 <span class="k">def</span> <span class="nf">vect_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sc</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2034,17 +2043,17 @@ Generate this figure as part of the <code class="docutils literal notranslate"><
 <span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="n">array_lengths</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Set N=</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">N</span>)
     <span class="c1">#randomly generate our 1D arrays of length N</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
     
     <span class="c1"># time loop_product 3 times and save the mean execution time.</span>
     <span class="n">timer</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;loop_product(a, b)&#39;</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">t_loop</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">timer</span><span class="p">))</span>
+    <span class="n">t_loop</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">timer</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop method took </span><span class="si">%d</span><span class="s2"> ms on average.&quot;</span> <span class="o">%</span><span class="k">t_loop</span>[-1])
     
     <span class="c1"># time vect_product 3 times and save the mean execution time.</span>
     <span class="n">timer</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;vect_product(a, b)&#39;</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-    <span class="n">t_vect</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">sc</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">timer</span><span class="p">))</span>
+    <span class="n">t_vect</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">timer</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;vectorized method took </span><span class="si">%d</span><span class="s2"> ms on average.&quot;</span> <span class="o">%</span><span class="k">t_vect</span>[-1])
 </pre></div>
 </div>
@@ -2059,16 +2068,16 @@ Loop method took 0 ms on average.
 vectorized method took 0 ms on average.
 
 Set N=10000
-Loop method took 21 ms on average.
+Loop method took 37 ms on average.
 vectorized method took 0 ms on average.
 
 Set N=1000000
-Loop method took 1574 ms on average.
+Loop method took 1801 ms on average.
 vectorized method took 6 ms on average.
 
 Set N=10000000
-Loop method took 17083 ms on average.
-vectorized method took 78 ms on average.
+Loop method took 16390 ms on average.
+vectorized method took 117 ms on average.
 </pre></div>
 </div>
 </div>
@@ -2087,7 +2096,7 @@ vectorized method took 78 ms on average.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06-Python_II_122_0.png" src="../_images/06-Python_II_122_0.png" />
+<img alt="../_images/06-Python_II_123_0.png" src="../_images/06-Python_II_123_0.png" />
 </div>
 </div>
 </div>
@@ -2101,8 +2110,8 @@ vectorized method took 78 ms on average.
 <p>There are trade-offs to vectorizing, most notably memory usage. One downside of calculating many steps simultaneously is that your computer needs to hold much more in memory in order to do it. If you try to vectorize a problem thats <em>too</em> large, you will probably run into memory errors. One easy example is to re-run the above example, but make it <strong>even bigger</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000000000</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">vect_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="c1"># if no error, remove a, b, c from memory.</span>
@@ -2116,7 +2125,7 @@ vectorized method took 78 ms on average.
 <p><em>Check out the CMEE module on High Performance Computing to learn about using Imperial College’s supercomputing cluster to run extremely large problems</em></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> package for “parallelizing” your code on own computer.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> package for parallelizing your code on your own computer.</p>
 </div>
 </div>
 </div>
@@ -2134,8 +2143,8 @@ vectorized method took 78 ms on average.
 <ul class="simple">
 <li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-fa361855-7f13-4495-bd35-ac877e962b18">
-<span class="eqno">(2)<a class="headerlink" href="#equation-fa361855-7f13-4495-bd35-ac877e962b18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6c6f81b4-b1c5-4ff0-9d5f-93a64d3ebb7e">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6c6f81b4-b1c5-4ff0-9d5f-93a64d3ebb7e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2152,8 +2161,8 @@ vectorized method took 78 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-3e03cbf8-6069-405d-81cb-e2bc514cabfa">
-<span class="eqno">(3)<a class="headerlink" href="#equation-3e03cbf8-6069-405d-81cb-e2bc514cabfa" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-360a6598-0ad3-4bad-be27-0f94ad77d348">
+<span class="eqno">(3)<a class="headerlink" href="#equation-360a6598-0ad3-4bad-be27-0f94ad77d348" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
     C_{t+1} &amp;= C_t (1 - z + e a R_t) 
 \end{align}\]</div>
@@ -2164,15 +2173,15 @@ vectorized method took 78 ms on average.
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-ec3c3771-68f0-4878-a0a7-3c350d439b9f">
-<span class="eqno">(4)<a class="headerlink" href="#equation-ec3c3771-68f0-4878-a0a7-3c350d439b9f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c20f1c6d-32c0-4ec5-828b-1f295b81b39e">
+<span class="eqno">(4)<a class="headerlink" href="#equation-c20f1c6d-32c0-4ec5-828b-1f295b81b39e" title="Permalink to this equation">¶</a></span>\[\begin{align}
         R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
         C_{t+1} &amp;= C_t (1 - z + e a R_t)
 \end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code>). Include this
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this
 script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa2457ba-2d26-4a96-a667-2d0c6dae4dff">
-<span class="eqno">(5)<a class="headerlink" href="#equation-aa2457ba-2d26-4a96-a667-2d0c6dae4dff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6af5e25b-1e6d-47e9-8b2d-33ee7efa7f90">
+<span class="eqno">(5)<a class="headerlink" href="#equation-6af5e25b-1e6d-47e9-8b2d-33ee7efa7f90" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
     C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
 \end{align}\]</div>
@@ -2219,8 +2228,8 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
     <span class="n">Ids</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
     <span class="n">ALst</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Ids</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span>
-            <span class="n">Lnk</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">Ids</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">C</span><span class="p">:</span>
+            <span class="n">Lnk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">Ids</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">Lnk</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">Lnk</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="c1">#avoid self (e.g., cannibalistic) loops</span>
                 <span class="n">ALst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Lnk</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ALst</span>
@@ -2241,7 +2250,7 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
 <p>Now generate an adjacency list representing a random food web:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AdjL</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">GenRdmAdjList</span><span class="p">(</span><span class="n">MaxN</span><span class="p">,</span> <span class="n">C</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AdjL</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">GenRdmAdjList</span><span class="p">(</span><span class="n">MaxN</span><span class="p">,</span> <span class="n">C</span><span class="p">))</span>
 <span class="n">AdjL</span>
 </pre></div>
 </div>
@@ -2275,7 +2284,7 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
 <p>Now generate species (node) data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sps</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">AdjL</span><span class="p">)</span> <span class="c1"># get species ids</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Sps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">AdjL</span><span class="p">)</span> <span class="c1"># get species ids</span>
 </pre></div>
 </div>
 </div>
@@ -2284,7 +2293,7 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SizRan</span> <span class="o">=</span> <span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span> <span class="c1">#use log10 scale</span>
-<span class="n">Sizs</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">SizRan</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SizRan</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">MaxN</span><span class="p">)</span>
+<span class="n">Sizs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">SizRan</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">SizRan</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">MaxN</span><span class="p">)</span>
 <span class="n">Sizs</span>
 </pre></div>
 </div>
@@ -2315,7 +2324,7 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
  &lt;a list of 10 Patch objects&gt;)
 </pre></div>
 </div>
-<img alt="../_images/06-Python_II_141_1.png" src="../_images/06-Python_II_141_1.png" />
+<img alt="../_images/06-Python_II_142_1.png" src="../_images/06-Python_II_142_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2332,7 +2341,7 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
  &lt;a list of 10 Patch objects&gt;)
 </pre></div>
 </div>
-<img alt="../_images/06-Python_II_142_1.png" src="../_images/06-Python_II_142_1.png" />
+<img alt="../_images/06-Python_II_143_1.png" src="../_images/06-Python_II_143_1.png" />
 </div>
 </div>
 <p>Now let’s plot the network, with node sizes proportional to (log) body size:</p>
@@ -2386,7 +2395,7 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06-Python_II_155_0.png" src="../_images/06-Python_II_155_0.png" />
+<img alt="../_images/06-Python_II_156_0.png" src="../_images/06-Python_II_156_0.png" />
 </div>
 </div>
 <p>You might get a warning. In that case, try upgrading the networkx package.</p>
