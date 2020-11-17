@@ -1251,7 +1251,7 @@ from the end of an array:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">87</span><span class="n">bbd101e41a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">173</span><span class="o">-</span><span class="mi">87</span><span class="n">bbd101e41a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mat</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
 <span class="ne">ValueError</span>: cannot reshape array of size 4 into shape (3,1)
@@ -1421,7 +1421,7 @@ from the end of an array:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-46-2d8eab61478f&gt;:1: RuntimeWarning: divide by zero encountered in floor_divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-183-2d8eab61478f&gt;:1: RuntimeWarning: divide by zero encountered in floor_divide
   mm // mm.transpose()
 </pre></div>
 </div>
@@ -1563,8 +1563,8 @@ from the end of an array:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.15003572,  0.99194602,  0.95332413, -2.02125482, -0.33407737,
-        0.00211836,  0.40545341,  0.28909194,  1.32115819, -1.54690555])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.40545341,  0.28909194,  1.32115819, -1.54690555, -0.20264632,
+       -0.65596934,  0.19342138,  0.55343891,  1.31815155, -0.46930528])
 </pre></div>
 </div>
 </div>
@@ -1677,7 +1677,7 @@ from the end of an array:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f529e96d790&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f529e907e50&gt;]
 </pre></div>
 </div>
 <img alt="../_images/06-Python_II_96_1.png" src="../_images/06-Python_II_96_1.png" />
@@ -1768,8 +1768,8 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Now let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-865b7d85-fdee-426f-9b94-3f32182c4335">
-<span class="eqno">(1)<a class="headerlink" href="#equation-865b7d85-fdee-426f-9b94-3f32182c4335" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-833dbda3-b81c-4d84-adfa-c5584a374bf4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-833dbda3-b81c-4d84-adfa-c5584a374bf4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R - a C R \\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2253,20 +2253,21 @@ Loop method took 0 ms on average.
 vectorized method took 0 ms on average.
 
 Set N=10000
-Loop method took 37 ms on average.
+Loop method took 34 ms on average.
 vectorized method took 0 ms on average.
 
 Set N=1000000
-Loop method took 1801 ms on average.
-vectorized method took 6 ms on average.
+Loop method took 3605 ms on average.
+vectorized method took 7 ms on average.
 
 Set N=10000000
-Loop method took 16390 ms on average.
-vectorized method took 117 ms on average.
+Loop method took 23285 ms on average.
+vectorized method took 155 ms on average.
 </pre></div>
 </div>
 </div>
 </div>
+<p>Phew! That last one just exploded in terms of the time it took!</p>
 <p>Now let’s compare the timings on a plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2328,8 +2329,8 @@ vectorized method took 117 ms on average.
 <ul class="simple">
 <li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-857e72c6-537c-4b86-9815-4e76f3d6c882">
-<span class="eqno">(2)<a class="headerlink" href="#equation-857e72c6-537c-4b86-9815-4e76f3d6c882" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-af9cefb3-87d7-4bb9-9bd9-dc4cd57751b3">
+<span class="eqno">(2)<a class="headerlink" href="#equation-af9cefb3-87d7-4bb9-9bd9-dc4cd57751b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2346,8 +2347,8 @@ vectorized method took 117 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-76fddfd9-9804-4df9-b46e-f73cef094b69">
-<span class="eqno">(3)<a class="headerlink" href="#equation-76fddfd9-9804-4df9-b46e-f73cef094b69" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-f26ed3db-0c91-4f7e-afe9-c099ea2cda8f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-f26ed3db-0c91-4f7e-afe9-c099ea2cda8f" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
     C_{t+1} &amp;= C_t (1 - z + e a R_t) 
 \end{align}\]</div>
@@ -2358,15 +2359,15 @@ vectorized method took 117 ms on average.
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a39c6925-d849-4217-b6fe-bb37c9c5a830">
-<span class="eqno">(4)<a class="headerlink" href="#equation-a39c6925-d849-4217-b6fe-bb37c9c5a830" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14b9caa2-f24d-4e83-8163-cedeb75a589a">
+<span class="eqno">(4)<a class="headerlink" href="#equation-14b9caa2-f24d-4e83-8163-cedeb75a589a" title="Permalink to this equation">¶</a></span>\[\begin{align}
         R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
         C_{t+1} &amp;= C_t (1 - z + e a R_t)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this
 script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b05ccb4d-799d-432a-babb-2748e01e4f83">
-<span class="eqno">(5)<a class="headerlink" href="#equation-b05ccb4d-799d-432a-babb-2748e01e4f83" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a8f2a580-930f-46e5-bc56-35a8b21f6e71">
+<span class="eqno">(5)<a class="headerlink" href="#equation-a8f2a580-930f-46e5-bc56-35a8b21f6e71" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
     C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
 \end{align}\]</div>
@@ -2852,7 +2853,7 @@ In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">152</span><span class="o">-</span><span class="mf">149e5</span><span class="n">ba466b2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">275</span><span class="o">-</span><span class="mf">149e5</span><span class="n">ba466b2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[\w\s]+,\s[\w\.@]+,\s[\w\s]+&quot;</span><span class="p">,</span><span class="n">MyStr</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
 
@@ -2866,6 +2867,11 @@ In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[\w\s]+,\s[\w\.-]+@[\w\.-]+,\s[\w\s]+&quot;</span><span class="p">,</span><span class="n">MyStr</span><span class="p">)</span>
 <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Samraat Pawar, s-pawar@imperial.ac.uk, Systems biology and ecological theory&#39;
 </pre></div>
 </div>
 </div>
@@ -2905,11 +2911,21 @@ In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Samraat Pawar, s.pawar@imperial.ac.uk, Systems biology and ecological theory&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Without grouping the regex:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Samraat Pawar, s.pawar@imperial.ac.uk, Systems biology and ecological theory&#39;
 </pre></div>
 </div>
 </div>
@@ -2923,6 +2939,14 @@ In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog
     <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Samraat Pawar, s.pawar@imperial.ac.uk, Systems biology and ecological theory
+Samraat Pawar
+s.pawar@imperial.ac.uk
+Systems biology and ecological theory
 </pre></div>
 </div>
 </div>
@@ -2988,6 +3012,13 @@ In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s.pawar@imperial.ac.uk
+a-academic@imperial.ac.uk
+y.a_academic@imperial.ac.uk
+</pre></div>
+</div>
+</div>
 </div>
 <p>Nice!</p>
 </div>
@@ -3001,6 +3032,11 @@ In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog
 <span class="n">found_oaks</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Q[\w\s].*\s&quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 <span class="n">found_oaks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Quercus, robur\n&#39;, &#39;Quercus, cerris\n&#39;, &#39;Quercus, petraea\n&#39;]
 </pre></div>
 </div>
 </div>
@@ -3144,12 +3180,13 @@ Dr Aurelio Malo
 </div>
 </div>
 </div>
-<p>Again, nice! However, its’ not perfect. You can improve this by:</p>
+<p>Again, nice! However, its’ not perfect.</p>
+<p>You can improve this by:</p>
 <ul class="simple">
 <li><p>Extracting Prof names as well</p></li>
 <li><p>Eliminating the repeated matches</p></li>
 <li><p>Grouping to separate title from first and second names</p></li>
-<li><p>Extracting names that have unexpected characters (e.g., “O’Gorman”, which are currently not being matched properly)</p></li>
+<li><p>Extracting names that have unexpected characters, such as in hyphenated names (a “-” in the name)</p></li>
 </ul>
 <p><em>Try making these improvements.</em></p>
 <p>Of course, you can match and extract other types of patterns as well, such as urls and email addresses (though this example web page does not have email addresses).</p>
