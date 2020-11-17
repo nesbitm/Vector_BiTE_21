@@ -1768,8 +1768,8 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Now let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-461b44f8-b3f0-4df5-a4af-c1be9e07a417">
-<span class="eqno">(1)<a class="headerlink" href="#equation-461b44f8-b3f0-4df5-a4af-c1be9e07a417" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-865b7d85-fdee-426f-9b94-3f32182c4335">
+<span class="eqno">(1)<a class="headerlink" href="#equation-865b7d85-fdee-426f-9b94-3f32182c4335" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R - a C R \\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2328,8 +2328,8 @@ vectorized method took 117 ms on average.
 <ul class="simple">
 <li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-83e55baf-53d2-4e33-a61d-2a45d5e5eaac">
-<span class="eqno">(2)<a class="headerlink" href="#equation-83e55baf-53d2-4e33-a61d-2a45d5e5eaac" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-857e72c6-537c-4b86-9815-4e76f3d6c882">
+<span class="eqno">(2)<a class="headerlink" href="#equation-857e72c6-537c-4b86-9815-4e76f3d6c882" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2346,8 +2346,8 @@ vectorized method took 117 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-71036a15-400d-4c74-8f5d-3c86688eb1cb">
-<span class="eqno">(3)<a class="headerlink" href="#equation-71036a15-400d-4c74-8f5d-3c86688eb1cb" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-76fddfd9-9804-4df9-b46e-f73cef094b69">
+<span class="eqno">(3)<a class="headerlink" href="#equation-76fddfd9-9804-4df9-b46e-f73cef094b69" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
     C_{t+1} &amp;= C_t (1 - z + e a R_t) 
 \end{align}\]</div>
@@ -2358,15 +2358,15 @@ vectorized method took 117 ms on average.
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-77438e10-f637-4d9d-96d4-0ed3bae92d56">
-<span class="eqno">(4)<a class="headerlink" href="#equation-77438e10-f637-4d9d-96d4-0ed3bae92d56" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a39c6925-d849-4217-b6fe-bb37c9c5a830">
+<span class="eqno">(4)<a class="headerlink" href="#equation-a39c6925-d849-4217-b6fe-bb37c9c5a830" title="Permalink to this equation">¶</a></span>\[\begin{align}
         R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
         C_{t+1} &amp;= C_t (1 - z + e a R_t)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this
 script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-219ab0ee-c4cb-4efe-81ed-fc8e358f0068">
-<span class="eqno">(5)<a class="headerlink" href="#equation-219ab0ee-c4cb-4efe-81ed-fc8e358f0068" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b05ccb4d-799d-432a-babb-2748e01e4f83">
+<span class="eqno">(5)<a class="headerlink" href="#equation-b05ccb4d-799d-432a-babb-2748e01e4f83" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
     C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
 \end{align}\]</div>
@@ -2395,7 +2395,7 @@ Regular expressions can really improve your quality of life!</p>
 <p>Regex packages are available for most programming languages (recall <a class="reference external" href="01-Unix.ipynb#Using-%60grep%60"><code class="docutils literal notranslate"><span class="pre">grep</span></code> in UNIX</a>; that is how regex first became popular).</p>
 <div class="section" id="metacharacters-vs-regular-characters">
 <h3>Metacharacters vs. regular characters<a class="headerlink" href="#metacharacters-vs-regular-characters" title="Permalink to this headline">¶</a></h3>
-<p>A regex may consist of a combination of “metacharacters” (modifiers) and “regular” or literal characters. There are 14 metacharacters:</p>
+<p>A regex may consist of a combination of special “metacharacters” (modifiers) and “regular” or literal characters. There are 14 metacharacters:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Metacharacter</p></th>
@@ -2438,16 +2438,17 @@ Regular expressions can really improve your quality of life!</p>
 </tr>
 </tbody>
 </table>
-<p>Thus, combinations of these metacharacters do particular things. Everything other than these metacharacters is interpreted literally (e.g., <em>a</em> is matched by entering <code class="docutils literal notranslate"><span class="pre">a</span></code> in the regex).</p>
+<p>Everything other than these metacharacters is interpreted literally (e.g., <em>a</em> is matched by entering <code class="docutils literal notranslate"><span class="pre">a</span></code> in the regex) – a regular character.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>The difference between <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, and <code class="docutils literal notranslate"><span class="pre">?</span></code></strong>:
-<code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more times, so whatever’s being repeated may <em>not</em> be present at all, while <code class="docutils literal notranslate"><span class="pre">+</span></code> <em>requires</em> at least one occurrence. So, for example, <code class="docutils literal notranslate"><span class="pre">ca+t</span></code> will match “rat” (one ‘a’ is present) and “raaat” (three “a”s), but won’t match “rt”. On the other hand, <code class="docutils literal notranslate"><span class="pre">?</span></code> matches either once or zero times, so it makes the pattern matching more flexible. For example, <code class="docutils literal notranslate"><span class="pre">home-?brew</span></code> matches either “homebrew” or “home-brew”.</p>
+<code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more times, so whatever’s being repeated may <em>not</em> be present at all, while <code class="docutils literal notranslate"><span class="pre">+</span></code> <em>requires</em> at least one occurrence. So, for example, <code class="docutils literal notranslate"><span class="pre">ra+t</span></code> will match “rat” (one ‘a’ is present) and “raaat” (three “a”s), but won’t match “rt”. On the other hand, <code class="docutils literal notranslate"><span class="pre">?</span></code> matches a pattern either once or zero times, so it makes the pattern matching more flexible. For example, <code class="docutils literal notranslate"><span class="pre">home-?brew</span></code> matches either “homebrew” or “home-brew”.</p>
 </div>
 </div>
 <div class="section" id="regex-special-sequences">
 <h3>Regex special sequences<a class="headerlink" href="#regex-special-sequences" title="Permalink to this headline">¶</a></h3>
-<p>Along with inhibiting the “specialness” of a metacharacter so that it can be interpreted literally (see examples in table above), the backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) can be followed by various standard character types to denote various <em>special sequences</em>. Below is a list of <em>commonly encountered</em> special sequences in <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> string patterns. For a complete list look <a class="reference external" href="https://docs.python.org/3/library/re.html#re-syntax">here</a> .</p>
+<p>Along with inhibiting the “specialness” of a metacharacter so that it can be interpreted literally (see examples in table above), the backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) can be followed by various standard character types to denote various <em>special sequences</em>.</p>
+<p>Below is a list of <em>commonly encountered</em> special sequences in <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> string patterns. For a complete list look <a class="reference external" href="https://docs.python.org/3/library/re.html#re-syntax">here</a>.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Sequence</p></th>
@@ -2455,30 +2456,47 @@ Regular expressions can really improve your quality of life!</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>\d</p></td>
-<td class="text-align:left"><p>Matches any decimal digit; this is equivalent to the class [0-9]</p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\d</span></code></p></td>
+<td class="text-align:left"><p>Matches any numeric (integer); this is equivalent to the regex class [0-9]</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>\D</p></td>
-<td class="text-align:left"><p>Matches any non-digit character; this is equivalent to the class [^0-9]</p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\D</span></code></p></td>
+<td class="text-align:left"><p>Matches any non-digit character not covered by <code class="docutils literal notranslate"> <span class="pre">\d</span></code> (i.e., match a non-digit); this is equivalent to the class [^0-9]</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>\s</p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
+<td class="text-align:left"><p>Matches a newline</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
+<td class="text-align:left"><p>Matches a tab space</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\s</span></code></p></td>
 <td class="text-align:left"><p>Matches any whitespace character; this is equivalent to the class [ \t\n\r\f\v]</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>\S</p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\S</span></code></p></td>
 <td class="text-align:left"><p>Matches any non-whitespace character; this is equivalent to the class [^ \t\n\r\f\v]</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>\w</p></td>
-<td class="text-align:left"><p>Matches any alphanumeric character; this is equivalent to the class [a-zA-Z0-9_]</p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\w</span></code></p></td>
+<td class="text-align:left"><p>Matches any “alphanumeric” character (including underscore); this is equivalent to the class [a-zA-Z0-9_]</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>\W</p></td>
-<td class="text-align:left"><p>Matches any non-alphanumeric character; this is equivalent to the class [^a-zA-Z0-9_]</p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\W</span></code></p></td>
+<td class="text-align:left"><p>Matches any non-alphanumeric character not covered by <code class="docutils literal notranslate"><span class="pre">\w</span></code>, i.e., any non-alphanumeric character excluding underscore, such as <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, etc. ; this is equivalent to the class [^a-zA-Z0-9_]</p></td>
 </tr>
 </tbody>
 </table>
+<p>In the above table,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code> stands for a “<a class="reference external" href="https://en.wikipedia.org/wiki/Carriage_return#Computers">carriage-return</a>”, which is usually (but not always) the same as as a newline (<code class="docutils literal notranslate"><span class="pre">\n</span></code>);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\f</span></code> stands fior <a class="reference external" href="https://en.wikipedia.org/wiki/Page_break">“form feed”</a> (or a page break character)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\v</span></code> stands for  <a class="reference external" href="https://en.wikipedia.org/wiki/Whitespace_character">“vertical whitespace”</a>, which includes all characters treated as line breaks in the Unicode standard.</p></li>
+</ul>
+<p>These are rarely encountered, but can exist in certain text files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The reason why we have specified underscore as belonging to <code class="docutils literal notranslate"><span class="pre">\w</span></code> (i.e., the regex set [A-Za-z0-9_]) is because this is the specification of this class in Python regex in particular. This class definition is shared by most, but not all regex “flavors” (i.e., regex in other languages, such as Perl or Bash (recall <code class="docutils literal notranslate"><span class="pre">grep</span></code>)). The goal is to not to worry about it, but to keep in mind that <code class="docutils literal notranslate"><span class="pre">\w</span></code> will also match any pattern that includes one or more <code class="docutils literal notranslate"><span class="pre">_</span></code>’s!</p>
+</div>
 </div>
 <div class="section" id="some-regex-examples">
 <h3>Some regex examples<a class="headerlink" href="#some-regex-examples" title="Permalink to this headline">¶</a></h3>
-<p>So combining these meta-characters and special sequences allows you to find pretty much any pattern. Here are some examples:</p>
+<p>So combining metacharacters, regular characters and special sequences allows you to find pretty much any pattern. Here are some examples:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Regex</p></th>
@@ -2489,53 +2507,38 @@ Regular expressions can really improve your quality of life!</p>
 <tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">aX9</span></code></p></td>
 <td class="text-align:left"><p>match the character string <em>aX9</em> exactly (case sensitively)</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">aX9\n</span></code></p></td>
+<td class="text-align:left"><p>match the character string <em>aX9</em>  (case sensitively) followed by a newline</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
 <td class="text-align:left"><p>match the number <em>8</em></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\n</span></code></p></td>
-<td class="text-align:left"><p>match a newline</p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\d8</span></code></p></td>
+<td class="text-align:left"><p>match the number <em>8</em> preceded by any decimal number</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\t</span></code></p></td>
-<td class="text-align:left"><p>match a tab</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\s</span></code></p></td>
-<td class="text-align:left"><p>match a whitespace</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\w</span></code></p></td>
-<td class="text-align:left"><p>match a single “word” character: any alphanumeric character (including underscore)</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\W</span></code></p></td>
-<td class="text-align:left"><p>match any character not covered by <code class="docutils literal notranslate"><span class="pre">\w</span></code>, i.e., match any non-alphanumeric character excluding underscore, such as <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, etc.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\d</span></code></p></td>
-<td class="text-align:left"><p>match a numeric (integer) character</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\D</span></code></p></td>
-<td class="text-align:left"><p>match any character not covered by <code class="docutils literal notranslate"> <span class="pre">\d</span></code> (i.e., match a non-digit)</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[atgc]</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[atgc]</span></code></p></td>
 <td class="text-align:left"><p>match any character listed: <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">at|gc</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">at|gc</span></code></p></td>
 <td class="text-align:left"><p>match <code class="docutils literal notranslate"><span class="pre">at</span></code> or <code class="docutils literal notranslate"><span class="pre">gc</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[^atgc]</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[^atgc]</span></code></p></td>
 <td class="text-align:left"><p>match any character not listed: any character except <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">g</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[^a-z]</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[^a-z]</span></code></p></td>
 <td class="text-align:left"><p>match everything except lower case <em>a</em> to <em>z</em></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[^Ff]</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">[^Ff]</span></code></p></td>
 <td class="text-align:left"><p>match anything except upper or lower case <em>f</em></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">{n}</span></code></p></td>
-<td class="text-align:left"><p>match the preceding pattern element exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> times</p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\w{n}</span></code></p></td>
+<td class="text-align:left"><p>match the preceding pattern  element (any alphanumeric character) <em>exactly</em> <code class="docutils literal notranslate"><span class="pre">n</span></code> times</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">{n,}</span></code></p></td>
-<td class="text-align:left"><p>match the preceding pattern element at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times</p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\w{n,}</span></code></p></td>
+<td class="text-align:left"><p>match the preceding pattern element (any alphanumeric character) <em>at least</em> <code class="docutils literal notranslate"><span class="pre">n</span></code> times</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">{n,m}</span></code></p></td>
-<td class="text-align:left"><p>match the preceding pattern element at least <code class="docutils literal notranslate"><span class="pre">n</span></code> but not more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times</p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">\w{n,m}</span></code></p></td>
+<td class="text-align:left"><p>match the preceding pattern element (any alphanumeric character) at least <code class="docutils literal notranslate"><span class="pre">n</span></code> but not more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times</p></td>
 </tr>
 </tbody>
 </table>
@@ -2556,9 +2559,10 @@ Regular expressions can really improve your quality of life!</p>
 </div>
 </div>
 <p>The simplest <code class="docutils literal notranslate"><span class="pre">python</span></code> regex function is <code class="docutils literal notranslate"><span class="pre">re.search</span></code>, which searches the string for match to a given pattern — returns a <em>match object</em> if a match is found and <code class="docutils literal notranslate"><span class="pre">None</span></code> if not. Thus, the command <code class="docutils literal notranslate"><span class="pre">match</span> <span class="pre">=</span> <span class="pre">re.search(pat,</span> <span class="pre">str)</span></code> finds matches of the pattern <code class="docutils literal notranslate"><span class="pre">pat</span></code> in the given string <code class="docutils literal notranslate"><span class="pre">str</span></code> and stores the search result in a variable named <code class="docutils literal notranslate"><span class="pre">match</span></code>.</p>
-<blockquote>
-<div><p><strong>Always</strong> put <code class="docutils literal notranslate"><span class="pre">r</span></code> in front of your regex — it tells python to read the regex in its “raw” (literal) form. Without raw string notation (<code class="docutils literal notranslate"><span class="pre">r&quot;text&quot;</span></code>), every backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) in a regular expression would have to be prefixed with another one to escape it. Read more about this <a class="reference external" href="https://docs.python.org/3.5/library/re.html">here</a>.</p>
-</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Always</strong> put <code class="docutils literal notranslate"><span class="pre">r</span></code> in front of your regex — it tells python to read the regex in its “raw” (literal) form. Without raw string notation (<code class="docutils literal notranslate"><span class="pre">r&quot;text&quot;</span></code>), every backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) in a regular expression would have to be prefixed with another one to escape it. Read more about this <a class="reference external" href="https://docs.python.org/3.5/library/re.html">here</a>.</p>
+</div>
 <p>OK, let’s try some regexes (type all that follows in <code class="docutils literal notranslate"><span class="pre">regexs.py</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2811,7 +2815,7 @@ Regular expressions can really improve your quality of life!</p>
 <hr class="docutils" />
 <p><img alt="image" src="../_images/thelodermaasper.JPG" />
 <small><center>
-In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog”, looks like. I snapped this one in North-east India ages ago</p>
+In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog”, looks like. I snapped this one in a North-East Indian rainforest ages ago.</p>
 </center></small>
 <hr class="docutils" />
 <p>How about looking for email addresses in a string? For example, let’s try matching a string consisting of an academic’s name, email address and research area or interest (no need to type this into any python file):</p>
