@@ -2131,11 +2131,12 @@ f(y_i|\beta_0, \beta_1, x_i) = \frac{1}{\sqrt{2\sigma^2 \pi}} \exp\left(-\frac{(
 <h3>A Likelihoods exercise<a class="headerlink" href="#a-likelihoods-exercise" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="the-binomial-distribution">
 <h4>The Binomial Distribution<a class="headerlink" href="#the-binomial-distribution" title="Permalink to this headline">¶</a></h4>
-<p>The Binomial distribution is used to model the number of “successes” in a set of trials (e.g., number of heads when you flip a coin <span class="math notranslate nohighlight">\(N\)</span> times). The pmf is
-$<span class="math notranslate nohighlight">\(
+<p>The Binomial distribution is used to model the number of “successes” in a set of trials (e.g., number of heads when you flip a coin <span class="math notranslate nohighlight">\(N\)</span> times). The pmf is</p>
+<div class="math notranslate nohighlight">
+\[
 {N \choose x} p^x(1-p)^{N-x}
-\)</span><span class="math notranslate nohighlight">\(
-such that \)</span>\mathrm{E}[x]=Np<span class="math notranslate nohighlight">\(. Throughout this &quot;experiment&quot;, you will assume that your experiment consists of flipping 20 coins, so that \)</span>N=20$.</p>
+\]</div>
+<p>such that <span class="math notranslate nohighlight">\(\mathrm{E}[x] = Np \)</span>. Throughout this “experiment”, you will assume that your experiment consists of flipping 20 coins, so that <span class="math notranslate nohighlight">\(N = 20\)</span>.</p>
 <p>Let’s use the Binomial distribution to practice two methods of estimating parameters for a probability distribution: method of moments and maximum likelihood.</p>
 <div class="section" id="simulating-from-the-binomial-using-r">
 <h5>Simulating from the Binomial using R<a class="headerlink" href="#simulating-from-the-binomial-using-r" title="Permalink to this headline">¶</a></h5>
@@ -2347,21 +2348,23 @@ $<span class="math notranslate nohighlight">\(
 \mu \sim \mathcal{N}(1.9, 0.8^2)
 \)</span>$</p>
 <hr class="docutils" />
-<p>Together, then, our full model is:
-\begin{align * }
-\mathbf{Y} &amp; \stackrel{\mathrm{iid}}{\sim} \mathcal{N}(\mu, 0.025^2)\
-\mu &amp;\sim \mathcal{N}(1.9, 0.8^2)
-\end{align * }</p>
+<p>Together, then, our full model is:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbf{Y} &amp; \stackrel{\mathrm{iid}}{\sim} \mathcal{N}(\mu, 0.025^2)\\
+    \mu &amp;\sim \mathcal{N}(1.9, 0.8^2)
+\end{align*}\]</div>
 </div>
 </div>
 <div class="section" id="analytic-posterior">
 <h3>Analytic Posterior<a class="headerlink" href="#analytic-posterior" title="Permalink to this headline">¶</a></h3>
-<p>For this very simple case it is easy to write down the posterior distribution (up to some constant). First, note that the likehood for the data can be written as</p>
-<p>\begin{align * }
-\mathcal{L} &amp;\propto \prod_{i=1}^n \frac{1}{\sigma} \exp\left(-\frac{1}{2\sigma^2}(Y_i-\mu)^2 \right) \
-&amp; = \frac{1}{\sigma^n} \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n (Y_i-\mu)^2 \right)\
-&amp; \propto \exp\left(-\frac{n}{2\sigma^2} (\bar{Y}-\mu)^2 \right)
-\end{align * }</p>
+<p>For this very simple case it is easy to write down the posterior distribution (up to some constant). First, note that the likelihood for the data can be written as</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathcal{L} &amp;\propto \prod_{i=1}^n \frac{1}{\sigma} \exp\left(-\frac{1}{2\sigma^2}(Y_i-\mu)^2 \right) \\
+    &amp; = \frac{1}{\sigma^n} \exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n (Y_i-\mu)^2 \right)\\
+    &amp; \propto \exp\left(-\frac{n}{2\sigma^2} (\bar{Y}-\mu)^2 \right)
+\end{align*}\]</div>
 <p>Multiplying the prior through we get the following for the posterior:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2373,11 +2376,12 @@ $<span class="math notranslate nohighlight">\(
 \mathrm{P}(\mu|\mathbf{Y}) \propto \exp \left(-\frac{1}{2\sigma_p^2} (\mu_p-\mu)^2 \right)
 \]</div>
 <p>where</p>
-<p>\begin{align * }
-\mu_p &amp; = \frac{n\sigma_0^2}{\sigma^2 + n\sigma_0^2} \bar{Y} + \frac{\sigma^2}{\frac{\sigma^2}{n} + \sigma_0^2} \mu_0\
-&amp; \
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mu_p &amp; = \frac{n\sigma_0^2}{\sigma^2 + n\sigma_0^2} \bar{Y} + \frac{\sigma^2}{\frac{\sigma^2}{n} + \sigma_0^2} \mu_0\\
+&amp; \\
 \sigma_p^2 &amp; = \left( \frac{n}{\sigma^2} + \frac{1}{\sigma_0^2} \right)^{-1}
-\end{align * }</p>
+\end{align*}\]</div>
 <p>Instead of writing this last in terms of the variances, we could instead use precision (the inverse variance) which gives a simpler expression:</p>
 <div class="math notranslate nohighlight">
 \[
