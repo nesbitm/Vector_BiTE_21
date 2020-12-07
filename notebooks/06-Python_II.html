@@ -166,6 +166,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-t_F_tests.html">
+   Basic hypothesis testing:
    <span class="math notranslate nohighlight">
     \(t\)
    </span>
@@ -770,16 +771,15 @@
                 
   <div class="section" id="biological-computing-in-python-ii">
 <h1>Biological Computing in Python II<a class="headerlink" href="#biological-computing-in-python-ii" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><blockquote>
-<div><p>…some things in life are bad. They can really make you mad. Other things just make you swear and curse. When you’re chewing on life’s gristle, don’t grumble; give a whistle, and this’ll help things turn out for the best. And… always look on the bright side of life…
-— <em>Guess who?</em></p>
-</div></blockquote>
+<blockquote class="epigraph">
+<div><p>…some things in life are bad. They can really make you mad. Other things just make you swear and curse. When you’re chewing on life’s gristle, don’t grumble; give a whistle, and this’ll help things turn out for the best. And… always look on the bright side of life…</p>
+<p class="attribution">—Monty Python
+</p>
 </div></blockquote>
 <p>In this chapter, we will build on the <a class="reference internal" href="05-Python_I.html"><span class="doc std std-doc">first Python Chapter</span></a>, covering some more advanced topics.</p>
 <div class="section" id="numerical-computing-in-python">
 <h2>Numerical computing in Python<a class="headerlink" href="#numerical-computing-in-python" title="Permalink to this headline">¶</a></h2>
-<p>Python is a good choice for numerical computing (recall <a class="reference internal" href="05-Python_I.html#why-python"><span class="std std-ref">this comparison</span></a>). Using the right packages, you can do some serious number crunching in Python.</p>
+<p>Python is a good choice for numerical computing (recall <a class="reference internal" href="05-Python_I.html#python-i-why-python"><span class="std std-ref">this comparison</span></a>). Using the right packages, you can do some serious number crunching in Python.</p>
 <p>We will use the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy</span></code> packages. The latter offers a data structure called numpy array that is suitable for efficient computing, along with basic operations on these arrays.</p>
 <p>On the other hand, scipy is proper numerical computing package (which <em>uses</em> numpy arrays) that can do a lot of things, including:</p>
 <ul class="simple">
@@ -1783,8 +1783,8 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Now let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8e5659e-0604-44be-9ce7-4215d8370c4c">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f8e5659e-0604-44be-9ce7-4215d8370c4c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8be16d68-331c-4ef4-be4a-6d90b93bd996">
+<span class="eqno">(1)<a class="headerlink" href="#equation-8be16d68-331c-4ef4-be4a-6d90b93bd996" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R - a C R \\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2344,8 +2344,8 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-1bf9b1b2-879c-4b46-9eca-4099a3aa65b6">
-<span class="eqno">(2)<a class="headerlink" href="#equation-1bf9b1b2-879c-4b46-9eca-4099a3aa65b6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-de9c2ee7-cf53-4d18-bf79-54cf844c83e9">
+<span class="eqno">(2)<a class="headerlink" href="#equation-de9c2ee7-cf53-4d18-bf79-54cf844c83e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2362,8 +2362,8 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0be45c97-a302-495c-88e5-a6c1c9220c21">
-<span class="eqno">(3)<a class="headerlink" href="#equation-0be45c97-a302-495c-88e5-a6c1c9220c21" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-3bd821ea-e992-4018-be15-6bd3343b486c">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3bd821ea-e992-4018-be15-6bd3343b486c" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
     C_{t+1} &amp;= C_t (1 - z + e a R_t) 
 \end{align}\]</div>
@@ -2374,15 +2374,15 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-7bf317d0-92a1-4398-a429-5e710d9d228e">
-<span class="eqno">(4)<a class="headerlink" href="#equation-7bf317d0-92a1-4398-a429-5e710d9d228e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fd69ee3-a358-44a4-bc56-d4e98fcf29e2">
+<span class="eqno">(4)<a class="headerlink" href="#equation-1fd69ee3-a358-44a4-bc56-d4e98fcf29e2" title="Permalink to this equation">¶</a></span>\[\begin{align}
         R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
         C_{t+1} &amp;= C_t (1 - z + e a R_t)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this
 script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66de791d-987f-42d8-a58b-8763b7432938">
-<span class="eqno">(5)<a class="headerlink" href="#equation-66de791d-987f-42d8-a58b-8763b7432938" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-786863c8-bf20-4a8c-ad6d-c3d1e3cf8f3b">
+<span class="eqno">(5)<a class="headerlink" href="#equation-786863c8-bf20-4a8c-ad6d-c3d1e3cf8f3b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
     C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
 \end{align}\]</div>

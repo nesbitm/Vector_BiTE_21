@@ -403,13 +403,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lattice-again">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       lattice
-      </span>
-     </code>
-     again
+    <a class="reference internal nav-link" href="#boxplots-by-groups">
+     Boxplots by groups
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -534,13 +529,15 @@
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function’s option <code class="docutils literal notranslate"><span class="pre">main</span> <span class="pre">=</span> </code> to add titles to a plot.</p>
 </div>
 </div>
-<div class="section" id="lattice-again">
-<h3><code class="docutils literal notranslate"><span class="pre">lattice</span></code> again<a class="headerlink" href="#lattice-again" title="Permalink to this headline">¶</a></h3>
-<p>Recall that the <code class="docutils literal notranslate"><span class="pre">lattice</span></code> package provides some very neat extra ways to plot data in groups. They look pretty but the downside is that they don’t use the same graphics system — all those <code class="docutils literal notranslate"><span class="pre">par</span></code> commands are useless for these graphs. The defaults look good though!</p>
+<div class="section" id="boxplots-by-groups">
+<h3>Boxplots by groups<a class="headerlink" href="#boxplots-by-groups" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> package provides a very neat way to plot data in groups with the <code class="docutils literal notranslate"><span class="pre">facet</span></code> command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
-<span class="nf">bwplot</span><span class="p">(</span><span class="n">logCvalue</span> <span class="o">~</span> <span class="n">TrophicLevel</span> <span class="o">|</span> <span class="n">GroundDwelling</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span> <span class="n">mammals</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">mammals</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">TrophicLevel</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="n">logCvalue</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_boxplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">facet_grid</span><span class="p">(</span><span class="n">.</span> <span class="o">~</span> <span class="n">GroundDwelling</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -555,7 +552,7 @@
 </div>
 <div class="section" id="barplots-again">
 <h3>Barplots again<a class="headerlink" href="#barplots-again" title="Permalink to this headline">¶</a></h3>
-<p>We’re going to make the barplot code from <a class="reference internal" href="14-regress.html"><span class="doc std std-doc">Regress</span></a> even more complicated! This time we want to know the mean log genome size within combinations of <code class="docutils literal notranslate"><span class="pre">TrophicLevel</span></code> and <code class="docutils literal notranslate"><span class="pre">GroundDwelling</span></code>. We can still use <code class="docutils literal notranslate"><span class="pre">tapply</span></code>, providing more than one grouping factor. We create a set of grouping factors like this:</p>
+<p>We’re going to make the barplot code from the <a class="reference internal" href="14-regress.html"><span class="doc std std-doc">Regression chapter</span></a> even more complicated! This time we want to know the mean log genome size within combinations of <code class="docutils literal notranslate"><span class="pre">TrophicLevel</span></code> and <code class="docutils literal notranslate"><span class="pre">GroundDwelling</span></code>. We can still use <code class="docutils literal notranslate"><span class="pre">tapply</span></code>, providing more than one grouping factor. We create a set of grouping factors like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">groups</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">mammals</span><span class="o">$</span><span class="n">GroundDwelling</span><span class="p">,</span> <span class="n">mammals</span><span class="o">$</span><span class="n">TrophicLevel</span><span class="p">)</span>

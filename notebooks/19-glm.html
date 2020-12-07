@@ -166,6 +166,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="13-t_F_tests.html">
+   Basic hypothesis testing:
    <span class="math notranslate nohighlight">
     \(t\)
    </span>
@@ -428,17 +429,17 @@
      Data exploration
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-at-strains-too">
+     Looking at strains too
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-linear-model">
+     A linear model
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#looking-at-strains-too">
-   Looking at strains too
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-linear-model">
-   A linear model
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fitting-a-glm">
@@ -501,8 +502,8 @@
 </div>
 <div class="section" id="some-statistical-distributions">
 <h2>Some (statistical) distributions<a class="headerlink" href="#some-statistical-distributions" title="Permalink to this headline">¶</a></h2>
-<p>First, it’s time to revisit the idea of <em>statistical distributions</em>, which you were introduced to <a class="reference external" href="12-ExpDesign.ipynb#Data-types-and-distributions">previously</a>. This is because while analyzing data using GLMs, one needs to decide what particular statistical distribution best represents (or captures, or “model’s”) that particular dataset. For example, continuous numeric data are <em>often</em> normally distributed (e.g., weights of lecturers!). On the other hand, count data are likely to be distributed according to the Poisson distribution (e.g., numbers of plant species found in a sampling plot). And all statistical distribution are actually a <em>family</em> of distributions of different shapes (e.g., can range from right-skewed to bell-shaped) and/or scales (spread) depending upon the value of their <em>parameters</em>. For example, the Gaussian distribution can have different scales depending on the variance parameter. More on distribution parameters below.</p>
-<p>There are actually a large number of statistical distributions <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_probability_distributions">out there</a> to choose from. But we will look at a few that GLMs support. Specifically, the <code class="docutils literal notranslate"><span class="pre">glm</span></code> procedure in R supports the following distribution “families”: Binomial, Gaussian, Gamma, Inverse Gaussian, Poisson, Quasi, Quasi-Binomial, and Quasi-Poisson. You may want to look these up online (google it). You have already seen, <a class="reference external" href="12-ExpDesign.ipynb#Sampling-from-distributions-in-R">sampled from</a>, and used the Gaussian distribution, so we won’t go into it here. But let’s look at three other distributions that are particularly useful in R.</p>
+<p>First, it’s time to revisit the idea of <em>statistical distributions</em>, which you were introduced to <a class="reference internal" href="12-ExpDesign.html#expdesign-data-types-and-distributions"><span class="std std-ref">previously</span></a>. This is because while analyzing data using GLMs, one needs to decide what particular statistical distribution best represents (or captures, or “model’s”) that particular dataset. For example, continuous numeric data are <em>often</em> normally distributed (e.g., weights of lecturers!). On the other hand, count data are likely to be distributed according to the Poisson distribution (e.g., numbers of plant species found in a sampling plot). And all statistical distribution are actually a <em>family</em> of distributions of different shapes (e.g., can range from right-skewed to bell-shaped) and/or scales (spread) depending upon the value of their <em>parameters</em>. For example, the Gaussian distribution can have different scales depending on the variance parameter. More on distribution parameters below.</p>
+<p>There are actually a large number of statistical distributions <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_probability_distributions">out there</a> to choose from. But we will look at a few that GLMs support. Specifically, the <code class="docutils literal notranslate"><span class="pre">glm</span></code> procedure in R supports the following distribution “families”: Binomial, Gaussian, Gamma, Inverse Gaussian, Poisson, Quasi, Quasi-Binomial, and Quasi-Poisson. You may want to look these up online (google it). You have already seen, <a class="reference internal" href="12-ExpDesign.html#expdesign-sampling-from-distributions-in-r"><span class="std std-ref">sampled from</span></a>, and used the Gaussian distribution, so we won’t go into it here. But let’s look at three other distributions that are particularly useful in R.</p>
 <div class="section" id="the-poisson-distribution">
 <h3>The Poisson distribution<a class="headerlink" href="#the-poisson-distribution" title="Permalink to this headline">¶</a></h3>
 <p>The Poisson distribution family is appropriate for discrete, integer valued data. You can generate “data” that are poisson-distributed by using the function <code class="docutils literal notranslate"><span class="pre">rpois(n,</span> <span class="pre">lambda)</span></code> in R:</p>
@@ -546,7 +547,7 @@
 <li><p>The two main parameters of interest are <code class="docutils literal notranslate"><span class="pre">size</span></code> (number of trials), and <code class="docutils literal notranslate"><span class="pre">prob</span></code> (the probability of an outcome in each trial). So,</p>
 <ul>
 <li><p>The left plot is the distribution of outcomes of a single try of a 50:50 (0.5 probability, like a coin-flip) outcome, re-generated 1000 times (e.g., a thousand coin flips) – as expected, there are about 500 each of 0’s and 1’s (e.g., 0 = head, 1 = tail). Each of the 1000 such success/failure experiments is called a Bernoulli trial/experiment. For repeated experiments of a single trial, i.e., <code class="docutils literal notranslate"><span class="pre">size</span></code> = 1 in the R code above, the binomial distribution is a Bernoulli distribution (so the left plot is a bernoulli distribution).</p></li>
-<li><p>The right plot is the binomial distribution that you will encounter more often, which is appropriate for modeling the number of successes in a sample of a given size. In the above code, <code class="docutils literal notranslate"><span class="pre">size</span></code> = 100, with 1000 repetitions of this “experiment”). Thus in the right plot, the distribution will on average have a mean value of 50 (<span class="math notranslate nohighlight">\(0.5\times100\)</span> trials) (recall the <a class="reference external" href="12-ExpDesign.ipynb#Data-types-and-distributions">Central Limit Theorem</a>).</p></li>
+<li><p>The right plot is the binomial distribution that you will encounter more often, which is appropriate for modeling the number of successes in a sample of a given size. In the above code, <code class="docutils literal notranslate"><span class="pre">size</span></code> = 100, with 1000 repetitions of this “experiment”). Thus in the right plot, the distribution will on average have a mean value of 50 (<span class="math notranslate nohighlight">\(0.5\times100\)</span> trials) (recall the <a class="reference internal" href="12-ExpDesign.html#expdesign-data-types-and-distributions"><span class="std std-ref">Central Limit Theorem</span></a>).</p></li>
 </ul>
 </li>
 <li><p>Thus, the binomial distribution family is appropriate for binomial <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression</a>, which is a GLM analysis where your sample of binary (yes/no, 0/1, etc) outcomes is fitted as a function of one or more continuous or categorical predictors.</p></li>
@@ -592,7 +593,7 @@
 <p><span class="math notranslate nohighlight">\(\star\)</span> Start R and change the working directory to <code class="docutils literal notranslate"><span class="pre">code</span></code>, and read in the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">colonies</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../data/PracData.csv&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">colonies</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../data/PracData.csv&quot;</span><span class="p">,</span> <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
 <span class="nf">str</span><span class="p">(</span><span class="n">colonies</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">colonies</span><span class="p">)</span>
 </pre></div>
@@ -608,14 +609,18 @@
 </pre></div>
 </div>
 <div class="output text_html"><table>
-<thead><tr><th scope=col>Student.ID</th><th scope=col>Strain</th><th scope=col>Treatment</th><th scope=col>ColonyCount</th><th scope=col>HaloLawn</th></tr></thead>
+<caption>A data.frame: 6 × 5</caption>
+<thead>
+	<tr><th></th><th scope=col>Student.ID</th><th scope=col>Strain</th><th scope=col>Treatment</th><th scope=col>ColonyCount</th><th scope=col>HaloLawn</th></tr>
+	<tr><th></th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td>A1     </td><td>899    </td><td>Control</td><td>0      </td><td>NA     </td></tr>
-	<tr><td>A1     </td><td>881    </td><td>Control</td><td>0      </td><td>NA     </td></tr>
-	<tr><td>A1     </td><td>TA102  </td><td>Control</td><td>0      </td><td>NA     </td></tr>
-	<tr><td>A10    </td><td>421    </td><td>NG     </td><td>0      </td><td>NA     </td></tr>
-	<tr><td>A10    </td><td>712    </td><td>NG     </td><td>0      </td><td>NA     </td></tr>
-	<tr><td>A10    </td><td>881    </td><td>Control</td><td>0      </td><td>NA     </td></tr>
+	<tr><th scope=row>1</th><td>A1 </td><td>899  </td><td>Control</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>2</th><td>A1 </td><td>881  </td><td>Control</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>3</th><td>A1 </td><td>TA102</td><td>Control</td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>4</th><td>A10</td><td>421  </td><td>NG     </td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>5</th><td>A10</td><td>712  </td><td>NG     </td><td>0</td><td>NA</td></tr>
+	<tr><th scope=row>6</th><td>A10</td><td>881  </td><td>Control</td><td>0</td><td>NA</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -657,16 +662,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><dl class=dl-horizontal>
-	<dt>Control</dt>
-		<dd>0</dd>
-	<dt>His</dt>
-		<dd>0</dd>
-	<dt>NG</dt>
-		<dd>0</dd>
-	<dt>Strep</dt>
-		<dd>0</dd>
-</dl>
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>Control</dt><dd>0</dd><dt>His</dt><dd>0</dd><dt>NG</dt><dd>0</dd><dt>Strep</dt><dd>0</dd></dl>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -676,16 +677,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><dl class=dl-horizontal>
-	<dt>Control</dt>
-		<dd>2400</dd>
-	<dt>His</dt>
-		<dd>0</dd>
-	<dt>NG</dt>
-		<dd>2367</dd>
-	<dt>Strep</dt>
-		<dd>0</dd>
-</dl>
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>Control</dt><dd>2400</dd><dt>His</dt><dd>0</dd><dt>NG</dt><dd>2367</dd><dt>Strep</dt><dd>0</dd></dl>
 </div></div>
 </div>
 <p>There is indeed no variation at all in colony count for histidine and streptomycine — colonies never grow in these treatments. We don’t really need statistics for this observation and, in fact, variation is needed for statistics to work. So, for the rest of this analysis, we will reduce the dataset to the control and nitroguanisine treatments.</p>
@@ -700,20 +697,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><ol class=list-inline>
-	<li>'Control'</li>
-	<li>'NG'</li>
-	<li>'NG'</li>
-	<li>'Control'</li>
-	<li>'NG'</li>
-	<li>'NG'</li>
-	<li>'Control'</li>
-	<li>'NG'</li>
-	<li>'NG'</li>
-	<li>'Control'</li>
-	<li>'NG'</li>
-	<li>'NG'</li>
-</ol>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'Control'</li><li>'NG'</li><li>'NG'</li><li>'Control'</li><li>'NG'</li><li>'NG'</li><li>'Control'</li><li>'NG'</li><li>'NG'</li><li>'Control'</li><li>'NG'</li><li>'NG'</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -723,20 +712,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><ol class=list-inline>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-</ol>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li></ol>
 </div></div>
 </div>
 <p>This is the same as doing:</p>
@@ -747,20 +728,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><ol class=list-inline>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-</ol>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li></ol>
 </div></div>
 </div>
 <p>Note that this is NOT the same as doing:</p>
@@ -771,20 +744,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><ol class=list-inline>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>FALSE</li>
-	<li>FALSE</li>
-	<li>FALSE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>TRUE</li>
-	<li>FALSE</li>
-	<li>FALSE</li>
-	<li>FALSE</li>
-	<li>TRUE</li>
-</ol>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>TRUE</li><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>TRUE</li></ol>
 </div></div>
 </div>
 <p>This is because concatenating the variable names <code class="docutils literal notranslate"><span class="pre">&quot;Control&quot;</span></code> and  <code class="docutils literal notranslate"><span class="pre">&quot;NG&quot;</span></code> using <code class="docutils literal notranslate"><span class="pre">c()</span></code> forces R to match only pairs in that sequence, and not just that, but also only search in successive blocks of two entries. That is why above, the sub-sequence <code class="docutils literal notranslate"><span class="pre">'Control'</span> <span class="pre">'NG'</span> <span class="pre">'NG'</span> <span class="pre">'Control'</span> <span class="pre">'NG'</span></code> still returns <code class="docutils literal notranslate"><span class="pre">TRUE</span> <span class="pre">TRUE</span> <span class="pre">FALSE</span> <span class="pre">FALSE</span> <span class="pre">FALSE</span></code>, as the second occurrence of the pair <code class="docutils literal notranslate"><span class="pre">'Control'</span> <span class="pre">'NG'</span></code> comes in an odd location, following a single <code class="docutils literal notranslate"><span class="pre">'NG'</span></code>.</p>
@@ -851,19 +816,23 @@ we’ll use the <code class="docutils literal notranslate"><span class="pre">dro
 </div>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Add these commands for sub-setting your data to your script file.</p>
 </div>
-</div>
 <div class="section" id="looking-at-strains-too">
-<h2>Looking at strains too<a class="headerlink" href="#looking-at-strains-too" title="Permalink to this headline">¶</a></h2>
-<p>Now we’ll look to see how counts differ between the strains. A simple way to visualise this is to use the <code class="docutils literal notranslate"><span class="pre">lattice</span></code> package again to get plots grouped by treatment.</p>
+<h3>Looking at strains too<a class="headerlink" href="#looking-at-strains-too" title="Permalink to this headline">¶</a></h3>
+<p>Now we’ll look to see how counts differ between the strains. A quick and elegant way to visualise this is to use the <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> package to get plots grouped by treatment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">lattice</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 
-<span class="nf">bwplot</span><span class="p">(</span><span class="n">logCC</span> <span class="o">~</span> <span class="n">Strain</span> <span class="o">|</span> <span class="n">Treatment</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">coloniesCN</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">coloniesCN</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Strain</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="n">logCC</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_boxplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">facet_grid</span><span class="p">(</span><span class="n">.</span> <span class="o">~</span> <span class="n">Treatment</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Removed 46 rows containing non-finite values (stat_boxplot).”
+</pre></div>
+</div>
 <img alt="../_images/19-glm_34_1.png" src="../_images/19-glm_34_1.png" />
 </div>
 </div>
@@ -904,7 +873,7 @@ NG       61.28571   5.517241 292.71429 593.000 523.9000
 <p>Let’s have a go at fitting an ordinary Linear model.</p>
 </div>
 <div class="section" id="a-linear-model">
-<h2>A linear model<a class="headerlink" href="#a-linear-model" title="Permalink to this headline">¶</a></h2>
+<h3>A linear model<a class="headerlink" href="#a-linear-model" title="Permalink to this headline">¶</a></h3>
 <p>We’ll fit a model of colony count as the interaction between strain and treatment and then look at the diagnostic plots. We’d do this anyway, but we’re already suspicious about the variance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -915,26 +884,28 @@ NG       61.28571   5.517241 292.71429 593.000 523.9000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_40_0.png" src="../_images/19-glm_40_0.png" />
+<img alt="../_images/19-glm_41_0.png" src="../_images/19-glm_41_0.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Include Run this code and have a close look at the plots.</p>
 <p>That normal Q-Q plot is not good. Our suspicions were justified and it doesn’t look like we can use a simple log transformation. We’re not even going to look at the <code class="docutils literal notranslate"><span class="pre">anova</span></code> and <code class="docutils literal notranslate"><span class="pre">summary</span></code> tables — if the diagnostic plots are bad enough, then the model outputs are not
 to be trusted.</p>
 </div>
+</div>
 <div class="section" id="fitting-a-glm">
 <h2>Fitting a GLM<a class="headerlink" href="#fitting-a-glm" title="Permalink to this headline">¶</a></h2>
-<p>In the linear models lecture, we looked at the expectation of <em>constant normal variance</em> in linear models. Whatever the combination of explanatory variables for a particular prediction, the residuals around that prediction have similar variance and are roughly normally distributed. The panel on the left shows this basic idea.</p>
-<p><img alt="image" src="../_images/GLMexample.svg" />
-<small> <center> Illustration of continuous data that follow a normal distribution (left) versus discerete, count data (right). </center></small></p>
-<p>As we have seem, count data does not have this distribution, even when logged. The panel on the right shows the expected distribution of count data as the mean count increases with an explanatory variable. There are three key differences between the two panels:</p>
+<p>In the linear models lecture, we looked at the expectation of <em>constant normal variance</em> in linear models. Whatever the combination of explanatory variables for a particular prediction, the residuals around that prediction have similar variance and are roughly normally distributed. The panel on the left in the figure below illustrates this basic idea.</p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="../_images/GLMexample.svg"><img alt="../_images/GLMexample.svg" src="../_images/GLMexample.svg" width="700px" /></a>
+<hr class="docutils" />
+<p>As we have seen, count data do not have this distribution, even when logged. The panel on the right in the above figure shows the expected distribution of count data as the mean count increases with an explanatory variable.</p>
+<p>There are three key differences between the two panels of the figure:</p>
 <ol class="simple">
 <li><p>Counts can <em>never</em> be negative but can be zero.</p></li>
 <li><p>Counts are always <em>integers</em> — whole numbers — rather than being continuous.</p></li>
 <li><p>The variance of count data is <em>not constant</em>. As the average predicted count gets larger, so does the variance. Unlike the normal distribution, where variance can take any value, for count data the variance is expected to be equal to the mean.</p></li>
 </ol>
-<p>So, we have data that is unsuitable for a linear model because it doesn’t show constant normal variance. This is where generalised linear models come in — we can change the model for the expected residuals to use a different distribution. For count data, this is the
-<em>Poisson</em> distribution.</p>
+<p>So, we have data that are unsuitable for a linear model because they do not show constant normal variance. This is where generalised linear models come in — we can change the model for the expected residuals to use a different distribution. For count data, this is the <em>Poisson</em> distribution.</p>
 <p>We need to change the function we use to fit models to <code class="docutils literal notranslate"><span class="pre">glm</span></code>, but otherwise the process is very similar. The whole point of the GLM is to model the original count data more appropriately, so we will abandon the logged data too. GLMs can cope with a range of different distributions, so we have to specify the <code class="docutils literal notranslate"><span class="pre">family</span></code> of the distribution we want to use.</p>
 <p>So let’s fit a GLM to the data:</p>
 <div class="cell docutils container">
@@ -945,18 +916,36 @@ to be trusted.</p>
 </div>
 </div>
 <p>First, we’ll look at the summary table for this model. We have 5 levels of strain and 2 levels of factor in the subset so we get an intercept (<span class="math notranslate nohighlight">\(i\)</span>), 4 differences for strains(<span class="math notranslate nohighlight">\(s_{2-5}\)</span>), one difference for treatment (<span class="math notranslate nohighlight">\(t_2\)</span>) and then four differences for the interaction (<span class="math notranslate nohighlight">\(s_{2-5}t_2\)</span>). These combine like this:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{|l|c|c|}
-\hline
-                            &amp; \textrm{Control} &amp; \textrm{Nitroguanisine} \\
-\hline
-\textrm{421}   &amp; i        &amp; i+t_2              \\
-\textrm{712}   &amp; i + s_2  &amp; i+s_2+t_2+ s_2t_2  \\
-\textrm{881}   &amp; i + s_3  &amp; i+s_3+t_2 + s_3t_2  \\
-\textrm{889}   &amp; i + s_4  &amp; i+s_4+t_2 + s_4t_2  \\
-\textrm{TA102} &amp; i + s_5  &amp; i+s_5+t_2  + s_5t_2 \\
-\hline
-\end{array}\end{split}\]</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<th class="text-align:left head"><p>Control</p></th>
+<th class="text-align:left head"><p>Nitroguanisine</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>421</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i+t_2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>712</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i + s_2\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i + s_2 + t_2 + s_2 t_2\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>881</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i + s_3\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i+s_3 + t_2 + s_3 t_2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>889</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\( + s_4\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i + s_4 + t_2 + s_4 t_2\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>TA102</p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\(i + s_5\)</span></p></td>
+<td class="text-align:left"><p><span class="math notranslate nohighlight">\( + s_5 + t_2  + s_5 t_2\)</span></p></td>
+</tr>
+</tbody>
+</table>
 <p>The summary table looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1020,7 +1009,7 @@ negative.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_46_0.png" src="../_images/19-glm_46_0.png" />
+<img alt="../_images/19-glm_47_0.png" src="../_images/19-glm_47_0.png" />
 </div>
 </div>
 <p>Actually, there are two problems. First, that Q-Q plot is still a bit dubious. More of the points are close to the line than in the linear model but there are some extreme positive residuals. Second, the magnitude of the residuals is enormous, and this is really clear in the plot in the bottom right hand corner. This plot identifies outliers and any points outside of the red dotted line are possible problems.</p>
@@ -1092,7 +1081,7 @@ Number of Fisher Scoring iterations: 7
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_52_0.png" src="../_images/19-glm_52_0.png" />
+<img alt="../_images/19-glm_53_0.png" src="../_images/19-glm_53_0.png" />
 </div>
 </div>
 <p>The residuals and leverage plot is now ok. The Q-Q plot is not better, but is still an improvement over the original linear model. We can’t improve the model fit any more — it isn’t perfect but we’ll accept those imperfections. It is worth thinking about the imperfections though — what might give rise to occasional larger than expected counts of
@@ -1106,12 +1095,16 @@ colonies?</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th></th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr></thead>
+<caption>A anova: 4 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><th scope=row>NULL</th><td>NA          </td><td>       NA   </td><td>293         </td><td>134444.90   </td><td>       NA   </td><td>          NA</td></tr>
-	<tr><th scope=row>Strain</th><td> 4          </td><td>13923.431   </td><td>289         </td><td>120521.47   </td><td> 8.629323   </td><td>1.383092e-06</td></tr>
-	<tr><th scope=row>Treatment</th><td> 1          </td><td> 6054.662   </td><td>288         </td><td>114466.81   </td><td>15.009988   </td><td>1.328328e-04</td></tr>
-	<tr><th scope=row>Strain:Treatment</th><td> 4          </td><td>52887.715   </td><td>284         </td><td> 61579.09   </td><td>32.778214   </td><td>1.790403e-22</td></tr>
+	<tr><th scope=row>NULL</th><td>NA</td><td>       NA</td><td>293</td><td>134444.90</td><td>       NA</td><td>          NA</td></tr>
+	<tr><th scope=row>Strain</th><td> 4</td><td>13923.431</td><td>289</td><td>120521.47</td><td> 8.629323</td><td>1.383092e-06</td></tr>
+	<tr><th scope=row>Treatment</th><td> 1</td><td> 6054.662</td><td>288</td><td>114466.81</td><td>15.009988</td><td>1.328328e-04</td></tr>
+	<tr><th scope=row>Strain:Treatment</th><td> 4</td><td>52887.715</td><td>284</td><td> 61579.09</td><td>32.778214</td><td>1.790403e-22</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1135,10 +1128,14 @@ colonies?</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<thead><tr><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr></thead>
+<caption>A anova: 2 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Resid. Df</th><th scope=col>Resid. Dev</th><th scope=col>Df</th><th scope=col>Deviance</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td>284         </td><td> 61579.09   </td><td>NA          </td><td>       NA   </td><td>      NA    </td><td>          NA</td></tr>
-	<tr><td>288         </td><td>114466.81   </td><td>-4          </td><td>-52887.72   </td><td>32.77821    </td><td>1.790403e-22</td></tr>
+	<tr><th scope=row>1</th><td>284</td><td> 61579.09</td><td>NA</td><td>       NA</td><td>      NA</td><td>          NA</td></tr>
+	<tr><th scope=row>2</th><td>288</td><td>114466.81</td><td>-4</td><td>-52887.72</td><td>32.77821</td><td>1.790403e-22</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1159,28 +1156,12 @@ colonies?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><dl class=dl-horizontal>
-	<dt>1</dt>
-		<dd>538.200000000001</dd>
-	<dt>2</dt>
-		<dd>138.866666666667</dd>
-	<dt>3</dt>
-		<dd>12.7307782005724</dd>
-	<dt>4</dt>
-		<dd>0.375000000000006</dd>
-	<dt>5</dt>
-		<dd>126.687499999999</dd>
-	<dt>6</dt>
-		<dd>61.285714285714</dd>
-	<dt>7</dt>
-		<dd>5.51724142694226</dd>
-	<dt>8</dt>
-		<dd>292.714285714285</dd>
-	<dt>9</dt>
-		<dd>592.999999999998</dd>
-	<dt>10</dt>
-		<dd>523.899999999999</dd>
-</dl>
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>1</dt><dd>538.200000000001</dd><dt>2</dt><dd>138.866666666667</dd><dt>3</dt><dd>12.7307782005724</dd><dt>4</dt><dd>0.375000000000006</dd><dt>5</dt><dd>126.687499999999</dd><dt>6</dt><dd>61.285714285714</dd><dt>7</dt><dd>5.51724142694226</dd><dt>8</dt><dd>292.714285714285</dd><dt>9</dt><dd>592.999999999998</dd><dt>10</dt><dd>523.899999999999</dd></dl>
 </div></div>
 </div>
 <p>Those are the same values as the means we calculated for the barplot. Adding standard errors to barplots is more difficult for GLMs and we won’t go into it here.</p>
@@ -1207,18 +1188,67 @@ colonies?</p>
 <li><p>Most importantly, you need to convey what the interpretation of the model is. What is it telling you about the data?</p></li>
 </ul>
 <p><em>Table 1</em>: Coefficients from a GLM of treatment and strain as predictors of colony count.</p>
-<p>||Estimate|   Std. Error|   t value |p |
-|-:|:-|:-|:-|<br />
-|(Intercept)|       6.29|         0.16|     39.78 |&lt;0.0001|
-|Strain712|-1.35 | 0.35|-3.88|0.0001|
-|Strain881|      -3.74|         1.11|     -3.36| 0.0009|
-|                  Strain899|      -7.27|         5.80|     -1.25| 0.2111|
-|                StrainTA102|      -1.45|         0.35|     -4.10 |&lt;0.0001|
-|                TreatmentNG|      -2.17|         0.51|     -4.26| &lt;0.0001|
-|      Strain712:TreatmentNG|      -1.05|         1.70|     -0.62| 0.5353|
-|      Strain881:TreatmentNG|       5.31|         1.24|      4.30| &lt;0.0001|
-|Strain899:TreatmentNG|       9.54|         5.82|      1.64| 0.1025|
-|    StrainTA102:TreatmentNG|       3.59|         0.62|      5.79| &lt;0.0001|</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Estimate</p></th>
+<th class="text-align:left head"><p>Std. Error</p></th>
+<th class="text-align:left head"><p>t value</p></th>
+<th class="text-align:left head"><p>p</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>(Intercept)</p></td>
+<td class="text-align:left"><p>6.29</p></td>
+<td class="text-align:left"><p>0.16</p></td>
+<td class="text-align:left"><p>39.78</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Strain712</p></td>
+<td class="text-align:left"><p>-1.35</p></td>
+<td class="text-align:left"><p>0.35</p></td>
+<td class="text-align:left"><p>-3.88</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>Strain881</p></td>
+<td class="text-align:left"><p>-3.74</p></td>
+<td class="text-align:left"><p>1.11</p></td>
+<td class="text-align:left"><p>-3.36</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Strain899</p></td>
+<td class="text-align:left"><p>-7.27</p></td>
+<td class="text-align:left"><p>5.80</p></td>
+<td class="text-align:left"><p>-1.25</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>StrainTA102</p></td>
+<td class="text-align:left"><p>-1.45</p></td>
+<td class="text-align:left"><p>0.35</p></td>
+<td class="text-align:left"><p>-4.10</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>TreatmentNG</p></td>
+<td class="text-align:left"><p>-2.17</p></td>
+<td class="text-align:left"><p>0.51</p></td>
+<td class="text-align:left"><p>-4.26</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>Strain712:TreatmentNG</p></td>
+<td class="text-align:left"><p>-1.05</p></td>
+<td class="text-align:left"><p>1.70</p></td>
+<td class="text-align:left"><p>-0.62</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Strain881:TreatmentNG</p></td>
+<td class="text-align:left"><p>5.31</p></td>
+<td class="text-align:left"><p>1.24</p></td>
+<td class="text-align:left"><p>4.30</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>Strain899:TreatmentNG</p></td>
+<td class="text-align:left"><p>9.54</p></td>
+<td class="text-align:left"><p>5.82</p></td>
+<td class="text-align:left"><p>1.64</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>StrainTA102:TreatmentNG</p></td>
+<td class="text-align:left"><p>3.59</p></td>
+<td class="text-align:left"><p>0.62</p></td>
+<td class="text-align:left"><p>5.79</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="halos-and-lawns">
