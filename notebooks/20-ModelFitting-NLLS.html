@@ -443,18 +443,35 @@
   <a class="reference internal nav-link" href="#allometric-scaling-of-traits">
    Allometric scaling of traits
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nlls-fitting-using-model-objects">
-   NLLS fitting using model objects
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-a-id-allom-exercises-a">
-     Exercises
-     <a id="Allom_Exercises">
-     </a>
+    <a class="reference internal nav-link" href="#nlls-fitting-using-a-model-object">
+     NLLS fitting using a model object
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-fit">
+     Visualizing the fit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-of-the-fit">
+     Summary of the fit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examine-the-residuals">
+     Examine the residuals
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercises-a-id-allom-exercises-a">
+       Exercises
+       <a id="Allom_Exercises">
+       </a>
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -599,8 +616,8 @@
 <li><p>Assess the quality of the fit, and whether the model is appropriate for your data</p></li>
 <li><p>Compare and select between competing models</p></li>
 </ul>
-<p>We will work through various examples. These assume that you have at least a conceptual understanding of what Linear vs Non-linear models are, how they are fitted to data, and how the fits can be assessed statistically. You may want to see the <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/tree/master/content/lectures/LinearModels">Linear Models lecture</a> (you can also watch the <a class="reference external" href="https://drive.google.com/drive/folders/12Sj56wHX6vcAnp9GE9qQ1gIXbn7QRHU2?usp=sharing">video</a>), and the <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/blob/master/content/lectures/NLLS">NLLS Lecture</a> lecture first (you can also watch the <span class="xref myst">video</span>).</p>
-<p>You may also (optionally) want to see the  <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/tree/master/content/lectures/ModelFitting">lecture on model fitting in Ecology and Evolution in general</a>).</p>
+<p>We will work through various examples. These assume that you have at least a conceptual understanding of what Linear vs Non-linear models are, how they are fitted to data, and how the fits can be assessed statistically. You may want to see the <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/tree/master/content/lectures/LinearModels">Linear Models lecture</a> (you can also watch the <a class="reference external" href="https://drive.google.com/drive/folders/12Sj56wHX6vcAnp9GE9qQ1gIXbn7QRHU2?usp=sharing">video</a>), and the <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/blob/master/content/lectures/NLLS">NLLS Lecture</a> lecture first (you can also watch the <a class="reference external" href="https://web.microsoftstream.com/video/529b2560-4f45-4675-ae8b-28487d63ac41">video</a>).</p>
+<p>You may also (optionally) want to see the  <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio/tree/master/content/lectures/ModelFitting">lecture on model fitting in Ecology and Evolution in general</a>.</p>
 <p>We will use R. For starters, clear all variables and graphic devices and load necessary packages:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -626,10 +643,10 @@ V = \frac{V_{\max} S}{K_M + S}
 \]</div>
 <p>Here,</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(V_{\max}\)</span> is the maximum rate that can be achieved in the reaction system, which happens at saturating substrate concentration, and</p></li>
-<li><p><span class="math notranslate nohighlight">\(K_M\)</span> is the Michaelis or half-saturation constant, defined as the substrate concentration at which the reaction rate is half of <span class="math notranslate nohighlight">\(V_{\max }\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{\max}\)</span> is the maximum rate that can be achieved in the reaction system, which happens at saturating substrate concentration (as <span class="math notranslate nohighlight">\(S\)</span> gets really large), and</p></li>
+<li><p><span class="math notranslate nohighlight">\(K_M\)</span> is the Michaelis or half-saturation constant, defined as the substrate concentration at which the reaction rate is half of <span class="math notranslate nohighlight">\(V_{\max }\)</span>. This parameter controls the overall shape of the curve, i.e., whether <span class="math notranslate nohighlight">\(V\)</span> approaches <span class="math notranslate nohighlight">\(V_{\max}\)</span> slowly or rapidly. In enzyme catalyzed reactions, it measures how loosely the substrate binds the enzyme: large <span class="math notranslate nohighlight">\(K_M\)</span> indicates loose binding of enzyme to substrate, small <span class="math notranslate nohighlight">\(K_M\)</span> indicates tight binding (it has units of the substrate concentration, <span class="math notranslate nohighlight">\(S\)</span>).</p></li>
 </ul>
-<p>Biochemical reactions involving a single substrate are often well fitted by the Michaelis-Menten kinetics, suggesting that its assumptions are often valid.</p>
+<p>Biochemical reactions involving a single substrate are often well fitted by the Michaelis-Menten kinetics.</p>
 <a class="reference internal image-reference" href="../_images/MM.png"><img alt="Michaelis-Menten model" src="../_images/MM.png" style="width: 400px;" /></a>
 <p><small><center>The Michaelis-Menten model.</center></small></p>
 <p>Let’s fit the Michaelis-Menten model to some data.</p>
@@ -1307,6 +1324,30 @@ y = a x^b
 </div>
 </div>
 </div>
+<div class="section" id="nlls-fitting-using-a-model-object">
+<h3>NLLS fitting using a model object<a class="headerlink" href="#nlls-fitting-using-a-model-object" title="Permalink to this headline">¶</a></h3>
+<p>Another way to tell <code class="docutils literal notranslate"><span class="pre">nlsLM</span></code> which model to fit, is to first create a function object for the power law model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">powMod</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nf">return</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">^</span><span class="n">b</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now fit the model to the data using NLLS by calling the model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">PowFit</span> <span class="o">&lt;-</span> <span class="nf">nlsLM</span><span class="p">(</span><span class="n">BodyWeight</span> <span class="o">~</span> <span class="nf">powMod</span><span class="p">(</span><span class="n">TotalLength</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Data2Fit</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which gives the same result as before (you can check it).</p>
+</div>
+<div class="section" id="visualizing-the-fit">
+<h3>Visualizing the fit<a class="headerlink" href="#visualizing-the-fit" title="Permalink to this headline">¶</a></h3>
 <p>The first thing to do is to see how well the model fitted the data, for which plotting is the best first option. So let’s visualize the fit. For this, first we need to generate a vector of body lengths (the x-axis variable) for plotting:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1331,12 +1372,6 @@ y = a x^b
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">powMod</span><span class="p">(</span><span class="n">Lengths</span><span class="p">,</span> <span class="n">coef</span><span class="p">(</span><span class="n">PowFit</span><span class="p">)[</span><span class="s2">&quot;a&quot;</span><span class="p">],</span> <span class="n">coef</span><span class="p">(</span><span class="n">PowFit</span><span class="p">)[</span><span class="s2">&quot;b&quot;</span><span class="p">]):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;powMod&quot;</span>
-<span class="ne">Traceback</span>:
-</pre></div>
-</div>
-</div>
 </div>
 <p>Next, calculate the predicted line. For this, we will need to extract the coefficient from the model fit object using the <code class="docutils literal notranslate"><span class="pre">coef()</span></code>command.</p>
 <p>Now plot the data and the fitted model line:</p>
@@ -1348,18 +1383,12 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;Predic2PlotPow&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">lines</span><span class="p">(</span><span class="n">Lengths</span><span class="p">,</span> <span class="n">Predic2PlotPow</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">lines</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">Lengths</span><span class="p">,</span> <span class="n">Predic2PlotPow</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="mi">3</span><span class="o">.</span> <span class="n">plot</span><span class="o">.</span><span class="n">xy</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">4</span><span class="o">.</span> <span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/20-ModelFitting-NLLS_92_1.png" src="../_images/20-ModelFitting-NLLS_92_1.png" />
+<img alt="../_images/20-ModelFitting-NLLS_97_0.png" src="../_images/20-ModelFitting-NLLS_97_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="summary-of-the-fit">
+<h3>Summary of the fit<a class="headerlink" href="#summary-of-the-fit" title="Permalink to this headline">¶</a></h3>
 <p>Now lets get some stats of this NLLS fit. Having obtained the fit object (<code class="docutils literal notranslate"><span class="pre">PowMod</span></code>), we can use <code class="docutils literal notranslate"><span class="pre">summary()</span></code> just like we would for a <code class="docutils literal notranslate"><span class="pre">lm()</span></code> fit object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1368,7 +1397,7 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Formula: BodyWeight ~ a * TotalLength^b
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Formula: BodyWeight ~ powMod(TotalLength, a, b)
 
 Parameters:
    Estimate Std. Error t value Pr(&gt;|t|)    
@@ -1386,33 +1415,26 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 </div>
-<div class="section" id="nlls-fitting-using-model-objects">
-<h2>NLLS fitting using model objects<a class="headerlink" href="#nlls-fitting-using-model-objects" title="Permalink to this headline">¶</a></h2>
-<p>Another way to tell <code class="docutils literal notranslate"><span class="pre">nlsLM</span></code> which model to fit, is to first create a function object for the power law model:</p>
+<div class="section" id="examine-the-residuals">
+<h3>Examine the residuals<a class="headerlink" href="#examine-the-residuals" title="Permalink to this headline">¶</a></h3>
+<p>As we did before, let’s plot the residuals around the fitted model:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">powMod</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
- <span class="nf">return</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">^</span><span class="n">b</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">hist</span><span class="p">(</span><span class="nf">residuals</span><span class="p">(</span><span class="n">PowFit</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-</div>
-<p>Now fit the model to the data using NLLS by calling the model:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">PowFit</span> <span class="o">&lt;-</span> <span class="nf">nlsLM</span><span class="p">(</span><span class="n">BodyWeight</span> <span class="o">~</span> <span class="nf">powMod</span><span class="p">(</span><span class="n">TotalLength</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Data2Fit</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">))</span>
-</pre></div>
+<div class="cell_output docutils container">
+<img alt="../_images/20-ModelFitting-NLLS_101_0.png" src="../_images/20-ModelFitting-NLLS_101_0.png" />
 </div>
 </div>
-</div>
-<p>Which gives the same result as before (you can check it).</p>
+<p>The residuals look OK.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Remember, when you write this analysis into a stand-alone R script, you should put all commands for loading packages (<code class="docutils literal notranslate"><span class="pre">library()</span></code>, <code class="docutils literal notranslate"><span class="pre">require()</span></code>) at the start of the script. *</p>
 </div>
 <div class="section" id="exercises-a-id-allom-exercises-a">
-<h3>Exercises <a id='Allom_Exercises'></a><a class="headerlink" href="#exercises-a-id-allom-exercises-a" title="Permalink to this headline">¶</a></h3>
+<h4>Exercises <a id='Allom_Exercises'></a><a class="headerlink" href="#exercises-a-id-allom-exercises-a" title="Permalink to this headline">¶</a></h4>
 <p>(a) Make the same plot as above, fitted line and all, in <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>, and add (display) the equation you estimated to your new (ggplot) plot. The equation is: <span class="math notranslate nohighlight">\(\text{Weight} = 3.94 \times 10^{-06} \times \text{Length}^{2.59}\)</span></p>
 <p>(b) Try playing with the starting values, and see if you can “break” the model fitting – that is, change the starting values till the NLLS fitting does not converge on a solution.</p>
 <p>(c) Repeat the model fitting (including a-b above) using the Zygoptera data subset.</p>
@@ -1426,6 +1448,7 @@ Achieved convergence tolerance: 1.49e-08
 <p>(e) The allometry between Body weight and Length is not the end of the story. You have a number of other linear morphological measurements (<code class="docutils literal notranslate"><span class="pre">HeadLength</span></code>, <code class="docutils literal notranslate"><span class="pre">ThoraxLength</span></code>, <code class="docutils literal notranslate"><span class="pre">AdbdomenLength</span></code>, <code class="docutils literal notranslate"><span class="pre">ForewingLength</span></code>, <code class="docutils literal notranslate"><span class="pre">HindwingLength</span></code>, <code class="docutils literal notranslate"><span class="pre">ForewingArea</span></code>, and <code class="docutils literal notranslate"><span class="pre">HindwingArea</span></code>) that can also be investigated. In this exercise, try two lines of investigation (again, repeated separately for Dragonflies and Damselfiles):</p>
 <p>(i) How do each of these measures allometrically scale with Body length (obtain estimates of scaling constant and exponent)? (Hint: you may want to use the <code class="docutils literal notranslate"><span class="pre">pairs()</span></code> command in R to get an overview of all the pairs of potential scaling relationships.</p>
 <p>(ii) Do any of the linear morphological measurements other than body length better predict Body weight? That is, does body weight scale more tightly with a linear morphological measurement other than total body length? You would use model selection here, which we will learn next. But for now, you can just look at and compare the <span class="math notranslate nohighlight">\(R^2\)</span> values of the models.</p>
+</div>
 </div>
 </div>
 <div class="section" id="comparing-models">
@@ -1463,16 +1486,7 @@ y = a + b x + c x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;Predic2PlotPow&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">lines</span><span class="p">(</span><span class="n">Lengths</span><span class="p">,</span> <span class="n">Predic2PlotPow</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">lines</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">Lengths</span><span class="p">,</span> <span class="n">Predic2PlotPow</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="mi">3</span><span class="o">.</span> <span class="n">plot</span><span class="o">.</span><span class="n">xy</span><span class="p">(</span><span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">4</span><span class="o">.</span> <span class="n">xy</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/20-ModelFitting-NLLS_107_1.png" src="../_images/20-ModelFitting-NLLS_107_1.png" />
+<img alt="../_images/20-ModelFitting-NLLS_110_0.png" src="../_images/20-ModelFitting-NLLS_110_0.png" />
 </div>
 </div>
 <p>Very similar fits, except that the quadratic model seems to deviate a bit from the data at the lower end of the data range. Let’s do a proper, formal model comparison now to check which model better-fits the data.</p>
@@ -1546,7 +1560,7 @@ y = a + b x + c x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_117_0.png" src="../_images/20-ModelFitting-NLLS_117_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_120_0.png" src="../_images/20-ModelFitting-NLLS_120_0.png" />
 </div>
 </div>
 <div class="section" id="fitting-the-three-models-using-nlls">
@@ -1631,7 +1645,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_126_0.png" src="../_images/20-ModelFitting-NLLS_126_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_129_0.png" src="../_images/20-ModelFitting-NLLS_129_0.png" />
 </div>
 </div>
 <p>Next examine the residuals between the 3 models:</p>
@@ -1645,7 +1659,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_128_0.png" src="../_images/20-ModelFitting-NLLS_128_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_131_0.png" src="../_images/20-ModelFitting-NLLS_131_0.png" />
 </div>
 </div>
 <p>The residuals for all 3 models still exhibit some patterns. In particular, the data seems to go down near the end of the observation period, but none of these models can capture that behavior.</p>
@@ -1692,7 +1706,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_134_0.png" src="../_images/20-ModelFitting-NLLS_134_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_137_0.png" src="../_images/20-ModelFitting-NLLS_137_0.png" />
 </div>
 </div>
 <div class="section" id="the-thermal-performance-curve-models">
@@ -1754,7 +1768,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">22</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
 <span class="n">N</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">32500</span><span class="p">,</span> <span class="m">33000</span><span class="p">,</span> <span class="m">38000</span><span class="p">,</span> <span class="m">105000</span><span class="p">,</span> <span class="m">445000</span><span class="p">,</span> <span class="m">1430000</span><span class="p">,</span> <span class="m">3020000</span><span class="p">,</span> <span class="m">4720000</span><span class="p">,</span> <span class="m">5670000</span><span class="p">,</span> <span class="m">5870000</span><span class="p">,</span> <span class="m">5930000</span><span class="p">,</span> <span class="m">5940000</span><span class="p">)</span>
 
-<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span> <span class="c1"># set seed to ensure you always get the same random sequence </span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span> <span class="c1"># To ensure we always get the same random sequence in this example &quot;dataset&quot; </span>
 
 <span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="m">1</span> <span class="o">+</span> <span class="nf">rnorm</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">)))</span> <span class="c1"># add some random error</span>
 
@@ -1783,7 +1797,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div></div>
 </div>
 <p>Note how we added some random “sampling” error using <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">*</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">rnorm(length(t),</span> <span class="pre">sd</span> <span class="pre">=</span> <span class="pre">.1))</span></code>.</p>
-<p>This means that we are adding an error at each time point <span class="math notranslate nohighlight">\(t\)</span> (let’s call this fluctuation <span class="math notranslate nohighlight">\(\epsilon_t\)</span>) as a * percentage * of the population (<span class="math notranslate nohighlight">\(N_t\)</span>) at that time point in a vectorized way. That is, we are performing the operation <span class="math notranslate nohighlight">\(N_t \times (1 + \epsilon_t)\)</span> at all time points at one go. This is important to note because this is often the way that errors appear – proportional to the value being measured.</p>
+<p>This means that we are adding an error at each time point <span class="math notranslate nohighlight">\(t\)</span> (let’s call this fluctuation <span class="math notranslate nohighlight">\(\epsilon_t\)</span>) as a <em>percentage</em> of the population (<span class="math notranslate nohighlight">\(N_t\)</span>) at that time point in a vectorized way. That is, we are performing the operation <span class="math notranslate nohighlight">\(N_t \times (1 + \epsilon_t)\)</span> at all time points at one go. This is important to note because this is often the way that errors appear – proportional to the value being measured.</p>
 <p>Now let’s plot these data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1794,7 +1808,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_146_0.png" src="../_images/20-ModelFitting-NLLS_146_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_149_0.png" src="../_images/20-ModelFitting-NLLS_149_0.png" />
 </div>
 </div>
 <div class="section" id="basic-approach">
@@ -1820,7 +1834,7 @@ r = \frac{\log(N(t)) - \log(N_0)}{t} ,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_148_0.png" src="../_images/20-ModelFitting-NLLS_148_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_151_0.png" src="../_images/20-ModelFitting-NLLS_151_0.png" />
 </div>
 </div>
 <p>By eye the logged data looks fairly linear (beyond the initial “lag phase” of growth; see below) between hours 5 and 10, so we’ll use that time-period to calculate the growth rate.</p>
@@ -1977,7 +1991,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_164_0.png" src="../_images/20-ModelFitting-NLLS_164_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_167_0.png" src="../_images/20-ModelFitting-NLLS_167_0.png" />
 </div>
 </div>
 <p>That looks nice, and the <span class="math notranslate nohighlight">\(r_{max}\)</span> estimate we get (0.64) is fairly close to what we got above with OLS fitting.</p>
@@ -1993,7 +2007,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_166_0.png" src="../_images/20-ModelFitting-NLLS_166_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_169_0.png" src="../_images/20-ModelFitting-NLLS_169_0.png" />
 </div>
 </div>
 <p>The model actually diverges from the data at the lower end! This was not visible in the previous plot where you examined the model in linear scale (without taking a log) because the deviation of the model is small, and only becomes clear in the log scale. This is because of the way logarithms work. Let’s have a look at this in our Cell counts “data”:</p>
@@ -2007,7 +2021,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_168_0.png" src="../_images/20-ModelFitting-NLLS_168_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_171_0.png" src="../_images/20-ModelFitting-NLLS_171_0.png" />
 </div>
 </div>
 <p>As you can see the logarithm is a strongly nonlinear transformation of any sequence of real numbers, with small numbers close to zero yielding disproportionately large deviations.</p>
@@ -2177,7 +2191,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_187_0.png" src="../_images/20-ModelFitting-NLLS_187_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_190_0.png" src="../_images/20-ModelFitting-NLLS_190_0.png" />
 </div>
 </div>
 <p>Clearly, the Gompertz model fits way better than the logistic growth equation in this case! Note also that there is a big difference in the fitted value of <span class="math notranslate nohighlight">\(r_{max}\)</span> from the two models; the value is much lower from the Logistic model because it ignores the lag phase, including it into the exponential growth phase.</p>

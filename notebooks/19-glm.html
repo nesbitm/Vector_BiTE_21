@@ -822,7 +822,6 @@ we’ll use the <code class="docutils literal notranslate"><span class="pre">dro
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">coloniesCN</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Strain</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="n">logCC</span><span class="p">))</span> <span class="o">+</span> 
     <span class="nf">geom_boxplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">facet_grid</span><span class="p">(</span><span class="n">.</span> <span class="o">~</span> <span class="n">Treatment</span><span class="p">)</span>
 </pre></div>
@@ -833,7 +832,7 @@ we’ll use the <code class="docutils literal notranslate"><span class="pre">dro
 “Removed 46 rows containing non-finite values (stat_boxplot).”
 </pre></div>
 </div>
-<img alt="../_images/19-glm_34_1.png" src="../_images/19-glm_34_1.png" />
+<img alt="../_images/19-glm_35_1.png" src="../_images/19-glm_35_1.png" />
 </div>
 </div>
 <p>First impressions from this figure:</p>
@@ -867,7 +866,7 @@ NG       61.28571   5.517241 292.71429 593.000 523.9000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_38_0.png" src="../_images/19-glm_38_0.png" />
+<img alt="../_images/19-glm_39_0.png" src="../_images/19-glm_39_0.png" />
 </div>
 </div>
 <p>Let’s have a go at fitting an ordinary Linear model.</p>
@@ -884,7 +883,7 @@ NG       61.28571   5.517241 292.71429 593.000 523.9000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_41_0.png" src="../_images/19-glm_41_0.png" />
+<img alt="../_images/19-glm_42_0.png" src="../_images/19-glm_42_0.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Include Run this code and have a close look at the plots.</p>
@@ -1009,7 +1008,7 @@ negative.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_47_0.png" src="../_images/19-glm_47_0.png" />
+<img alt="../_images/19-glm_48_0.png" src="../_images/19-glm_48_0.png" />
 </div>
 </div>
 <p>Actually, there are two problems. First, that Q-Q plot is still a bit dubious. More of the points are close to the line than in the linear model but there are some extreme positive residuals. Second, the magnitude of the residuals is enormous, and this is really clear in the plot in the bottom right hand corner. This plot identifies outliers and any points outside of the red dotted line are possible problems.</p>
@@ -1081,7 +1080,7 @@ Number of Fisher Scoring iterations: 7
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/19-glm_53_0.png" src="../_images/19-glm_53_0.png" />
+<img alt="../_images/19-glm_54_0.png" src="../_images/19-glm_54_0.png" />
 </div>
 </div>
 <p>The residuals and leverage plot is now ok. The Q-Q plot is not better, but is still an improvement over the original linear model. We can’t improve the model fit any more — it isn’t perfect but we’ll accept those imperfections. It is worth thinking about the imperfections though — what might give rise to occasional larger than expected counts of
