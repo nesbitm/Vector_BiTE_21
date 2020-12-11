@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Model Fitting using Non-linear Least-squares &#8212; TheMulQuaBio</title>
     
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,7 +25,7 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -45,7 +45,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -83,22 +83,19 @@
   <h1 class="site-logo" id="site-title">TheMulQuaBio</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Welcome to The Multilingual Quantitative Biologist!
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Computing
  </span>
@@ -143,7 +140,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Basic Data Analyses and Statistics
  </span>
@@ -208,7 +205,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Advanced Data Analyses and Statistics
  </span>
@@ -230,7 +227,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Appendices
  </span>
@@ -275,9 +272,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -306,11 +301,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -322,8 +317,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -345,7 +340,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -362,11 +358,6 @@
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/mhasoba/TheMulQuaBio/blob/master/notebooks/20-ModelFitting-NLLS.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -830,12 +821,17 @@ Achieved convergence tolerance: 1.938e-06
 <p>Lets try the NLLS fitting again, but with some particular starting values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">MM_model2</span> <span class="o">&lt;-</span> <span class="nf">nls</span><span class="p">(</span><span class="n">V_data</span> <span class="o">~</span> <span class="n">V_max</span> <span class="o">*</span> <span class="n">S_data</span> <span class="o">/</span> <span class="p">(</span><span class="n">K_M</span> <span class="o">+</span> <span class="n">S_data</span><span class="p">),</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">V_max</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">K_M</span> <span class="o">=</span> <span class="m">2</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">MM_model2</span> <span class="o">&lt;-</span> <span class="nf">nls</span><span class="p">(</span><span class="n">V_data</span> <span class="o">~</span> <span class="n">V_max</span> <span class="o">*</span> <span class="n">S_data</span> <span class="o">/</span> <span class="p">(</span><span class="n">K_M</span> <span class="o">+</span> <span class="n">S_data</span><span class="p">),</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">V_max</span> <span class="o">=</span> <span class="m">12</span><span class="p">,</span> <span class="n">K_M</span> <span class="o">=</span> <span class="m">7</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Note that unlike before, we got no warning message about starting values.</p>
+<p><em>As will become apparent below, using sensible starting values is important in NLLS fitting.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>How do you find “sensible” starting values for NLLS fitting?</em> This very much depends on your understanding of the mathematical model that is being fitted to the data, the mechanistic interpretation of its parameters, and the specific dataset. For example, in the Michaelis-Menten Model example, we can know that <span class="math notranslate nohighlight">\(V_{\max}\)</span> is maximum reaction velocity and <span class="math notranslate nohighlight">\(K_M\)</span> is the value of the substrate concentration at which half of <span class="math notranslate nohighlight">\(V_{\max}\)</span> is reached. So we can choose starting values by “eye-balling” a particular dataset and determining <em>approximately</em> what the <code class="docutils literal notranslate"><span class="pre">V_max</span></code>and <code class="docutils literal notranslate"><span class="pre">K_M</span></code> are be for that particular dataset. In this particular case, we chose <code class="docutils literal notranslate"><span class="pre">V_max</span></code> = 12 and <code class="docutils literal notranslate"><span class="pre">K_M</span></code> = 7 because looking at the data plot above, these values seem to be reasonable guesses for the two parameters.</p>
+</div>
 <p>Let’s compare the coefficient estimates from our two different model fits to the same dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -856,7 +852,7 @@ Achieved convergence tolerance: 1.938e-06
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
 .dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
 .dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041046181521</dd><dt>K_M</dt><dd>9.40842557733051</dd></dl>
+</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041165306463</dd><dt>K_M</dt><dd>9.40845745424881</dd></dl>
 </div></div>
 </div>
 <p>Not too different, but not exactly the same!</p>
@@ -890,7 +886,7 @@ Achieved convergence tolerance: 1.938e-06
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
 .dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
 .dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041046181521</dd><dt>K_M</dt><dd>9.40842557733051</dd></dl>
+</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041165306463</dd><dt>K_M</dt><dd>9.40845745424881</dd></dl>
 </div><div class="output text_html"><style>
 .dl-inline {width: auto; margin:0; padding: 0}
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
@@ -1007,6 +1003,11 @@ Achieved convergence tolerance: 1.938e-06
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: minpack.lm
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now let’s try it (using the same starting values as <code class="docutils literal notranslate"><span class="pre">MM_model2</span></code> above):</p>
 <div class="cell docutils container">
@@ -1030,7 +1031,7 @@ Achieved convergence tolerance: 1.938e-06
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
 .dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
 .dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041046181521</dd><dt>K_M</dt><dd>9.40842557733051</dd></dl>
+</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041277414957</dd><dt>K_M</dt><dd>9.40848745421833</dd></dl>
 </div><div class="output text_html"><style>
 .dl-inline {width: auto; margin:0; padding: 0}
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
@@ -1086,7 +1087,7 @@ Achieved convergence tolerance: 1.938e-06
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
 .dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
 .dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041046181521</dd><dt>K_M</dt><dd>9.40842557733051</dd></dl>
+</style><dl class=dl-inline><dt>V_max</dt><dd>13.5041277414957</dd><dt>K_M</dt><dd>9.40848745421833</dd></dl>
 </div><div class="output text_html"><style>
 .dl-inline {width: auto; margin:0; padding: 0}
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
@@ -1139,11 +1140,6 @@ Achieved convergence tolerance: 1.938e-06
 </pre></div>
 </div>
 </div>
-</div>
-<p>Thus, using starting values that are in a sensible range is always a good idea. Here, we know that neither <span class="math notranslate nohighlight">\(V_{\max}\)</span> nor <span class="math notranslate nohighlight">\(K_M\)</span> can be negative, so we can use that bit of information to assign reasonable starting values.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><em>How do you find “sensible” starting values for NLLS fitting?</em> This very much depends on your understanding of the mathematical model that is being fitted to the data, and the mechanistic interpretation of its parameters.</p>
 </div>
 </div>
 <div class="section" id="bounding-parameter-values">
@@ -2333,7 +2329,7 @@ In both cases, the <em>mean</em> of the sampling distribution will be the starti
     </div>
 
     
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
