@@ -757,7 +757,7 @@ Achieved convergence tolerance: 1.938e-06
 <p>This looks a lot like the output of a linear model, and to be specific, of a <a class="reference internal" href="14-regress.html"><span class="doc std std-doc">Linear Regression</span></a>. For starters, compare the above output with the output of <code class="docutils literal notranslate"><span class="pre">summary(genomeSizeModelDragon)</span></code> in <a class="reference internal" href="14-regress.html#regress-perform"><span class="std std-ref">this section</span></a> of the Linear Regression chapter.</p>
 <p>So here are the main things to note about the output of <code class="docutils literal notranslate"><span class="pre">summary()</span></code> of an <code class="docutils literal notranslate"><span class="pre">nls()</span></code> model object:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Estimate</span></code>s are, as in the output of the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> function for fitting linear models, the estimated values of the coefficients of the model that you fitted (<span class="math notranslate nohighlight">\(V_(\max)\)</span> and <span class="math notranslate nohighlight">\(K_M\)</span>). Note that although we generated our data using <span class="math notranslate nohighlight">\(V_{\max} = 12.5\)</span> and <span class="math notranslate nohighlight">\(K_M = 7.1\)</span>, the actual coefficients are quite different from what we are getting with the NLLS fitting (<span class="math notranslate nohighlight">\(\hat{V_{\max} = 13.5\)</span> and <span class="math notranslate nohighlight">\(\hat{K}_M = 9.4\)</span>). This is because we introduced random (normally-distributed) errors. This tell you something about how experimental and/or measurement errors can distort your image of the underlying mechanism or process.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Estimate</span></code>s are, as in the output of the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> function for fitting linear models, the estimated values of the coefficients of the model that you fitted (<span class="math notranslate nohighlight">\(V_(\max)\)</span> and <span class="math notranslate nohighlight">\(K_M\)</span>). Note that although we generated our data using <span class="math notranslate nohighlight">\(V_{\max} = 12.5\)</span> and <span class="math notranslate nohighlight">\(K_M = 7.1\)</span>, the actual coefficients are quite different from what we are getting with the NLLS fitting (<span class="math notranslate nohighlight">\(\hat{V_{\max} = 13.5\)</span> and <span class="math notranslate nohighlight">\(\hat{K}_M = 9.4\)</span>). This is because we added random (normally-distributed) errors when we generated the “data”. This tells you something about how experimental and/or measurement errors can distort your image of the underlying mechanism or process.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Std.</span> <span class="pre">Error</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">value</span></code>, and <code class="docutils literal notranslate"><span class="pre">Pr(&gt;|t|)</span></code> and <code class="docutils literal notranslate"><span class="pre">Residual</span> <span class="pre">standard</span> <span class="pre">error</span></code> have the same interpretation as in the output of <code class="docutils literal notranslate"><span class="pre">lm()</span></code> (please look back at the <a class="reference internal" href="14-regress.html"><span class="doc std std-doc">Linear Regression Chapter</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Number</span> <span class="pre">of</span> <span class="pre">iterations</span> <span class="pre">to</span> <span class="pre">convergence</span></code> tells you how many times the NLLS algorithm had to adjust the parameter values till it managed to find a solution that minimizes the Residual Sum of Squares (RSS)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Achieved</span> <span class="pre">convergence</span> <span class="pre">tolerance</span></code> tells you on what basis the algorithm decided that it was close enough to the a solution; basically if the RSS does not improve more than a certain threshold despite parameter adjustments, the algorithm stops searching. This may or may not be close to an optimal solution (but in this case it is).</p></li>
@@ -1144,7 +1144,8 @@ Achieved convergence tolerance: 1.938e-06
 </div>
 <div class="section" id="bounding-parameter-values">
 <span id="modelfitting-nlls-bounding"></span><h2>Bounding parameter values<a class="headerlink" href="#bounding-parameter-values" title="Permalink to this headline">¶</a></h2>
-<p>You can also bound the starting values, i.e., prevent them from exceeding some minimum and maximum value <em>during</em> the NLLS fitting process:</p>
+<p>You can also bound the starting values, i.e., prevent them from exceeding some minimum and maximum value <em>during</em> the NLLS fitting process.</p>
+<p>For example let’s first re-run the fitting without bounding the parameters (and some relatively-far-from-optimal starting values):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nlsLM</span><span class="p">(</span><span class="n">V_data</span> <span class="o">~</span> <span class="n">V_max</span> <span class="o">*</span> <span class="n">S_data</span> <span class="o">/</span> <span class="p">(</span><span class="n">K_M</span> <span class="o">+</span> <span class="n">S_data</span><span class="p">),</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">V_max</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">K_M</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">))</span>
@@ -1165,6 +1166,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 </div>
+<p>Now, the same with parameter bounds:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nlsLM</span><span class="p">(</span><span class="n">V_data</span> <span class="o">~</span> <span class="n">V_max</span> <span class="o">*</span> <span class="n">S_data</span> <span class="o">/</span> <span class="p">(</span><span class="n">K_M</span> <span class="o">+</span> <span class="n">S_data</span><span class="p">),</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">V_max</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">K_M</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">),</span> <span class="n">lower</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0.4</span><span class="p">,</span><span class="m">0.4</span><span class="p">),</span> <span class="n">upper</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">))</span>
@@ -1185,7 +1187,11 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 </div>
-<p>So the solution was found in one lesser iteration (not a spectacular improvement, but an improvement nevertheless).</p>
+<p>So when you added bounds, the solution was found in one lesser iteration (not a spectacular improvement, but an improvement nevertheless).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">nls()</span></code> function too has an option to provide <code class="docutils literal notranslate"><span class="pre">lower</span></code> and <code class="docutils literal notranslate"><span class="pre">upper</span></code> parameter bounds, but that is only in effect available when using <code class="docutils literal notranslate"><span class="pre">algorithm</span> <span class="pre">=</span> <span class="pre">&quot;port&quot;</span></code> (only available for a particular algorithm).</p>
+</div>
 <p>However, if you bound the parameters too much (to excessively narrow ranges), the algorithm cannot search sufficient parameter space (combinations of parameters), and will fail to converge on a good solution. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1225,7 +1231,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_68_0.png" src="../_images/20-ModelFitting-NLLS_68_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_69_0.png" src="../_images/20-ModelFitting-NLLS_69_0.png" />
 </div>
 </div>
 <p>The residuals look OK. But this should not come as a surprise because we generated these “data” ourselves using normally-distributed errors!</p>
@@ -1293,7 +1299,7 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_80_0.png" src="../_images/20-ModelFitting-NLLS_80_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_81_0.png" src="../_images/20-ModelFitting-NLLS_81_0.png" />
 </div>
 </div>
 <p>Or, using <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>:</p>
@@ -1308,11 +1314,20 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_82_0.png" src="../_images/20-ModelFitting-NLLS_82_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_83_0.png" src="../_images/20-ModelFitting-NLLS_83_0.png" />
 </div>
 </div>
 <p>You can see these body weights of dragonflies does not increase proportionally with body length – they curve upwards w.r.t. wing length (so the allometric constant <span class="math notranslate nohighlight">\(b\)</span> in eqn <a class="reference internal" href="#equation-eq-allom">(7)</a> mustbe greater than 1), instead of increasing as a straight line (in which case <span class="math notranslate nohighlight">\(b = 1\)</span> (isometry, instead of allometry).</p>
 <p>Now fit the model to the data using NLLS:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">Data2Fit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">60</div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">PowFit</span> <span class="o">&lt;-</span> <span class="nf">nlsLM</span><span class="p">(</span><span class="n">BodyWeight</span> <span class="o">~</span> <span class="n">a</span> <span class="o">*</span> <span class="n">TotalLength</span><span class="o">^</span><span class="n">b</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Data2Fit</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">))</span>
@@ -1336,6 +1351,19 @@ y = a x^b
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">PowFit</span> <span class="o">&lt;-</span> <span class="nf">nlsLM</span><span class="p">(</span><span class="n">BodyWeight</span> <span class="o">~</span> <span class="nf">powMod</span><span class="p">(</span><span class="n">TotalLength</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Data2Fit</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">.</span><span class="m">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nonlinear regression model
+  model: BodyWeight ~ powMod(TotalLength, a, b)
+   data: Data2Fit
+        a         b 
+3.941e-06 2.585e+00 
+ residual sum-of-squares: 0.04569
+
+Number of iterations to convergence: 39 
+Achieved convergence tolerance: 1.49e-08
 </pre></div>
 </div>
 </div>
@@ -1379,7 +1407,7 @@ y = a x^b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_97_0.png" src="../_images/20-ModelFitting-NLLS_97_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_99_0.png" src="../_images/20-ModelFitting-NLLS_99_0.png" />
 </div>
 </div>
 </div>
@@ -1421,7 +1449,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_101_0.png" src="../_images/20-ModelFitting-NLLS_101_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_103_0.png" src="../_images/20-ModelFitting-NLLS_103_0.png" />
 </div>
 </div>
 <p>The residuals look OK.</p>
@@ -1482,7 +1510,7 @@ y = a + b x + c x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_110_0.png" src="../_images/20-ModelFitting-NLLS_110_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_112_0.png" src="../_images/20-ModelFitting-NLLS_112_0.png" />
 </div>
 </div>
 <p>Very similar fits, except that the quadratic model seems to deviate a bit from the data at the lower end of the data range. Let’s do a proper, formal model comparison now to check which model better-fits the data.</p>
@@ -1556,7 +1584,7 @@ y = a + b x + c x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_120_0.png" src="../_images/20-ModelFitting-NLLS_120_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_122_0.png" src="../_images/20-ModelFitting-NLLS_122_0.png" />
 </div>
 </div>
 <div class="section" id="fitting-the-three-models-using-nlls">
@@ -1641,7 +1669,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_129_0.png" src="../_images/20-ModelFitting-NLLS_129_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_131_0.png" src="../_images/20-ModelFitting-NLLS_131_0.png" />
 </div>
 </div>
 <p>Next examine the residuals between the 3 models:</p>
@@ -1655,7 +1683,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_131_0.png" src="../_images/20-ModelFitting-NLLS_131_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_133_0.png" src="../_images/20-ModelFitting-NLLS_133_0.png" />
 </div>
 </div>
 <p>The residuals for all 3 models still exhibit some patterns. In particular, the data seems to go down near the end of the observation period, but none of these models can capture that behavior.</p>
@@ -1702,7 +1730,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_137_0.png" src="../_images/20-ModelFitting-NLLS_137_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_139_0.png" src="../_images/20-ModelFitting-NLLS_139_0.png" />
 </div>
 </div>
 <div class="section" id="the-thermal-performance-curve-models">
@@ -1804,7 +1832,7 @@ N_t = \frac{N_0 K e^{r t}}{K + N_0 (e^{r t} - 1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_149_0.png" src="../_images/20-ModelFitting-NLLS_149_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_151_0.png" src="../_images/20-ModelFitting-NLLS_151_0.png" />
 </div>
 </div>
 <div class="section" id="basic-approach">
@@ -1830,7 +1858,7 @@ r = \frac{\log(N(t)) - \log(N_0)}{t} ,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_151_0.png" src="../_images/20-ModelFitting-NLLS_151_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_153_0.png" src="../_images/20-ModelFitting-NLLS_153_0.png" />
 </div>
 </div>
 <p>By eye the logged data looks fairly linear (beyond the initial “lag phase” of growth; see below) between hours 5 and 10, so we’ll use that time-period to calculate the growth rate.</p>
@@ -1987,7 +2015,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_167_0.png" src="../_images/20-ModelFitting-NLLS_167_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_169_0.png" src="../_images/20-ModelFitting-NLLS_169_0.png" />
 </div>
 </div>
 <p>That looks nice, and the <span class="math notranslate nohighlight">\(r_{max}\)</span> estimate we get (0.64) is fairly close to what we got above with OLS fitting.</p>
@@ -2003,7 +2031,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_169_0.png" src="../_images/20-ModelFitting-NLLS_169_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_171_0.png" src="../_images/20-ModelFitting-NLLS_171_0.png" />
 </div>
 </div>
 <p>The model actually diverges from the data at the lower end! This was not visible in the previous plot where you examined the model in linear scale (without taking a log) because the deviation of the model is small, and only becomes clear in the log scale. This is because of the way logarithms work. Let’s have a look at this in our Cell counts “data”:</p>
@@ -2017,7 +2045,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_171_0.png" src="../_images/20-ModelFitting-NLLS_171_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_173_0.png" src="../_images/20-ModelFitting-NLLS_173_0.png" />
 </div>
 </div>
 <p>As you can see the logarithm is a strongly nonlinear transformation of any sequence of real numbers, with small numbers close to zero yielding disproportionately large deviations.</p>
@@ -2187,7 +2215,7 @@ Achieved convergence tolerance: 1.49e-08
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20-ModelFitting-NLLS_190_0.png" src="../_images/20-ModelFitting-NLLS_190_0.png" />
+<img alt="../_images/20-ModelFitting-NLLS_192_0.png" src="../_images/20-ModelFitting-NLLS_192_0.png" />
 </div>
 </div>
 <p>Clearly, the Gompertz model fits way better than the logistic growth equation in this case! Note also that there is a big difference in the fitted value of <span class="math notranslate nohighlight">\(r_{max}\)</span> from the two models; the value is much lower from the Logistic model because it ignores the lag phase, including it into the exponential growth phase.</p>
