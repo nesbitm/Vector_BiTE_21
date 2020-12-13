@@ -974,10 +974,19 @@
 <p>You should be using an IDE for R. Please re-visit the <a class="reference internal" href="../intro.html"><span class="doc std std-doc">“To IDE or not to IDE” section of the introduction</span></a> if you are not familiar with IDEs.</p>
 <p>Let’s briefly look at the bare-bones R interface and command line  interface (CLI), and then switch to an IDE like VS Code or RStudio.</p>
 <p>Launch R (From Applications menu on Window or Mac, from terminal in  Linux/Ubuntu) — it should look something like this (on Linux/Ubuntu or Mac terminal):</p>
-<p><img alt="image" src="../_images/R_Linux.png" /></p>
-<p>Or like this (Windows “console”, similar in Mac):</p>
-<p><img alt="image" src="../_images/R_terminal.jpg" /></p>
+<hr class="docutils" />
+<div class="figure align-default" id="r-linux-console">
+<a class="reference internal image-reference" href="../_images/R_Linux.png"><img alt="R in UNIX" src="../_images/R_Linux.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text"><strong>The R console in Linux/Unix.</strong></span><a class="headerlink" href="#r-linux-console" title="Permalink to this image">¶</a></p>
 </div>
+<p>Or like this (Windows “console”, similar in Mac):</p>
+<hr class="docutils" />
+<div class="figure align-default" id="r-windows-console">
+<a class="reference internal image-reference" href="../_images/R_terminal.jpg"><img alt="R in Windows" src="../_images/R_terminal.jpg" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text"><strong>The R console in Windows/Mac OS.</strong></span><a class="headerlink" href="#r-windows-console" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="r-basics">
 <h2>R basics<a class="headerlink" href="#r-basics" title="Permalink to this headline">¶</a></h2>
 <p>Lets get started with some R basics. You will be working by entering R commands interactively at the R user prompt (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>). Up and down arrow keys scroll through your command history.</p>
@@ -3332,9 +3341,10 @@ Traceback:
 <p>In using R for an analysis, you will likely use and create several files. As in the case of bash and Python based projects, in R projects as well, you should keep your workflow well organized. For example, it is sensible to create a folder (directory) to keep all code files together. You can then set R to work from this directory, so that files are easy to find and run — this will be your “working directory” (more on this below). Also, you don’t want to mix code files with data and results files. So you should create separate directories for these as well.</p>
 <p>Thus, your typical R analysis workflow will be:</p>
 <hr class="docutils" />
-<p><img alt="image" src="../_images/RWorkflow.png" />
-<small><center>Your R project. Keep it neat and organized!</p>
-</center></small>
+<div class="figure align-default" id="r-project-organization">
+<a class="reference internal image-reference" href="../_images/RWorkflow.png"><img alt="R Project Organization" src="../_images/RWorkflow.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text"><strong>Your R project.</strong> Keeping it neat and organized if the key to becoming a good R programmer.</span><a class="headerlink" href="#r-project-organization" title="Permalink to this image">¶</a></p>
+</div>
 <hr class="docutils" />
 <p>Some details on each kind of file:</p>
 <ul class="simple">

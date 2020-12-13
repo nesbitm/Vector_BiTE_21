@@ -400,17 +400,17 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-r-2">
-     The
+     The R
      <span class="math notranslate nohighlight">
-      \(R^{2}\)
+      \(^2\)
      </span>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#adjusted-r-2">
-       Adjusted
+       Adjusted R
        <span class="math notranslate nohighlight">
-        \(R^{2}\)
+        \(^2\)
        </span>
       </a>
      </li>
@@ -511,30 +511,39 @@
 <div class="section" id="what-is-anova">
 <h2>What is ANOVA?<a class="headerlink" href="#what-is-anova" title="Permalink to this headline">¶</a></h2>
 <p><u>An</u>alysis  <u>O</u>f  <u>Va</u>riance (ANOVA) is an extremely useful class of Linear models. It is very often appropriate when your response (dependent) variable is continuous, while your predictor (independent) variable is categorical. Specifically, <em>One-way ANOVA</em> is used to compare means of two or more samples representing numerical, continuous data in response to a single categorical variable (factor).</p>
-<a class="reference internal image-reference" href="../_images/ANOVA_is_LM.png"><img alt="ANOVA example" src="../_images/ANOVA_is_LM.png" style="width: 300px;" /></a>
-<p><small><center>A dataset where an ANOVA is appropriate.
-<br>
-Performing an ANOVA on this dataset is the same as fitting the linear model <span class="math notranslate nohighlight">\(y  = \beta_1  + \beta_2 x_s + \beta_3 x_a\)</span>, where <span class="math notranslate nohighlight">\(x_s\)</span> and <span class="math notranslate nohighlight">\(x_a\)</span> are two levels (“treatments”, representing statistically separate populations) within the factor (games console ownership). Here, the first treatment, the control, is captured by the baseline value <span class="math notranslate nohighlight">\(\beta_1\)</span> (the sample with the lowest value, on the far left).</p>
-</center> </small>
-<p>(One-way) ANOVA tests the null hypothesis that samples from two or more groups (the treatments or factors) are drawn from populations with the <em>same mean value</em>. That is, the null hypothesis is that all the groups are random samples from the <em>same</em> population (no statistical difference in their means). To do this, ANOVA compares the variance in the data explained by fitting the linear model, to the unexplained variance (the null hypothesis.</p>
-<p>In other words, in effect, ANOVA asks whether a linear model with a predictor (or explanatory variable) with at least two categorical levels (or factors), better accounts for the variance (Explained Sum of Squares, ESS, see below) than a null model of the form <span class="math notranslate nohighlight">\(y  = \beta_1\)</span> (<a class="reference external" href="#fig:anova1">Figure 1</a>). Thus, ANOVA is just a type of linear model.</p>
+<hr class="docutils" />
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/ANOVA_is_LM.svg"><img alt="ANOVA example" src="../_images/ANOVA_is_LM.svg" width="300px" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text"><strong>A dataset where an ANOVA is appropriate.</strong> Performing an ANOVA on this dataset is the same as fitting the linear model <span class="math notranslate nohighlight">\(y  = \beta_1  + \beta_2 x_s + \beta_3 x_a\)</span>, where <span class="math notranslate nohighlight">\(x_s\)</span> and <span class="math notranslate nohighlight">\(x_a\)</span> are two levels (“treatments”, representing statistically separate populations) within the factor (games console ownership). Here, the first treatment, the control, is captured by the baseline value <span class="math notranslate nohighlight">\(\beta_1\)</span> (the sample with the lowest value, on the far left).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<hr class="docutils" />
+<p>(One-way) ANOVA tests the null hypothesis that samples from two or more groups (the treatments or factors) are drawn from populations with the <em>same mean value</em>. That is, the null hypothesis is that all the groups are random samples from the <em>same</em> population (no statistical difference in their means). To do this, ANOVA compares the variance in the data explained by fitting the linear model, to the unexplained variance (the null hypothesis.</p>
+<p>In other words, in effect, ANOVA asks whether a linear model with a predictor (or explanatory variable) with at least two categorical levels (or factors), better accounts for the variance (Explained Sum of Squares, ESS, see below) than a null model of the form <span class="math notranslate nohighlight">\(y  = \beta_1\)</span> (<a class="reference internal" href="#id1"><span class="std std-ref">Figure 1</span></a>). Thus, ANOVA is just a type of linear model.</p>
 <p>By the end of this chapter, it will also make more sense to you how/why fitting a linear regression model to the data that we learned <a class="reference internal" href="14-regress.html"><span class="doc std std-doc">previously</span></a>, of the form <span class="math notranslate nohighlight">\(y = \beta_1  + \beta_2 x\)</span> (where <span class="math notranslate nohighlight">\(x\)</span> is a continuous predictor variable), requires an ANOVA to determine if the model better fits than a null model of the form <span class="math notranslate nohighlight">\(y  = \beta_1\)</span>.</p>
 <p>Typically, one-way ANOVA is used to test for differences among at least three groups, since the two-group (or levels or factors) case can be covered by a <span class="math notranslate nohighlight">\(t\)</span>-test (see <a class="reference internal" href="13-t_F_tests.html"><span class="doc std std-doc">t &amp; F tests</span></a>). When there are only two means to compare, the <span class="math notranslate nohighlight">\(t\)</span>-test and the F-test are equivalent; the relation between ANOVA and t is given by <span class="math notranslate nohighlight">\(F = t^2\)</span>.</p>
 <p>An extension of one-way ANOVA is two-way analysis of variance that examines the influence of two different categorical independent variables on one dependent variable — we will look at multiple predictor variables in <a class="reference internal" href="16-MulExpl.html"><span class="doc std std-doc">MulExpl</span></a> onwards.</p>
 </div>
 <div class="section" id="calculating-the-anova-test-statistic">
 <span id="anova-sos"></span><h2>Calculating the ANOVA test statistic<a class="headerlink" href="#calculating-the-anova-test-statistic" title="Permalink to this headline">¶</a></h2>
-<p>ANOVA uses of the <a class="reference external" href="13-t_F_tests.ipynb#The-%24F%24-test">F-Statistic</a>. To this end, an ANOVA “partitions” variability in your data as follows:</p>
+<p>ANOVA uses of the <a class="reference internal" href="13-t_F_tests.html"><span class="doc std std-doc">F-Statistic</span></a>. To this end, an ANOVA “partitions” variability in your data as follows:</p>
 <p><strong>Total sum of squares (TSS)</strong>: This is the sum of the squared difference between the observed dependent variable (<span class="math notranslate nohighlight">\(y\)</span>) and the mean of the response variable <span class="math notranslate nohighlight">\(y\)</span> (denoted by <span class="math notranslate nohighlight">\(\bar{y}\)</span>), i.e.,</p>
-<div class="math notranslate nohighlight">
-\[\text{TSS} = \sum_{i=1}^{n}(y_i - \bar{y})^2\]</div>
-<p>TSS tells us how much variation there is in the dependent variable without having any other information (your null model). You might notice that TSS is the numerator of the <em>sample variance</em> (or it’s square-root, the <em>sample standard deviation</em>), which you learned about <a class="reference external" href="12-ExpDesign.ipynb#Descriptive-statistics">previously</a>.</p>
-<p><strong>Explained sum of squares (ESS)</strong>: Sum of the squared differences between the predicted <span class="math notranslate nohighlight">\(y\)</span>’s (denoted <span class="math notranslate nohighlight">\(\hat{y}\)</span>’s) and <span class="math notranslate nohighlight">\(\bar{y}\)</span>, or,
-$<span class="math notranslate nohighlight">\(\text{ESS} = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2\)</span>$
-ESS tells us how much of the variation in the dependent variable our alternative (linear) model was able to explain. That is, it’s the reduction in uncertainty that occurs when the linear model is used to predict the responses.</p>
-<p><strong>Residual sum of squares (RSS)</strong>: Sum of the squared differences between the observed <span class="math notranslate nohighlight">\(y\)</span>’s (denoted by <span class="math notranslate nohighlight">\(y_i\)</span>) and the predicted <span class="math notranslate nohighlight">\(\hat{y}\)</span>, or,
-$<span class="math notranslate nohighlight">\(\text{RSS} = \sum_{i=1}^{n} (\hat{y}_i - y_i)^2\)</span>$
-RSS tells us how much of the variation in the dependent variable our model could not explain. That is, it’s the uncertainty that remains even after the linear model is used. The linear model is considered to be statistically significant if it can account for a large amount of variability in the response.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \text{TSS} = \sum_{i=1}^{n}(y_i - \bar{y})^2
+\end{equation*}\]</div>
+<p>TSS tells us how much variation there is in the dependent variable without having any other information (your null model). You might notice that TSS is the numerator of the <em>sample variance</em> (or it’s square-root, the <em>sample standard deviation</em>), which you learned about <a class="reference internal" href="12-ExpDesign.html#expdesign-descriptive-stats"><span class="std std-ref">previously</span></a>.</p>
+<p><strong>Explained sum of squares (ESS)</strong>: Sum of the squared differences between the predicted <span class="math notranslate nohighlight">\(y\)</span>’s (denoted <span class="math notranslate nohighlight">\(\hat{y}\)</span>’s) and <span class="math notranslate nohighlight">\(\bar{y}\)</span>, or,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \text{ESS} = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2
+\end{equation*}\]</div>
+<p>ESS tells us how much of the variation in the dependent variable our alternative (linear) model was able to explain. That is, it’s the reduction in uncertainty that occurs when the linear model is used to predict the responses.</p>
+<p><strong>Residual sum of squares (RSS)</strong>: Sum of the squared differences between the observed <span class="math notranslate nohighlight">\(y\)</span>’s (denoted by <span class="math notranslate nohighlight">\(y_i\)</span>) and the predicted <span class="math notranslate nohighlight">\(\hat{y}\)</span>, or,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \text{RSS} = \sum_{i=1}^{n} (\hat{y}_i - y_i)^2
+\end{equation*}\]</div>
+<p>RSS tells us how much of the variation in the dependent variable our model could not explain. That is, it’s the uncertainty that remains even after the linear model is used. The linear model is considered to be statistically significant if it can account for a large amount of variability in the response.</p>
 <ul class="simple">
 <li><p>And of course, TSS = ESS + RSS. That is, the OLS method “decomposes” the total variation in the dependent variable into an explained component (ESS; explained by the predictor) and an unexplained or residual component (the RSS).</p></li>
 </ul>
@@ -571,29 +580,28 @@ RSS tells us how much of the variation in the dependent variable our model could
 <p>Each sum of squares has a corresponding degrees of freedom (DF) associated with it that gives the Mean Sum of Squares (MSS) — the Sums of Squares divided by the corresponding degrees of freedom.</p>
 <ul class="simple">
 <li><p>The TSS DF is one less than the number of observations <span class="math notranslate nohighlight">\(n-1\)</span>. This is because calculating TSS, needs <span class="math notranslate nohighlight">\(\bar y\)</span> , which imposes loss of one degree of freedom. Note that MSS is thus nothing but the sample variance.</p></li>
-<li><p>The ESS DF is one less than the number of coefficients (<span class="math notranslate nohighlight">\(n_c\)</span>) (estimated parameters) in the model: <span class="math notranslate nohighlight">\(n_c-1\)</span>. Note that in the case where the linear model is an ANOVA, the number of coefficients equals the number of “treatments” (the categories or levels in the predictor or factor). So for example, in <a class="reference external" href="#fig:anova1">Figure 1</a>, there are three treatments (predictors) and therefore three coefficients (<span class="math notranslate nohighlight">\(\beta_1\)</span>, <span class="math notranslate nohighlight">\(\beta_2\)</span>, <span class="math notranslate nohighlight">\(\beta_3\)</span>), which means that the ESS degrees of freedom there is <span class="math notranslate nohighlight">\(n_c-1 = 2\)</span>.</p></li>
+<li><p>The ESS DF is one less than the number of coefficients (<span class="math notranslate nohighlight">\(n_c\)</span>) (estimated parameters) in the model: <span class="math notranslate nohighlight">\(n_c-1\)</span>. Note that in the case where the linear model is an ANOVA, the number of coefficients equals the number of “treatments” (the categories or levels in the predictor or factor). So for example, in <a class="reference internal" href="#id1"><span class="std std-ref">Figure 1</span></a>, there are three treatments (predictors) and therefore three coefficients (<span class="math notranslate nohighlight">\(\beta_1\)</span>, <span class="math notranslate nohighlight">\(\beta_2\)</span>, <span class="math notranslate nohighlight">\(\beta_3\)</span>), which means that the ESS degrees of freedom there is <span class="math notranslate nohighlight">\(n_c-1 = 2\)</span>.</p></li>
 <li><p>The RSS DF is the sample size <span class="math notranslate nohighlight">\(n\)</span> minus the number of coefficients that you need to estimate (<span class="math notranslate nohighlight">\(n_c\)</span>), that is, <span class="math notranslate nohighlight">\(n - n_c\)</span>, because each estimated coefficient is an unknown parameter.</p></li>
 </ul>
 </div>
 <div class="section" id="the-f-value-or-ratio">
 <h3>The F-Value (or Ratio)<a class="headerlink" href="#the-f-value-or-ratio" title="Permalink to this headline">¶</a></h3>
 <p>The F-Value or F-Ratio, the test statistic used to decide whether the linear model fit is statistically significant, is the ratio of the Mean ESS to the Mean RSS:</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 F = \frac{\left(\frac{ESS}{n_c-1}\right)}{\left(\frac{RSS}{n-n_c}\right)}
-\]</div>
+\end{equation*}\]</div>
 <p>If the null hypothesis that the group means are drawn from sub-populations with the <em>same</em> mean were indeed true, the between-group variance (numerator in this F-ratio) should be lower than the within-group variance (denominator). The null hypothesis is rejected if this F-Ratio is large — the model explains a significant amount of variance, and we can conclude that the samples were drawn from populations with different mean values.</p>
 <p>The p-value is calculated for the overall model fit using the F-distribution as you learned before, in <a class="reference internal" href="13-t_F_tests.html"><span class="doc std std-doc">t &amp; F tests</span></a>.</p>
 <p>Also note that the Root Mean Square Error (RMSE), also known as the standard error of the estimate, is the square root of the Mean RSS. It is the standard deviation of the data about the Linear model, rather than about the sample mean.</p>
 </div>
 <div class="section" id="the-r-2">
-<h3>The <span class="math notranslate nohighlight">\(R^{2}\)</span><a class="headerlink" href="#the-r-2" title="Permalink to this headline">¶</a></h3>
-<p>The <span class="math notranslate nohighlight">\(R^{2}\)</span>, also called the Coefficient of Determination, is the proportion of total error (TSS) explained by the model (ESS), so the ratio ESS/TSS. That is it is the proportion of the variability in the response that is explained by the fitted model. Since TSS = ESS + RSS, <span class="math notranslate nohighlight">\(R^{2}\)</span> can be rewritten as (TSS-RSS)/TSS = 1 - RSS/TSS. If a model has perfectly fits the data, <span class="math notranslate nohighlight">\(R^{2}=1\)</span>, and if it has no predictive capability <span class="math notranslate nohighlight">\(R^{2}=0\)</span>. In reality, <span class="math notranslate nohighlight">\(R^{2}\)</span> will never be exactly 0 because even a null model will explain some variance just by chance due to sampling error. Note that <span class="math notranslate nohighlight">\(R\)</span>, the square root of <span class="math notranslate nohighlight">\(R^2\)</span>, is the multiple correlation coefficient: the correlation between the observed values (<span class="math notranslate nohighlight">\(y\)</span>), and the predicted values (<span class="math notranslate nohighlight">\(\hat{y}\)</span>).</p>
+<h3>The R<span class="math notranslate nohighlight">\(^2\)</span><a class="headerlink" href="#the-r-2" title="Permalink to this headline">¶</a></h3>
+<p>The R<span class="math notranslate nohighlight">\(^2\)</span>, also called the Coefficient of Determination, is the proportion of total error (TSS) explained by the model (ESS), so the ratio ESS/TSS. That is it is the proportion of the variability in the response that is explained by the fitted model. Since TSS = ESS + RSS, R<span class="math notranslate nohighlight">\(^2\)</span> can be rewritten as (TSS-RSS)/TSS = 1 - RSS/TSS. If a model has perfectly fits the data, <span class="math notranslate nohighlight">\(R^{2}=1\)</span>, and if it has no predictive capability <span class="math notranslate nohighlight">\(R^{2}=0\)</span>. In reality, R<span class="math notranslate nohighlight">\(^2\)</span> will never be exactly 0 because even a null model will explain some variance just by chance due to sampling error. Note that <span class="math notranslate nohighlight">\(R\)</span>, the square root of R<span class="math notranslate nohighlight">\(^2\)</span>, is the multiple correlation coefficient: the correlation between the observed values (<span class="math notranslate nohighlight">\(y\)</span>), and the predicted values (<span class="math notranslate nohighlight">\(\hat{y}\)</span>).</p>
 <div class="section" id="adjusted-r-2">
-<h4>Adjusted <span class="math notranslate nohighlight">\(R^{2}\)</span><a class="headerlink" href="#adjusted-r-2" title="Permalink to this headline">¶</a></h4>
-<p>As additional predictors (and therefore linear model coefficients) are added to a linear model, <span class="math notranslate nohighlight">\(R^2\)</span> increases even when the new predictors add no real predictive capability. The adjusted-<span class="math notranslate nohighlight">\(R^2\)</span> tries to address this problem of over-specification or over-fitting by including the degrees of freedom: Adjusted <span class="math notranslate nohighlight">\(R^2\)</span> = 1 - (RSS/<span class="math notranslate nohighlight">\(n-n_c-2\)</span>)/(TSS/<span class="math notranslate nohighlight">\(n-1\)</span>)
-<a class="reference external" href="#fn2"><span class="math notranslate nohighlight">\(^{[2]}\)</span></a>.</p>
-<p>Thus, additional predictors with little explanatory capability will increase the ESS (and reduce the RSS), but they will also have lower RSS degrees of freedom (because of the additional number of fitted coefficients, <span class="math notranslate nohighlight">\(n_c\)</span>’s)<a class="reference external" href="#fn3"><span class="math notranslate nohighlight">\(^{[3]}\)</span></a>. Thus if the additional predictors have poor predictive capability, these two reductions will cancel each other out. In other words, the Adjusted <span class="math notranslate nohighlight">\(R^2\)</span> penalizes the addition of new predictors to the linear model, so you should always have a look at the Adjusted <span class="math notranslate nohighlight">\(R^2\)</span> as a corrected measure of <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
+<h4>Adjusted R<span class="math notranslate nohighlight">\(^2\)</span><a class="headerlink" href="#adjusted-r-2" title="Permalink to this headline">¶</a></h4>
+<p>As additional predictors (and therefore linear model coefficients) are added to a linear model, R<span class="math notranslate nohighlight">\(^2\)</span> increases even when the new predictors add no real predictive capability. The adjusted-R<span class="math notranslate nohighlight">\(^2\)</span> tries to address this problem of over-specification or over-fitting by including the degrees of freedom: Adjusted R<span class="math notranslate nohighlight">\(^2\)</span> = 1 - (RSS/<span class="math notranslate nohighlight">\(n-n_c-2\)</span>)/(TSS/<span class="math notranslate nohighlight">\(n-1\)</span>) <a class="reference external" href="#fn2"><span class="math notranslate nohighlight">\(^{[2]}\)</span></a>.</p>
+<p>Thus, additional predictors with little explanatory capability will increase the ESS (and reduce the RSS), but they will also have lower RSS degrees of freedom (because of the additional number of fitted coefficients, <span class="math notranslate nohighlight">\(n_c\)</span>’s)<a class="reference external" href="#fn3"><span class="math notranslate nohighlight">\(^{[3]}\)</span></a>. Thus if the additional predictors have poor predictive capability, these two reductions will cancel each other out. In other words, the Adjusted R<span class="math notranslate nohighlight">\(^2\)</span> penalizes the addition of new predictors to the linear model, so you should always have a look at the Adjusted R<span class="math notranslate nohighlight">\(^2\)</span> as a corrected measure of R<span class="math notranslate nohighlight">\(^2\)</span>.</p>
 </div>
 </div>
 </div>
@@ -841,7 +849,7 @@ model called <code class="docutils literal notranslate"><span class="pre">trophi
 </div></div>
 </div>
 <p><em>Note the style of reporting the result</em> - the statistic (<span class="math notranslate nohighlight">\(F\)</span>), degrees of freedom and <span class="math notranslate nohighlight">\(p\)</span> value are all provided in support. A commonly used style is this: <span class="math notranslate nohighlight">\(F_{2,300}=7.22, p=0.0009\)</span>.</p>
-<p>Pay close attention to the sum of squares column. Of a total of <span class="math notranslate nohighlight">\(17.18+0.83 = 18.01\)</span> units of sums of squares, only 0.83 are explained by trophic level: <span class="math notranslate nohighlight">\(0.83/18.01 \approx 0.046\)</span> or 4.6%. This ratio is called <span class="math notranslate nohighlight">\(r^2\)</span>, a measure of explanatory power, and shows that, although the model is very significant, it isn’t very explanatory. We care about explanatory power
+<p>Pay close attention to the sum of squares column. Of a total of <span class="math notranslate nohighlight">\(17.18+0.83 = 18.01\)</span> units of sums of squares, only 0.83 are explained by trophic level: <span class="math notranslate nohighlight">\(0.83/18.01 \approx 0.046\)</span> or 4.6%. This ratio is called R<span class="math notranslate nohighlight">\(^2\)</span>, a measure of explanatory power, and shows that, although the model is very significant, it isn’t very explanatory. We care about explanatory power
 or effect size, <code class="docutils literal notranslate"><span class="pre">*not*</span></code> <span class="math notranslate nohighlight">\(p\)</span> values.</p>
 <p>The coefficients table for the model looks like this:</p>
 <div class="cell docutils container">
@@ -878,7 +886,7 @@ F-statistic:  7.22 on 2 and 300 DF,  p-value: 0.0008657
 <ul class="simple">
 <li><p>The reference level (or intercept) is for carnivores. Their mean genome size is significantly different from zero - this is not an exciting finding!</p></li>
 <li><p>The mean genome size for both herbivores and omnivores are both significantly different from carnivores. Both larger in fact: herbivore mean genome size = <span class="math notranslate nohighlight">\(1.085 + 0.112 = 1.197\)</span> and omnivore mean genome size = <span class="math notranslate nohighlight">\(1.085 + 0.151 = 1.236\)</span>. These are the same group means we found above.</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(r^2\)</span> is shown and is the 4.6% we calculated above. The <em>adjusted</em> <span class="math notranslate nohighlight">\(r^2\)</span> reduces the raw <span class="math notranslate nohighlight">\(r^2\)</span> to account for the number of variables included in the model. That 4.6% would be even less impressive if we needed 6 explanatory variables to get it…</p></li>
+<li><p>The R<span class="math notranslate nohighlight">\(^2\)</span> is shown and is the 4.6% we calculated above. The <em>adjusted</em> R<span class="math notranslate nohighlight">\(^2\)</span> reduces the raw R<span class="math notranslate nohighlight">\(^2\)</span> to account for the number of variables included in the model. That 4.6% would be even less impressive if we needed 6 explanatory variables to get it!</p></li>
 <li><p>The <span class="math notranslate nohighlight">\(F\)</span> statistic, as in the ANOVA table above.</p></li>
 </ul>
 <p><span class="math notranslate nohighlight">\(\star\)</span> Repeat the analysis of variance above to look at the effects of ground dwelling on genome size.</p>

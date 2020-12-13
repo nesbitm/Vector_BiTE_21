@@ -836,10 +836,13 @@
 </div>
 </div>
 <p>Thus the last two outputs tell you that firstly, that numpy arrays belong to a data structure type (and a class) called <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, and secondly, that at position <code class="docutils literal notranslate"><span class="pre">0</span></code> (remember, Python indexing starts at 0) it holds an <a class="reference external" href="https://en.wikipedia.org/wiki/9,223,372,036,854,775,807">64 bit integer</a>. All elements in <code class="docutils literal notranslate"><span class="pre">a</span></code> are of type <code class="docutils literal notranslate"><span class="pre">int</span></code> because that is what <code class="docutils literal notranslate"><span class="pre">range()</span></code> returns (try <code class="docutils literal notranslate"><span class="pre">?range</span></code>).</p>
-<p><img alt="image" src="../_images/numpyarray.png" />
-<small><center>A graphical depiction of numpy/numpy arrays, which can have multiple dimensions (even greater than 3).<br>
-Source: <a class="reference external" href="http://pages.physics.cornell.edu/~myers/teaching/ComputationalMethods/python/arrays.html">http://pages.physics.cornell.edu/~myers/teaching/ComputationalMethods/python/arrays.html</a></p>
-</center> </small>
+<hr class="docutils" />
+<div class="figure align-default" id="python-arrays">
+<a class="reference internal image-reference" href="../_images/numpyarray.png"><img alt="Python arrays" src="../_images/numpyarray.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text"><strong>A graphical depiction of numpy/numpy arrays.</strong> These can have multiple dimensions (even greater than 3). <br>
+(Source: <a class="reference external" href="http://pages.physics.cornell.edu/~myers/teaching/ComputationalMethods/python/arrays.html">http://pages.physics.cornell.edu/~myers/teaching/ComputationalMethods/python/arrays.html</a>)</span><a class="headerlink" href="#python-arrays" title="Permalink to this image">¶</a></p>
+</div>
+<hr class="docutils" />
 <p>You can also specify the data type of the array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1774,9 +1777,9 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Now let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8dbe2df5-e002-4bb6-9a72-532b9f177a8b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8dbe2df5-e002-4bb6-9a72-532b9f177a8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
-    \frac{dR}{dt} &amp;= r R - a C R \\
+<div class="amsmath math notranslate nohighlight" id="equation-708911b5-8b77-4a85-8efe-8d379b04b106">
+<span class="eqno">(1)<a class="headerlink" href="#equation-708911b5-8b77-4a85-8efe-8d379b04b106" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \frac{dR}{dt} &amp;= r R - a C R  \nonumber \\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
 <p>where,</p>
@@ -1971,10 +1974,12 @@ from the end of an array:</p>
 <ol class="simple">
 <li><p>Create a self-standing script using the above example and save it as <code class="docutils literal notranslate"><span class="pre">LV1.py</span></code> in your code directory. In addition to generating the above figure, it should also generate the following figure:</p></li>
 </ol>
-<p><img alt="image" src="../_images/LV_model_CR.png" />
-<small><center>
-Generate this figure as part of the <code class="docutils literal notranslate"><span class="pre">LV1.py</span></code> script.</p>
-</center></small>
+<hr class="docutils" />
+<div class="figure align-default" id="lv-practical-1">
+<a class="reference internal image-reference" href="../_images/LV_model_CR.png"><img alt="Lotka-Volterra phase plot" src="../_images/LV_model_CR.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text"><strong>Generate this figure as part of the <code class="docutils literal notranslate"><span class="pre">LV1.py</span></code> script.</strong></span><a class="headerlink" href="#lv-practical-1" title="Permalink to this image">¶</a></p>
+</div>
+<hr class="docutils" />
 <p>It should save both figures in pdf to the <code class="docutils literal notranslate"><span class="pre">results</span></code> directory, <em>without displaying them on screen</em>.</p>
 </div>
 <div class="section" id="the-need-for-speed-profiling-code">
@@ -2335,8 +2340,8 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0cde8dca-4f4c-4e9d-acb9-7de8fc939819">
-<span class="eqno">(2)<a class="headerlink" href="#equation-0cde8dca-4f4c-4e9d-acb9-7de8fc939819" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4f61ce1-c5f9-4559-afce-36abdcb46b79">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e4f61ce1-c5f9-4559-afce-36abdcb46b79" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2353,8 +2358,8 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c1fdc987-66b5-46c5-958e-87ab0c47806d">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c1fdc987-66b5-46c5-958e-87ab0c47806d" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-86f124f6-6a53-4cb8-9f2f-f4a66e17791b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-86f124f6-6a53-4cb8-9f2f-f4a66e17791b" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
     C_{t+1} &amp;= C_t (1 - z + e a R_t) 
 \end{align}\]</div>
@@ -2365,15 +2370,15 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-aa134406-7694-4278-900d-ff5fb774ac28">
-<span class="eqno">(4)<a class="headerlink" href="#equation-aa134406-7694-4278-900d-ff5fb774ac28" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a5409250-30b2-4264-8ebb-e1cb6e3ab9ea">
+<span class="eqno">(4)<a class="headerlink" href="#equation-a5409250-30b2-4264-8ebb-e1cb6e3ab9ea" title="Permalink to this equation">¶</a></span>\[\begin{align}
         R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
         C_{t+1} &amp;= C_t (1 - z + e a R_t)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this
 script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60f7e8c7-8883-4d98-ba51-6fa04be67bab">
-<span class="eqno">(5)<a class="headerlink" href="#equation-60f7e8c7-8883-4d98-ba51-6fa04be67bab" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5cff9ddf-ad05-4d40-b878-69e8f3ba6bc2">
+<span class="eqno">(5)<a class="headerlink" href="#equation-5cff9ddf-ad05-4d40-b878-69e8f3ba6bc2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
     C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
 \end{align}\]</div>
@@ -2394,10 +2399,10 @@ script in <code class="docutils literal notranslate"> <span class="pre">run_LV.p
 </ul>
 <p>Thus, if you are interested in data mining, need to clean or process data in any other way, or convert a bunch of information into usable data, knowing regex is absolutely necessary.</p>
 <hr class="docutils" />
-<p><img alt="image" src="../_images/regex.png" />
-<small><center>(Source: <a class="reference external" href="https://www.xkcd.com/208/">www.xkcd.com</a>)
-Regular expressions can really improve your quality of life!</p>
-</center></small>
+<div class="figure align-default" id="xkcd-regex">
+<a class="reference internal image-reference" href="../_images/regex.png"><img alt="XKCD on Regex" src="../_images/regex.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text"><strong>Regular expressions can really improve your quality of life.</strong><br> (Source: <a class="reference external" href="https://www.xkcd.com/208/">XKCD</a>)</span><a class="headerlink" href="#xkcd-regex" title="Permalink to this image">¶</a></p>
+</div>
 <hr class="docutils" />
 <p>Regex packages are available for most programming languages (recall <a class="reference external" href="01-Unix.ipynb#Using-%60grep%60"><code class="docutils literal notranslate"><span class="pre">grep</span></code> in UNIX</a>; that is how regex first became popular).</p>
 <div class="section" id="metacharacters-vs-regular-characters">
@@ -2820,10 +2825,10 @@ Regular expressions can really improve your quality of life!</p>
 </div>
 </div>
 <hr class="docutils" />
-<p><img alt="image" src="../_images/thelodermaasper.JPG" />
-<small><center>
-In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog”, looks like. I snapped this one in a North-East Indian rainforest ages ago.</p>
-</center></small>
+<div class="figure align-default" id="bird-shit-frog">
+<a class="reference internal image-reference" href="../_images/thelodermaasper.JPG"><img alt="ANOVA example" src="../_images/thelodermaasper.JPG" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text"><strong>In case you were wondering what <em>Theloderma asper</em>, the “bird-shit frog”, looks like.</strong> Samraat snapped this one in a North-East Indian rainforest ages ago.</span><a class="headerlink" href="#bird-shit-frog" title="Permalink to this image">¶</a></p>
+</div>
 <hr class="docutils" />
 <p>How about looking for email addresses in a string? For example, let’s try matching a string consisting of an academic’s name, email address and research area or interest (no need to type this into any python file):</p>
 <div class="cell docutils container">

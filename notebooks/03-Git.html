@@ -537,7 +537,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      Branching
     </a>
    </li>
@@ -561,9 +561,13 @@
 <p>Version control, also known as revision control or source control, is the management and tracking of changes to computer code and other certain other types of data in an automated way.</p>
 <p>Any project (collections of files in directories) under version control has changes and additions/deletions to its files and directories recorded and archived over time so that you can recall specific versions later.</p>
 <p>Version control is in fact the technology embedded in the versioning of various word processor and spreadsheet applications (e.g., Google Docs, Overleaf).</p>
-<p><img alt="image" src="../_images/VC.png" />
-<small> <center>An overview of how Version control works</center></small></p>
+<hr class="docutils" />
+<div class="figure align-default" id="vc-overview">
+<a class="reference internal image-reference" href="../_images/VC.png"><img alt="Version control" src="../_images/VC.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text"><strong>An overview of how version control works.</strong> Some of the project mainline’s branches may eventually be merged back into the mainline if they are successful in achieving some objective that is worth integrating into the mainline.</span><a class="headerlink" href="#vc-overview" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="why-version-control">
 <h2>Why Version Control?<a class="headerlink" href="#why-version-control" title="Permalink to this headline">¶</a></h2>
 <p>With version control of biological computing projects, you can:</p>
@@ -575,11 +579,13 @@
 <li><p>collaborate more easily with others on developing new code or writing documents – branch (and merge) projects</p></li>
 <li><p>back up your project (but git is not a backup software - see <a class="reference external" href="#Dealing-with-binary-files">sections on binary and large files</a> below).</p></li>
 </ul>
-<p><img alt="image" src="../_images/cvs.png" />
-<small> <center>If you don’t use Version Control.<br>
-Source: <a class="reference external" href="http://maktoons.blogspot.com/2009/06/if-dont-use-version-control-system.html">maktoons.blogspot.com/2009/06/if-dont-use-version-control-system.html</a> </center></small></p>
-<p>Or here’s <a class="reference external" href="http://www.phdcomics.com/comics/archive/phd101212s.gif">another one</a>.</p>
+<hr class="docutils" />
+<div class="figure align-default" id="mess-happens-without-vc">
+<a class="reference internal image-reference" href="../_images/cvs.png"><img alt="Mess without Version Control" src="../_images/cvs.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><strong>This will very likely happen if you don’t use Version Control.</strong> <br> (Source: <a class="reference external" href="http://maktoons.blogspot.com/2009/06/if-dont-use-version-control-system.html">maktoons.blogspot.com</a>).</span><a class="headerlink" href="#mess-happens-without-vc" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="git">
 <h2>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
 <p>We will use git, developed by Linus Torvalds, the “Linu” in Linux. This is currently the most popular tool for version control.</p>
@@ -593,12 +599,17 @@ git config --list
 <div class="section" id="git-workflow">
 <h3><code class="docutils literal notranslate"><span class="pre">git</span></code> workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline">¶</a></h3>
 <p>Here is a graphical outline of the git workflow and command structure:</p>
-<p><img alt="image" src="../_images/git.png" /></p>
+<hr class="docutils" />
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/git.png"><img alt="Git Workflow" src="../_images/git.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text"><strong>The git workflow and command structure.</strong>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<hr class="docutils" />
 <p>Note that only when you <code class="docutils literal notranslate"><span class="pre">push</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> do you need an internet connection, because before that you are only archiving in a local (hidden) repository (that sits in a hidden <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory within your project).</p>
 </div>
 <div class="section" id="basic-git-commands">
 <h3>Basic git commands<a class="headerlink" href="#basic-git-commands" title="Permalink to this headline">¶</a></h3>
-<p>Here are some fundamenetally important git commands (please make sure you read about them):</p>
+<p>Here are some fundamentally important git commands (please make sure you read more about them):</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Command</p></th>
@@ -874,12 +885,10 @@ nothing to commit, working tree clean
 </div>
 </div>
 <hr class="docutils" />
-<blockquote>
-<div><p><strong>Make meaningful Comments</strong>: Please don’t neglect to make each commit message meaningful. And use this mantra: “commit often, comment always”.</p>
-</div></blockquote>
-<p><img alt="image" src="../_images/git_xkcd.png" />
-<small> <center>Source: <a class="reference external" href="https://m.xkcd.com/1296/">https://m.xkcd.com/1296/</a>
-Don’t succumb to this.</figcaption></center></small></p>
+<div class="figure align-default" id="git-commit">
+<a class="reference internal image-reference" href="../_images/git_xkcd.png"><img alt="XKCD committing" src="../_images/git_xkcd.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text"><strong>Make meaningful comments in your git commit.</strong> Please don’t neglect to make each commit message meaningful. And use this mantra: “commit often, comment always”. The correct meaning of “often” in this context comes with experience.<br> (Source: <a class="reference external" href="https://m.xkcd.com/1296/">XKCD</a>)</span><a class="headerlink" href="#git-commit" title="Permalink to this image">¶</a></p>
+</div>
 <hr class="docutils" />
 <p>Nothing has been sent to the remote server yet (see below for more on the remote server).</p>
 <p>So let’s go to your online git service (e.g., github or  bitbucket) and set up. Note that github and bitbucket both give you unlimited free private repositories if you register with an academic email. Not a big deal if you will not be writing private code, handy if you are (<em>can you think of examples when you would need to write private code?</em>).</p>
@@ -973,11 +982,10 @@ Don’t succumb to this.</figcaption></center></small></p>
 <p>Then,</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">*</span></code></p>
 <p>You can also create a global gitignore file that lists rules for files to be ignored <a class="reference external" href="https://help.github.com/articles/ignoring-files">in every Git repository on your computer</a>.</p>
-<hr class="docutils" />
-<blockquote>
-<div><p><strong>Templates for .gitignore</strong>: You can find standard <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> templates online. For example, Seacrh for “.gitignore templates”.</p>
-</div></blockquote>
-<hr class="docutils" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Templates for .gitignore</strong>: You can find standard <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> templates online. For example, search for “.gitignore templates”.</p>
+</div>
 <div class="section" id="directory-and-file-patterns-for-gitignoring">
 <h3>Directory and file patterns for gitignoring<a class="headerlink" href="#directory-and-file-patterns-for-gitignoring" title="Permalink to this headline">¶</a></h3>
 <p>It’s important that you use the correct <em>patterns</em> for what to ignore in your <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>, to make sure that all the correct directories and files are being excluded. Note that you can put additonal <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files in sub-directories if you need more fine-grained control over what is to be ignored, bt it is not necessary, because git-ignoring works recursively (including thorugh sub-directories) as long as you include the correct pattern.</p>
@@ -1042,19 +1050,11 @@ Don’t succumb to this.</figcaption></center></small></p>
 <p><em>Then what about code that needs large files?</em> For this, the best approach is write code that scales up with data size. If it works on a 1 mb file, it should also work on a 1000 mb file! If you have written such code, then you can include a smaller file as a MWE (minimum working example).</p>
 <p><em>And how do you back up your large data files?</em> Remember, version control software like git are not meant for backing up data. The solution is to back up separately, either to an external hard drive or a cloud service. <code class="docutils literal notranslate"><span class="pre">rsync</span></code> is a great Linux utility for making such backups. Google it!</p>
 <p>You may also explore alternatives such as <code class="docutils literal notranslate"><span class="pre">git-annex</span></code> (e.g., <a class="reference external" href="https://git-annex.branchable.com">see this</a>), and <code class="docutils literal notranslate"><span class="pre">git-lfs</span></code> (e.g., <a class="reference external" href="https://www.atlassian.com/git/tutorials/git-lfs">see this</a>).</p>
-<hr class="docutils" />
-<blockquote>
-<div><p><strong>Checking size of your git repo</strong>: You have two options in Linux (<code class="docutils literal notranslate"><span class="pre">cd</span></code> to your repo first):</p>
-</div></blockquote>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>du -sh .git
-</pre></div>
-</div>
-<p>or (more detailed information about what’s using the space),</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git count-objects -vH
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Checking size of your git repo</strong>: You have two options in Linux/UNIX to check the size of your git repo. You can use (<code class="docutils literal notranslate"><span class="pre">cd</span></code> to your repo first) <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">.git</span></code>, or for more detailed information about what’s using the space, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">count-objects</span> <span class="pre">-vH</span></code> (this will work across platforms as this is a git command).</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="removing-files">
 <h2>Removing files<a class="headerlink" href="#removing-files" title="Permalink to this headline">¶</a></h2>
 <p>To remove a file (i.e. stop version controlling it) use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code>:</p>
@@ -1177,23 +1177,22 @@ abandon the branch:</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-D</span> <span class="pre">anexperiment</span></code></p>
 <p>When you want to test something out, always branch! Reverting changes, especially in code, is typically painful. Merging can be tricky, especially if multiple people have simultaneously worked on a particular document. In the worst-case scenario, you may want to delete the local copy and re-clone the remote repository.</p>
 <hr class="docutils" />
-<p><img alt="image" src="../_images/git_xkcd_1.png" />
-<small> <center>(Source: [https://xkcd.com/1597/))
-Try not to do this, but most of us will have, at some point!</p>
-</center></small>
+<div class="figure align-default" id="git-xkcd-2">
+<a class="reference internal image-reference" href="../_images/git_xkcd_1.png"><img alt="git desperation" src="../_images/git_xkcd_1.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text"><strong>Try not to do this.</strong> But most of us mortals will have, at some point! <br> (Source: <a class="reference external" href="https://xkcd.com/1597/">XKCD</a>)</span><a class="headerlink" href="#git-xkcd-2" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="running-git-commands-on-a-different-directory">
 <h2>Running git commands on a different directory<a class="headerlink" href="#running-git-commands-on-a-different-directory" title="Permalink to this headline">¶</a></h2>
-<p>Since <span>git</span> version 1.8.5, you can run git directly on a different directory than the current one using absolute or relative paths. For example, using a relative path, you can do:</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">git</span></code> version 1.8.5, you can run git directly on a different directory than the current one using absolute or relative paths. For example, using a relative path, you can do:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git -C ../SomeDir/ status
 </pre></div>
 </div>
-<hr class="docutils" />
-<blockquote>
-<div><p><strong>Cloning the MulQuaBio repository</strong>: You can clone the master repository of these notes on your computer and regularly git pull it to keep it updated. That way the these notes and the associated code and data files are easily and locally available on your computer. DO NOT clone the repository into your own coursework repository though!</p>
-</div></blockquote>
-<hr class="docutils" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Cloning the MulQuaBio repository</strong>: You can clone the master repository of this book on your computer and regularly git pull it to keep it updated. That way the these notes and the associated code and data files are easily and locally available on your computer. DO NOT clone the repository into your own coursework repository though!</p>
+</div>
 <div class="section" id="running-git-commands-on-multiple-repositories-at-once">
 <h3>Running git commands on multiple repositories at once<a class="headerlink" href="#running-git-commands-on-multiple-repositories-at-once" title="Permalink to this headline">¶</a></h3>
 <p>For git pulling in multiple subdirectories (each a separate repository), here is an example:</p>
@@ -1255,8 +1254,8 @@ Try not to do this, but most of us will have, at some point!</p>
 <li><p>Guidelines for the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file: https://labs.consol.de/development/git/2017/02/22/gitignore.html, https://docs.github.com/en/free-pro-team&#64;latest/github/using-git/ignoring-files</p></li>
 </ul>
 </div>
-<div class="section" id="id1">
-<h3>Branching<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Branching<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Guidelines for brancing: https://gist.github.com/digitaljhelms/4287848</p></li>
 </ul>

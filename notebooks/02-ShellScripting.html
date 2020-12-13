@@ -471,7 +471,7 @@
 <h1>Shell scripting<a class="headerlink" href="#shell-scripting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Instead of typing all the UNIX commands we need to perform one after the other, we can save them all in a file (a “script”) and execute them all at once. Recall from the <a class="reference external" href="./01-Unix.ipynb#Meet-the-UNIX-shell">UNIX and Linux Chapter</a> that the bash shell (or terminal) is a text command processor that interfaces with the Operating System. The bash shell provides a computer language that can be used to build scripts (AKA shell scripts) that can be run through the terminal.</p>
+<p>Instead of typing all the UNIX commands we need to perform one after the other, we can save them all in a file (a “script”) and execute them all at once. Recall from the <a class="reference internal" href="01-Unix.html"><span class="doc std std-doc">UNIX and Linux Chapter</span></a> that the bash shell (or terminal) is a text command processor that interfaces with the Operating System. The bash shell provides a computer language that can be used to build scripts (AKA shell scripts) that can be run through the terminal.</p>
 <div class="section" id="what-shell-scripts-are-good-for">
 <h3>What shell scripts are good for<a class="headerlink" href="#what-shell-scripts-are-good-for" title="Permalink to this headline">¶</a></h3>
 <p>It is possible to write reasonably sophisticated programs with shell scripting, but the bash language is not featured to the extent that it can replace a “proper” language like C, Python, or R. However, you will find that shell scripting is necessary. This is because as such, as you saw in the previous chapter, UNIX has an incredibly powerful set of tools that can be used thorugh the bash terminal. Shell scripts can allow you to automate the usage of these commands and create your own, simple utility tools/scripts/programs for tasks such as backups, converting file formats, handling &amp; manipulating files and directories). This enables you to perform many everyday tasks on your computer without having to invoke another language that might require installation or updating.</p>
@@ -641,7 +641,7 @@ Done!
 </ul>
 </div>
 <div class="section" id="variables-in-shell-scripts">
-<h2>Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Permalink to this headline">¶</a></h2>
+<span id="shellscripting-variables"></span><h2>Variables in shell scripts<a class="headerlink" href="#variables-in-shell-scripts" title="Permalink to this headline">¶</a></h2>
 <p>There are three ways to assign values to variables (note lack of spaces!):</p>
 <ol class="simple">
 <li><p>Explicit declaration: <code class="docutils literal notranslate"><span class="pre">MYVAR=myvalue</span></code></p></li>
@@ -716,9 +716,15 @@ cat <span class="nv">$3</span>
     <span class="k">done</span>
 </pre></div>
 </div>
+<hr class="docutils" />
+<div class="figure align-default" id="dont-do-this-shell-script">
+<a class="reference internal image-reference" href="../_images/universal_install_script.png"><img alt="XKCD " src="../_images/universal_install_script.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text"><strong>This is not a good use of shell scripting!</strong> <br>(Source: <a class="reference external" href="https://xkcd.com/1654/">XKCD</a>)</span><a class="headerlink" href="#dont-do-this-shell-script" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="practicals">
 <h2>Practicals<a class="headerlink" href="#practicals" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="instructions">
