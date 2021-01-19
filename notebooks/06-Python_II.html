@@ -1777,8 +1777,8 @@ from the end of an array:</p>
 <div class="section" id="the-lotka-volterra-model">
 <h5>The Lotka-Volterra model<a class="headerlink" href="#the-lotka-volterra-model" title="Permalink to this headline">¶</a></h5>
 <p>Now let’s try numerical integration in Python for solving a classical model in biology — the Lotka-Volterra (LV) model for a predator-prey system in two-dimensional space (e.g., on land). The LV model is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-708911b5-8b77-4a85-8efe-8d379b04b106">
-<span class="eqno">(1)<a class="headerlink" href="#equation-708911b5-8b77-4a85-8efe-8d379b04b106" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-46c46b15-65d5-488a-bf0f-9f2b8b74f3ea">
+<span class="eqno">(1)<a class="headerlink" href="#equation-46c46b15-65d5-488a-bf0f-9f2b8b74f3ea" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R - a C R  \nonumber \\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2340,8 +2340,8 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>It runs the Lotka-Volterra model with prey density dependence <span class="math notranslate nohighlight">\(r R \left(1 - \frac{R} {K}\right)\)</span>, which changes the coupled ODEs to,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-e4f61ce1-c5f9-4559-afce-36abdcb46b79">
-<span class="eqno">(2)<a class="headerlink" href="#equation-e4f61ce1-c5f9-4559-afce-36abdcb46b79" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b68846bd-5ecd-4036-b35e-58ac8cfad60b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-b68846bd-5ecd-4036-b35e-58ac8cfad60b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{dR}{dt} &amp;= r R \left(1 - \frac{R} {K}\right) - a C R\\
     \frac{dC}{dt} &amp;= - z C + e a C R
 \end{align}\]</div>
@@ -2358,8 +2358,8 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>Write a discrete-time version of the LV model called <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>. The discrete-time model is:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-86f124f6-6a53-4cb8-9f2f-f4a66e17791b">
-<span class="eqno">(3)<a class="headerlink" href="#equation-86f124f6-6a53-4cb8-9f2f-f4a66e17791b" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-f5b82fc5-ff77-47da-adec-7c83ab0a8961">
+<span class="eqno">(3)<a class="headerlink" href="#equation-f5b82fc5-ff77-47da-adec-7c83ab0a8961" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     R_{t+1} &amp;= R_t (1 + r \left(1 - \frac{R_t}{K}\right) - a C_t)\\ 
     C_{t+1} &amp;= C_t (1 - z + e a R_t) 
 \end{align}\]</div>
@@ -2370,17 +2370,16 @@ vectorized method took 155 ms on average.
 <ul class="simple">
 <li><p>Write a version of the discrete-time model (which you implemented in <code class="docutils literal notranslate"><span class="pre">LV3.py</span></code>) simulation with a random gaussian fluctuation in resource’s growth rate at each time-step:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a5409250-30b2-4264-8ebb-e1cb6e3ab9ea">
-<span class="eqno">(4)<a class="headerlink" href="#equation-a5409250-30b2-4264-8ebb-e1cb6e3ab9ea" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d99f9257-2fbd-4411-a286-4be26eb75ce0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-d99f9257-2fbd-4411-a286-4be26eb75ce0" title="Permalink to this equation">¶</a></span>\[\begin{align}
         R_{t+1} &amp;= R_t (1 + (r + \epsilon) \left(1 - \frac{R_t}{K}\right)- a C_t)\\
         C_{t+1} &amp;= C_t (1 - z + e a R_t)
 \end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this
-script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5cff9ddf-ad05-4d40-b878-69e8f3ba6bc2">
-<span class="eqno">(5)<a class="headerlink" href="#equation-5cff9ddf-ad05-4d40-b878-69e8f3ba6bc2" title="Permalink to this equation">¶</a></span>\[\begin{align}
-    R_{t+1} &amp;= R_t (1 + \epsilon + r +  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
-    C_{t+1} &amp;= C_t (1 - z + \epsilon + e a R_t)
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is a random fluctuation drawn from a gaussian distribution (use <code class="docutils literal notranslate"><span class="pre">sc.stats</span></code> or <code class="docutils literal notranslate"><span class="pre">np.random</span></code>). Include this script in <code class="docutils literal notranslate"> <span class="pre">run_LV.py</span></code>, and profile it as well. You can also add fluctuations to both populations simultaneously this way:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3317dabb-3bf4-4899-b7b2-73ea6d0653a3">
+<span class="eqno">(5)<a class="headerlink" href="#equation-3317dabb-3bf4-4899-b7b2-73ea6d0653a3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    R_{t+1} &amp;= R_t (1 + (r + \epsilon)  \left(1 - \frac{R_t}{K}\right) - a C_t)\\
+    C_{t+1} &amp;= C_t (1 - (z + \epsilon) + e a R_t)
 \end{align}\]</div>
 <p><em>As always, test, add, commit and push all your new code and data to your git repository.</em></p>
 </div>

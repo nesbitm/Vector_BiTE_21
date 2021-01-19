@@ -3667,7 +3667,7 @@ For example, the input file can be a single <code class="docutils literal notran
 <div class="section" id="groupwork-practical-on-align-dna-sequences">
 <h3>Groupwork Practical on Align DNA sequences<a class="headerlink" href="#groupwork-practical-on-align-dna-sequences" title="Permalink to this headline">¶</a></h3>
 <p>Align all the <code class="docutils literal notranslate"><span class="pre">.fasta</span></code> sequences from the <a class="reference internal" href="01-Unix.html"><span class="doc std std-doc">Unix chapter</span></a>. Call the new script <code class="docutils literal notranslate"><span class="pre">align_seqs_fasta.py</span></code>. Unlike <code class="docutils literal notranslate"><span class="pre">align_seqs.py</span></code>, this script should take <em>any</em> two fasta sequences (in separate files) to be aligned as input. So this script would typically run by using explicit inputs, for example, when called with something like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 align_seqs_fasta.py seq1.csv seq2.csv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 align_seqs_fasta.py seq1.fasta seq2.fasta
 </pre></div>
 </div>
 <p>However, it should still run if no inputs were given, using two fasta sequences from the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory as defaults.</p>
