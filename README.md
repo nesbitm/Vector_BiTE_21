@@ -1,4 +1,4 @@
-# The Multilingual Quantitative Biologist
+# The Multilingual Quantitative Biologist VectorBiTE 2021 Edition
 
 This repository contains the source code for the **The Multilingual Quantitative Biologist** online book.
 
