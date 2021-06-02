@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the VectorBiTE 2021 Training Workshop! &#8212; VectorBiTE 2021</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Management and Visualization" href="1-Data_R.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">VectorBiTE 2021</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Welcome to the VectorBiTE 2021 Training Workshop!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Wrangling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-Data_R.html">
+   Data Management and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-Digitizer_explanation.html">
+   How to Digitize Data from Graphs in Published Papers
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Model Fitting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-ModelFitting-NLLS.html">
+   Model Fitting using Non-linear Least-squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-ModelFitting-MLE.html">
+   Model Fitting using Maximum Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-ModelFitting-Bayesian.html">
+   Model Fitting the Bayesian Way
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-Bootstrap_rTPC_tutorial_Nesbit.html">
+   Bootstrapping using rTPC package
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/0-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nesbitm/Vector_BiTE_21"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nesbitm/Vector_BiTE_21/issues/new?title=Issue%20on%20page%20%2Fnotebooks/0-intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nesbitm/Vector_BiTE_21/master?urlpath=tree/notebooks/0-intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keeping-your-workflow-organized">
+   Keeping your workflow organized
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conventions-used-in-this-document">
+   Conventions used in this document
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-preliminaries">
+   Other Preliminaries
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="welcome-to-the-vectorbite-2021-training-workshop">
+<h1>Welcome to the VectorBiTE 2021 Training Workshop!<a class="headerlink" href="#welcome-to-the-vectorbite-2021-training-workshop" title="Permalink to this headline">¶</a></h1>
+<p><em>Please visit the <a class="reference external" href="https://vectorbite.github.io/VBiTraining2">new soon to be changed landing page</a> first if you have not already. It includes the workshop schedule and important instructions, including how to prepare for the workshop.</em></p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>These <a class="reference external" href="https://jupyter.org/">jupyter</a> notebooks contain the content of the <a class="reference external" href="https://vectorbite.github.io/VBiTraining2/">VectorBiTE 2021 Training workshop</a>. All these materials  are available at a <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio">git repository</a>.</p>
+<p>These notebooks are accompanied by data and code on which you can practice your skills during the training sessions and in your own time.  If you do not use git, you may download the code, data, these notes, and other course materials from the repository at one go by clicking on the green “Clone or download” button. You can then unzip the downloaded .zip and grab the files you need.</p>
+<p>It is important that you work through the exercises and problems in each chapter/section. This document does not tell you every single thing you need to know to perform the exercises in it. In programming and computing, you learn faster by trying to solve problems (including computer crashes!) on your own, often by liberally googling the problem!</p>
+<p>This training is specifically for the <a class="reference external" href="https://vectorbite.github.io/VBiTraining2/">VectorBiTE 2021 Training</a>. If you need any more in depth explanations about computational biology/ecology please visit the <a class="reference external" href="https://mhasoba.github.io/TheMulQuaBio/intro.html">MulQuaBio</a> for the full course. This will have more examples and explanations of skills that are assumed as a preliminary to this training.</p>
+</div>
+<div class="section" id="keeping-your-workflow-organized">
+<h2>Keeping your workflow organized<a class="headerlink" href="#keeping-your-workflow-organized" title="Permalink to this headline">¶</a></h2>
+<p>In the training sessions, you will practice many examples where you are required to write large blocks of code. Please get into the habit of writing code into text files with an appropriate extension (e.g., <code class="docutils literal notranslate"><span class="pre">.R</span></code> for <code class="docutils literal notranslate"><span class="pre">R</span></code> code, <code class="docutils literal notranslate"><span class="pre">.py</span></code> for <code class="docutils literal notranslate"><span class="pre">python</span></code> code, etc.). Furthermore, please keep all your code files organized in one or more directories (e.g., named <code class="docutils literal notranslate"><span class="pre">code</span></code>). Similarly, some of these scripts will take data files as inputs, and output some results in the form of text or graphics. Please keep these inputs and outputs organized as well, in separate directories (e.g., named <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">results</span></code>) respectively.</p>
+<p>Thus in general,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Create separate <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">results</span></code> directories</em> within your VBiTE Training week directory, and set your <code class="docutils literal notranslate"><span class="pre">R</span></code> working directory (using <code class="docutils literal notranslate"><span class="pre">setwd()</span></code>) to <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p></li>
+<li><p><em>Build separate R scripts for each of the examples given within various topics</em>.</p></li>
+</ul>
+</div></blockquote>
+<p>We will help you get set up and abide by this project organization and “workflow”. Examples of this are in the <a class="reference external" href="https://mhasoba.github.io/TheMulQuaBio/notebooks/07-R.html">R pre-work</a>. Specifically, <a class="reference external" href="https://mhasoba.github.io/TheMulQuaBio/notebooks/07-R.html#practicals">here</a>.</p>
+</div>
+<div class="section" id="conventions-used-in-this-document">
+<h2>Conventions used in this document<a class="headerlink" href="#conventions-used-in-this-document" title="Permalink to this headline">¶</a></h2>
+<p>Throughout these sessions, directory paths will be specified in UNIX (Mac, Linux) style, using <code class="docutils literal notranslate"><span class="pre">/</span></code> instead of the <code class="docutils literal notranslate"><span class="pre">\</span></code> used in Windows. Also, in general, we will be using <a class="reference external" href="https://en.wikipedia.org/wiki/Path_(computing)">relative paths</a> throughout the exercises and practicals (more on this later, but google it!).</p>
+<p>You will find all command line/console arguments, code snippets and output in boxes like this:
+You will type the commands/code that you see in such boxes into the relevant command line (don’t copy-paste - you likely need all the command / syntax typing practice you can get !).</p>
+<p>Note that the commandline prompt you will see on your own terminal/console will vary with the programming language: <code class="docutils literal notranslate"><span class="pre">$</span></code> for UNIX, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> for Python, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for R, etc.</p>
+<p>Also note that:</p>
+<p><span class="math notranslate nohighlight">\(\star\)</span> Lines marked with a star like this will be specific instructions for you to follow</p>
+<p>And there will be notes, tips and warnings that you should pay particular attention to, which will appear like this:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a note</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is a tip</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a warning</p>
+</div>
+<p>So here’s your first (and perhaps most important) tip:</p>
+<p><strong>Finding solutions online.</strong>  This document does not tell you every single thing you need to know to perform the exercises in it. In programming and computing, you learn faster by trying to solve problems on your own. The contemporary way to do this is to google the problem! Some suggestions:</p>
+<ul class="simple">
+<li><p>Your typical approach should be to serach online the main keywords along the programming language name (e.g., “unix mv vs cp” or “R create empty dataframe”).</p></li>
+<li><p>Look for <a class="reference external" href="https://stackoverflow.com/">stackoverflow</a> or <a class="reference external" href="https://stackexchange.com/">stackexchange</a> based results in particular. Look for number of endorsements for both the question that has been asked, and for its answer.</p></li>
+<li><p>Be selective - there will often be multiple solutions to the same issue or problem - don’t just blindly use the first one you find.</p></li>
+<li><p>Also, every time a mysterious, geeky-sounding term like “relative path” or “version control” appears, please search (e.g., google) it online it as well!</p></li>
+</ul>
+</div>
+<div class="section" id="other-preliminaries">
+<h2>Other Preliminaries<a class="headerlink" href="#other-preliminaries" title="Permalink to this headline">¶</a></h2>
+<p>You will  learn multiple techniques here (NLLS, MLE and Bayesian methods, etc) through examples. These notes assume that you have already seen <a class="reference external" href="https://github.com/vectorbite/VBiTraining2/tree/master/lectures">lectures</a> on these and related topics.</p>
+<p>Final note: you may use <a class="reference external" href="https://www.rstudio.com">RStudio</a> or any other code editor you prefer.</p>
+<p>Please proceded to the <a class="reference external" href="https://vectorbite.github.io/VBiTraining2/#schedule">next lesson</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="1-Data_R.html" title="next page">Data Management and Visualization</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By VectorBiTE Team<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
