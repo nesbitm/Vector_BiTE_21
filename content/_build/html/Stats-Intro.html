@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to this section &#8212; TheMulQuaBio</title>
+    <title>Introduction to this section &#8212; VectorBiTE 2021</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to The Multilingual Quantitative Biologist!" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -76,7 +75,7 @@
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">TheMulQuaBio</h1>
+      <h1 class="site-logo" id="site-title">VectorBiTE 2021</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -86,20 +85,52 @@
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Welcome to The Multilingual Quantitative Biologist!
+  <a class="reference internal" href="notebooks/0-intro.html">
+   Welcome to the VectorBiTE 2021 Training Workshop!
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Basic Data Analyses and Statistics
+  Data Wrangling
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Introduction to this section
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/1-Data_R.html">
+   Data Management and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/2-Digitizer_explanation.html">
+   How to Digitize Data from Graphs in Published Papers
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Model Fitting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/3-ModelFitting-NLLS.html">
+   Model Fitting using Non-linear Least-squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/4-ModelFitting-MLE.html">
+   Model Fitting using Maximum Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/5-ModelFitting-Bayesian.html">
+   Model Fitting the Bayesian Way
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/6-Bootstrap_rTPC_tutorial_Nesbit.html">
+   Bootstrapping using rTPC package
   </a>
  </li>
 </ul>
@@ -159,11 +190,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/mhasoba/TheMulQuaBio"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/nesbitm/Vector_BiTE_21"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/mhasoba/TheMulQuaBio/issues/new?title=Issue%20on%20page%20%2FStats-Intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/nesbitm/Vector_BiTE_21/issues/new?title=Issue%20on%20page%20%2FStats-Intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -205,11 +236,11 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-this-section">
+  <!-- #region -->
+<div class="section" id="introduction-to-this-section">
 <h1>Introduction to this section<a class="headerlink" href="#introduction-to-this-section" title="Permalink to this headline">¶</a></h1>
-<p>This section of TheMulQuaBio course builds on the computing component, introducing you to statistical analyses of data. You will learn statistics in a hands-on on way using the programming language R, interspersed with lectures on statistical concepts.</p>
-<p><em>The chapters in this Section assume that you have already worked through at least the basic sections of the <span class="xref myst">R Chapter</span> of these notes.</em></p>
-<p>It is important that you work through the problems in each chapter, particularly as some of the questions ask you to find out about commands and functions not introduced in the chapter’s text itself, but which will be relied on in later chapters.</p>
+<p>This section of the VectorBiTE 2021 training introduces you to statistical analyses of data. You will learn statistics in a hands-on on way using the programming language R.</p>
+<p><em>The chapters in this Section assume that you have already have a working knowledge of basic R skills. If you need a refresher please refer to the <a class="reference external" href="https://mhasoba.github.io/TheMulQuaBio/notebooks/07-R.html">R Chapter</a> of the MulQuaBio.</em></p>
 <div class="section" id="readings-resources">
 <h2>Readings &amp; Resources<a class="headerlink" href="#readings-resources" title="Permalink to this headline">¶</a></h2>
 <p>Look up the Readings directory on <a class="reference external" href="https://github.com/mhasoba/TheMulQuaBio">TheMulQuaBio</a>.</p>
@@ -218,6 +249,7 @@
 <li><p>Beckerman, A. P. &amp; Petchey, O. L. (2012) Getting started with R: an introduction for biologists. Oxford, Oxford University Press. (<em>Good, short, general introduction</em>)</p></li>
 <li><p>Crawley, R. (2013) The R book. 2nd edition. Chichester, Wiley.Excellent but enormous reference book, with code and data <a class="reference external" href="http://www.bio.ic.ac.uk/research/mjcraw/therbook/index.htm">available online</a></p></li>
 </ul>
+<!-- #endregion -->
 </div>
 </div>
 
@@ -246,7 +278,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Welcome to The Multilingual Quantitative Biologist!</a>
 
         </div>
         
@@ -256,9 +287,9 @@
     <div class="container">
       <p>
         
-          By Samraat Pawar<br/>
+          By VectorBiTE Team<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

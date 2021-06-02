@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Digitize Data from Graphs in Published Papers &#8212; VectorBiTE 2021</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Model Fitting using Non-linear Least-squares" href="3-ModelFitting-NLLS.html" />
+    <link rel="prev" title="Data Management and Visualization" href="1-Data_R.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">VectorBiTE 2021</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0-intro.html">
+   Welcome to the VectorBiTE 2021 Training Workshop!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Wrangling
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-Data_R.html">
+   Data Management and Visualization
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   How to Digitize Data from Graphs in Published Papers
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Model Fitting
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-ModelFitting-NLLS.html">
+   Model Fitting using Non-linear Least-squares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-ModelFitting-MLE.html">
+   Model Fitting using Maximum Likelihood
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-ModelFitting-Bayesian.html">
+   Model Fitting the Bayesian Way
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-Bootstrap_rTPC_tutorial_Nesbit.html">
+   Bootstrapping using rTPC package
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/2-Digitizer_explanation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/nesbitm/Vector_BiTE_21"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/nesbitm/Vector_BiTE_21/issues/new?title=Issue%20on%20page%20%2Fnotebooks/2-Digitizer_explanation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nesbitm/Vector_BiTE_21/master?urlpath=tree/notebooks/2-Digitizer_explanation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="how-to-digitize-data-from-graphs-in-published-papers">
+<h1>How to Digitize Data from Graphs in Published Papers<a class="headerlink" href="#how-to-digitize-data-from-graphs-in-published-papers" title="Permalink to this headline">¶</a></h1>
+<p>There are a few methods of digitizing data from published papers; the one I will use for this is called <a class="reference external" href="https://automeris.io/WebPlotDigitizer/">webplotdigitizer</a> (WPD). This is a web application. There are methods of using the application through linux and R but they are more complicated than is necessary and I found the web application to work perfectly fine.</p>
+<p>Click the <em>Launch Now!</em> button to start. This will lead you to an example image. The example image can be used to play around and explore the functions of the tool.</p>
+<p>The majority of trait data will be in papers with graphs with an <strong>X</strong> and <strong>Y</strong> axis. Once you have found published papers and downloaded the pdf’s, you will need to crop the image you would like to digitize. For example, from <em>Model on the microbial quality change of seasoned soybean sprouts for on-line shelf life prediction</em> by Lee et. al:</p>
+<p><img alt="Fig.jpeg" src="notebooks/attachment:Fig.jpeg" /></p>
+<p>This is a good example of a growth curve chart aligned in <strong>X</strong> and <strong>Y</strong> axis, with time and colony forming units per gram (an abundance measure in microbiology). Please note the units in your digitization.</p>
+<p>You’ll need to upload your image to the webplotdigitizer through the file button in the upper left corner:</p>
+<p><img alt="wpd.PNG" src="notebooks/attachment:wpd.PNG" /></p>
+<p>This will be in Load Image(s). Once your image is loaded you’ll need to build your axes. Follow the prompts from WPD. Try to get the axes lined up as precisely as possible as this is the basis for the correct digitization of the rest of the graph. There is some alignment correction but you will still need to be as precise as possible, the program can only do so much.</p>
+<p>We will start with a manual extraction. This is much more precise and is the far superior option in older or less clear graphs. Pick a single set of data from the image. I will use the 15C set from Lee et al. Rename your dataset to the first set you will be digitizing. Click each of the points. Keep in mind you can use the <strong>S</strong> key in conjuction with the arrow keys to precisely maneuver the point to its location on the graph. When you are done it should look something like this:</p>
+<p><img alt="wpd_dig-2.PNG" src="notebooks/attachment:wpd_dig-2.PNG" /></p>
+<p>Select the word <em>Datasets</em>. Create your new labelled dataset for the next temperature. Repeat the process of selecting each datapoint on the graph. Repeat this process for each of the different tempertures. The final project should look like this:</p>
+<p><img alt="wpd_fin.PNG" src="notebooks/attachment:wpd_fin.PNG" /></p>
+<p>Export all data. This will save the entire project so far as a CSV. Please note your units and any special information necessary to recreate this graph later.</p>
+<p>Save the overall file (under file, save project) as a TAR file. Keep this with the file your PDF and csv’s are in. This will enable you to fix any problems with relative ease should there inevitably be a mistake in the digitization.</p>
+<p>Depending on your dataset, you will need to format the data differently, using a different function. This is a base function for this particular set of data in <strong>R</strong>:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1">#data function</span>
+<span class="n">format_data</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">temp</span><span class="p">,</span><span class="n">time_units</span><span class="p">,</span><span class="n">popBio_unts</span><span class="p">,</span><span class="n">species</span><span class="p">,</span><span class="n">medium</span><span class="p">,</span><span class="n">rep</span><span class="p">,</span><span class="n">header</span><span class="p">){</span>
+  <span class="c1">#get number of datasets</span>
+  <span class="n">n_data</span> <span class="o">&lt;-</span> <span class="nf">ncol</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">/</span><span class="m">2</span>
+  <span class="n">data_list</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+  <span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">n_data</span><span class="p">){</span>
+    <span class="c1">#construct dataframe</span>
+    <span class="n">df_temp</span> <span class="o">&lt;-</span> <span class="n">df</span><span class="p">[</span> <span class="p">,</span> <span class="p">((</span><span class="n">i</span><span class="o">*</span><span class="m">2</span><span class="p">)</span><span class="m">-1</span><span class="p">)</span> <span class="o">:</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="m">2</span><span class="p">)</span> <span class="p">]</span> <span class="o">%&gt;%</span>
+      <span class="nf">filter</span><span class="p">(</span><span class="nf">row_number</span><span class="p">()</span> <span class="o">&gt;</span> <span class="m">1</span><span class="p">)</span> <span class="o">%&gt;%</span>
+      <span class="nf">mutate_all</span><span class="p">(</span><span class="n">as.numeric</span><span class="p">)</span>
+    
+    <span class="n">df_temp</span><span class="p">[</span><span class="n">df_temp</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
+    <span class="n">df_temp</span> <span class="o">&lt;-</span> <span class="n">df_temp</span> <span class="o">%&gt;%</span> <span class="nf">na.omit</span><span class="p">()</span>
+    
+    <span class="c1">#get header</span>
+    <span class="n">header</span> <span class="o">&lt;-</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">df_temp</span><span class="p">[</span><span class="m">1</span><span class="p">])</span> <span class="o">%&gt;%</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;X&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">.</span><span class="p">)</span>
+    <span class="c1">#add data </span>
+    <span class="nf">colnames</span><span class="p">(</span><span class="n">df_temp</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Time&quot;</span><span class="p">,</span><span class="s">&quot;PopBio&quot;</span><span class="p">)</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">header</span> <span class="o">&lt;-</span> <span class="n">header</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">Temp</span> <span class="o">&lt;-</span> <span class="n">temp</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">Time_units</span> <span class="o">&lt;-</span> <span class="n">time_units</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">PopBio_unts</span> <span class="o">&lt;-</span> <span class="n">popBio_unts</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">Species</span> <span class="o">&lt;-</span> <span class="n">species</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">Medium</span> <span class="o">&lt;-</span> <span class="n">medium</span>
+    <span class="n">df_temp</span><span class="o">$</span><span class="n">Rep</span> <span class="o">&lt;-</span> <span class="n">rep</span>
+    
+    <span class="n">data_list</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span> <span class="o">&lt;-</span> <span class="n">df_temp</span>
+  <span class="p">}</span>
+  <span class="nf">return</span><span class="p">(</span><span class="nf">bind_rows</span><span class="p">(</span><span class="n">data_list</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Feel free to copy this into your <strong>R</strong> script. Please keep in mind this will need to be edited to your specifications.</p>
+<p>You’ll need “tidyverse” and “ggplot2” packages.</p>
+<p>From here you’ll need to load in your CSV add the headers:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">Fig_1</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;../Data/Lee_et_al_2007/Fig_1.csv&quot;</span><span class="p">,</span>
+                  <span class="n">stringsAsFactors</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">format_data</span><span class="p">(</span><span class="n">.</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="s">&quot;Hours&quot;</span><span class="p">,</span><span class="s">&quot;log(CFU/g)&quot;</span><span class="p">,</span><span class="s">&quot;aerobic bacteria&quot;</span><span class="p">,</span><span class="s">&quot;soybeans&quot;</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You’ll need to squish it down:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span> <span class="o">&lt;-</span> <span class="nf">bind_rows</span><span class="p">(</span><span class="n">Fig_1</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">Temp</span> <span class="o">=</span> <span class="n">header</span><span class="p">)</span>
+<span class="n">drops</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;header&quot;</span><span class="p">)</span>
+<span class="n">final_df</span> <span class="o">&lt;-</span> <span class="n">final_df</span><span class="p">[</span> <span class="p">,</span> <span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">final_df</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">drops</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Edit what needs editing to fit into the right dataset. For example Lee et al. used days as a unit of time, where normally growth curves are done with hours or minutes. Lets change this unit to hours:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span> <span class="o">&lt;-</span> <span class="n">final_df</span> <span class="o">%&gt;%</span>
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="n">Time</span> <span class="o">*</span> <span class="m">24</span><span class="p">,</span>
+         <span class="n">Time_units</span> <span class="o">=</span> <span class="s">&quot;Hours&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is the stage you should check over the data and make sure it looks like the original graph before you add it to the larger database. ggplot2 is a good package for this:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span> <span class="o">%&gt;%</span>
+  <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Time</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">PopBio</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">Temp</span><span class="p">,</span> <span class="n">group</span> <span class="o">=</span> <span class="n">Temp</span><span class="p">))</span><span class="o">+</span>
+  <span class="nf">geom_point</span><span class="p">()</span><span class="o">+</span>
+  <span class="nf">theme_bw</span><span class="p">()</span><span class="o">+</span>
+  <span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="n">Species</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It looks good!</p>
+<p><img alt="wpd_graph-2.jpeg" src="notebooks/attachment:wpd_graph-2.jpeg" /></p>
+<p>Let’s add a citation:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">final_df</span><span class="o">$</span><span class="n">Citation</span> <span class="o">&lt;-</span> <span class="s">&#39;Lee, D. S., Hwang, K. J., An, D. S., Park, J. P., &amp; Lee, H. J. (2007). Model on the microbial quality change of seasoned soybean sprouts for on-line shelf life prediction. International Journal of Food Microbiology, 118(3), 285â293. https://doi.org/10.1016/j.ijfoodmicro.2007.07.052&#39;</span>
+</pre></div>
+</div>
+<p>Save the new CSV:</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">write.csv</span><span class="p">(</span><span class="n">final_df</span><span class="p">,</span><span class="s">&quot;../Results/Formated/Lee_processed.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Repeat this process for each image in each paper which you want to digitize traits from. Save each as a CSV as was done at the end here. From this stage it is a simple matter to <code class="docutils literal notranslate"><span class="pre">rbind()</span></code> the CSV’s together as dataframes to create one master CSV with all the data you have digitized.</p>
+<p>If you take away nothing else from this, remember your <em><strong>units</strong></em> and check yourself often!</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="1-Data_R.html" title="previous page">Data Management and Visualization</a>
+    <a class='right-next' id="next-link" href="3-ModelFitting-NLLS.html" title="next page">Model Fitting using Non-linear Least-squares</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By VectorBiTE Team<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
