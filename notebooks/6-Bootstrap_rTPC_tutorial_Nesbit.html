@@ -418,7 +418,7 @@ Loading required package: minpack.lm
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#visualize</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">ambienttemp</span><span class="p">,</span> <span class="n">originaltraitvalue</span><span class="p">))</span><span class="o">+</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">ambienttemp</span><span class="p">,</span> <span class="n">originaltraitvalue</span><span class="p">))</span><span class="o">+</span>
   <span class="nf">geom_point</span><span class="p">()</span><span class="o">+</span>
   <span class="nf">theme_bw</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">12</span><span class="p">)</span> <span class="o">+</span>
   <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Temperature (ºC)&#39;</span><span class="p">,</span>
@@ -428,16 +428,7 @@ Loading required package: minpack.lm
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error:   You&#39;re passing a function as global data.
-  Have you misspelled the `data` argument in `ggplot()`
-Traceback:
-
-1. ggplot(df, aes(ambienttemp, originaltraitvalue))
-2. ggplot.function(df, aes(ambienttemp, originaltraitvalue))
-3. abort(glue(&quot;\n    You&#39;re passing a function as global data.\n    Have you misspelled the `data` argument in `ggplot()`\n  &quot;))
-4. signal_abort(cnd)
-</pre></div>
-</div>
+<img alt="../_images/6-Bootstrap_rTPC_tutorial_Nesbit_11_0.png" src="../_images/6-Bootstrap_rTPC_tutorial_Nesbit_11_0.png" />
 </div>
 </div>
 <p>We will need to write which model we are using (sharpschoolhigh_1981). From here we can actually build our fit. We will use ‘’nls_multstart’’ to automatically find our starting values. This lets us skip the <a class="reference external" href="https://mhasoba.github.io/TheMulQuaBio/notebooks/20-ModelFitting-NLLS.html#the-starting-values-problem">starting value problem</a>. From here we build our predicted line.</p>
