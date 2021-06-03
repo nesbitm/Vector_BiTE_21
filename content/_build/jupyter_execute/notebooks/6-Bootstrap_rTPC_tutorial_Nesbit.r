@@ -31,7 +31,7 @@ df1 <- final_trait_data %>%
 df2 <- dplyr::filter(df1, originalid == 'csm7I')
 
 #visualize
-ggplot(df, aes(ambienttemp, originaltraitvalue))+
+ggplot(df2, aes(ambienttemp, originaltraitvalue))+
   geom_point()+
   theme_bw(base_size = 12) +
   labs(x = 'Temperature (ºC)',

@@ -56,12 +56,13 @@
 # 
 # So here's your first (and perhaps most important) tip:
 # 
-# 
+# ```{tip}
 # **Finding solutions online.**  This document does not tell you every single thing you need to know to perform the exercises in it. In programming and computing, you learn faster by trying to solve problems on your own. The contemporary way to do this is to google the problem! Some suggestions: 
 # * Your typical approach should be to serach online the main keywords along the programming language name (e.g., "unix mv vs cp" or "R create empty dataframe"). 
 # * Look for [stackoverflow](https://stackoverflow.com/) or [stackexchange](https://stackexchange.com/) based results in particular. Look for number of endorsements for both the question that has been asked, and for its answer.
 # * Be selective - there will often be multiple solutions to the same issue or problem - don't just blindly use the first one you find. 
 # * Also, every time a mysterious, geeky-sounding term like "relative path" or "version control" appears, please search (e.g., google) it online it as well!
+# ```
 # 
 # ## Other Preliminaries 
 # 
@@ -69,18 +70,10 @@
 # 
 # Final note: you may use [RStudio](https://www.rstudio.com) or any other code editor you prefer.
 # 
-# Please proceded to the [next lesson](https://vectorbite.github.io/VBiTraining2/#schedule).
-# 
 # 
 # ```python
 # 
 # ```
-
-# In[ ]:
-
-
-
-
 
 # 
 # ```{toctree}
